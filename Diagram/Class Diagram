@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-09-24T12:43:29.545Z" agent="5.0 (X11)" etag="IjwkRv4KWLAAixWTpJZF" version="15.2.9" type="gitlab">
+<mxfile host="app.diagrams.net" modified="2021-09-24T12:49:24.316Z" agent="5.0 (X11)" etag="wmHYSA9OdzIo2ZCapRWH" version="15.2.9" type="gitlab">
   <diagram id="N64K4NdRYR98vtDT6O_Q" name="Page-1">
     <mxGraphModel dx="1422" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -28,7 +28,7 @@
           <mxGeometry y="104" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="moANbagoKgdeDMScmdTi-15" value="Devis" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;sketch=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1" collapsed="1">
-          <mxGeometry x="30" y="174" width="60" height="26" as="geometry">
+          <mxGeometry x="100" y="40" width="60" height="26" as="geometry">
             <mxRectangle x="20" y="16" width="160" height="78" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -39,7 +39,7 @@
           <mxGeometry y="52" width="60" height="26" as="geometry" />
         </mxCell>
         <mxCell id="moANbagoKgdeDMScmdTi-19" value="Facture" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;sketch=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1" collapsed="1">
-          <mxGeometry x="25" y="110" width="70" height="26" as="geometry">
+          <mxGeometry x="20" y="40" width="70" height="26" as="geometry">
             <mxRectangle x="10" y="60" width="160" height="104" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
