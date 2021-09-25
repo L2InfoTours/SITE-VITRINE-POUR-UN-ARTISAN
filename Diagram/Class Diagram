@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-09-24T12:49:24.316Z" agent="5.0 (X11)" etag="wmHYSA9OdzIo2ZCapRWH" version="15.2.9" type="gitlab">
+<mxfile host="app.diagrams.net" modified="2021-09-24T13:23:12.721Z" agent="5.0 (X11)" etag="NQFFEGy21-mdpYdoEjB2" version="15.2.9" type="gitlab">
   <diagram id="N64K4NdRYR98vtDT6O_Q" name="Page-1">
     <mxGraphModel dx="1422" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -191,7 +191,7 @@
         <mxCell id="ysRw84HECUco7x_D4uvJ-8" value="lettre_motivation" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-4">
           <mxGeometry y="104" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ysRw84HECUco7x_D4uvJ-9" value="numero_tel" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-4">
+        <mxCell id="ysRw84HECUco7x_D4uvJ-9" value="telephone" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-4">
           <mxGeometry y="130" width="160" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ysRw84HECUco7x_D4uvJ-10" value="&lt;div&gt;email&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-4">
@@ -229,7 +229,7 @@
         <mxCell id="ysRw84HECUco7x_D4uvJ-24" value="lettre_motivation" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-20">
           <mxGeometry y="104" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ysRw84HECUco7x_D4uvJ-25" value="numero_tel" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-20">
+        <mxCell id="ysRw84HECUco7x_D4uvJ-25" value="telephone" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-20">
           <mxGeometry y="130" width="160" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ysRw84HECUco7x_D4uvJ-26" value="&lt;div&gt;email&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-20">
@@ -239,7 +239,7 @@
           <mxGeometry y="170" width="160" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ysRw84HECUco7x_D4uvJ-28" value="Demande_devis" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;sketch=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="430" y="437" width="160" height="150" as="geometry">
+          <mxGeometry x="430" y="437" width="160" height="176" as="geometry">
             <mxRectangle x="10" y="20" width="60" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -252,11 +252,14 @@
         <mxCell id="ysRw84HECUco7x_D4uvJ-31" value="description" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-28">
           <mxGeometry y="78" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ysRw84HECUco7x_D4uvJ-32" value="coordonnees" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-28">
+        <mxCell id="ysRw84HECUco7x_D4uvJ-32" value="telephone" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-28">
           <mxGeometry y="104" width="160" height="26" as="geometry" />
         </mxCell>
+        <mxCell id="ysRw84HECUco7x_D4uvJ-40" value="email" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-28">
+          <mxGeometry y="130" width="160" height="26" as="geometry" />
+        </mxCell>
         <mxCell id="ysRw84HECUco7x_D4uvJ-33" value="statut" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ysRw84HECUco7x_D4uvJ-28">
-          <mxGeometry y="130" width="160" height="20" as="geometry" />
+          <mxGeometry y="156" width="160" height="20" as="geometry" />
         </mxCell>
         <mxCell id="ysRw84HECUco7x_D4uvJ-37" value="0.N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="460" y="417" width="40" height="20" as="geometry" />
