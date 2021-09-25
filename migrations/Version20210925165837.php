@@ -1,0 +1,36 @@
+<?php
+
+declare(strict_types=1);
+
+namespace DoctrineMigrations;
+
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+final class Version20210925165837 extends AbstractMigration
+{
+    public function getDescription(): string
+    {
+        return '';
+    }
+
+    public function up(Schema $schema): void
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+        $this->addSql('ALTER TABLE type_chantier ADD chantier_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE type_chantier ADD CONSTRAINT FK_AE90000AD0C0049D FOREIGN KEY (chantier_id) REFERENCES chantier (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('CREATE INDEX IDX_AE90000AD0C0049D ON type_chantier (chantier_id)');
+    }
+
+    public function down(Schema $schema): void
+    {
+        // this down() migration is auto-generated, please modify it to your needs
+        $this->addSql('CREATE SCHEMA public');
+        $this->addSql('ALTER TABLE type_chantier DROP CONSTRAINT FK_AE90000AD0C0049D');
+        $this->addSql('DROP INDEX IDX_AE90000AD0C0049D');
+        $this->addSql('ALTER TABLE type_chantier DROP chantier_id');
+    }
+}
