@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DemandeDevis{% endblock %}
+
+{% block body %}
+    <h1>DemandeDevis</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ demande_devi.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ demande_devi.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ demande_devi.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ demande_devi.description }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ demande_devi.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ demande_devi.email }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ demande_devi.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('demande_devis_index') }}">back to list</a>
+
+    <a href="{{ path('demande_devis_edit', {'id': demande_devi.id}) }}">edit</a>
+
+    {{ include('demande_devis/_delete_form.html.twig') }}
+{% endblock %}
