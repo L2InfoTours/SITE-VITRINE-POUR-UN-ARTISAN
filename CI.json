@@ -1,0 +1,14 @@
+{
+
+	"pages":[
+		{
+			"url":"chantier"
+		},
+		{
+			"url":"demandedevis"
+		},
+		{
+			"url":"home"
+		}
+	]
+}
