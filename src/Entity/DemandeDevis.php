@@ -45,7 +45,7 @@ class DemandeDevis
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $status;
+    private $status = "En cours";
 
     /**
      * @ORM\ManyToOne(targetEntity=Admin::class, inversedBy="devis")
