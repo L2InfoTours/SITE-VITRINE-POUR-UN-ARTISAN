@@ -10,10 +10,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/demande/devis')]
 class DemandeDevisController extends AbstractController
 {
-    #[Route('/', name: 'demande_devis_index', methods: ['GET'])]
+	#[Route('/', name: 'demande_devis', methods: ['GET', 'POST'])]
     public function index(DemandeDevisRepository $demandeDevisRepository): Response
     {
         return $this->render('demande_devis/index.html.twig', [

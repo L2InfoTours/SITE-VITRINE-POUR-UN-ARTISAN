@@ -39,8 +39,8 @@ async function testForm(browser,config){
 function testError(browser,config){
 	return new Promise(async (resolve,reject)=>{
 		var exception = await browser.querySelector('.exception-message');
-		var exception_message = await exception.getText()
-		if(exception_message){
+		if(exception){
+			var exception_message = await exception.getText()
 			reject(exception_message)
 		}else{
 			resolve()

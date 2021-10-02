@@ -23,7 +23,11 @@ class Browser{
 		await this.driver.quit();
 	}
 	async querySelector(selector){
-		return await this.driver.findElement(By.css(selector))
+		try {
+			return await this.driver.findElement(By.css(selector))
+		} catch{
+			return null
+		}
 	}
 	async screenShot(){
 		return await this.driver.takeScreenshot()
