@@ -16,14 +16,15 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress",
-		"test":"node npm/ci.js",
-		"start":"node npm/start.js"
+        "test": "node npm/ci.js",
+        "start": "node npm/start.js"
     },
     "dependencies": {
         "@popperjs/core": "^2.10.1",
         "autoprefixer": "^10.3.6",
         "bootstrap": "^5.0.0-beta3",
         "popper.js": "^1.16.1",
-        "postcss-loader": "^6.1.1"
+        "postcss-loader": "^6.1.1",
+        "selenium-webdriver": "^4.0.0-alpha.8"
     }
 }

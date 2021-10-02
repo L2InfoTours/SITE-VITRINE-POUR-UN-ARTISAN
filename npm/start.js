@@ -1,2 +1,2 @@
-const {startSymfony} = require('./symfony')
-startSymfony(true)
+const {start} = require('./symfony')
+start(true)
