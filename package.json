@@ -1,7 +1,7 @@
 {
     "devDependencies": {
         "@symfony/stimulus-bridge": "^2.0.0",
-        "@symfony/webpack-encore": "^1.0.0",
+        "@symfony/webpack-encore": "^1.6.1",
         "core-js": "^3.0.0",
         "node-sass": "^6.0.1",
         "regenerator-runtime": "^0.13.2",
@@ -19,6 +19,7 @@
         "test": "node npm/ci.js",
         "start": "node npm/start.js"
     },
+	"postgres":"C:\\Program Files\\PostgreSQL\\13\\data",
     "dependencies": {
         "@popperjs/core": "^2.10.1",
         "autoprefixer": "^10.3.6",

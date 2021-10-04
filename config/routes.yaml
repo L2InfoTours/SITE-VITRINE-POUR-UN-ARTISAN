@@ -1,9 +1,9 @@
-index:
-    path: /
-    controller: App\Controller\HomeController::index
-dashboard:
-    path: /admin
-    controller: App\Controller\Admin\DashboardController::index
-chantier:
-    path: /chantier
-    controller: App\Controller\ChantierController::index
+# index:
+#     path: /
+#     controller: App\Controller\HomeController::index
+# dashboard:
+#     path: /admin
+#     controller: App\Controller\Admin\DashboardController::index
+# chantier:
+#     path: /chantier
+#     controller: App\Controller\ChantierController::index

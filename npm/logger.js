@@ -32,4 +32,5 @@ module.exports = {
 	error:text(BgRed,FgWhite,Bright),
 	warn:text(BgYellow,FgBlack,Bright,Underscore),
 	succes:text(BgGreen,FgWhite,Bright),
+	info:text(BgBlue,FgWhite,Bright,Underscore),
 }

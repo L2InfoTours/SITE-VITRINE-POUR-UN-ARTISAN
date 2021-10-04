@@ -82,6 +82,6 @@ function testWebSite(config){
 	config = new Config(config)
 	testWebSitePages(config)
 }
-symfony.start()
+symfony.start(true)
 // config.url = symfony.url()
 testWebSite(config)

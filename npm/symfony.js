@@ -27,6 +27,10 @@ function getURL(){
 	var str = exec("symfony open:local")
 	return str.split(": ")[1]
 }
+/**
+ * php bin/console make:migration
+ * 
+ */
 module.exports = {
 	start:startSymfony,
 	reload:reloadSymfony,
