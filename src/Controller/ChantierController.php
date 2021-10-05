@@ -10,9 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/chantier')]
 class ChantierController extends AbstractController
 {
-    #Route('/', name: 'chantier_index', methods: ['GET'])
+    #[Route('/', name: 'chantier_index', methods: ['GET'])]
     public function index(ChantierRepository $chantierRepository): Response
     {
         return $this->render('chantier/index.html.twig', [
@@ -20,7 +21,7 @@ class ChantierController extends AbstractController
         ]);
     }
 
-    #Route('/new', name: 'chantier_new', methods: ['GET', 'POST'])
+    #[Route('/new', name: 'chantier_new', methods: ['GET', 'POST'])]
     public function new(Request $request): Response
     {
         $chantier = new Chantier();
