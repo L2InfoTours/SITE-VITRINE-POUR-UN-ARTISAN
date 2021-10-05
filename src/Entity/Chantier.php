@@ -42,7 +42,7 @@ class Chantier
     /**
      * @ORM\ManyToMany(targetEntity=TypeChantier::class, inversedBy="chantiers")
      */
-    private $type;
+    private $types;
 
     /**
      * @ORM\ManyToOne(targetEntity=Admin::class, inversedBy="chantiers")
@@ -50,10 +50,7 @@ class Chantier
      */
     private $admin;
 
-    /**
-     * @ORM\OneToMany(targetEntity=TypeChantier::class, mappedBy="chantier")
-     */
-    private $types;
+
 
     public function __construct()
     {

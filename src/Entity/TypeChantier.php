@@ -25,14 +25,9 @@ class TypeChantier
     private $type;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Chantier::class, mappedBy="type")
+     * @ORM\ManyToMany(targetEntity=Chantier::class, mappedBy="types")
      */
     private $chantiers;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Chantier::class, inversedBy="types")
-     */
-    private $chantier;
 
     public function __construct()
     {
