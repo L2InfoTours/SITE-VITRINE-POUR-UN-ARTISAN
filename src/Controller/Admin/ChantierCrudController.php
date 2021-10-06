@@ -12,14 +12,14 @@ class ChantierCrudController extends AbstractCrudController
         return Chantier::class;
     }
 
-    /*
+    
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            'nom',
+            'contenu',
+            'adresse',
         ];
     }
-    */
+    
 }
