@@ -74,6 +74,9 @@ class DashboardController extends AbstractDashboardController
 
             MenuItem::section('DemandeDevis'),
             MenuItem::linkToCrud('DemandeDevis', 'fa fa-comment', DemandeDevis::class),
+
+            // MenuItem::section('Image'),
+            // MenuItem::linkToCrud('Image', 'fa fa-comment', Image::class),
         ];
     }
 }

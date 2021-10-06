@@ -19,6 +19,7 @@ class ChantierCrudController extends AbstractCrudController
             'nom',
             'contenu',
             'adresse',
+            'images',
         ];
     }
     
