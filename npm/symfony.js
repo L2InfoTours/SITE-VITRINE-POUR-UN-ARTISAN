@@ -23,6 +23,9 @@ function startSymfony(force = false){
 		console.info("Server is Running")
 	}
 }
+function stopSymfony(){
+	var str = exec("symfony server:stop")
+}
 function getURL(){
 	var str = exec("symfony open:local")
 	return str.split(": ")[1]
@@ -33,6 +36,7 @@ function getURL(){
  */
 module.exports = {
 	start:startSymfony,
+	stop:stopSymfony,
 	reload:reloadSymfony,
 	url:getURL,
 }

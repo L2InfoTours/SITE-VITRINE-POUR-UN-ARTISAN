@@ -17,7 +17,9 @@
         "watch": "encore dev --watch",
         "build": "encore production --progress",
         "test": "node npm/ci.js",
-        "start": "node npm/start.js"
+        "start": "node npm/start.js",
+		"stop": "node npm/stop.js",
+		"setup": "node npm/setup.js"
     },
 	"postgres":"C:\\Program Files\\PostgreSQL\\13\\data",
     "dependencies": {
