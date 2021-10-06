@@ -21,3 +21,4 @@ if(!pdo_driver){
 
 //console.log(ini)
 logger.succes('your installation is a succes')
+execute("php bin/console doctrine:database:create")
