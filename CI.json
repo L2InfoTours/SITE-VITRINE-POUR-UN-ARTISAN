@@ -1,0 +1,22 @@
+{
+	"host":"127.0.0.1",
+	"port":"8000",
+	"protocol":"https",
+	"pages":[
+		{
+			"url":"chantier",
+			"froms":[
+
+			]
+		},
+		{
+			"url":"demandedevis"
+		},
+		{
+			"url":"admin"
+		},
+		{
+			"url":""
+		}
+	]
+}
