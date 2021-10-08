@@ -4,7 +4,6 @@ namespace App\Controller\Admin;
 
 use App\Entity\Image;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
