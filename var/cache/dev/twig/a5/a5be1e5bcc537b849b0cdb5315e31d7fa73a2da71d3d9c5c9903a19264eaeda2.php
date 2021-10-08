@@ -86,10 +86,10 @@ class __TwigTemplate_9037c7ac189e564a8fce697805ad6d42849124018ddd19dd550a71aafc4
 
     
     <!-- Custom styles for this template -->
-    <link href=\"";
+    ";
         // line 47
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/feature.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("feature");
+        echo "
   </head>
   <body>
 <main>
@@ -255,7 +255,7 @@ class __TwigTemplate_9037c7ac189e564a8fce697805ad6d42849124018ddd19dd550a71aafc4
 
     
     <!-- Custom styles for this template -->
-    <link href=\"{{ asset('css/feature.css') }}\" rel=\"stylesheet\">
+    {{encore_entry_link_tags('feature')}}
   </head>
   <body>
 <main>

@@ -5,6 +5,8 @@ namespace App\Controller\Admin;
 use App\Entity\Chantier;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+
 class ChantierCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -19,7 +21,7 @@ class ChantierCrudController extends AbstractCrudController
             'nom',
             'contenu',
             'adresse',
-            'images',
+            CollectionField::new('images')->onlyOnForms(),
         ];
     }
     

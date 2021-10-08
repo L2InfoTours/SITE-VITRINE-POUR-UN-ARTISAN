@@ -26,11 +26,6 @@ class Image
     private $titre;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $lien;
-
-    /**
      * @ORM\ManyToOne(targetEntity=Chantier::class, inversedBy="images")
      */
     private $chantier;
@@ -54,6 +49,10 @@ class Image
     private $updatedAt;
 
     // ...
+
+    public function __toString(){
+        return $this->titre;
+    }
 
     public function setImageFile(File $image = null)
     {

@@ -6,4 +6,6 @@ symfony doctrine:database:create
 
 symfony serv
 
+Easy admin
+VichUploaderBundle
 

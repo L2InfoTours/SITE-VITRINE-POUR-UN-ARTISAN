@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Chantier;
 use App\Entity\DemandeDevis;
+use App\Entity\Image;
 
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -31,9 +32,9 @@ class DashboardController extends AbstractDashboardController
     {
         return Dashboard::new()
             // the name visible to end users
-            ->setTitle('ACME Corp.')
+            //->setTitle('ABC Legermain')
             // you can include HTML contents too (e.g. to link to an image)
-            ->setTitle('<img src="..."> ACME <span class="text-small">Corp.</span>')
+            ->setTitle('<img src="..."> &#x1F333; ABC Legermain')
 
             // the path defined in this method is passed to the Twig asset() function
             ->setFaviconPath('favicon.svg')
@@ -51,7 +52,7 @@ class DashboardController extends AbstractDashboardController
 
             // set this option if you prefer the sidebar (which contains the main menu)
             // to be displayed as a narrow column instead of the default expanded design
-            ->renderSidebarMinimized()
+            //->renderSidebarMinimized()
 
             // by default, all backend URLs include a signature hash. If a user changes any
             // query parameter (to "hack" the backend) the signature won't match and EasyAdmin
@@ -69,14 +70,13 @@ class DashboardController extends AbstractDashboardController
         return [
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
 
-            MenuItem::section('Chantier'),
+            MenuItem::section('Consulter'),
             MenuItem::linkToCrud('Chantier', 'fa fa-tags', Chantier::class),
-
-            MenuItem::section('DemandeDevis'),
             MenuItem::linkToCrud('DemandeDevis', 'fa fa-comment', DemandeDevis::class),
 
-            // MenuItem::section('Image'),
-            // MenuItem::linkToCrud('Image', 'fa fa-comment', Image::class),
+            MenuItem::section('Modifier'),
+            MenuItem::linkToCrud('Chantier', 'fa fa-tags', Chantier::class),
+            MenuItem::linkToCrud('Image', 'fa fa-comment', Image::class),
         ];
     }
 }
