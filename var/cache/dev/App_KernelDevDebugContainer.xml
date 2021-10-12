@@ -69,7 +69,7 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
-    <parameter key="app.path.product_images">/uploads/images/products</parameter>
+    <parameter key="app.path.chantier_images">/uploads/images/chantier</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -228,9 +228,9 @@
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="vich_uploader.default_filename_attribute_suffix">_name</parameter>
     <parameter key="vich_uploader.mappings" type="collection">
-      <parameter key="product_images" type="collection">
-        <parameter key="uri_prefix">/uploads/images/products</parameter>
-        <parameter key="upload_destination">/var/www/private/L3/stabs/public/uploads/images/products</parameter>
+      <parameter key="chantier_images" type="collection">
+        <parameter key="uri_prefix">/uploads/images/chantier</parameter>
+        <parameter key="upload_destination">/var/www/private/L3/stabs/public/uploads/images/chantier</parameter>
         <parameter key="namer" type="collection">
           <parameter key="service">null</parameter>
           <parameter key="options">null</parameter>
@@ -3373,13 +3373,13 @@
       </argument>
     </service>
     <service id="doctrine.dbal.default_connection.event_manager" class="Symfony\Bridge\Doctrine\ContainerAwareEventManager">
-      <argument type="service" id=".service_locator.7lGV.i9"/>
+      <argument type="service" id=".service_locator.G2ByJEa"/>
       <argument type="collection">
-        <argument>vich_uploader.listener.clean.product_images</argument>
+        <argument>vich_uploader.listener.clean.chantier_images</argument>
         <argument>doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber</argument>
         <argument>doctrine.orm.listeners.doctrine_token_provider_schema_subscriber</argument>
-        <argument>vich_uploader.listener.remove.product_images</argument>
-        <argument>vich_uploader.listener.upload.product_images</argument>
+        <argument>vich_uploader.listener.remove.chantier_images</argument>
+        <argument>vich_uploader.listener.upload.chantier_images</argument>
         <argument type="collection">
           <argument type="collection">
             <argument>loadClassMetadata</argument>
@@ -5745,23 +5745,23 @@
       <tag name="twig.extension"/>
       <argument type="service" id="Vich\UploaderBundle\Templating\Helper\UploaderHelper"/>
     </service>
-    <service id="vich_uploader.listener.clean.product_images" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
+    <service id="vich_uploader.listener.clean.chantier_images" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
       <tag name="doctrine.event_subscriber" priority="50"/>
-      <argument>product_images</argument>
+      <argument>chantier_images</argument>
       <argument type="service" id="vich_uploader.adapter.orm"/>
       <argument type="service" id="vich_uploader.metadata_reader"/>
       <argument type="service" id="vich_uploader.upload_handler"/>
     </service>
-    <service id="vich_uploader.listener.remove.product_images" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener">
+    <service id="vich_uploader.listener.remove.chantier_images" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener">
       <tag name="doctrine.event_subscriber" priority="0"/>
-      <argument>product_images</argument>
+      <argument>chantier_images</argument>
       <argument type="service" id="vich_uploader.adapter.orm"/>
       <argument type="service" id="vich_uploader.metadata_reader"/>
       <argument type="service" id="vich_uploader.upload_handler"/>
     </service>
-    <service id="vich_uploader.listener.upload.product_images" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener">
+    <service id="vich_uploader.listener.upload.chantier_images" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener">
       <tag name="doctrine.event_subscriber" priority="0"/>
-      <argument>product_images</argument>
+      <argument>chantier_images</argument>
       <argument type="service" id="vich_uploader.adapter.orm"/>
       <argument type="service" id="vich_uploader.metadata_reader"/>
       <argument type="service" id="vich_uploader.upload_handler"/>
@@ -6213,6 +6213,12 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.CKlWSja" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="actions" type="service_closure" id=".errored..service_locator.CKlWSja.EasyCorp\Bundle\EasyAdminBundle\Config\Actions"/>
+      </argument>
+    </service>
     <service id=".service_locator.4C0Bh8j" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6223,12 +6229,6 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="assets" type="service_closure" id=".errored..service_locator.U4Bbnsn.EasyCorp\Bundle\EasyAdminBundle\Config\Assets"/>
-      </argument>
-    </service>
-    <service id=".service_locator.CKlWSja" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="actions" type="service_closure" id=".errored..service_locator.CKlWSja.EasyCorp\Bundle\EasyAdminBundle\Config\Actions"/>
       </argument>
     </service>
     <service id=".service_locator.Nt.ogDb" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6617,15 +6617,15 @@
         <argument key="Vich\UploaderBundle\Form\Type\VichImageType" type="service_closure" id="vich_uploader.form.type.image"/>
       </argument>
     </service>
-    <service id=".service_locator.7lGV.i9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.G2ByJEa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service_closure" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
         <argument key="doctrine.orm.listeners.doctrine_token_provider_schema_subscriber" type="service_closure" id="doctrine.orm.listeners.doctrine_token_provider_schema_subscriber"/>
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
-        <argument key="vich_uploader.listener.clean.product_images" type="service_closure" id="vich_uploader.listener.clean.product_images"/>
-        <argument key="vich_uploader.listener.remove.product_images" type="service_closure" id="vich_uploader.listener.remove.product_images"/>
-        <argument key="vich_uploader.listener.upload.product_images" type="service_closure" id="vich_uploader.listener.upload.product_images"/>
+        <argument key="vich_uploader.listener.clean.chantier_images" type="service_closure" id="vich_uploader.listener.clean.chantier_images"/>
+        <argument key="vich_uploader.listener.remove.chantier_images" type="service_closure" id="vich_uploader.listener.remove.chantier_images"/>
+        <argument key="vich_uploader.listener.upload.chantier_images" type="service_closure" id="vich_uploader.listener.upload.chantier_images"/>
       </argument>
     </service>
     <service id="cache.doctrine.orm.default.query.compatibility_layer" class="Doctrine\Common\Cache\CacheProvider">
@@ -6900,9 +6900,9 @@
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.CKlWSja.EasyCorp\Bundle\EasyAdminBundle\Config\Actions" class="EasyCorp\Bundle\EasyAdminBundle\Config\Actions"/>
     <service id=".errored..service_locator.4C0Bh8j.EasyCorp\Bundle\EasyAdminBundle\Config\Crud" class="EasyCorp\Bundle\EasyAdminBundle\Config\Crud"/>
     <service id=".errored..service_locator.U4Bbnsn.EasyCorp\Bundle\EasyAdminBundle\Config\Assets" class="EasyCorp\Bundle\EasyAdminBundle\Config\Assets"/>
-    <service id=".errored..service_locator.CKlWSja.EasyCorp\Bundle\EasyAdminBundle\Config\Actions" class="EasyCorp\Bundle\EasyAdminBundle\Config\Actions"/>
     <service id=".errored..service_locator.Nt.ogDb.EasyCorp\Bundle\EasyAdminBundle\Config\Filters" class="EasyCorp\Bundle\EasyAdminBundle\Config\Filters"/>
     <service id=".errored..service_locator.ZOQ9v2d.EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext" class="EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext"/>
     <service id=".errored..service_locator.AWPr3oy.EasyCorp\Bundle\EasyAdminBundle\Dto\BatchActionDto" class="EasyCorp\Bundle\EasyAdminBundle\Dto\BatchActionDto"/>
@@ -7900,9 +7900,9 @@
     <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~mhJZ4ZZ"/>
     <service id=".service_locator._5g_Wvc" alias=".service_locator.KfwZsne"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
+    <service id=".service_locator.2If3Gqv" alias=".service_locator.CKlWSja"/>
     <service id=".service_locator.c1uUVZb" alias=".service_locator.4C0Bh8j"/>
     <service id=".service_locator.wl5Ymvc" alias=".service_locator.U4Bbnsn"/>
-    <service id=".service_locator.2If3Gqv" alias=".service_locator.CKlWSja"/>
     <service id=".service_locator.HoBWItU" alias=".service_locator.Nt.ogDb"/>
     <service id=".service_locator.7VDoXVk" alias=".service_locator.ZOQ9v2d"/>
     <service id=".service_locator.x16RqkD" alias=".service_locator.AWPr3oy"/>

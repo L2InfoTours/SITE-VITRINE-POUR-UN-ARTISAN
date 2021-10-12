@@ -6,19 +6,15 @@ use App\Entity\Image;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Vich\UploaderBundle\Form\Type\VichImageType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class ImageType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('imageFile', VichFileType::class)
             ->add('titre')
-            ->add('lien')
-            ->add('image')
-            ->add('updatedAt')
-            ->add('chantier')
+            ->add('imageFile', VichFileType::class)
         ;
     }
 

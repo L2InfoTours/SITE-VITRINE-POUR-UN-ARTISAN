@@ -21,7 +21,7 @@ class ImageCrudController extends AbstractCrudController
         return [
             'titre',
             ImageField::new('image')
-            ->setBasePath($this->getParameter("app.path.product_images"))
+            ->setBasePath($this->getParameter("app.path.chantier_images"))
             ->onlyOnIndex(),
             TextareaField::new('imageFile')
             ->setFormType(VichImageType::class)

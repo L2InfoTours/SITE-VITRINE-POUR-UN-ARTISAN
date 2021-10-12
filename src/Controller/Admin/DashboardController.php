@@ -71,7 +71,6 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
 
             MenuItem::section('Consulter'),
-            MenuItem::linkToCrud('Chantier', 'fa fa-tags', Chantier::class),
             MenuItem::linkToCrud('DemandeDevis', 'fa fa-comment', DemandeDevis::class),
 
             MenuItem::section('Modifier'),

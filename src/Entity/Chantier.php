@@ -35,7 +35,7 @@ class Chantier
     private $adresse;
 
     /**
-     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="chantier")
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="chantier", cascade={"persist"})
      */
     private $images;
 
@@ -46,7 +46,7 @@ class Chantier
 
     /**
      * @ORM\ManyToOne(targetEntity=Admin::class, inversedBy="chantiers")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true) //TODO nullable false
      */
     private $admin;
 
