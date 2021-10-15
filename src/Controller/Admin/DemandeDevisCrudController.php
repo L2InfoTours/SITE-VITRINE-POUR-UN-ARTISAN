@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 
 
 class DemandeDevisCrudController extends AbstractCrudController
@@ -26,7 +27,7 @@ class DemandeDevisCrudController extends AbstractCrudController
             'nom',
             'adresse',
             TextEditorField::new('description'),
-            'telephone',
+            TelephoneField::new('telephone'),
             'email',
             ChoiceField::new('status')->setChoices([
                     'En cours' => 'En cours',
