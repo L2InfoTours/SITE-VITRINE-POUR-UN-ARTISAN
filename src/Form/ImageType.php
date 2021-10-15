@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ImageType extends AbstractType
 {
@@ -14,7 +15,8 @@ class ImageType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('imageFile', VichFileType::class)
+            ->add('imageFile', VichImageType::class,[
+                'allow_delete' => false])
         ;
     }
 

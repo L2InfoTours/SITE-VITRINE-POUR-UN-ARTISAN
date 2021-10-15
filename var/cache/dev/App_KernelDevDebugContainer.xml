@@ -364,11 +364,12 @@
         <argument type="service" id=".service_locator.opmh_Hv.App\Controller\Admin\ImageCrudController"/>
       </call>
     </service>
-    <service id="App\Controller\AdminController" class="App\Controller\AdminController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\Admin\OffreCrudController" class="App\Controller\Admin\OffreCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="ea.crud_controller"/>
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\AdminController"/>
+        <argument type="service" id=".service_locator.opmh_Hv.App\Controller\Admin\OffreCrudController"/>
       </call>
     </service>
     <service id="App\Controller\ChantierController" class="App\Controller\ChantierController" public="true" autowire="true" autoconfigure="true">
@@ -5782,9 +5783,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ImageCrudController" class="App\Controller\Admin\ImageCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\ImageCrudController" class="App\Controller\Admin\ImageCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\ImageCrudController" class="App\Controller\Admin\ImageCrudController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\OffreCrudController" class="App\Controller\Admin\OffreCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\OffreCrudController" class="App\Controller\Admin\OffreCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\OffreCrudController" class="App\Controller\Admin\OffreCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\OffreCrudController" class="App\Controller\Admin\OffreCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ChantierController" class="App\Controller\ChantierController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ChantierController" class="App\Controller\ChantierController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ChantierController" class="App\Controller\ChantierController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6285,18 +6287,6 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.q6hA_O0.Symfony\Component\Security\Core\User\UserInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.lp2LR4S" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="adminRepository" type="service_closure" id="App\Repository\AdminRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.3UuJun2" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="admin" type="service_closure" id=".errored..service_locator.3UuJun2.App\Entity\Admin"/>
-      </argument>
-    </service>
     <service id=".service_locator.LrGOLIG" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6345,13 +6335,9 @@
         <argument key="typeChantier" type="service_closure" id=".errored..service_locator..5zsod1.App\Entity\TypeChantier"/>
       </argument>
     </service>
-    <service id=".service_locator.AnHtyBi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.2EoAm9N" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\AdminController::delete" type="service_closure" id=".service_locator.3UuJun2"/>
-        <argument key="App\Controller\AdminController::edit" type="service_closure" id=".service_locator.3UuJun2"/>
-        <argument key="App\Controller\AdminController::index" type="service_closure" id=".service_locator.lp2LR4S"/>
-        <argument key="App\Controller\AdminController::show" type="service_closure" id=".service_locator.3UuJun2"/>
         <argument key="App\Controller\Admin\ChantierCrudController::autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\ChantierCrudController::batchDelete" type="service_closure" id=".service_locator.AWPr3oy"/>
         <argument key="App\Controller\Admin\ChantierCrudController::configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
@@ -6416,6 +6402,27 @@
         <argument key="App\Controller\Admin\ImageCrudController::persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\ImageCrudController::renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\ImageCrudController::updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\OffreCrudController::autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController::batchDelete" type="service_closure" id=".service_locator.AWPr3oy"/>
+        <argument key="App\Controller\Admin\OffreCrudController::configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
+        <argument key="App\Controller\Admin\OffreCrudController::configureAssets" type="service_closure" id=".service_locator.U4Bbnsn"/>
+        <argument key="App\Controller\Admin\OffreCrudController::configureCrud" type="service_closure" id=".service_locator.4C0Bh8j"/>
+        <argument key="App\Controller\Admin\OffreCrudController::configureFilters" type="service_closure" id=".service_locator.Nt.ogDb"/>
+        <argument key="App\Controller\Admin\OffreCrudController::configureResponseParameters" type="service_closure" id=".service_locator.2dc0eaX"/>
+        <argument key="App\Controller\Admin\OffreCrudController::createEditForm" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\OffreCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\OffreCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.rAlqQ78"/>
+        <argument key="App\Controller\Admin\OffreCrudController::createNewForm" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\OffreCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\OffreCrudController::delete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController::deleteEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\OffreCrudController::detail" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController::edit" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController::index" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController::new" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController::persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\OffreCrudController::renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController::updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\ChantierController::delete" type="service_closure" id=".service_locator.KDH6mTw"/>
         <argument key="App\Controller\ChantierController::edit" type="service_closure" id=".service_locator.KDH6mTw"/>
         <argument key="App\Controller\ChantierController::index" type="service_closure" id=".service_locator.LrGOLIG"/>
@@ -6438,10 +6445,6 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
-        <argument key="App\Controller\AdminController:delete" type="service_closure" id=".service_locator.3UuJun2"/>
-        <argument key="App\Controller\AdminController:edit" type="service_closure" id=".service_locator.3UuJun2"/>
-        <argument key="App\Controller\AdminController:index" type="service_closure" id=".service_locator.lp2LR4S"/>
-        <argument key="App\Controller\AdminController:show" type="service_closure" id=".service_locator.3UuJun2"/>
         <argument key="App\Controller\Admin\ChantierCrudController:autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\ChantierCrudController:batchDelete" type="service_closure" id=".service_locator.AWPr3oy"/>
         <argument key="App\Controller\Admin\ChantierCrudController:configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
@@ -6506,6 +6509,27 @@
         <argument key="App\Controller\Admin\ImageCrudController:persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\ImageCrudController:renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\ImageCrudController:updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\OffreCrudController:autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController:batchDelete" type="service_closure" id=".service_locator.AWPr3oy"/>
+        <argument key="App\Controller\Admin\OffreCrudController:configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
+        <argument key="App\Controller\Admin\OffreCrudController:configureAssets" type="service_closure" id=".service_locator.U4Bbnsn"/>
+        <argument key="App\Controller\Admin\OffreCrudController:configureCrud" type="service_closure" id=".service_locator.4C0Bh8j"/>
+        <argument key="App\Controller\Admin\OffreCrudController:configureFilters" type="service_closure" id=".service_locator.Nt.ogDb"/>
+        <argument key="App\Controller\Admin\OffreCrudController:configureResponseParameters" type="service_closure" id=".service_locator.2dc0eaX"/>
+        <argument key="App\Controller\Admin\OffreCrudController:createEditForm" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\OffreCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\OffreCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.rAlqQ78"/>
+        <argument key="App\Controller\Admin\OffreCrudController:createNewForm" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\OffreCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\OffreCrudController:delete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController:deleteEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\OffreCrudController:detail" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController:edit" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController:index" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController:new" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController:persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\OffreCrudController:renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\OffreCrudController:updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\ChantierController:delete" type="service_closure" id=".service_locator.KDH6mTw"/>
         <argument key="App\Controller\ChantierController:edit" type="service_closure" id=".service_locator.KDH6mTw"/>
         <argument key="App\Controller\ChantierController:index" type="service_closure" id=".service_locator.LrGOLIG"/>
@@ -6696,6 +6720,7 @@
         <argument>App\Controller\Admin\ChantierCrudController</argument>
         <argument>App\Controller\Admin\DemandeDevisCrudController</argument>
         <argument>App\Controller\Admin\ImageCrudController</argument>
+        <argument>App\Controller\Admin\OffreCrudController</argument>
       </argument>
     </service>
     <service id="logger" class="Symfony\Component\HttpKernel\Log\Logger"/>
@@ -6786,6 +6811,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.opmh_Hv" method="withContext"/>
     </service>
+    <service id=".service_locator.opmh_Hv.App\Controller\Admin\OffreCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\OffreCrudController"/>
+      <argument>App\Controller\Admin\OffreCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.opmh_Hv" method="withContext"/>
+    </service>
     <service id=".service_locator.W9y3dzm" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6801,12 +6832,6 @@
         <argument key="session" type="service_closure" id=".session.deprecated" on-invalid="ignore"/>
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
-    </service>
-    <service id=".service_locator.W9y3dzm.App\Controller\AdminController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\AdminController"/>
-      <argument>App\Controller\AdminController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
     <service id=".service_locator.W9y3dzm.App\Controller\ChantierController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ChantierController"/>
@@ -6916,7 +6941,6 @@
     <service id=".errored..service_locator.tbo4Jjv.EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore" class="EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore"/>
     <service id=".errored..service_locator.2dc0eaX.EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore" class="EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore"/>
     <service id=".errored..service_locator.q6hA_O0.Symfony\Component\Security\Core\User\UserInterface" class="Symfony\Component\Security\Core\User\UserInterface"/>
-    <service id=".errored..service_locator.3UuJun2.App\Entity\Admin" class="App\Entity\Admin"/>
     <service id=".errored..service_locator.KDH6mTw.App\Entity\Chantier" class="App\Entity\Chantier"/>
     <service id=".errored..service_locator._DVoNCC.App\Entity\DemandeDevis" class="App\Entity\DemandeDevis"/>
     <service id=".errored..service_locator.xlRbV4..App\Entity\Image" class="App\Entity\Image"/>
@@ -7012,12 +7036,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.AnHtyBi"/>
+      <argument type="service" id=".service_locator.2EoAm9N"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.AnHtyBi"/>
+      <argument type="service" id=".service_locator.2EoAm9N"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -7889,7 +7913,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.AnHtyBi"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.2EoAm9N"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -7911,8 +7935,6 @@
     <service id=".service_locator.lDJSw7o" alias=".service_locator.tbo4Jjv"/>
     <service id=".service_locator.6KoT76J" alias=".service_locator.2dc0eaX"/>
     <service id=".service_locator.vS1lpro" alias=".service_locator.q6hA_O0"/>
-    <service id=".service_locator.Acr1u85" alias=".service_locator.lp2LR4S"/>
-    <service id=".service_locator.OzMlF53" alias=".service_locator.3UuJun2"/>
     <service id=".service_locator.SdCMu.E" alias=".service_locator.LrGOLIG"/>
     <service id=".service_locator.W4StZHf" alias=".service_locator.KDH6mTw"/>
     <service id=".service_locator.v4uHsTd" alias=".service_locator.yb_fsEw"/>
