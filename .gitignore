@@ -9,3 +9,6 @@
 ###< symfony/framework-bundle ###
 
 .env
+
+/node_modules/
+/npm/
