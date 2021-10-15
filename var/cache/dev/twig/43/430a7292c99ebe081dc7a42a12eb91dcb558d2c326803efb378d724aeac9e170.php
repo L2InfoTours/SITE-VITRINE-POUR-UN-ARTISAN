@@ -24,16 +24,10 @@ class __TwigTemplate_4a0ec019a5276ff69517826055f5f8bdae11d2b9cec8196484e1b09f039
 
         $this->source = $this->getSourceContext();
 
-        $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'body' => [$this, 'block_body'],
-        ];
-    }
+        $this->parent = false;
 
-    protected function doGetParent(array $context)
-    {
-        // line 1
-        return "base.html.twig";
+        $this->blocks = [
+        ];
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,121 +39,357 @@ class __TwigTemplate_4a0ec019a5276ff69517826055f5f8bdae11d2b9cec8196484e1b09f039
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "chantier/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "chantier/index.html.twig", 1);
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+        // line 1
+        echo "<!doctype html>
+<html lang=\"en\">
+  <head>
+    <meta charset=\"utf-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+    <meta name=\"description\" content=\"\">
+    <meta name=\"author\" content=\"Mark Otto, Jacob Thornton, and Bootstrap contributors\">
+    <meta name=\"generator\" content=\"Hugo 0.84.0\">
+    <title>Features · Bootstrap v5.0</title>
 
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+    <link rel=\"canonical\" href=\"https://getbootstrap.com/docs/5.0/examples/features/\">
 
-    }
+    
 
-    // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+    <!-- Bootstrap core CSS -->
+<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">
 
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Chantier index";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+    <!-- Favicons -->
+<link rel=\"apple-touch-icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2//assets/img/favicons/apple-touch-icon.png\" sizes=\"180x180\">
+<link rel=\"icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/favicon-32x32.png\" sizes=\"32x32\" type=\"image/png\">
+<link rel=\"icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/favicon-16x16.png\" sizes=\"16x16\" type=\"image/png\">
+<link rel=\"manifest\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/manifest.json\">
+<link rel=\"mask-icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/safari-pinned-tab.svg\" color=\"#7952b3\">
+<link rel=\"icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/favicon.ico\">
+<meta name=\"theme-color\" content=\"#7952b3\">
 
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
-    }
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-    // line 5
-    public function block_body($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        // line 6
-        echo "    <h1>Chantier index</h1>
-
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Contenu</th>
-                <th>Adresse</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 19
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["chantiers"]) || array_key_exists("chantiers", $context) ? $context["chantiers"] : (function () { throw new RuntimeError('Variable "chantiers" does not exist.', 19, $this->source); })()));
-        $context['_iterated'] = false;
-        foreach ($context['_seq'] as $context["_key"] => $context["chantier"]) {
-            // line 20
-            echo "            <tr>
-                <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["chantier"], "id", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["chantier"], "nom", [], "any", false, false, false, 22), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["chantier"], "contenu", [], "any", false, false, false, 23), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["chantier"], "adresse", [], "any", false, false, false, 24), "html", null, true);
-            echo "</td>
-                <td>
-                    <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("chantier_show", ["id" => twig_get_attribute($this->env, $this->source, $context["chantier"], "id", [], "any", false, false, false, 26)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("chantier_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["chantier"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\">edit</a>
-                </td>
-            </tr>
-        ";
-            $context['_iterated'] = true;
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
         }
-        if (!$context['_iterated']) {
-            // line 31
-            echo "            <tr>
-                <td colspan=\"5\">no records found</td>
-            </tr>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['chantier'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
-        echo "        </tbody>
-    </table>
+      }
+    </style>
 
-    <a href=\"";
-        // line 38
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("chantier_new");
-        echo "\">Create new</a>
+    
+    <!-- Custom styles for this template -->
+    ";
+        // line 47
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("feature");
+        echo "
+  </head>
+  <body>
+<main>
+
+  <section class=\"py-5 text-center container\">
+    <div class=\"row py-lg-5\">
+      <div class=\"col-lg-6 col-md-8 mx-auto\">
+        <h1 class=\"fw-light\">PROJETS</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class=\"album py-5 bg-light  \">
+
+  <div class=\"container px-4 py-5\" id=\"custom-cards\">
+
+    <div class=\"row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 border-bottom border-5\">
+      <div class=\"col\">
+        <div class=\"card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg\" style=\"background-image: url('unsplash-photo-1.jpg');\">
+          <div class=\"d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1\">
+            <h2 class=\"pt-5 mt-5 mb-4 display-6 lh-1 fw-bold\">Short title, long jacket</h2>
+            <ul class=\"d-flex list-unstyled mt-auto\">
+              <li class=\"me-auto\">
+                <img src=\"https://github.com/twbs.png\" alt=\"Bootstrap\" width=\"32\" height=\"32\" class=\"rounded-circle border border-white\">
+              </li>
+              <li class=\"d-flex align-items-center me-3\">
+                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#geo-fill\"/></svg>
+                <small>Earth</small>
+              </li>
+              <li class=\"d-flex align-items-center\">
+                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#calendar3\"/></svg>
+                <small>3d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class=\"col\">
+        <div class=\"card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg\" style=\"background-image: url('unsplash-photo-2.jpg');\">
+          <div class=\"d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1\">
+            <h2 class=\"pt-5 mt-5 mb-4 display-6 lh-1 fw-bold\">Much longer title that wraps to multiple lines</h2>
+            <ul class=\"d-flex list-unstyled mt-auto\">
+              <li class=\"me-auto\">
+                <img src=\"https://github.com/twbs.png\" alt=\"Bootstrap\" width=\"32\" height=\"32\" class=\"rounded-circle border border-white\">
+              </li>
+              <li class=\"d-flex align-items-center me-3\">
+                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#geo-fill\"/></svg>
+                <small>Pakistan</small>
+              </li>
+              <li class=\"d-flex align-items-center\">
+                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#calendar3\"/></svg>
+                <small>4d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class=\"col\">
+        <div class=\"card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg\" style=\"background-image: url('unsplash-photo-3.jpg');\">
+          <div class=\"d-flex flex-column h-100 p-5 pb-3 text-shadow-1\">
+            <h2 class=\"pt-5 mt-5 mb-4 display-6 lh-1 fw-bold\">Another longer title belongs here</h2>
+            <ul class=\"d-flex list-unstyled mt-auto\">
+              <li class=\"me-auto\">
+                <img src=\"https://github.com/twbs.png\" alt=\"Bootstrap\" width=\"32\" height=\"32\" class=\"rounded-circle border border-white\">
+              </li>
+              <li class=\"d-flex align-items-center me-3\">
+                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#geo-fill\"/></svg>
+                <small>California</small>
+              </li>
+              <li class=\"d-flex align-items-center\">
+                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#calendar3\"/></svg>
+                <small>5d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class=\"container\">
+
+      <div class=\"row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3\">
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+
+    <script src=\"/docs/5.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
+
+
+  </body>
+</html>
+
 ";
         
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
         
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
     }
 
@@ -175,50 +405,352 @@ class __TwigTemplate_4a0ec019a5276ff69517826055f5f8bdae11d2b9cec8196484e1b09f039
 
     public function getDebugInfo()
     {
-        return array (  155 => 38,  150 => 35,  141 => 31,  132 => 27,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  91 => 47,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("<!doctype html>
+<html lang=\"en\">
+  <head>
+    <meta charset=\"utf-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+    <meta name=\"description\" content=\"\">
+    <meta name=\"author\" content=\"Mark Otto, Jacob Thornton, and Bootstrap contributors\">
+    <meta name=\"generator\" content=\"Hugo 0.84.0\">
+    <title>Features · Bootstrap v5.0</title>
 
-{% block title %}Chantier index{% endblock %}
+    <link rel=\"canonical\" href=\"https://getbootstrap.com/docs/5.0/examples/features/\">
 
-{% block body %}
-    <h1>Chantier index</h1>
+    
 
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Contenu</th>
-                <th>Adresse</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for chantier in chantiers %}
-            <tr>
-                <td>{{ chantier.id }}</td>
-                <td>{{ chantier.nom }}</td>
-                <td>{{ chantier.contenu }}</td>
-                <td>{{ chantier.adresse }}</td>
-                <td>
-                    <a href=\"{{ path('chantier_show', {'id': chantier.id}) }}\">show</a>
-                    <a href=\"{{ path('chantier_edit', {'id': chantier.id}) }}\">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"5\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <!-- Bootstrap core CSS -->
+<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">
 
-    <a href=\"{{ path('chantier_new') }}\">Create new</a>
-{% endblock %}
+
+    <!-- Favicons -->
+<link rel=\"apple-touch-icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2//assets/img/favicons/apple-touch-icon.png\" sizes=\"180x180\">
+<link rel=\"icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/favicon-32x32.png\" sizes=\"32x32\" type=\"image/png\">
+<link rel=\"icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/favicon-16x16.png\" sizes=\"16x16\" type=\"image/png\">
+<link rel=\"manifest\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/manifest.json\">
+<link rel=\"mask-icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/safari-pinned-tab.svg\" color=\"#7952b3\">
+<link rel=\"icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/favicon.ico\">
+<meta name=\"theme-color\" content=\"#7952b3\">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    {{encore_entry_link_tags('feature')}}
+  </head>
+  <body>
+<main>
+
+  <section class=\"py-5 text-center container\">
+    <div class=\"row py-lg-5\">
+      <div class=\"col-lg-6 col-md-8 mx-auto\">
+        <h1 class=\"fw-light\">PROJETS</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class=\"album py-5 bg-light  \">
+
+  <div class=\"container px-4 py-5\" id=\"custom-cards\">
+
+    <div class=\"row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 border-bottom border-5\">
+      <div class=\"col\">
+        <div class=\"card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg\" style=\"background-image: url('unsplash-photo-1.jpg');\">
+          <div class=\"d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1\">
+            <h2 class=\"pt-5 mt-5 mb-4 display-6 lh-1 fw-bold\">Short title, long jacket</h2>
+            <ul class=\"d-flex list-unstyled mt-auto\">
+              <li class=\"me-auto\">
+                <img src=\"https://github.com/twbs.png\" alt=\"Bootstrap\" width=\"32\" height=\"32\" class=\"rounded-circle border border-white\">
+              </li>
+              <li class=\"d-flex align-items-center me-3\">
+                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#geo-fill\"/></svg>
+                <small>Earth</small>
+              </li>
+              <li class=\"d-flex align-items-center\">
+                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#calendar3\"/></svg>
+                <small>3d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class=\"col\">
+        <div class=\"card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg\" style=\"background-image: url('unsplash-photo-2.jpg');\">
+          <div class=\"d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1\">
+            <h2 class=\"pt-5 mt-5 mb-4 display-6 lh-1 fw-bold\">Much longer title that wraps to multiple lines</h2>
+            <ul class=\"d-flex list-unstyled mt-auto\">
+              <li class=\"me-auto\">
+                <img src=\"https://github.com/twbs.png\" alt=\"Bootstrap\" width=\"32\" height=\"32\" class=\"rounded-circle border border-white\">
+              </li>
+              <li class=\"d-flex align-items-center me-3\">
+                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#geo-fill\"/></svg>
+                <small>Pakistan</small>
+              </li>
+              <li class=\"d-flex align-items-center\">
+                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#calendar3\"/></svg>
+                <small>4d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class=\"col\">
+        <div class=\"card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg\" style=\"background-image: url('unsplash-photo-3.jpg');\">
+          <div class=\"d-flex flex-column h-100 p-5 pb-3 text-shadow-1\">
+            <h2 class=\"pt-5 mt-5 mb-4 display-6 lh-1 fw-bold\">Another longer title belongs here</h2>
+            <ul class=\"d-flex list-unstyled mt-auto\">
+              <li class=\"me-auto\">
+                <img src=\"https://github.com/twbs.png\" alt=\"Bootstrap\" width=\"32\" height=\"32\" class=\"rounded-circle border border-white\">
+              </li>
+              <li class=\"d-flex align-items-center me-3\">
+                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#geo-fill\"/></svg>
+                <small>California</small>
+              </li>
+              <li class=\"d-flex align-items-center\">
+                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#calendar3\"/></svg>
+                <small>5d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class=\"container\">
+
+      <div class=\"row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3\">
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=\"col-3\">
+          <div class=\"card shadow-sm\">
+            <svg class=\"bd-placeholder-img card-img-top\" width=\"100%\" height=\"225\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: Thumbnail\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#55595c\"/><text x=\"50%\" y=\"50%\" fill=\"#eceeef\" dy=\".3em\">Thumbnail</text></svg>
+
+            <div class=\"card-body\">
+              <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class=\"d-flex justify-content-between align-items-center\">
+                <div class=\"btn-group\">
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>
+                  <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>
+                </div>
+                <small class=\"text-muted\">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+
+    <script src=\"/docs/5.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
+
+
+  </body>
+</html>
+
 ", "chantier/index.html.twig", "/var/www/private/L3/stabs/templates/chantier/index.html.twig");
     }
 }

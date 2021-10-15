@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Chantier;
 use App\Entity\DemandeDevis;
 use App\Entity\Image;
+use App\Entity\Offre;
 
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -37,10 +38,10 @@ class DashboardController extends AbstractDashboardController
             ->setTitle('<img src="..."> &#x1F333; ABC Legermain')
 
             // the path defined in this method is passed to the Twig asset() function
-            ->setFaviconPath('favicon.svg')
+            //->setFaviconPath('favicon.svg')
 
             // the domain used by default is 'messages'
-            ->setTranslationDomain('my-custom-domain')
+            //->setTranslationDomain('my-custom-domain')
 
             // there's no need to define the "text direction" explicitly because
             // its default value is inferred dynamically from the user locale
@@ -76,6 +77,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::section('Modifier'),
             MenuItem::linkToCrud('Chantier', 'fa fa-tags', Chantier::class),
             MenuItem::linkToCrud('Image', 'fa fa-comment', Image::class),
+            MenuItem::linkToCrud('Offre', 'fa fa-comment', Offre::class),
         ];
     }
 }
