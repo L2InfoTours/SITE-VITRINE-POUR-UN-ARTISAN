@@ -31,6 +31,7 @@ return [
     'image_show' => [['id'], ['_controller' => 'App\\Controller\\ImageController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/image']], [], []],
     'image_edit' => [['id'], ['_controller' => 'App\\Controller\\ImageController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/image']], [], []],
     'image_delete' => [['id'], ['_controller' => 'App\\Controller\\ImageController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/image']], [], []],
+    'reponse' => [[], ['_controller' => 'App\\Controller\\ReponseController::index'], [], [['text', '/reponse']], [], []],
     'type_chantier_index' => [[], ['_controller' => 'App\\Controller\\TypeChantierController::index'], [], [['text', '/type/chantier/']], [], []],
     'type_chantier_new' => [[], ['_controller' => 'App\\Controller\\TypeChantierController::new'], [], [['text', '/type/chantier/new']], [], []],
     'type_chantier_show' => [['id'], ['_controller' => 'App\\Controller\\TypeChantierController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/type/chantier']], [], []],

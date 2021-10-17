@@ -6,6 +6,7 @@ use App\Entity\Chantier;
 use App\Entity\DemandeDevis;
 use App\Entity\Image;
 use App\Entity\Offre;
+use App\Entity\Reponse;
 
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -78,6 +79,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Chantier', 'fa fa-tags', Chantier::class),
             MenuItem::linkToCrud('Image', 'fa fa-comment', Image::class),
             MenuItem::linkToCrud('Offre', 'fa fa-comment', Offre::class),
+            MenuItem::linkToCrud('Reponse', 'fa fa-comment', Reponse::class),
         ];
     }
 }

@@ -5,8 +5,12 @@ namespace App\Entity;
 use App\Repository\ReponseRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 /**
  * @ORM\Entity(repositoryClass=ReponseRepository::class)
+ * @Vich\Uploadable
  */
 class Reponse
 {
@@ -29,8 +33,15 @@ class Reponse
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
      */
     private $cv;
+
+    /**
+     * @Vich\UploadableField(mapping="reponse_cv", fileNameProperty="cv")
+     * @var File
+     */
+    private $cvFile;
 
     /**
      * @ORM\Column(type="text")
@@ -81,16 +92,24 @@ class Reponse
         return $this;
     }
 
-    public function getCv(): ?string
+    public function setCvFile(File $cvFile = null)
     {
-        return $this->cv;
+        $this->cvFile = $cvFile;
     }
 
-    public function setCv(string $cv): self
+    public function getCvFile()
+    {
+        return $this->cvFile;
+    }
+
+    public function setCv($cv)
     {
         $this->cv = $cv;
+    }
 
-        return $this;
+    public function getCv()
+    {
+        return $this->cv;
     }
 
     public function getLettreMotivation(): ?string
