@@ -1764,3 +1764,6 @@ a3bc03,127.0.0.1,GET,https://127.0.0.1:8000/chantier/unsplash-photo-2.jpg,163462
 db18b3,127.0.0.1,GET,https://127.0.0.1:8000/chantier/unsplash-photo-2.jpg,1634626663,,500
 b0ce16,127.0.0.1,GET,https://127.0.0.1:8000/chantier/unsplash-photo-3.jpg,1634626666,97e340,500
 97e340,127.0.0.1,GET,https://127.0.0.1:8000/chantier/unsplash-photo-3.jpg,1634626666,,500
+cb31b1,127.0.0.1,GET,https://127.0.0.1:8000/home,1634627129,,200
+b9611b,127.0.0.1,GET,https://127.0.0.1:8000/docs/5.0/dist/js/bootstrap.bundle.min.js,1634627132,a54922,404
+a54922,127.0.0.1,GET,https://127.0.0.1:8000/docs/5.0/dist/js/bootstrap.bundle.min.js,1634627133,,404
