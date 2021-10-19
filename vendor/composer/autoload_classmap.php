@@ -6,14 +6,17 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Controller\\AdminController' => $baseDir . '/src/Controller/AdminController.php',
     'App\\Controller\\Admin\\ChantierCrudController' => $baseDir . '/src/Controller/Admin/ChantierCrudController.php',
     'App\\Controller\\Admin\\DashboardController' => $baseDir . '/src/Controller/Admin/DashboardController.php',
     'App\\Controller\\Admin\\DemandeDevisCrudController' => $baseDir . '/src/Controller/Admin/DemandeDevisCrudController.php',
+    'App\\Controller\\Admin\\ImageCrudController' => $baseDir . '/src/Controller/Admin/ImageCrudController.php',
+    'App\\Controller\\Admin\\OffreCrudController' => $baseDir . '/src/Controller/Admin/OffreCrudController.php',
+    'App\\Controller\\Admin\\ReponseCrudController' => $baseDir . '/src/Controller/Admin/ReponseCrudController.php',
     'App\\Controller\\ChantierController' => $baseDir . '/src/Controller/ChantierController.php',
     'App\\Controller\\DemandeDevisController' => $baseDir . '/src/Controller/DemandeDevisController.php',
     'App\\Controller\\HomeController' => $baseDir . '/src/Controller/HomeController.php',
     'App\\Controller\\ImageController' => $baseDir . '/src/Controller/ImageController.php',
+    'App\\Controller\\ReponseController' => $baseDir . '/src/Controller/ReponseController.php',
     'App\\Controller\\TypeChantierController' => $baseDir . '/src/Controller/TypeChantierController.php',
     'App\\Entity\\Admin' => $baseDir . '/src/Entity/Admin.php',
     'App\\Entity\\Chantier' => $baseDir . '/src/Entity/Chantier.php',
@@ -27,6 +30,7 @@ return array(
     'App\\Form\\ChantierType' => $baseDir . '/src/Form/ChantierType.php',
     'App\\Form\\DemandeDevisType' => $baseDir . '/src/Form/DemandeDevisType.php',
     'App\\Form\\ImageType' => $baseDir . '/src/Form/ImageType.php',
+    'App\\Form\\ReponseType' => $baseDir . '/src/Form/ReponseType.php',
     'App\\Form\\TypeChantier1Type' => $baseDir . '/src/Form/TypeChantier1Type.php',
     'App\\Form\\TypeChantierType' => $baseDir . '/src/Form/TypeChantierType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
