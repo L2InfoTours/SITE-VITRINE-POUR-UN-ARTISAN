@@ -7,7 +7,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichFileType;
-use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ReponseType extends AbstractType
 {
@@ -16,6 +15,11 @@ class ReponseType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
+            ->add('cvFile', VichFileType::class,[
+                'allow_delete' => false])
+            ->add('lettre_motivation')
+            ->add('telephone')
+            ->add('email')
             // ->add('imageFile', VichFileType::class,[
             //     'allow_delete' => false])
         ;
@@ -25,6 +29,7 @@ class ReponseType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Reponse::class,
+            'disabled' => 'true',
         ]);
     }
 }

@@ -85,6 +85,10 @@ class Offre
         $this->date=(new \DateTime());
     }
 
+    public function __toString(){
+        return $this->intitule;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

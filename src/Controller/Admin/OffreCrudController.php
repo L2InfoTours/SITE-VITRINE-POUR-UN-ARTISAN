@@ -54,10 +54,12 @@ class OffreCrudController extends AbstractCrudController
             CollectionField::new('reponses')
             ->setEntryType(ReponseType::class)
             ->setFormTypeOption('by_reference', false)
-            ->onlyOnForms(),
+            ->onlyOnForms()
+            ->allowAdd(false),
+            //TODO ITEM NAME ->prototype_name('__name__'),
             CollectionField::new('reponses')
             ->setTemplatePath('reponses.html.twig')
-            ->onlyOnDetail(),
+            ->onlyOnDetail()
         ];
     }
 }
