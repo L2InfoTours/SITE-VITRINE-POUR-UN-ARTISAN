@@ -1,15 +1,13 @@
-
-###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
 /.env.*.local
-/public/bundles/
+/.env
+
+###> symfony/framework-bundle ###
 /var/
 /vendor/
+/public/bundles/
 ###< symfony/framework-bundle ###
-
-.env
-
 /node_modules/
 /npm/
 
