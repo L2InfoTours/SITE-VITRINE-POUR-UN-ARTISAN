@@ -12,3 +12,6 @@
 /npm/
 
 /public/uploads/
+!/var/cache
+/var/cache/*
+!/var/cache/.gitkeep
