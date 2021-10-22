@@ -11586,4 +11586,9 @@
   .list-group {
 	font-size: 0.9625rem;
   }
-  
+
+  .margin-left-button{
+      float: right;
+      margin-right: 1em;
+  }
+
