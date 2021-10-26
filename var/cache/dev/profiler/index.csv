@@ -2020,3 +2020,16 @@ f61d39,127.0.0.1,GET,http://127.0.0.1:8000/...,1634658134,039d8a,404
 0b9223,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=detail&crudControllerFqcn=App%5CController%5CAdmin%5COffreCrudController&entityId=1&referrer=%2Fadmin%3FcrudAction%3Dindex%26crudControllerFqcn%3DApp%255CController%255CAdmin%255CReponseCrudController%26menuIndex%3D7%26submenuIndex%3D-1,1634658140,6b728a,500
 6b728a,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=detail&crudControllerFqcn=App%5CController%5CAdmin%5COffreCrudController&entityId=1&referrer=%2Fadmin%3FcrudAction%3Dindex%26crudControllerFqcn%3DApp%255CController%255CAdmin%255CReponseCrudController%26menuIndex%3D7%26submenuIndex%3D-1,1634658140,,500
 c9c937,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5CReponseCrudController&menuIndex=7&submenuIndex=-1,1634658147,,200
+4bcb22,127.0.0.1,GET,https://127.0.0.1:8000/home,1635233962,,200
+befcff,127.0.0.1,GET,https://127.0.0.1:8000/demande/devis/,1635233971,9a4b28,500
+9a4b28,127.0.0.1,GET,https://127.0.0.1:8000/demande/devis/,1635233972,,500
+f7322e,127.0.0.1,GET,https://127.0.0.1:8000/demande/devis/new,1635233977,,200
+694c3b,127.0.0.1,GET,https://127.0.0.1:8000/demande/devis/,1635234019,dfec9c,500
+dfec9c,127.0.0.1,GET,https://127.0.0.1:8000/demande/devis/,1635234019,,500
+5d40eb,127.0.0.1,GET,https://127.0.0.1:8000/demande/devis/new,1635234032,,200
+145f3f,127.0.0.1,GET,https://127.0.0.1:8000/demande/devis/new,1635234109,,200
+7f9e17,127.0.0.1,GET,https://127.0.0.1:8000/demande/devis/,1635234141,52a61d,500
+52a61d,127.0.0.1,GET,https://127.0.0.1:8000/demande/devis/,1635234141,,500
+b0f8d4,127.0.0.1,GET,https://127.0.0.1:8000/demande/devis/new,1635234825,,200
+a985a0,127.0.0.1,GET,https://127.0.0.1:8000/demande/devis/new,1635234956,,200
+2cc0b6,127.0.0.1,GET,https://127.0.0.1:8000/demande/devis/new,1635235169,,200
