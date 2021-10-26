@@ -5,19 +5,32 @@
 	"postgres":"C:\\Program Files\\PostgreSQL\\13\\data",
 	"pages":[
 		{
-			"url":"chantier",
-			"froms":[
-
+			"url":"chantier"
+		},
+		{
+			"url":"demande/devis",
+			"redirections":[
+				"a[href=/demande/devis/new]"
 			]
 		},
 		{
-			"url":"demande/devis"
+			"url" : "demande/devis/new",
+			"sendform":"button.btn",
+			"forms":[
+				{
+					"demande_devis_nom":"Macron",
+					"demande_devis_adresse":"Champ Elysée",
+					"demande_devis_description":"je veux un bo toi",
+					"demande_devis_telephone":"0123456789",
+					"demande_devis_email":"president@france.fr"
+				}
+			]
 		},
 		{
 			"url":"admin"
 		},
 		{
-			"url":""
+			"url":"home"
 		}
 	]
 }

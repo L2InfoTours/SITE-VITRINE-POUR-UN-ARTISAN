@@ -29,6 +29,15 @@ return [[
                 '/build/feature.css',
             ],
         ],
+        'haiku' => [
+            'js' => [
+                '/build/runtime.js',
+                '/build/haiku.js',
+            ],
+            'css' => [
+                '/build/haiku.css',
+            ],
+        ],
     ],
 ],
 
