@@ -1,16 +1,5 @@
-{% for reponse in field.value %}                 
-<div class="d-flex align-items-center">
-  <div class="flex-shrink-0">
-    <a href="#" class="ea-lightbox-thumbnail" data-ea-lightbox-content-selector="#ea-lightbox-{{reponse.id}}">
-        <img alt="{{reponse.reponse}}" class="img-thumbnail" src="/uploads/images/chantier/{{reponse.reponse}}" height="200" width="200">
-    </a>
+{% for reponse in field.value %}
 
-    <div id="ea-lightbox-{{reponse.id}}" class="ea-lightbox">
-        <img alt="{{reponse.reponse}}" src="/uploads/images/chantier/{{reponse.reponse}}">
-    </div>
-  </div>
-  <div class="flex-grow-1 ms-3">
-    Nom: {{reponse.nom}}
-</div>
-</div>
+({{reponse.nom | upper}} {{reponse.prenom}})
+
 {% endfor %}

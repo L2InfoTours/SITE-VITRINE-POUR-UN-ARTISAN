@@ -24,6 +24,8 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
+        $hasAccess = $this->isGranted('ROLE_ADMIN');
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         // redirect to some CRUD controller
         $routeBuilder = $this->get(AdminUrlGenerator::class);
 
@@ -36,7 +38,7 @@ class DashboardController extends AbstractDashboardController
             // the name visible to end users
             //->setTitle('ABC Legermain')
             // you can include HTML contents too (e.g. to link to an image)
-            ->setTitle('<img src="..."> &#x1F333; ABC Legermain')
+            ->setTitle('&#x1F333; ABC Legermain')
 
             // the path defined in this method is passed to the Twig asset() function
             //->setFaviconPath('favicon.svg')

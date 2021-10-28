@@ -14,6 +14,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 // use App\Form\ImageType;
 
 class OffreCrudController extends AbstractCrudController
@@ -55,11 +58,20 @@ class OffreCrudController extends AbstractCrudController
             ->setEntryType(ReponseType::class)
             ->setFormTypeOption('by_reference', false)
             ->onlyOnForms()
-            ->allowAdd(false),
+            ->allowAdd(false)
+            ->allowDelete(false),
             //TODO ITEM NAME ->prototype_name('__name__'),
             CollectionField::new('reponses')
-            ->setTemplatePath('reponses.html.twig')
+            // ->setTemplatePath('reponses.html.twig')
+            ->setEntryType(ReponseType::class)
+            ->setFormTypeOption('by_reference', false)
+            ->allowAdd(false)
+            ->allowDelete(false)
             ->onlyOnDetail()
         ];
+    }
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions->add(Crud::PAGE_INDEX, 'detail');
     }
 }

@@ -70,6 +70,10 @@ class Reponse
      */
     private $offre;
 
+    public function __toString(){
+        return strtoupper($this->nom) ." " . ucfirst($this->prenom);
+    }
+
     public function getId(): ?int
     {
         return $this->id;
