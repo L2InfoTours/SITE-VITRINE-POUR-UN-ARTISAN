@@ -13,6 +13,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use App\Form\ImageType;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -31,6 +32,7 @@ class ChantierCrudController extends AbstractCrudController
             'nom',
             'contenu',
             'adresse',
+            AssociationField::new('types'),
             CollectionField::new('images')
             ->setEntryType(ImageType::class)
             ->setFormTypeOption('by_reference', false)

@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Chantier;
+use App\Entity\TypeChantier;
 use App\Entity\DemandeDevis;
 use App\Entity\Image;
 use App\Entity\Offre;
@@ -79,6 +80,7 @@ class DashboardController extends AbstractDashboardController
 
             MenuItem::section('Modifier'),
             MenuItem::linkToCrud('Chantier', 'fa fa-tags', Chantier::class),
+            MenuItem::linkToCrud('TypeChantier','fa fa-comment', TypeChantier::class),
             MenuItem::linkToCrud('Image', 'fa fa-comment', Image::class),
             MenuItem::linkToCrud('Offre', 'fa fa-comment', Offre::class),
             MenuItem::linkToCrud('Reponse', 'fa fa-comment', Reponse::class),
