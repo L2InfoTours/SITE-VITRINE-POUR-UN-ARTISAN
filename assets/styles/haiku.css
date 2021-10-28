@@ -512,12 +512,14 @@
 	  font-size: 1.375rem;
 	}
   }
-  
+  .uppercase{
+	text-transform: uppercase;  
+  }
   .display-1 {
 	font-size: calc(1.625rem + 4.5vw);
 	font-weight: 300;
 	line-height: 1.2;
-	text-transform: capitalize;
+	text-transform: uppercase;
   }
   
   @media (min-width: 1200px) {
@@ -530,7 +532,7 @@
 	font-size: calc(1.575rem + 3.9vw);
 	font-weight: 300;
 	line-height: 1.2;
-	text-transform: capitalize;
+	text-transform: uppercase;
   }
   
   @media (min-width: 1200px) {
@@ -543,7 +545,7 @@
 	font-size: calc(1.525rem + 3.3vw);
 	font-weight: 300;
 	line-height: 1.2;
-	text-transform: capitalize;
+	text-transform: uppercase;
   }
   
   @media (min-width: 1200px) {
@@ -556,7 +558,7 @@
 	font-size: calc(1.475rem + 2.7vw);
 	font-weight: 300;
 	line-height: 1.2;
-	text-transform: capitalize;
+	text-transform: uppercase;
   }
   
   @media (min-width: 1200px) {
@@ -569,7 +571,7 @@
 	font-size: calc(1.425rem + 2.1vw);
 	font-weight: 300;
 	line-height: 1.2;
-	text-transform: capitalize;
+	text-transform: uppercase;
   }
   
   @media (min-width: 1200px) {
@@ -582,7 +584,7 @@
 	font-size: calc(1.375rem + 1.5vw);
 	font-weight: 300;
 	line-height: 1.2;
-	text-transform: capitalize;
+	text-transform: uppercase;
   }
   
   @media (min-width: 1200px) {
