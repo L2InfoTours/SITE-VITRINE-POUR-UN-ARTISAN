@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Chantier;
+use App\Entity\TypeChantier;
 use App\Entity\DemandeDevis;
 use App\Entity\Image;
 use App\Entity\Offre;
@@ -32,11 +33,13 @@ class DashboardController extends AbstractDashboardController
 
     public function configureDashboard(): Dashboard
     {
+        $hasAccess = $this->isGranted('ROLE_ADMIN');
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return Dashboard::new()
             // the name visible to end users
             //->setTitle('ABC Legermain')
             // you can include HTML contents too (e.g. to link to an image)
-            ->setTitle('<img src="..."> &#x1F333; ABC Legermain')
+            ->setTitle('&#x1F333; ABC Legermain')
 
             // the path defined in this method is passed to the Twig asset() function
             //->setFaviconPath('favicon.svg')
@@ -77,6 +80,7 @@ class DashboardController extends AbstractDashboardController
 
             MenuItem::section('Modifier'),
             MenuItem::linkToCrud('Chantier', 'fa fa-tags', Chantier::class),
+            MenuItem::linkToCrud('TypeChantier','fa fa-comment', TypeChantier::class),
             MenuItem::linkToCrud('Image', 'fa fa-comment', Image::class),
             MenuItem::linkToCrud('Offre', 'fa fa-comment', Offre::class),
             MenuItem::linkToCrud('Reponse', 'fa fa-comment', Reponse::class),

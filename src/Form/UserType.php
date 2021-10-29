@@ -2,25 +2,26 @@
 
 namespace App\Form;
 
-use App\Entity\TypeChantier;
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class TypeChantier1Type extends AbstractType
+class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('type')
-            ->add('chantiers')
+            ->add('email')
+            ->add('roles')
+            ->add('password')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => TypeChantier::class,
+            'data_class' => User::class,
         ]);
     }
 }

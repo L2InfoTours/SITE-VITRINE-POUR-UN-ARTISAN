@@ -10,6 +10,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
 class DemandeDevisCrudController extends AbstractCrudController
 {
@@ -35,6 +37,10 @@ class DemandeDevisCrudController extends AbstractCrudController
                     'Cloturé' => 'Cloturé',
                 ])->hideWhenCreating(),
         ];
+    }
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions->add(Crud::PAGE_INDEX, 'detail');
     }
     
 }
