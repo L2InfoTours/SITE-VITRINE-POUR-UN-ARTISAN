@@ -16,8 +16,12 @@ class ChantierController extends AbstractController
     #[Route('/', name: 'chantier_index', methods: ['GET'])]
     public function index(ChantierRepository $chantierRepository): Response
     {
+            $repo = $this->getDoctrine()->getRepository(Chantier::class);
+            $projects = $repo->findAll();
+
         return $this->render('chantier/index.html.twig', [
             'chantiers' => $chantierRepository->findAll(),
+            'projects' => $projects
         ]);
     }
 
