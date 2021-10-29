@@ -401,6 +401,14 @@
         <argument type="service" id=".service_locator.opmh_Hv.App\Controller\Admin\ImageCrudController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\IndexController" class="App\Controller\Admin\IndexController" public="true" autowire="true" autoconfigure="true">
+      <tag name="ea.crud_controller"/>
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.opmh_Hv.App\Controller\Admin\IndexController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\OffreCrudController" class="App\Controller\Admin\OffreCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="ea.crud_controller"/>
       <tag name="controller.service_arguments"/>
@@ -6499,6 +6507,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ImageCrudController" class="App\Controller\Admin\ImageCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\ImageCrudController" class="App\Controller\Admin\ImageCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\ImageCrudController" class="App\Controller\Admin\ImageCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\IndexController" class="App\Controller\Admin\IndexController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\IndexController" class="App\Controller\Admin\IndexController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\IndexController" class="App\Controller\Admin\IndexController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\IndexController" class="App\Controller\Admin\IndexController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\OffreCrudController" class="App\Controller\Admin\OffreCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\OffreCrudController" class="App\Controller\Admin\OffreCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\OffreCrudController" class="App\Controller\Admin\OffreCrudController" autowire="true" abstract="true"/>
@@ -7104,7 +7116,7 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.ch4Jgvl.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.0iZ81ip" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Suwdifc" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\ChantierCrudController::autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
@@ -7171,6 +7183,27 @@
         <argument key="App\Controller\Admin\ImageCrudController::persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\ImageCrudController::renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\ImageCrudController::updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\IndexController::autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController::batchDelete" type="service_closure" id=".service_locator.AWPr3oy"/>
+        <argument key="App\Controller\Admin\IndexController::configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
+        <argument key="App\Controller\Admin\IndexController::configureAssets" type="service_closure" id=".service_locator.U4Bbnsn"/>
+        <argument key="App\Controller\Admin\IndexController::configureCrud" type="service_closure" id=".service_locator.4C0Bh8j"/>
+        <argument key="App\Controller\Admin\IndexController::configureFilters" type="service_closure" id=".service_locator.Nt.ogDb"/>
+        <argument key="App\Controller\Admin\IndexController::configureResponseParameters" type="service_closure" id=".service_locator.2dc0eaX"/>
+        <argument key="App\Controller\Admin\IndexController::createEditForm" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\IndexController::createEditFormBuilder" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\IndexController::createIndexQueryBuilder" type="service_closure" id=".service_locator.rAlqQ78"/>
+        <argument key="App\Controller\Admin\IndexController::createNewForm" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\IndexController::createNewFormBuilder" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\IndexController::delete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController::deleteEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\IndexController::detail" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController::edit" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController::index" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController::new" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController::persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\IndexController::renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController::updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\OffreCrudController::autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\OffreCrudController::batchDelete" type="service_closure" id=".service_locator.AWPr3oy"/>
         <argument key="App\Controller\Admin\OffreCrudController::configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
@@ -7326,6 +7359,27 @@
         <argument key="App\Controller\Admin\ImageCrudController:persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\ImageCrudController:renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\ImageCrudController:updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\IndexController:autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController:batchDelete" type="service_closure" id=".service_locator.AWPr3oy"/>
+        <argument key="App\Controller\Admin\IndexController:configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
+        <argument key="App\Controller\Admin\IndexController:configureAssets" type="service_closure" id=".service_locator.U4Bbnsn"/>
+        <argument key="App\Controller\Admin\IndexController:configureCrud" type="service_closure" id=".service_locator.4C0Bh8j"/>
+        <argument key="App\Controller\Admin\IndexController:configureFilters" type="service_closure" id=".service_locator.Nt.ogDb"/>
+        <argument key="App\Controller\Admin\IndexController:configureResponseParameters" type="service_closure" id=".service_locator.2dc0eaX"/>
+        <argument key="App\Controller\Admin\IndexController:createEditForm" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\IndexController:createEditFormBuilder" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\IndexController:createIndexQueryBuilder" type="service_closure" id=".service_locator.rAlqQ78"/>
+        <argument key="App\Controller\Admin\IndexController:createNewForm" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\IndexController:createNewFormBuilder" type="service_closure" id=".service_locator.tbo4Jjv"/>
+        <argument key="App\Controller\Admin\IndexController:delete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController:deleteEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\IndexController:detail" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController:edit" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController:index" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController:new" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController:persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\IndexController:renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\IndexController:updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\OffreCrudController:autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\OffreCrudController:batchDelete" type="service_closure" id=".service_locator.AWPr3oy"/>
         <argument key="App\Controller\Admin\OffreCrudController:configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
@@ -7630,6 +7684,7 @@
         <argument>App\Controller\Admin\ChantierCrudController</argument>
         <argument>App\Controller\Admin\DemandeDevisCrudController</argument>
         <argument>App\Controller\Admin\ImageCrudController</argument>
+        <argument>App\Controller\Admin\IndexController</argument>
         <argument>App\Controller\Admin\OffreCrudController</argument>
         <argument>App\Controller\Admin\ReponseCrudController</argument>
         <argument>App\Controller\Admin\TypeChantierCrudController</argument>
@@ -7724,6 +7779,12 @@
     <service id=".service_locator.opmh_Hv.App\Controller\Admin\ImageCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\ImageCrudController"/>
       <argument>App\Controller\Admin\ImageCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.opmh_Hv" method="withContext"/>
+    </service>
+    <service id=".service_locator.opmh_Hv.App\Controller\Admin\IndexController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\IndexController"/>
+      <argument>App\Controller\Admin\IndexController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.opmh_Hv" method="withContext"/>
     </service>
@@ -7997,12 +8058,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.0iZ81ip"/>
+      <argument type="service" id=".service_locator.Suwdifc"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.0iZ81ip"/>
+      <argument type="service" id=".service_locator.Suwdifc"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8941,7 +9002,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.0iZ81ip"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Suwdifc"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
