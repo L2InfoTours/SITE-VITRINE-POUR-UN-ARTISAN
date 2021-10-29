@@ -67,15 +67,6 @@ class __TwigTemplate_4a0ec019a5276ff69517826055f5f8bdae11d2b9cec8196484e1b09f039
         // line 3
         echo "<main>
 
-<div class=\"position-relative overflow-hidden  text-center bg-light\">
-    <div class=\"col-md-5 p-lg-5 mx-auto my-5\">
-      <h1 class=\"display-4 fw-normal\">PROJETS</h1>
-      <p class=\"lead fw-normal\">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-
-    </div>
-    <div class=\"product-device shadow-sm d-none d-md-block\"></div>
-    <div class=\"product-device product-device-2 shadow-sm d-none d-md-block\"></div>
-  </div>
 
   <div class=\"container px-4 py-5 pt-lg-0\" id=\"custom-cards\">
 
@@ -381,15 +372,6 @@ class __TwigTemplate_4a0ec019a5276ff69517826055f5f8bdae11d2b9cec8196484e1b09f039
 {% block body %}
 <main>
 
-<div class=\"position-relative overflow-hidden  text-center bg-light\">
-    <div class=\"col-md-5 p-lg-5 mx-auto my-5\">
-      <h1 class=\"display-4 fw-normal\">PROJETS</h1>
-      <p class=\"lead fw-normal\">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-
-    </div>
-    <div class=\"product-device shadow-sm d-none d-md-block\"></div>
-    <div class=\"product-device product-device-2 shadow-sm d-none d-md-block\"></div>
-  </div>
 
   <div class=\"container px-4 py-5 pt-lg-0\" id=\"custom-cards\">
 

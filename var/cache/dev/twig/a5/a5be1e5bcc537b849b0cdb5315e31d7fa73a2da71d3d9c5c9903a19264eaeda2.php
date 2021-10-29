@@ -24,10 +24,15 @@ class __TwigTemplate_9037c7ac189e564a8fce697805ad6d42849124018ddd19dd550a71aafc4
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
         $this->blocks = [
+            'body' => [$this, 'block_body'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -39,156 +44,84 @@ class __TwigTemplate_9037c7ac189e564a8fce697805ad6d42849124018ddd19dd550a71aafc4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/index.html.twig"));
 
-        // line 1
-        echo "<!doctype html>
-<html lang=\"en\">
-  <head>
-    <meta charset=\"utf-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <meta name=\"description\" content=\"\">
-    <meta name=\"author\" content=\"Mark Otto, Jacob Thornton, and Bootstrap contributors\">
-    <meta name=\"generator\" content=\"Hugo 0.84.0\">
-    <title>Features · Bootstrap v5.0</title>
-
-    <link rel=\"canonical\" href=\"https://getbootstrap.com/docs/5.0/examples/features/\">
-
-    
-
-    <!-- Bootstrap core CSS -->
-<!link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">
-
-
-    <!-- Favicons -->
-<link rel=\"apple-touch-icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2//assets/img/favicons/apple-touch-icon.png\" sizes=\"180x180\">
-<link rel=\"icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/favicon-32x32.png\" sizes=\"32x32\" type=\"image/png\">
-<link rel=\"icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/favicon-16x16.png\" sizes=\"16x16\" type=\"image/png\">
-<link rel=\"manifest\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/manifest.json\">
-<link rel=\"mask-icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/safari-pinned-tab.svg\" color=\"#7952b3\">
-<link rel=\"icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/favicon.ico\">
-<meta name=\"theme-color\" content=\"#7952b3\">
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    ";
-        // line 47
-        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("feature");
-        echo "
-  </head>
-  <body>
-<main>
-  <h1 class=\"visually-hidden\">Features examples</h1>
-
-
-
-  <div class=\"b-example-divider\"></div>
-
-
-  <div class=\"b-example-divider\"></div>
-
-  <div class=\"container px-4 py-5\" id=\"custom-cards\">
-    <h2 class=\"pb-2 border-bottom\">Notre savoir faire</h2>
-
-    <div class=\"row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5\">
-      <div class=\"col-8\">
-        <p>\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"
-        </p>
-        <button>Découvrire nos projets</button>
-      </div>
-
-      <div class=\"col\">
-        <div class=\"card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg\" style=\"background-image: url(";
-        // line 71
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/unsplash-photo-3.jpg"), "html", null, true);
-        echo " );\">
-          <div class=\"d-flex flex-column h-100 p-5 pb-3 text-shadow-1\">
-            <h2 class=\"pt-5 mt-5 mb-4 display-6 lh-1 fw-bold\">Another longer title belongs here</h2>
-            <ul class=\"d-flex list-unstyled mt-auto\">
-              <li class=\"me-auto\">
-                <img src=\"https://github.com/twbs.png\" alt=\"Bootstrap\" width=\"32\" height=\"32\" class=\"rounded-circle border border-white\">
-              </li>
-              <li class=\"d-flex align-items-center me-3\">
-                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#geo-fill\"/></svg>
-                <small>California</small>
-              </li>
-              <li class=\"d-flex align-items-center\">
-                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#calendar3\"/></svg>
-                <small>5d</small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class=\"b-example-divider\"></div>
-
-  <div class=\"container px-4 py-5\" id=\"custom-cards\">
-    <h2 class=\"pb-2 border-bottom\">Prêt à travailler enssemble ?</h2>
-
-    <div class=\"row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5\">
-
-      <div class=\"col\">
-        <div class=\"card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg\" style=\"background-image: url(";
-        // line 101
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/unsplash-photo-3.jpg"), "html", null, true);
-        echo " );\">
-          <div class=\"d-flex flex-column h-100 p-5 pb-3 text-shadow-1\">
-            <h2 class=\"pt-5 mt-5 mb-4 display-6 lh-1 fw-bold\">Another longer title belongs here</h2>
-            <ul class=\"d-flex list-unstyled mt-auto\">
-              <li class=\"me-auto\">
-                <img src=\"https://github.com/twbs.png\" alt=\"Bootstrap\" width=\"32\" height=\"32\" class=\"rounded-circle border border-white\">
-              </li>
-              <li class=\"d-flex align-items-center me-3\">
-                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#geo-fill\"/></svg>
-                <small>California</small>
-              </li>
-              <li class=\"d-flex align-items-center\">
-                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#calendar3\"/></svg>
-                <small>5d</small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class=\"col-8\">
-        <button>Découvrire nos projets</button>
-      </div>
-    </div>
-  </div>
-
-</main>
-
-
-    <script src=\"/docs/5.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"></script>
-
-      
-  </body>
-</html>
-
-";
+        $this->parent = $this->loadTemplate("base.html.twig", "home/index.html.twig", 1);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+    }
+
+    // line 2
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 3
+        echo "<div class=\"container marketing\">
+    <hr class=\"featurette-divider\">
+
+    <div class=\"row featurette\">
+      <div class=\"col-md-7\">
+        <h2 class=\"featurette-heading\">First featurette heading. <span class=\"text-muted\">It’ll blow your mind.</span></h2>
+        <p class=\"lead\">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+      </div>
+      <div class=\"col-md-5\">
+        <svg class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: 500x500\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><text x=\"50%\" y=\"50%\" fill=\"#aaa\" dy=\".3em\">500x500</text></svg>
+
+      </div>
+    </div>
+
+    <hr class=\"featurette-divider\">
+
+
+    <div class=\"position-relative overflow-hidden  text-center bg-light\">
+        <div class=\"col-md-5 p-0 mx-auto my-5\">
+          <h1 class=\"display-4 fw-normal\">POURQUOI NOUS CHOISIR ?</h1>
+          <p class=\"lead fw-normal\">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
+            <button type=\"button\" class=\"btn btn-outline-secondary mb-0\">Secondary</button>
+        </div>
+        <div class=\"product-device shadow-sm d-none d-md-block\"></div>
+        <div class=\"product-device product-device-2 shadow-sm d-none d-md-block\"></div>
+      </div>
+
+    <hr class=\"featurette-divider\">
+
+     <hr class=\"featurette-divider\">
+
+        <div class=\"row featurette\">
+          <div class=\"col-md-7 order-md-2\">
+            <h2 class=\"featurette-heading\">Oh yeah, it’s that good. <span class=\"text-muted\">See for yourself.</span></h2>
+            <p class=\"lead\">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+          </div>
+          <div class=\"col-md-5 order-md-1\">
+            <svg class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: 500x500\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><text x=\"50%\" y=\"50%\" fill=\"#aaa\" dy=\".3em\">500x500</text></svg>
+
+          </div>
+        </div>
+
+
+    <hr class=\"featurette-divider\">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div>
+
+
+
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
     }
 
@@ -204,145 +137,65 @@ class __TwigTemplate_9037c7ac189e564a8fce697805ad6d42849124018ddd19dd550a71aafc4
 
     public function getDebugInfo()
     {
-        return array (  151 => 101,  118 => 71,  91 => 47,  43 => 1,);
+        return array (  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<!doctype html>
-<html lang=\"en\">
-  <head>
-    <meta charset=\"utf-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <meta name=\"description\" content=\"\">
-    <meta name=\"author\" content=\"Mark Otto, Jacob Thornton, and Bootstrap contributors\">
-    <meta name=\"generator\" content=\"Hugo 0.84.0\">
-    <title>Features · Bootstrap v5.0</title>
+        return new Source("{% extends \"base.html.twig\" %}
+{% block body %}
+<div class=\"container marketing\">
+    <hr class=\"featurette-divider\">
 
-    <link rel=\"canonical\" href=\"https://getbootstrap.com/docs/5.0/examples/features/\">
-
-    
-
-    <!-- Bootstrap core CSS -->
-<!link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">
-
-
-    <!-- Favicons -->
-<link rel=\"apple-touch-icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2//assets/img/favicons/apple-touch-icon.png\" sizes=\"180x180\">
-<link rel=\"icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/favicon-32x32.png\" sizes=\"32x32\" type=\"image/png\">
-<link rel=\"icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/favicon-16x16.png\" sizes=\"16x16\" type=\"image/png\">
-<link rel=\"manifest\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/manifest.json\">
-<link rel=\"mask-icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/safari-pinned-tab.svg\" color=\"#7952b3\">
-<link rel=\"icon\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/assets/img/favicons/favicon.ico\">
-<meta name=\"theme-color\" content=\"#7952b3\">
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    {{encore_entry_link_tags('feature')}}
-  </head>
-  <body>
-<main>
-  <h1 class=\"visually-hidden\">Features examples</h1>
-
-
-
-  <div class=\"b-example-divider\"></div>
-
-
-  <div class=\"b-example-divider\"></div>
-
-  <div class=\"container px-4 py-5\" id=\"custom-cards\">
-    <h2 class=\"pb-2 border-bottom\">Notre savoir faire</h2>
-
-    <div class=\"row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5\">
-      <div class=\"col-8\">
-        <p>\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"
-        </p>
-        <button>Découvrire nos projets</button>
+    <div class=\"row featurette\">
+      <div class=\"col-md-7\">
+        <h2 class=\"featurette-heading\">First featurette heading. <span class=\"text-muted\">It’ll blow your mind.</span></h2>
+        <p class=\"lead\">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
       </div>
+      <div class=\"col-md-5\">
+        <svg class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: 500x500\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><text x=\"50%\" y=\"50%\" fill=\"#aaa\" dy=\".3em\">500x500</text></svg>
 
-      <div class=\"col\">
-        <div class=\"card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg\" style=\"background-image: url({{ asset('images/unsplash-photo-3.jpg') }} );\">
-          <div class=\"d-flex flex-column h-100 p-5 pb-3 text-shadow-1\">
-            <h2 class=\"pt-5 mt-5 mb-4 display-6 lh-1 fw-bold\">Another longer title belongs here</h2>
-            <ul class=\"d-flex list-unstyled mt-auto\">
-              <li class=\"me-auto\">
-                <img src=\"https://github.com/twbs.png\" alt=\"Bootstrap\" width=\"32\" height=\"32\" class=\"rounded-circle border border-white\">
-              </li>
-              <li class=\"d-flex align-items-center me-3\">
-                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#geo-fill\"/></svg>
-                <small>California</small>
-              </li>
-              <li class=\"d-flex align-items-center\">
-                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#calendar3\"/></svg>
-                <small>5d</small>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
 
-  <div class=\"b-example-divider\"></div>
+    <hr class=\"featurette-divider\">
 
-  <div class=\"container px-4 py-5\" id=\"custom-cards\">
-    <h2 class=\"pb-2 border-bottom\">Prêt à travailler enssemble ?</h2>
 
-    <div class=\"row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5\">
+    <div class=\"position-relative overflow-hidden  text-center bg-light\">
+        <div class=\"col-md-5 p-0 mx-auto my-5\">
+          <h1 class=\"display-4 fw-normal\">POURQUOI NOUS CHOISIR ?</h1>
+          <p class=\"lead fw-normal\">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
+            <button type=\"button\" class=\"btn btn-outline-secondary mb-0\">Secondary</button>
+        </div>
+        <div class=\"product-device shadow-sm d-none d-md-block\"></div>
+        <div class=\"product-device product-device-2 shadow-sm d-none d-md-block\"></div>
+      </div>
 
-      <div class=\"col\">
-        <div class=\"card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg\" style=\"background-image: url({{ asset('images/unsplash-photo-3.jpg') }} );\">
-          <div class=\"d-flex flex-column h-100 p-5 pb-3 text-shadow-1\">
-            <h2 class=\"pt-5 mt-5 mb-4 display-6 lh-1 fw-bold\">Another longer title belongs here</h2>
-            <ul class=\"d-flex list-unstyled mt-auto\">
-              <li class=\"me-auto\">
-                <img src=\"https://github.com/twbs.png\" alt=\"Bootstrap\" width=\"32\" height=\"32\" class=\"rounded-circle border border-white\">
-              </li>
-              <li class=\"d-flex align-items-center me-3\">
-                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#geo-fill\"/></svg>
-                <small>California</small>
-              </li>
-              <li class=\"d-flex align-items-center\">
-                <svg class=\"bi me-2\" width=\"1em\" height=\"1em\"><use xlink:href=\"#calendar3\"/></svg>
-                <small>5d</small>
-              </li>
-            </ul>
+    <hr class=\"featurette-divider\">
+
+     <hr class=\"featurette-divider\">
+
+        <div class=\"row featurette\">
+          <div class=\"col-md-7 order-md-2\">
+            <h2 class=\"featurette-heading\">Oh yeah, it’s that good. <span class=\"text-muted\">See for yourself.</span></h2>
+            <p class=\"lead\">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+          </div>
+          <div class=\"col-md-5 order-md-1\">
+            <svg class=\"bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto\" width=\"500\" height=\"500\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: 500x500\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#eee\"/><text x=\"50%\" y=\"50%\" fill=\"#aaa\" dy=\".3em\">500x500</text></svg>
+
           </div>
         </div>
-      </div>
-      <div class=\"col-8\">
-        <button>Découvrire nos projets</button>
-      </div>
-    </div>
+
+
+    <hr class=\"featurette-divider\">
+
+    <!-- /END THE FEATURETTES -->
+
   </div>
 
-</main>
 
 
-    <script src=\"/docs/5.0/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"></script>
-
-      
-  </body>
-</html>
-
+{% endblock %}
 ", "home/index.html.twig", "/var/www/private/L3/stabs/templates/home/index.html.twig");
     }
 }

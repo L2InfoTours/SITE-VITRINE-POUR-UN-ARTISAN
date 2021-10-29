@@ -60,6 +60,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
         // line 12
         echo "    </head>
     <body>
+
     <nav class=\"navbar navbar-dark bg-dark\" aria-label=\"First navbar example\">
         <div class=\"container-fluid\">
           <a class=\"navbar-brand\" href=\"#\">LEGERMAIN</a>
@@ -95,13 +96,23 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
       </nav>
 
 
+<div class=\"position-relative overflow-hidden  text-center bg-light\">
+    <div class=\"col-md-5 p-lg-5 mx-auto my-5\">
+      <h1 class=\"display-4 fw-normal\">nom</h1>
+      <p class=\"lead fw-normal\">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
+
+    </div>
+    <div class=\"product-device shadow-sm d-none d-md-block\"></div>
+    <div class=\"product-device product-device-2 shadow-sm d-none d-md-block\"></div>
+  </div>
+
         ";
-        // line 49
+        // line 60
         $this->displayBlock('body', $context, $blocks);
-        // line 50
+        // line 61
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 51
+        // line 62
         echo "    </body>
 
 <div class=\"container\">
@@ -176,7 +187,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     }
 
-    // line 49
+    // line 60
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -194,7 +205,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     }
 
-    // line 50
+    // line 61
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -220,7 +231,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     public function getDebugInfo()
     {
-        return array (  198 => 50,  180 => 49,  168 => 10,  163 => 9,  153 => 8,  134 => 7,  105 => 51,  102 => 50,  100 => 49,  61 => 12,  59 => 8,  55 => 7,  47 => 1,);
+        return array (  209 => 61,  191 => 60,  179 => 10,  174 => 9,  164 => 8,  145 => 7,  116 => 62,  113 => 61,  111 => 60,  61 => 12,  59 => 8,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -238,6 +249,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 \t\t{% endblock %}
     </head>
     <body>
+
     <nav class=\"navbar navbar-dark bg-dark\" aria-label=\"First navbar example\">
         <div class=\"container-fluid\">
           <a class=\"navbar-brand\" href=\"#\">LEGERMAIN</a>
@@ -272,6 +284,16 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
         </div>
       </nav>
 
+
+<div class=\"position-relative overflow-hidden  text-center bg-light\">
+    <div class=\"col-md-5 p-lg-5 mx-auto my-5\">
+      <h1 class=\"display-4 fw-normal\">nom</h1>
+      <p class=\"lead fw-normal\">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
+
+    </div>
+    <div class=\"product-device shadow-sm d-none d-md-block\"></div>
+    <div class=\"product-device product-device-2 shadow-sm d-none d-md-block\"></div>
+  </div>
 
         {% block body %}{% endblock %}
         {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
