@@ -67,37 +67,35 @@
 
 </main>
         <script type="text/javascript">
-            const filtred = document.querySelector("#filtred")
-            const filters = document.querySelectorAll("input.filter")
-            const filtererror = document.querySelector(".filter.error")
-            function doFilter(){
-                var any = ! [...filters].some((o)=>o.checked)
-                console.log(
-                    any,
-                    [...filters].map(o=>o.checked)
-                    )
-                elements = filtred.querySelectorAll(".filter:not(.error)")
-                var isempty = ! [...elements].some(filter=>{
-                    var clzzs = filter.classList
-                    clzzs = Object.values(clzzs)
-                    var mod = [...filters].reduce(
-                        (p,o)=>{
-                        if(o.checked)
-                            p.push(o.getAttribute("id"))
-                        return p
-                        },[]
-                    )
-                    var isgood = mod.some(x=>clzzs.includes(x))||any
-                    filter.style.display = isgood ?"flex":"none"
+                    const filtred = document.querySelector("#filtred")
+                    const filters = document.querySelectorAll("input.filter")
+                    const filtererror = document.querySelector(".filter.error")
+                    function doFilter(){
+                        var any = ! [...filters].some((o)=>o.checked)
+                        elements = filtred.querySelectorAll(".filter:not(.error)")
+                        var isempty = false;
+                        [...elements].map(filter=>{
+                            var clzzs = filter.classList
+                            clzzs = Object.values(clzzs)
+                            var mod = [...filters].reduce(
+                                (p,o)=>{
+                                if(o.checked)
+                                    p.push(o.getAttribute("id"))
+                                return p
+                                },[]
+                            )
+                            var isgood = mod.some(x=>clzzs.includes(x))
+                            isgood||=any
+                            filter.style.display = isgood ?"flex":"none"
 
-                    return isgood
+                            isempty ||= isgood
 
-                })
+                        })
 
-                filtererror.style.display = isempty ?"flex":"none"
+                        filtererror.style.display = !isempty ?"flex":"none"
 
-            }
-        </script>
+                    }
+                </script>
 
 
 {% endblock %}
