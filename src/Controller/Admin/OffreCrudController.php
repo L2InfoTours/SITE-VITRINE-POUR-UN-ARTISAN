@@ -33,7 +33,7 @@ class OffreCrudController extends AbstractCrudController
             DateField::new('date')
             ->onlyOnIndex()
             ->setFormat('dd/MM/yyyy'),
-            ChoiceField::new('niveau_etude')->setChoices([
+            ChoiceField::new('niveau_etude', 'Niveau d\'études')->setChoices([
                 'Bac+1' => 'Bac+1',
                 'Bac+2' => 'Bac+2',
                 'Bac+3' => 'Bac+3',
@@ -44,7 +44,7 @@ class OffreCrudController extends AbstractCrudController
             'lieu',
             'intitule',
             'mission',
-            MoneyField::new('remuneration')
+            MoneyField::new('remuneration', 'Rémunération')
             ->setCurrency('EUR'),
             'profile',
             ChoiceField::new('type', "Type d'offre")->setChoices([
@@ -54,19 +54,16 @@ class OffreCrudController extends AbstractCrudController
                 'CDI' => 'CDI',
             ]),
             IntegerField::new('duree', 'Nombre de jours'),
-            CollectionField::new('reponses')
+            //MODIFER
+            CollectionField::new('reponses', 'Réponses')
             ->setEntryType(ReponseType::class)
             ->setFormTypeOption('by_reference', false)
             ->onlyOnForms()
             ->allowAdd(false)
             ->allowDelete(false),
-            //TODO ITEM NAME ->prototype_name('__name__'),
-            CollectionField::new('reponses')
-            // ->setTemplatePath('reponses.html.twig')
-            ->setEntryType(ReponseType::class)
-            ->setFormTypeOption('by_reference', false)
-            ->allowAdd(false)
-            ->allowDelete(false)
+            //CONSULTER
+            CollectionField::new('reponses', 'Réponses')
+            ->setTemplatePath('reponses.html.twig')
             ->onlyOnDetail()
         ];
     }

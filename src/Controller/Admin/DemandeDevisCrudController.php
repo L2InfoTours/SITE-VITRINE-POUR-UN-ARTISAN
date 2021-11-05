@@ -29,7 +29,7 @@ class DemandeDevisCrudController extends AbstractCrudController
             'nom',
             'adresse',
             TextEditorField::new('description'),
-            TelephoneField::new('telephone'),
+            TelephoneField::new('telephone', 'Téléphone'),
             'email',
             ChoiceField::new('status')->setChoices([
                     'En cours' => 'En cours',

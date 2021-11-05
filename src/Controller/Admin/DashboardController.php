@@ -79,13 +79,14 @@ class DashboardController extends AbstractDashboardController
         return [
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
 
-            MenuItem::section('Consulter'),
+            MenuItem::section('Devis'),
             MenuItem::linkToCrud('DemandeDevis', 'fa fa-comment', DemandeDevis::class),
 
-            MenuItem::section('Modifier'),
+            MenuItem::section('Chantier'),
             MenuItem::linkToCrud('Chantier', 'fa fa-tags', Chantier::class),
             MenuItem::linkToCrud('TypeChantier','fa fa-comment', TypeChantier::class),
             MenuItem::linkToCrud('Image', 'fa fa-comment', Image::class),
+            MenuItem::section('Offre'),
             MenuItem::linkToCrud('Offre', 'fa fa-comment', Offre::class),
             MenuItem::linkToCrud('Reponse', 'fa fa-comment', Reponse::class),
         ];

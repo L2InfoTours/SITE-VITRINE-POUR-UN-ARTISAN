@@ -9,6 +9,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
 class ReponseCrudController extends AbstractCrudController
 {
@@ -26,12 +28,13 @@ class ReponseCrudController extends AbstractCrudController
             // ImageField::new('cv')
             // ->setBasePath($this->getParameter("app.path.reponse_cv"))
             // ->onlyOnIndex(),
+            'cv',
             TextareaField::new('cvFile')
             ->setFormType(VichFileType::class)
             ->hideOnIndex()
             ->setFormTypeOption('allow_delete', false),
-            'lettre_motivation',
-            'telephone',
+            TextEditorField::new('lettre_motivation'),
+            TelephoneField::new('telephone', 'Téléphone'),
             'email',
             AssociationField::new('offre'),
             

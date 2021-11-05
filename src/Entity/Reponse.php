@@ -135,6 +135,10 @@ class Reponse
     {
         return $this->lettre_motivation;
     }
+    public function getLettre_Motivation(): ?string
+    {
+        return $this->getLettreMotivation();
+    }
 
     public function setLettreMotivation(string $lettre_motivation): self
     {
