@@ -5,8 +5,13 @@ namespace App\Entity;
 use App\Repository\ReponseRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
+
 /**
  * @ORM\Entity(repositoryClass=ReponseRepository::class)
+ * @Vich\Uploadable
  */
 class Reponse
 {
@@ -29,8 +34,21 @@ class Reponse
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
      */
     private $cv;
+
+    /**
+     * @Vich\UploadableField(mapping="reponse_cv", fileNameProperty="cv")
+     * @var File
+     */
+    private $cvFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * @ORM\Column(type="text")
@@ -51,6 +69,10 @@ class Reponse
      * @ORM\ManyToOne(targetEntity=Offre::class, inversedBy="reponses")
      */
     private $offre;
+
+    public function __toString(){
+        return strtoupper($this->nom) ." " . ucfirst($this->prenom);
+    }
 
     public function getId(): ?int
     {
@@ -81,16 +103,32 @@ class Reponse
         return $this;
     }
 
-    public function getCv(): ?string
+    public function setCvFile(File $cv = null)
     {
-        return $this->cv;
-    }
-
-    public function setCv(string $cv): self
-    {
-        $this->cv = $cv;
+        $this->cvFile = $cv;
+        if ($cv) {
+            var_dump($cv);
+           // It is required that at least one field changes if you are using doctrine
+           // otherwise the event listeners won't be called and the file is lost
+           $this->updatedAt = new \DateTime("now");
+       }
 
         return $this;
+    }
+
+    public function getCvFile()
+    {
+        return $this->cvFile;
+    }
+
+    public function setCv($cv)
+    {
+        $this->cv = $cv;
+    }
+
+    public function getCv()
+    {
+        return $this->cv;
     }
 
     public function getLettreMotivation(): ?string

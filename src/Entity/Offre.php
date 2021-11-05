@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass=OffreRepository::class)
  */
 class Offre
-{
+{    
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -20,7 +20,7 @@ class Offre
     private $id;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", options={"default":"now()"})
      */
     private $date;
 
@@ -45,7 +45,7 @@ class Offre
     private $mission;
 
     /**
-     * @ORM\Column(type="decimal", precision=7, scale=2, nullable=true)
+     * @ORM\Column(type="decimal", precision=8, scale=2, nullable=true)
      */
     private $remuneration;
 
@@ -70,7 +70,7 @@ class Offre
     private $admin;
 
     /**
-     * @ORM\OneToMany(targetEntity=Reponse::class, mappedBy="offre")
+     * @ORM\OneToMany(targetEntity=Reponse::class, mappedBy="offre",cascade={"persist"})
      */
     private $reponses;
 
@@ -82,6 +82,11 @@ class Offre
     public function __construct()
     {
         $this->reponses = new ArrayCollection();
+        $this->date=(new \DateTime());
+    }
+
+    public function __toString(){
+        return $this->intitule;
     }
 
     public function getId(): ?int

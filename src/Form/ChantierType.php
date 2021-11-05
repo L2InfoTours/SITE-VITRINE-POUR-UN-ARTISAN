@@ -15,7 +15,7 @@ class ChantierType extends AbstractType
             ->add('nom')
             ->add('contenu')
             ->add('adresse')
-            ->add('type')
+            ->add('types')
             ->add('admin')
         ;
     }

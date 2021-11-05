@@ -35,25 +35,22 @@ class Chantier
     private $adresse;
 
     /**
-     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="chantier")
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="chantier", cascade={"persist"})
      */
     private $images;
 
     /**
      * @ORM\ManyToMany(targetEntity=TypeChantier::class, inversedBy="chantiers")
      */
-    private $type;
+    private $types;
 
     /**
      * @ORM\ManyToOne(targetEntity=Admin::class, inversedBy="chantiers")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true) //TODO nullable false
      */
     private $admin;
 
-    /**
-     * @ORM\OneToMany(targetEntity=TypeChantier::class, mappedBy="chantier")
-     */
-    private $types;
+
 
     public function __construct()
     {

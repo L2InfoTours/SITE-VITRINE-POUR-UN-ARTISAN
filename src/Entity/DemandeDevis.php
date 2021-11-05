@@ -33,7 +33,7 @@ class DemandeDevis
     private $description;
 
     /**
-     * @ORM\Column(type="decimal", precision=10, scale=0)
+     * @ORM\Column(type="string", length=255)
      */
     private $telephone;
 

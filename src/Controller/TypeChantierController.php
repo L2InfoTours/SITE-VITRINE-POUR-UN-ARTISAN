@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\TypeChantier;
-use App\Form\TypeChantierType;
+use App\Form\TypeChantier1Type;
 use App\Repository\TypeChantierRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,7 +25,7 @@ class TypeChantierController extends AbstractController
     public function new(Request $request): Response
     {
         $typeChantier = new TypeChantier();
-        $form = $this->createForm(TypeChantierType::class, $typeChantier);
+        $form = $this->createForm(TypeChantier1Type::class, $typeChantier);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -53,7 +53,7 @@ class TypeChantierController extends AbstractController
     #[Route('/{id}/edit', name: 'type_chantier_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, TypeChantier $typeChantier): Response
     {
-        $form = $this->createForm(TypeChantierType::class, $typeChantier);
+        $form = $this->createForm(TypeChantier1Type::class, $typeChantier);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
