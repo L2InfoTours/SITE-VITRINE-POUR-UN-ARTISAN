@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Chantier;
+use App\Entity\TypeChantier;
 use App\Form\ChantierType;
 use App\Repository\ChantierRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,9 +19,11 @@ class ChantierController extends AbstractController
     {
             $repo = $this->getDoctrine()->getRepository(Chantier::class);
             $projects = $repo->findAll();
+            $Types = $this->getDoctrine()->getRepository(TypeChantier::class);
 
         return $this->render('chantier/index.html.twig', [
             'chantiers' => $chantierRepository->findAll(),
+            'types' => $Types->findAll(),
             'projects' => $projects
         ]);
     }
