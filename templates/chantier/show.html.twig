@@ -1,34 +1,59 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Chantier{% endblock %}
-
 {% block body %}
-    <h1>Chantier</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ chantier.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ chantier.nom }}</td>
-            </tr>
-            <tr>
-                <th>Contenu</th>
-                <td>{{ chantier.contenu }}</td>
-            </tr>
-            <tr>
-                <th>Adresse</th>
-                <td>{{ chantier.adresse }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <h1 class="mt-5 ms-5 mb-5 ">{{ chantier.nom}}</h1>
 
+  <div class="container ">
+    <hr class="featurette-divider mb-5">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+
+     <table class="table ">
+             <tbody>
+                 <tr>
+                     <th>Id</th>
+                     <td>{{ chantier.id }}</td>
+                 </tr>
+                 <tr>
+                     <th>Nom</th>
+                     <td>{{ chantier.nom }}</td>
+                 </tr>
+                 <tr>
+                     <th>Contenu</th>
+                     <td>{{ chantier.contenu }}</td>
+                 </tr>
+                 <tr>
+                     <th>Adresse</th>
+                     <td>{{ chantier.adresse }}</td>
+                 </tr>
+             </tbody>
+         </table>
     <a href="{{ path('chantier_index') }}">back to list</a>
 
     <a href="{{ path('chantier_edit', {'id': chantier.id}) }}">edit</a>
 
     {{ include('chantier/_delete_form.html.twig') }}
+     </div>
+      <div class="col-md-5 order-md-1">
+    <img src="{{ asset("/uploads/images/chantier/#{chantier.getImages()[0].getImage()}") }}" class="img-thumbnail" alt="...">
+      </div>
+    </div>
+
+        <hr class="featurette-divider mb-5 mt-5 text-center">
+
+        <h1 class="mt-5 ms-5 mb-5 text-center">Photos</h1>
+
+<!-- Gallery -->
+<div class="row">
+  {% for image in images %}
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+<img class="w-100 shadow-1-strong rounded mb-4" src="{{ asset("/uploads/images/chantier/#{chantier.getImages()[0].getImage()}") }}" alt="img"  />
+</div>
+    {% endfor %}
+
+</div>
+<!-- Gallery -->
+
 {% endblock %}
