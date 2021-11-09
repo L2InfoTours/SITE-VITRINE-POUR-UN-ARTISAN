@@ -11,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
 class ReponseCrudController extends AbstractCrudController
 {
@@ -28,6 +29,8 @@ class ReponseCrudController extends AbstractCrudController
             // ImageField::new('cv')
             // ->setBasePath($this->getParameter("app.path.reponse_cv"))
             // ->onlyOnIndex(),
+            // ImageField::new('cv')
+            // ->setBasePath($this->getParameter("app.path.reponse_cv")),
             'cv',
             TextareaField::new('cvFile')
             ->setFormType(VichFileType::class)
