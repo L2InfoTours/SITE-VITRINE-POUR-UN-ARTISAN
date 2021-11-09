@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
     <h1 class="mt-5 ms-5 mb-5 ">{{ chantier.nom}}</h1>
 
   <div class="container ">
@@ -44,16 +43,156 @@
         <hr class="featurette-divider mb-5 mt-5 text-center">
 
         <h1 class="mt-5 ms-5 mb-5 text-center">Photos</h1>
-
 <!-- Gallery -->
 <div class="row">
-  {% for image in images %}
-  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-<img class="w-100 shadow-1-strong rounded mb-4" src="{{ asset("/uploads/images/chantier/#{chantier.getImages()[0].getImage()}") }}" alt="img"  />
+  {% for image in chantier.getImages() %}
+  {#col-md-12 mb-4 mb-lg-0 #}
+  <div class="col-lg-4 col-6">
+        <img class="w-100 shadow-1-strong rounded mb-4 img-fluid img-aspect lightbox" src="{{ asset("/uploads/images/chantier/#{image.getImage()}") }}" alt="img" style="object-fit: cover;" />
 </div>
     {% endfor %}
 
 </div>
+<script>
+const modal = {
+    open:function(){
+        if(!this.isClosed)return
+        this.isClosed = false
+        this.element = document.createElement('div')
+        this.element.style = `
+                                position: fixed; /* Stay in place */
+                                z-index: 1; /* Sit on top */
+                                left: 0;
+                                top: 0;
+                                width: 100%; /* Full width */
+                                height: 100%; /* Full height */
+                                overflow: auto; /* Enable scroll if needed */
+                                background-color: rgb(0,0,0); /* Fallback color */
+                                background-color: rgba(0,0,0,0.9); /* Black w/ opacity */`
+        document.body.appendChild(this.element)
+        this.element.addEventListener('click',(event)=>{
+            var element = event.target
+            if(element != this.context.canvas && !modal.isClosed)
+                modal.close()
+        })
+    },
+    close:function(){
+        this.isClosed = true
+        this.element.remove()
+    },
+    isClosed:true,
+
+    showImage(img){
+        let W,H
+        this.context.canvas.width = W = 1920
+        this.context.canvas.height = H = 1080
+
+
+        var w = img.naturalWidth
+        var h = img.naturalHeight
+
+        var r = w/h
+
+        var isH = w/W>h/H
+
+        var x = 0
+        var y = 0
+
+        if(isH){
+            w = H*r
+            h = H
+        }else{
+            h = W/r
+            w = W
+        }
+
+        x = W/2 - w/2
+        y = H/2 - h/2
+
+        this.context.drawImage(img,x,y,w,h)
+        this.div.classList.add('padding-10')
+        this.div.style = `height:100vmin;
+                                       transform:translate(-50%,-50%);
+                                       left:50%;
+                                       top:50%;
+                                       position:relative;
+                                       width: max-content;max-width:100vw;
+                                       `
+    },
+    div:document.createElement('div'),
+    context:null,
+    hitbox:150,
+    arrowR:"M9.46967 5.46967C9.76256 5.17678 10.2374 5.17678 10.5303 5.46967L16.5303 11.4697C16.8232 11.7626 16.8232 12.2374 16.5303 12.5303L10.5303 18.5303C10.2374 18.8232 9.76256 18.8232 9.46967 18.5303C9.17678 18.2374 9.17678 17.7626 9.46967 17.4697L14.9393 12L9.46967 6.53033C9.17678 6.23744 9.17678 5.76256 9.46967 5.46967Z",
+    arrowL:"M14.5303 18.5303C14.2374 18.8232 13.7626 18.8232 13.4697 18.5303L7.46967 12.5303C7.17678 12.2374 7.17678 11.7626 7.46967 11.4697L13.4697 5.46967C13.7626 5.17678 14.2374 5.17678 14.5303 5.46967C14.8232 5.76256 14.8232 6.23744 14.5303 6.53033L9.06066 12L14.5303 17.4697C14.8232 17.7626 14.8232 18.2374 14.5303 18.5303Z",
+    slideshow:function(imgs,index = 0){
+        this.context = document.createElement('canvas').getContext('2d')
+        this.div = document.createElement('div')
+        this.currentImage = index
+
+        const show = ()=>{
+            if(!imgs[this.currentImage]){
+                if(this.currentImage<0){
+                    this.currentImage = imgs.length-1
+                }
+                if(this.currentImage>imgs.length-1){
+                    this.currentImage = 0
+                }
+            }
+            this.showImage(imgs[this.currentImage])
+            //this.context.fillStyle = "rgba(0,0,0,.8)"
+            //this.context.fillRect(0,0,this.hitbox,this.context.canvas.height)
+            //this.context.fillRect(this.context.canvas.width-this.hitbox,0,this.hitbox,this.context.canvas.height)
+            var arrowR = new Path2D(this.arrowR)
+            this.context.fillStyle = "#fff"
+            this.context.save()
+            this.context.translate(this.context.canvas.width-this.hitbox,this.context.canvas.height/2)
+            this.context.scale(5,5)
+            this.context.fill(arrowR)
+            this.context.restore()
+            this.context.save()
+            var arrowL = new Path2D(this.arrowL)
+            this.context.translate(0,this.context.canvas.height/2)
+            this.context.scale(5,5)
+            this.context.fill(arrowL)
+            this.context.restore()
+        }
+
+        this.context.canvas.addEventListener('click',(event)=>{
+            var padding = this.div.style.padding.match(/0-9/)
+            var left = this.div.offsetLeft+padding - (this.div.offsetWidth)/2
+            var x = (event.clientX-left)/this.context.canvas.offsetWidth*this.context.canvas.width
+            console.log(left,x)
+            if(x>this.context.canvas.width-this.hitbox){
+                console.log("Go TO RIGHT")
+                this.currentImage+=1
+                show()
+            }else if(x<this.hitbox){
+                console.log("Go TO LEFT")
+                this.currentImage-=1
+                show()
+            }
+
+        })
+        show()
+
+        this.div.appendChild(this.context.canvas)
+        this.context.canvas.style.width="100%"
+        this.element.appendChild(this.div)
+    },
+}
+
+const slideshow = document.querySelectorAll('img.lightbox[src]')
+slideshow.forEach((img,n)=> {
+img.addEventListener('click',()=>{
+                event.preventDefault();
+                var element = event.target;
+                if(modal.isClosed){
+                    modal.open()
+                    modal.slideshow(slideshow,n)
+                }
+    });
+})
+</script>
 <!-- Gallery -->
 
 {% endblock %}
