@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Chantier;
+use App\Entity\Image;
+use App\Entity\TypeChantier;
 use App\Form\ChantierType;
 use App\Repository\ChantierRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,9 +20,11 @@ class ChantierController extends AbstractController
     {
             $repo = $this->getDoctrine()->getRepository(Chantier::class);
             $projects = $repo->findAll();
+            $Types = $this->getDoctrine()->getRepository(TypeChantier::class);
 
         return $this->render('chantier/index.html.twig', [
             'chantiers' => $chantierRepository->findAll(),
+            'types' => $Types->findAll(),
             'projects' => $projects
         ]);
     }
@@ -46,11 +50,21 @@ class ChantierController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'chantier_show', methods: ['GET'])]
-    public function show(Chantier $chantier): Response
-    {
+    /**
+    *   @Route("/chantier/{id}",name="chantier_show")
+    */
+    public function show($id) {
+
+        $repo = $this->getDoctrine()->getRepository(Chantier::class);
+        $chantiers = $repo->find($id);
+
+            $repoImg = $this->getDoctrine()->getRepository(Chantier::class);
+            $images = $repoImg->findAll();
+
+
         return $this->render('chantier/show.html.twig', [
-            'chantier' => $chantier,
+            'chantier' => $chantiers,
+            'images'  => $images,
         ]);
     }
 
