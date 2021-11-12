@@ -158,7 +158,7 @@ const modal = {
         }
 
         this.context.canvas.addEventListener('click',(event)=>{
-            var padding = this.div.style.padding.match(/0-9/)
+            var padding = ~~ this.div.style.padding.match(/[0-9]*/)
             var left = this.div.offsetLeft+padding - (this.div.offsetWidth)/2
             var x = (event.clientX-left)/this.context.canvas.offsetWidth*this.context.canvas.width
             console.log(left,x)
