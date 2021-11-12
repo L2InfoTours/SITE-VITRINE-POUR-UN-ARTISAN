@@ -25,7 +25,8 @@ class ChantierController extends AbstractController
         return $this->render('chantier/index.html.twig', [
             'chantiers' => $chantierRepository->findAll(),
             'types' => $Types->findAll(),
-            'projects' => $projects
+            'projects' => $projects,
+            'titre' => 'CHANTIER',
         ]);
     }
 
@@ -65,6 +66,7 @@ class ChantierController extends AbstractController
         return $this->render('chantier/show.html.twig', [
             'chantier' => $chantiers,
             'images'  => $images,
+            'titre' => 'CHANTIER N',
         ]);
     }
 
