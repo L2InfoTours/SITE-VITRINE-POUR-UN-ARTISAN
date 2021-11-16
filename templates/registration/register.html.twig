@@ -3,19 +3,73 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
+{{encore_entry_link_tags('signin') }}
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
+        {# <main class="form-register">
+    <form action="{{ path('app_register') }}" method="post">
+        <div class="form-floating">
+            <input type="email" class="form-control" id="username" name="_username" placeholder="name@example.com">
+            <label for="username">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="password" name="_password" placeholder="Password">
+            <label for="password">Password</label>
+        </div>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('register') }}">
 
-    <h1>Register</h1>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div> 
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    </form>
+    </main> #}
+
+    {# <form action="{{ path('app_register') }}" method="post">
+        <div><label for="registration_form_email" class="required">Email</label><input type="email" id="registration_form_email" name="registration_form[email]" required="required"></div>
+        <div><label for="registration_form_plainPassword" class="required">Password</label><input type="password" id="registration_form_plainPassword" name="registration_form[plainPassword]" required="required" autocomplete="new-password"></div>
+        <div><label for="registration_form_agreeTerms" class="required">Agree terms</label><input type="checkbox" id="registration_form_agreeTerms" name="registration_form[agreeTerms]" required="required" value="1"></div>
+        <button type="submit" class="btn">Register</button>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('app_register') }}">
+    <input type="hidden" id="registration_form__token" name="registration_form[_token]" value="{{ csrf_token('app_register') }}"> 
+    </form> #}
+<main class="form-signin">
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        <div class="form-floating">
+            {{ form_widget(registrationForm.email, { 'attr': {'placeholder': 'name@example.com', 'class' : 'form-control form-control-danger'} }) }}
+            {{ form_label(registrationForm.email, "Adresse mail") }}
+            </div>
+        <div class="form-floating">
 
-        <button type="submit" class="btn">Register</button>
+            {{ form_widget(registrationForm.plainPassword, {'attr' : {'placeholder': 'password', 'class' : 'form-control form-control-danger'},
+                label: 'Password'
+            }) }}
+            {{ form_label(registrationForm.plainPassword, 'Mot de passe') }}
+            
+        </div>
+        <div class="checkbox mb-3" style="text-align: center;">
+            <a class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModalLg">Conditions d'utilisation</a>
+            {{ form_label(registrationForm.agreeTerms, "Accepter") }}
+            {{ form_widget(registrationForm.agreeTerms) }}
+            <div class="modal fade" id="exampleModalLg" tabindex="-1" aria-labelledby="exampleModalLgLabel" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title h4" id="exampleModalLgLabel">Conditions d'utilisation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="col-1">blablablablablablablablablablablabla</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <button type="submit" class="w-100 btn btn-lg btn-primary">S'inscrire</button>
     {{ form_end(registrationForm) }}
+</main>
 {% endblock %}
