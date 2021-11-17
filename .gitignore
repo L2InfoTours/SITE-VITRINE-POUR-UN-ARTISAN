@@ -15,3 +15,5 @@
 !/var/cache
 /var/cache/*
 !/var/cache/.gitkeep
+.idea
+
