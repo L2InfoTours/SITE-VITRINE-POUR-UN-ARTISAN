@@ -65,7 +65,7 @@ class __TwigTemplate_9202e761e4284b3a9b070b7955536265bbd9e19b2bd65e4a179ec7521be
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         // line 3
-        echo "<h3>Pannelle d'administration</h3>
+        echo "<h3>Pannel d'administration</h3>
 <p>Ici vous pouvez modifier le site, gérer les chantiers, les demandes de devis et les offres...
 </p>
 ";
@@ -96,7 +96,7 @@ class __TwigTemplate_9202e761e4284b3a9b070b7955536265bbd9e19b2bd65e4a179ec7521be
     {
         return new Source("{% extends '@EasyAdmin/page/content.html.twig' %}
 {% block main %}
-<h3>Pannelle d'administration</h3>
+<h3>Pannel d'administration</h3>
 <p>Ici vous pouvez modifier le site, gérer les chantiers, les demandes de devis et les offres...
 </p>
 {% endblock %}

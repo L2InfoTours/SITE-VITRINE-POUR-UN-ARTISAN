@@ -77,18 +77,18 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         return [
-            MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
+            MenuItem::linkToDashboard('Information', 'fa fa-info-circle'),
 
             MenuItem::section('Devis'),
-            MenuItem::linkToCrud('DemandeDevis', 'fa fa-comment', DemandeDevis::class),
+            MenuItem::linkToCrud('Demande de devis', 'fa fa-comment', DemandeDevis::class),
 
             MenuItem::section('Chantier'),
-            MenuItem::linkToCrud('Chantier', 'fa fa-tags', Chantier::class),
-            MenuItem::linkToCrud('TypeChantier','fa fa-comment', TypeChantier::class),
-            MenuItem::linkToCrud('Image', 'fa fa-comment', Image::class),
+            MenuItem::linkToCrud('Chantier', 'fa fa-hammer', Chantier::class),
+            MenuItem::linkToCrud('Type de chantier','fa fa-tags', TypeChantier::class),
+            MenuItem::linkToCrud('Image', 'fa fa-images', Image::class),
             MenuItem::section('Offre'),
-            MenuItem::linkToCrud('Offre', 'fa fa-comment', Offre::class),
-            MenuItem::linkToCrud('Reponse', 'fa fa-comment', Reponse::class),
+            MenuItem::linkToCrud('Offre', 'fa fa-file', Offre::class),
+            MenuItem::linkToCrud('Reponse', 'fa fa-reply', Reponse::class),
         ];
     }
 }
