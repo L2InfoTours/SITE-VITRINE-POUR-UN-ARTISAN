@@ -33,11 +33,13 @@ class DemandeDevisController extends AbstractController
             $entityManager->persist($demandeDevi);
             $entityManager->flush();
 
-            return $this->redirectToRoute('demande_devis_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('demande_devis_index', [
+            ], Response::HTTP_SEE_OTHER);
         }
-
+        
         return $this->renderForm('demande_devis/new.html.twig', [
             'demande_devi' => $demandeDevi,
+            "titre" => "contactez-nous",
             'form' => $form,
         ]);
     }

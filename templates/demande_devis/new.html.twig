@@ -1,11 +1,63 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block title %}New DemandeDevis{% endblock %}
 
 {% block body %}
-    <h1>Create new DemandeDevis</h1>
+    <h1 class="text-center">Nouvelle demande de devis</h1>
 
-    {{ include('demande_devis/_form.html.twig') }}
+    
+     
 
-    <a href="{{ path('demande_devis_index') }}">back to list</a>
+
+    {{ form_start(form) }}
+
+    <div class ="row bg-black">
+    <div class="col-5 my-2 p-4 d-flex flex-column position-static">
+
+        <label class="form-label my-2">Nom</label> 
+        <div>{{ form_widget(form.nom, {'attr':{'class':'form-control'}}) }}</div>
+        <label class="form-label my-2">Telephone </label>
+        <div class="form-control"> {{ form_widget(form.telephone) }} </div> 
+
+    </div>
+    <div class="col-2 vertical-sep">
+    </div>
+    <div class="col-5 my-2 p-4 d-flex flex-column position-static">
+
+        <label class="form-label my-2">adresse  </label>
+        <div class="form-control"> {{ form_widget(form.adresse) }} </div>
+        <label class="form-label my-2">email </label>
+        <div class="form-control"> {{ form_widget(form.email) }} </div>
+        
+       </div>
+    
+
+    <div class=" my-2 p-4 ">
+    <label class="form-label"> description </label>
+    <div class:"form-control">{{ form_widget(form.description, {'attr': {'rows':"5", 'class':'col-12'} })}}</div>
+  
+  
+  
+     </div>
+ 
+      <button type="submit" style="width: 50%;left: 50%;position: relative;transform: translate(-50%);">Enregistrer</button>
+        
+    </div>
+             
+            
+
+        {{ form_rest(form) }}
+
+        
+      
+    {{form_end(form)}}
+
+    <div>
+    <h1>Contact</h1>
+        <div>
+            <p> Carte du lieu<p/>
+        </div>
+    </div>
 {% endblock %}
