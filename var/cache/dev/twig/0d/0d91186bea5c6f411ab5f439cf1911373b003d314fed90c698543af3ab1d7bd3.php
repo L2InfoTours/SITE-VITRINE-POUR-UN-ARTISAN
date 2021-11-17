@@ -64,7 +64,10 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     <nav class=\"navbar navbar-light bg-light fixed-top\" aria-label=\"First navbar example\">
         <div class=\"container-fluid\">
-          <a class=\"navbar-brand\" style=\"font-size:30pt;\" href=\"#\">LEGERMAIN</a>
+          <a class=\"navbar-brand\" style=\"font-size:30pt;\" href=";
+        // line 17
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo ">LEGERMAIN</a>
           <button class=\"navbar-toggler\" onclick=\"openNav()\" >
             <span class=\"navbar-toggler-icon\"></span>
           </button>
@@ -73,10 +76,24 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
         <div id=\"mySidenav\" class=\"sidenav\">
           <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>
-          <a href=\"#\">About</a>
-          <a href=\"#\">Services</a>
-          <a href=\"#\">Clients</a>
-          <a href=\"#\">Contact</a>
+          <a href=\"";
+        // line 26
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\"><box-icon name='home'>ACCUEIL</box-icon></a>
+          <a href=\"";
+        // line 27
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+        echo "\">SE CONNECTER</a>
+          <a href=\"";
+        // line 28
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\">S'INSCRIRE</a>
+          <a href=\"";
+        // line 29
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("chantier_index");
+        echo "\">PROJETS</a>
+          <a href=\"#\">OFFRES</a>
+          <a href=\"#\">DEVIS/CONTACT</a>
         </div>
         <style>
 /* The side navigation menu */
@@ -146,15 +163,15 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
     #}
 
         ";
-        // line 98
+        // line 100
         $this->displayBlock('header', $context, $blocks);
-        // line 99
+        // line 101
         echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 100
+        // line 102
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 101
+        // line 103
         echo "    </body>
 
 <div class=\"container\">
@@ -193,7 +210,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo twig_escape_filter($this->env, (isset($context["titre"]) || array_key_exists("titre", $context) ? $context["titre"] : (function () { throw new RuntimeError('Variable "titre" does not exist.', 7, $this->source); })()), "html", null, true);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -229,7 +246,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     }
 
-    // line 98
+    // line 100
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -247,7 +264,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     }
 
-    // line 99
+    // line 101
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -265,7 +282,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     }
 
-    // line 100
+    // line 102
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -289,9 +306,14 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  269 => 100,  251 => 99,  233 => 98,  221 => 10,  216 => 9,  206 => 8,  187 => 7,  158 => 101,  155 => 100,  152 => 99,  150 => 98,  62 => 12,  60 => 8,  56 => 7,  48 => 1,);
+        return array (  286 => 102,  268 => 101,  250 => 100,  238 => 10,  233 => 9,  223 => 8,  204 => 7,  175 => 103,  172 => 102,  169 => 101,  167 => 100,  93 => 29,  89 => 28,  85 => 27,  81 => 26,  69 => 17,  62 => 12,  60 => 8,  56 => 7,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -302,7 +324,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
         <meta charset=\"utf-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{{titre}}{% endblock %}</title>
         {% block stylesheets %}
 \t\t{{ encore_entry_link_tags('app') }}
 \t\t{{encore_entry_link_tags('haiku') }}
@@ -312,7 +334,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     <nav class=\"navbar navbar-light bg-light fixed-top\" aria-label=\"First navbar example\">
         <div class=\"container-fluid\">
-          <a class=\"navbar-brand\" style=\"font-size:30pt;\" href=\"#\">LEGERMAIN</a>
+          <a class=\"navbar-brand\" style=\"font-size:30pt;\" href={{ path('home') }}>LEGERMAIN</a>
           <button class=\"navbar-toggler\" onclick=\"openNav()\" >
             <span class=\"navbar-toggler-icon\"></span>
           </button>
@@ -321,10 +343,12 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
         <div id=\"mySidenav\" class=\"sidenav\">
           <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>
-          <a href=\"#\">About</a>
-          <a href=\"#\">Services</a>
-          <a href=\"#\">Clients</a>
-          <a href=\"#\">Contact</a>
+          <a href=\"{{ path('home') }}\"><box-icon name='home'>ACCUEIL</box-icon></a>
+          <a href=\"{{ path('login')}}\">SE CONNECTER</a>
+          <a href=\"{{ path('app_register')}}\">S'INSCRIRE</a>
+          <a href=\"{{ path('chantier_index') }}\">PROJETS</a>
+          <a href=\"#\">OFFRES</a>
+          <a href=\"#\">DEVIS/CONTACT</a>
         </div>
         <style>
 /* The side navigation menu */

@@ -16,11 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerWENyzZd\App_KernelDevDebugContainer([
     'container.build_hash' => 'WENyzZd',
-<<<<<<< HEAD
-    'container.build_id' => '063c6f74',
-    'container.build_time' => 1637049378,
-=======
-    'container.build_id' => '261a72cd',
-    'container.build_time' => 1637075364,
->>>>>>> easyadmin
+    'container.build_id' => 'de9137e4',
+    'container.build_time' => 1637145804,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerWENyzZd');

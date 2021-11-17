@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{{titre}}{% endblock %}</title>
         {% block stylesheets %}
 		{{ encore_entry_link_tags('app') }}
 		{{encore_entry_link_tags('haiku') }}
@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-light bg-light fixed-top" aria-label="First navbar example">
         <div class="container-fluid">
-          <a class="navbar-brand" style="font-size:30pt;" href="#">LEGERMAIN</a>
+          <a class="navbar-brand" style="font-size:30pt;" href={{ path('home') }}>LEGERMAIN</a>
           <button class="navbar-toggler" onclick="openNav()" >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -23,10 +23,12 @@
 
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Clients</a>
-          <a href="#">Contact</a>
+          <a href="{{ path('home') }}"> </a>
+          <a href="{{ path('chantier_index') }}">PROJETS</a>
+          <a href="#">OFFRES</a> {#TODO#}
+          <a href="#">DEVIS/CONTACT</a> {#TODO#}
+          <a href="{{ path('login')}}">SE CONNECTER</a>
+          <a href="{{ path('app_register')}}">S'INSCRIRE</a>
         </div>
         <style>
 /* The side navigation menu */
