@@ -29,6 +29,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
+            'header' => [$this, 'block_header'],
             'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
         ];
@@ -61,58 +62,99 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
         echo "    </head>
     <body>
 
-    <nav class=\"navbar navbar-dark bg-dark\" aria-label=\"First navbar example\">
+    <nav class=\"navbar navbar-light bg-light fixed-top\" aria-label=\"First navbar example\">
         <div class=\"container-fluid\">
-          <a class=\"navbar-brand\" href=\"#\">LEGERMAIN</a>
-          <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarsExample01\" aria-controls=\"navbarsExample01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+          <a class=\"navbar-brand\" style=\"font-size:30pt;\" href=\"#\">LEGERMAIN</a>
+          <button class=\"navbar-toggler\" onclick=\"openNav()\" >
             <span class=\"navbar-toggler-icon\"></span>
           </button>
-
-          <div class=\"collapse navbar-collapse\" id=\"navbarsExample01\">
-            <ul class=\"navbar-nav me-auto mb-2\">
-              <li class=\"nav-item\">
-                <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Home</a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Link</a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link disabled\">Disabled</a>
-              </li>
-              <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"dropdown01\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">Dropdown</a>
-                <ul class=\"dropdown-menu\" aria-labelledby=\"dropdown01\">
-                  <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>
-                  <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
-                  <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form>
-              <input class=\"form-control\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">
-            </form>
-          </div>
         </div>
-      </nav>
+    </nav>
 
+        <div id=\"mySidenav\" class=\"sidenav\">
+          <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>
+          <a href=\"#\">About</a>
+          <a href=\"#\">Services</a>
+          <a href=\"#\">Clients</a>
+          <a href=\"#\">Contact</a>
+        </div>
+        <style>
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 6666; /* Stay on top */
+  top: 0;
+  right: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
 
-<div class=\"position-relative overflow-hidden  text-center bg-light\">
-    <div class=\"col-md-5 p-lg-5 mx-auto my-5\">
-      <h1 class=\"display-4 fw-normal\">nom</h1>
-      <p class=\"lead fw-normal\">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
 
-    </div>
-    <div class=\"product-device shadow-sm d-none d-md-block\"></div>
-    <div class=\"product-device product-device-2 shadow-sm d-none d-md-block\"></div>
-  </div>
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+        </style>
+        <script>
+        function openNav() {
+          var w = \"50vmin\";
+          document.getElementById(\"mySidenav\").style.width = w;
+          document.getElementById(\"main\").style.marginLeft = w;
+        }
+
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+          document.getElementById(\"mySidenav\").style.width = \"0\";
+          document.getElementById(\"main\").style.marginLeft = \"0\";
+        }
+        </script>
+    #}
 
         ";
-        // line 60
+        // line 98
+        $this->displayBlock('header', $context, $blocks);
+        // line 99
+        echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 61
+        // line 100
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 62
+        // line 101
         echo "    </body>
 
 <div class=\"container\">
@@ -187,7 +229,25 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     }
 
-    // line 60
+    // line 98
+    public function block_header($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 99
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -205,7 +265,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     }
 
-    // line 61
+    // line 100
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -231,7 +291,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     public function getDebugInfo()
     {
-        return array (  209 => 61,  191 => 60,  179 => 10,  174 => 9,  164 => 8,  145 => 7,  116 => 62,  113 => 61,  111 => 60,  61 => 12,  59 => 8,  55 => 7,  47 => 1,);
+        return array (  269 => 100,  251 => 99,  233 => 98,  221 => 10,  216 => 9,  206 => 8,  187 => 7,  158 => 101,  155 => 100,  152 => 99,  150 => 98,  62 => 12,  60 => 8,  56 => 7,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -250,51 +310,90 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
     </head>
     <body>
 
-    <nav class=\"navbar navbar-dark bg-dark\" aria-label=\"First navbar example\">
+    <nav class=\"navbar navbar-light bg-light fixed-top\" aria-label=\"First navbar example\">
         <div class=\"container-fluid\">
-          <a class=\"navbar-brand\" href=\"#\">LEGERMAIN</a>
-          <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarsExample01\" aria-controls=\"navbarsExample01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+          <a class=\"navbar-brand\" style=\"font-size:30pt;\" href=\"#\">LEGERMAIN</a>
+          <button class=\"navbar-toggler\" onclick=\"openNav()\" >
             <span class=\"navbar-toggler-icon\"></span>
           </button>
-
-          <div class=\"collapse navbar-collapse\" id=\"navbarsExample01\">
-            <ul class=\"navbar-nav me-auto mb-2\">
-              <li class=\"nav-item\">
-                <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Home</a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">Link</a>
-              </li>
-              <li class=\"nav-item\">
-                <a class=\"nav-link disabled\">Disabled</a>
-              </li>
-              <li class=\"nav-item dropdown\">
-                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"dropdown01\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">Dropdown</a>
-                <ul class=\"dropdown-menu\" aria-labelledby=\"dropdown01\">
-                  <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>
-                  <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>
-                  <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form>
-              <input class=\"form-control\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">
-            </form>
-          </div>
         </div>
-      </nav>
+    </nav>
 
+        <div id=\"mySidenav\" class=\"sidenav\">
+          <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>
+          <a href=\"#\">About</a>
+          <a href=\"#\">Services</a>
+          <a href=\"#\">Clients</a>
+          <a href=\"#\">Contact</a>
+        </div>
+        <style>
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 6666; /* Stay on top */
+  top: 0;
+  right: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
 
-<div class=\"position-relative overflow-hidden  text-center bg-light\">
-    <div class=\"col-md-5 p-lg-5 mx-auto my-5\">
-      <h1 class=\"display-4 fw-normal\">nom</h1>
-      <p class=\"lead fw-normal\">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
 
-    </div>
-    <div class=\"product-device shadow-sm d-none d-md-block\"></div>
-    <div class=\"product-device product-device-2 shadow-sm d-none d-md-block\"></div>
-  </div>
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
 
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+        </style>
+        <script>
+        function openNav() {
+          var w = \"50vmin\";
+          document.getElementById(\"mySidenav\").style.width = w;
+          document.getElementById(\"main\").style.marginLeft = w;
+        }
+
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+          document.getElementById(\"mySidenav\").style.width = \"0\";
+          document.getElementById(\"main\").style.marginLeft = \"0\";
+        }
+        </script>
+    #}
+
+        {% block header %}{% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
     </body>
