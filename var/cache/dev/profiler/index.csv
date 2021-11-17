@@ -2966,3 +2966,8 @@ efbb1d,127.0.0.1,POST,http://127.0.0.1:8000/admin?crudAction=new&crudControllerF
 2b34a3,127.0.0.1,GET,http://127.0.0.1:8000/admin,1635445064,,302
 309ba8,127.0.0.1,GET,http://127.0.0.1:8000/login,1635445064,,200
 108ea0,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5CChantierCrudController&menuIndex=4&submenuIndex=-1,1635445073,,200
+611fd5,127.0.0.1,GET,http://127.0.0.1:8000/,1637143815,,200
+4512f0,127.0.0.1,GET,http://127.0.0.1:8000/chantier/,1637143820,,200
+674b47,127.0.0.1,GET,http://127.0.0.1:8000/chantier/unsplash-photo-1.jpg,1637143821,07c658,405
+07c658,127.0.0.1,GET,http://127.0.0.1:8000/chantier/unsplash-photo-1.jpg,1637143821,,405
+2f044b,127.0.0.1,GET,http://127.0.0.1:8000/chantier/chantier/10,1637143824,,200

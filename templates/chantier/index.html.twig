@@ -7,7 +7,7 @@
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 border-bottom border-5">
     {% for type in types %}
       <div class="col" onclick="document.getElementById('{{type}}').click()"  >
-        <input type="checkbox"  style="display:block;" id="{{type}}" onclick="doFilter()" class="filter">
+        <input type="checkbox"  style="display:none;" id="{{type}}" onclick="doFilter()" class="filter">
         <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{type}}</h2>
@@ -44,10 +44,10 @@
 
             <div class="card-body">
             <h6>{{ chantier.nom }}</h6>
-              <p class="card-text">{{ chantier.contenu}}</p>
+              <p class="card-text" style="  white-space: normal;overflow: hidden;text-overflow: ellipsis;max-height: 105px;min-height: 105px;">{{ chantier.contenu}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group d-grid gap-2 col-12 mx-auto">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <a href="{{path('chantier_show',{'id': chantier.id}) }}" class="btn btn-sm btn-outline-secondary">View</a>
 
                 </div>
               </div>
@@ -55,8 +55,8 @@
           </div>
         </div>
     {% endfor %}
-    <div class="filter error" style="display:none;" >
-        Il n a R
+    <div class="filter error" style="display:none;margin: auto;font-weight: bold;" >
+       Il n'y a pas d'article dans le chantier sélectionné
     <div>
 
     </div>

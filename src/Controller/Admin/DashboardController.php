@@ -25,10 +25,14 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        // redirect to some CRUD controller
-        $routeBuilder = $this->get(AdminUrlGenerator::class);
+        // you can also render some template to display a proper Dashboard
+        // (tip: it's easier if your template extends from @EasyAdmin/page/content.html.twig)
+        return $this->render('admin/index.html.twig');
+        // return parent::index();
+        // // redirect to some CRUD controller
+        // $routeBuilder = $this->get(AdminUrlGenerator::class);
 
-        return $this->redirect($routeBuilder->setController(DemandeDevisCrudController::class)->generateUrl());
+        // return $this->redirect($routeBuilder->setController(ChantierCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
@@ -75,13 +79,14 @@ class DashboardController extends AbstractDashboardController
         return [
             MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
 
-            MenuItem::section('Consulter'),
+            MenuItem::section('Devis'),
             MenuItem::linkToCrud('DemandeDevis', 'fa fa-comment', DemandeDevis::class),
 
-            MenuItem::section('Modifier'),
+            MenuItem::section('Chantier'),
             MenuItem::linkToCrud('Chantier', 'fa fa-tags', Chantier::class),
             MenuItem::linkToCrud('TypeChantier','fa fa-comment', TypeChantier::class),
             MenuItem::linkToCrud('Image', 'fa fa-comment', Image::class),
+            MenuItem::section('Offre'),
             MenuItem::linkToCrud('Offre', 'fa fa-comment', Offre::class),
             MenuItem::linkToCrud('Reponse', 'fa fa-comment', Reponse::class),
         ];

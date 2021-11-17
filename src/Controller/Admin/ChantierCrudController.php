@@ -32,7 +32,14 @@ class ChantierCrudController extends AbstractCrudController
             'nom',
             'contenu',
             'adresse',
-            AssociationField::new('types'),
+            AssociationField::new('types')
+            ->formatValue(function ($value, $entity) {
+                $str = $entity->getTypes()[0];
+                for ($i = 1; $i < $entity->getTypes()->count(); $i++) {
+                    $str = $str . ", " . $entity->getTypes()[$i];
+                }
+                return $str;
+              }),
             CollectionField::new('images')
             ->setEntryType(ImageType::class)
             ->setFormTypeOption('by_reference', false)
