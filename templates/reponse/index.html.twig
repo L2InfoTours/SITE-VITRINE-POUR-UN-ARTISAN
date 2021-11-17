@@ -1,20 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ReponseController!{% endblock %}
+{% block title %}Reponse index{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1>Repondre à l'offre</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/private/L3/stabs/src/Controller/ReponseController.php'|file_link(0) }}">src/Controller/ReponseController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/private/L3/stabs/templates/reponse/index.html.twig'|file_link(0) }}">templates/reponse/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <table class="table">
+       <div class="name">
+            <label for="validationDefault01" class="form-label">Nom</label>
+            <input type="text" class="form-reponse" id="validationDefault01" value="Nom" required>
+          </div>
+          <div class="prénom">
+              <label for="validationDefault01" class="form-label">Prénom</label>
+              <input type="text" class="form-reponse" id="validationDefault01" value="Prenom" required>
+            </div>
+
+        <tbody>
+        {% for reponse in reponses %}
+        <div>
+            <tr>
+                <td>{{ reponse.id }}</td>
+                <td>{{ reponse.nom }}</td>
+                <td>{{ reponse.prenom }}</td>
+                <td>{{ reponse.cv }}</td>
+                <td>{{ reponse.lettreMotivation }}</td>
+                <td>{{ reponse.telephone }}</td>
+                <td>{{ reponse.email }}</td>
+                <td>
+                    <a href="{{ path('reponse_show', {'id': reponse.id}) }}">show</a>
+                    <a href="{{ path('reponse_edit', {'id': reponse.id}) }}">edit</a>
+                </td>
+            </tr>
+            </div>
+        {% else %}
+            <tr>
+
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('reponse_new') }}">Create new</a>
 {% endblock %}

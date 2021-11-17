@@ -3128,3 +3128,14 @@ d7d30b,127.0.0.1,GET,http://127.0.0.1:8000/admin?menuIndex=0&submenuIndex=-1,163
 a55508,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5CIndexController&menuIndex=4&submenuIndex=-1,1635502362,,200
 3e662f,127.0.0.1,GET,http://127.0.0.1:8000/admin?menuIndex=0&submenuIndex=-1,1635502364,,200
 622bf2,127.0.0.1,GET,http://127.0.0.1:8000/admin?menuIndex=0&submenuIndex=-1,1635502417,,200
+121216,127.0.0.1,GET,http://127.0.0.1:8000/login,1637144007,,200
+712253,127.0.0.1,GET,http://127.0.0.1:8000/favicon.ico,1637144010,f92eb4,404
+f92eb4,127.0.0.1,GET,http://127.0.0.1:8000/favicon.ico,1637144010,,404
+bbdec9,127.0.0.1,POST,http://127.0.0.1:8000/login,1637144040,,302
+1f2c56,127.0.0.1,GET,http://127.0.0.1:8000/admin,1637144041,,200
+8ff28f,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5CReponseCrudController&menuIndex=8&submenuIndex=-1,1637144060,,200
+d764f7,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5CImageCrudController&menuIndex=6&submenuIndex=-1,1637144064,,200
+4bab1c,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5COffreCrudController&menuIndex=7&submenuIndex=-1,1637144066,,200
+40636d,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5COffreCrudController&menuIndex=7&submenuIndex=-1,1637144072,,200
+8b9dac,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5COffreCrudController&menuIndex=7&submenuIndex=-1,1637144092,,200
+4e4e1f,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5COffreCrudController&menuIndex=7&submenuIndex=-1,1637144093,,200
