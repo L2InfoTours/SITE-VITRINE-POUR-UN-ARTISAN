@@ -378,7 +378,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
         <div id=\"mySidenav\" class=\"sidenav\">
           <a style=\"color: #C5A476;\" href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>
-          {% if is_granted('ROLE_ADMIN') %} {#SI ON EST CONNECTER#}
+          {% if is_granted('ROLE_ADMIN') %} {# SI ON EST CONNECTER EN TANT QU'ADMIN #}
             <a style=\"color: #C5A476;\" href=\"{{ path('app_admin')}}\">PANNEL ADMINISTRATION</a>
           {% endif %}
           <a style=\"color: #C5A476;\" href=\"{{ path('home') }}\"> HOME </a>

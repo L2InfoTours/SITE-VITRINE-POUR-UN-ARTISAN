@@ -44,11 +44,11 @@ class Chantier
      */
     private $types;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Admin::class, inversedBy="chantiers")
-     * @ORM\JoinColumn(nullable=true) //TODO nullable false
-     */
-    private $admin;
+    // /**
+    //  * @ORM\ManyToOne(targetEntity=Admin::class, inversedBy="chantiers")
+    //  * @ORM\JoinColumn(nullable=true) //TODO nullable false
+    //  */
+    // private $admin;
 
 
 
@@ -158,17 +158,17 @@ class Chantier
         return $this;
     }
 
-    public function getAdmin(): ?Admin
-    {
-        return $this->admin;
-    }
+    // public function getAdmin(): ?Admin
+    // {
+    //     return $this->admin;
+    // }
 
-    public function setAdmin(?Admin $admin): self
-    {
-        $this->admin = $admin;
+    // public function setAdmin(?Admin $admin): self
+    // {
+    //     $this->admin = $admin;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     /**
      * @return Collection|TypeChantier[]

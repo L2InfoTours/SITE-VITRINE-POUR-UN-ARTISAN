@@ -496,9 +496,6 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\UserController"/>
       </call>
     </service>
-    <service id="App\Form\AdminType" class="App\Form\AdminType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
     <service id="App\Form\ChantierType" class="App\Form\ChantierType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -1217,7 +1214,6 @@
         <argument>Vich\UploaderBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
-        <argument>App\Form\AdminType</argument>
         <argument>App\Form\ChantierType</argument>
         <argument>App\Form\DemandeDevisType</argument>
         <argument>App\Form\ImageType</argument>
@@ -1646,7 +1642,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.veezMX2"/>
+      <argument type="service" id=".service_locator.62VP4lv"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -6541,8 +6537,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AdminType" class="App\Form\AdminType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\AdminType" class="App\Form\AdminType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ChantierType" class="App\Form\ChantierType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ChantierType" class="App\Form\ChantierType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DemandeDevisType" class="App\Form\DemandeDevisType" autowire="true" abstract="true"/>
@@ -7483,10 +7477,9 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.veezMX2" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.62VP4lv" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Form\AdminType" type="service_closure" id="App\Form\AdminType"/>
         <argument key="App\Form\ChantierType" type="service_closure" id="App\Form\ChantierType"/>
         <argument key="App\Form\DemandeDevisType" type="service_closure" id="App\Form\DemandeDevisType"/>
         <argument key="App\Form\ImageType" type="service_closure" id="App\Form\ImageType"/>

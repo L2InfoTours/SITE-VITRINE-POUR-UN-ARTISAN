@@ -38,6 +38,15 @@ return [[
                 '/build/haiku.css',
             ],
         ],
+        'signin' => [
+            'js' => [
+                '/build/runtime.js',
+                '/build/signin.js',
+            ],
+            'css' => [
+                '/build/signin.css',
+            ],
+        ],
     ],
 ],
 
