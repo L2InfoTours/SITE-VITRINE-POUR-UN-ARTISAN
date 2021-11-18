@@ -74,6 +74,7 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
+    <parameter key="app.path.type_chantier_images">/uploads/images/typechantier</parameter>
     <parameter key="app.path.chantier_images">/uploads/images/chantier</parameter>
     <parameter key="app.path.reponse_cv">/uploads/cv/reponse</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
@@ -241,6 +242,22 @@
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="vich_uploader.default_filename_attribute_suffix">_name</parameter>
     <parameter key="vich_uploader.mappings" type="collection">
+      <parameter key="type_chantier_images" type="collection">
+        <parameter key="uri_prefix">/uploads/images/typechantier</parameter>
+        <parameter key="upload_destination">/var/www/private/L3/stabs/public/uploads/images/typechantier</parameter>
+        <parameter key="namer" type="collection">
+          <parameter key="service">null</parameter>
+          <parameter key="options">null</parameter>
+        </parameter>
+        <parameter key="directory_namer" type="collection">
+          <parameter key="service">null</parameter>
+          <parameter key="options">null</parameter>
+        </parameter>
+        <parameter key="delete_on_remove">true</parameter>
+        <parameter key="delete_on_update">true</parameter>
+        <parameter key="inject_on_load">false</parameter>
+        <parameter key="db_driver">orm</parameter>
+      </parameter>
       <parameter key="chantier_images" type="collection">
         <parameter key="uri_prefix">/uploads/images/chantier</parameter>
         <parameter key="upload_destination">/var/www/private/L3/stabs/public/uploads/images/chantier</parameter>
@@ -3882,13 +3899,16 @@
       </argument>
     </service>
     <service id="doctrine.dbal.default_connection.event_manager" class="Symfony\Bridge\Doctrine\ContainerAwareEventManager">
-      <argument type="service" id=".service_locator.U861px0"/>
+      <argument type="service" id=".service_locator.zmwlqt2"/>
       <argument type="collection">
+        <argument>vich_uploader.listener.clean.type_chantier_images</argument>
         <argument>vich_uploader.listener.clean.chantier_images</argument>
         <argument>vich_uploader.listener.clean.reponse_cv</argument>
         <argument>doctrine.orm.messenger.doctrine_schema_subscriber</argument>
         <argument>doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber</argument>
         <argument>doctrine.orm.listeners.doctrine_token_provider_schema_subscriber</argument>
+        <argument>vich_uploader.listener.remove.type_chantier_images</argument>
+        <argument>vich_uploader.listener.upload.type_chantier_images</argument>
         <argument>vich_uploader.listener.remove.chantier_images</argument>
         <argument>vich_uploader.listener.upload.chantier_images</argument>
         <argument>vich_uploader.listener.remove.reponse_cv</argument>
@@ -6422,6 +6442,27 @@
       <tag name="twig.extension"/>
       <argument type="service" id="Vich\UploaderBundle\Templating\Helper\UploaderHelper"/>
     </service>
+    <service id="vich_uploader.listener.clean.type_chantier_images" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
+      <tag name="doctrine.event_subscriber" priority="50"/>
+      <argument>type_chantier_images</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.type_chantier_images" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>type_chantier_images</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.type_chantier_images" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>type_chantier_images</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
     <service id="vich_uploader.listener.clean.chantier_images" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
       <tag name="doctrine.event_subscriber" priority="50"/>
       <argument>chantier_images</argument>
@@ -7537,7 +7578,7 @@
         </argument>
       </argument>
     </service>
-    <service id=".service_locator.U861px0" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.zmwlqt2" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service_closure" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
@@ -7546,10 +7587,13 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
         <argument key="vich_uploader.listener.clean.chantier_images" type="service_closure" id="vich_uploader.listener.clean.chantier_images"/>
         <argument key="vich_uploader.listener.clean.reponse_cv" type="service_closure" id="vich_uploader.listener.clean.reponse_cv"/>
+        <argument key="vich_uploader.listener.clean.type_chantier_images" type="service_closure" id="vich_uploader.listener.clean.type_chantier_images"/>
         <argument key="vich_uploader.listener.remove.chantier_images" type="service_closure" id="vich_uploader.listener.remove.chantier_images"/>
         <argument key="vich_uploader.listener.remove.reponse_cv" type="service_closure" id="vich_uploader.listener.remove.reponse_cv"/>
+        <argument key="vich_uploader.listener.remove.type_chantier_images" type="service_closure" id="vich_uploader.listener.remove.type_chantier_images"/>
         <argument key="vich_uploader.listener.upload.chantier_images" type="service_closure" id="vich_uploader.listener.upload.chantier_images"/>
         <argument key="vich_uploader.listener.upload.reponse_cv" type="service_closure" id="vich_uploader.listener.upload.reponse_cv"/>
+        <argument key="vich_uploader.listener.upload.type_chantier_images" type="service_closure" id="vich_uploader.listener.upload.type_chantier_images"/>
       </argument>
     </service>
     <service id="cache.doctrine.orm.default.query.compatibility_layer" class="Doctrine\Common\Cache\CacheProvider">

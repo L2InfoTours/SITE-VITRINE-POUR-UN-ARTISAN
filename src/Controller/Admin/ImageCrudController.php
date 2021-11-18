@@ -2,6 +2,9 @@
 
 namespace App\Controller\Admin;
 
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+
 use App\Entity\Image;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use Vich\UploaderBundle\Form\Type\VichImageType;
@@ -28,5 +31,14 @@ class ImageCrudController extends AbstractCrudController
             ->hideOnIndex()
             ->setFormTypeOption('allow_delete', false),
         ];
+    }
+    
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            // ...
+            // ->setPermission(Action::NEW, 'ROLE_ADMIN')
+            ->setPermission(Action::DELETE, 'ROLE_ADMIN')
+        ;
     }
 }

@@ -35,7 +35,7 @@ class Chantier
     private $adresse;
 
     /**
-     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="chantier", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="chantier", cascade={"persist", "remove"})
      */
     private $images;
 
