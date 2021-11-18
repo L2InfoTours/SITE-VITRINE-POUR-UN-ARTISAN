@@ -26,7 +26,7 @@ class ChantierController extends AbstractController
             'chantiers' => $chantierRepository->findAll(),
             'types' => $Types->findAll(),
             'projects' => $projects,
-            'titre' => 'CHANTIER',
+            'titre' => 'PROJETS',
         ]);
     }
 
@@ -52,7 +52,7 @@ class ChantierController extends AbstractController
     }
 
     /**
-    *   @Route("/chantier/{id}",name="chantier_show")
+    *   @Route("/{id}",name="chantier_show")
     */
     public function show($id) {
 
@@ -66,7 +66,7 @@ class ChantierController extends AbstractController
         return $this->render('chantier/show.html.twig', [
             'chantier' => $chantiers,
             'images'  => $images,
-            'titre' => 'CHANTIER N',
+            'titre' => 'CHANTIER',
         ]);
     }
 
