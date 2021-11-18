@@ -14,7 +14,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
-    'app_admin_dashboard_index' => [[], ['_controller' => 'App\\Controller\\Admin\\DashboardController::index'], [], [['text', '/admin']], [], []],
+    'app_admin' => [[], ['_controller' => 'App\\Controller\\Admin\\DashboardController::index'], [], [['text', '/admin']], [], []],
     'chantier_index' => [[], ['_controller' => 'App\\Controller\\ChantierController::index'], [], [['text', '/chantier/']], [], []],
     'chantier_new' => [[], ['_controller' => 'App\\Controller\\ChantierController::new'], [], [['text', '/chantier/new']], [], []],
     'chantier_show' => [['id'], ['_controller' => 'App\\Controller\\ChantierController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/chantier/chantier']], [], []],

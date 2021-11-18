@@ -60,41 +60,66 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 12
         echo "    </head>
-    <body>
+    <body style=\"background:#161616;\">
 
-    <nav class=\"navbar navbar-light bg-light fixed-top\" aria-label=\"First navbar example\">
+    <nav class=\"navbar  fixed-top\" style=\"background:#161616;\" aria-label=\"First navbar example\">
         <div class=\"container-fluid\">
-          <a class=\"navbar-brand\" style=\"font-size:30pt;\" href=";
+          <a class=\"navbar-brand\" style=\"font-size:30pt;color: #C5A476;\" href=";
         // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo ">LEGERMAIN</a>
-          <button class=\"navbar-toggler\" onclick=\"openNav()\" >
-            <span class=\"navbar-toggler-icon\"></span>
+          <button class=\"navbar-toggler\" style=\"color: #C5A476;\" onclick=\"openNav()\" >
+        <span class=\"navbar-toggler-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" enable-background=\"new 0 0 297 297\" viewBox=\"0 0 297 297\"><path d=\"M280.214 39.211H16.786C7.531 39.211 0 46.742 0 55.997v24.335c0 9.256 7.531 16.787 16.786 16.787h263.428c9.255 0 16.786-7.531 16.786-16.787V55.997C297 46.742 289.469 39.211 280.214 39.211zM280.214 119.546H16.786C7.531 119.546 0 127.077 0 136.332v24.336c0 9.255 7.531 16.786 16.786 16.786h263.428c9.255 0 16.786-7.531 16.786-16.786v-24.336C297 127.077 289.469 119.546 280.214 119.546zM280.214 199.881H16.786C7.531 199.881 0 207.411 0 216.668v24.335c0 9.255 7.531 16.786 16.786 16.786h263.428c9.255 0 16.786-7.531 16.786-16.786v-24.335C297 207.411 289.469 199.881 280.214 199.881z\" fill=\"#c5a476\" class=\"color000 svgShape\" style=\"
+        \"></path></svg></span>
           </button>
         </div>
     </nav>
 
         <div id=\"mySidenav\" class=\"sidenav\">
-          <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>
-          <a href=\"";
-        // line 26
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\"><box-icon name='home'>ACCUEIL</box-icon></a>
-          <a href=\"";
+          <a style=\"color: #C5A476;\" href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>
+          ";
         // line 27
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
-        echo "\">SE CONNECTER</a>
-          <a href=\"";
-        // line 28
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
-        echo "\">S'INSCRIRE</a>
-          <a href=\"";
-        // line 29
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            echo " ";
+            // line 28
+            echo "            <a style=\"color: #C5A476;\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin");
+            echo "\">PANNEL ADMINISTRATION</a>
+          ";
+        }
+        // line 30
+        echo "          <a style=\"color: #C5A476;\" href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\"> HOME </a>
+          <a style=\"color: #C5A476;\" href=\"";
+        // line 31
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("chantier_index");
         echo "\">PROJETS</a>
-          <a href=\"#\">OFFRES</a>
-          <a href=\"#\">DEVIS/CONTACT</a>
-        </div>
+          <a style=\"color: #C5A476;\" href=\"#\">OFFRES</a> ";
+        // line 33
+        echo "          <a style=\"color: #C5A476;\" href=\"#\">DEVIS/CONTACT</a> ";
+        // line 34
+        echo "          ";
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            echo " ";
+            // line 35
+            echo "            <a style=\"color: #C5A476;\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">SE DECONNECTER</a>
+          ";
+        } else {
+            // line 37
+            echo "            <a style=\"color: #C5A476;\" href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
+            echo "\">SE CONNECTER</a>
+            <a style=\"color: #C5A476;\" href=\"";
+            // line 38
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+            echo "\">S'INSCRIRE</a>
+          ";
+        }
+        // line 40
+        echo "        </div>
         <style>
 /* The side navigation menu */
 .sidenav {
@@ -160,36 +185,45 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
           document.getElementById(\"main\").style.marginLeft = \"0\";
         }
         </script>
-    #}
+
 
         ";
-        // line 100
+        // line 108
         $this->displayBlock('header', $context, $blocks);
-        // line 101
+        // line 109
         echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 102
+        // line 110
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 103
+        // line 111
         echo "    </body>
-
+    <div style=\"background:#222;\">
 <div class=\"container\">
-  <footer class=\"d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top\">
-    <p class=\"col-md-4 mb-0 text-muted\">&copy; 2021 Company, Inc</p>
-
-    <a href=\"/\" class=\"col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none\">
+  <footer class=\"py-3 \" >
+    <a href=\"/\" class=\"col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-3 ms-auto me-md-auto link-dark text-decoration-none\">
       <svg width=\"24\" height=\"24\" xmlns=\"http://www.w3.org/2000/svg\" fill-rule=\"evenodd\" clip-rule=\"evenodd\"><path d=\"M13 24h-2v-5.126c-.806-.208-1.513-.661-2.039-1.274-.602.257-1.265.4-1.961.4-2.76 0-5-2.24-5-5 0-1.422.595-2.707 1.55-3.617-.348-.544-.55-1.19-.55-1.883 0-1.878 1.483-3.413 3.341-3.496.823-2.332 3.047-4.004 5.659-4.004 2.612 0 4.836 1.672 5.659 4.004 1.858.083 3.341 1.618 3.341 3.496 0 .693-.202 1.339-.55 1.883.955.91 1.55 2.195 1.55 3.617 0 2.76-2.24 5-5 5-.696 0-1.359-.143-1.961-.4-.526.613-1.233 1.066-2.039 1.274v5.126z\"/></svg>
     </a>
-
-    <ul class=\"nav col-md-4 justify-content-end\">
-      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">Home</a></li>
-      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">Features</a></li>
-      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">Pricing</a></li>
-      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">FAQs</a></li>
-      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">About</a></li>
+    <ul class=\"nav justify-content-center border-bottom pb-3 mb-3\">
+      <li class=\"nav-item\"><a href=\"";
+        // line 119
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\" class=\"nav-link px-2 text-muted\">HOME</a></li>
+      <li class=\"nav-item\"><a href=\"";
+        // line 120
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("chantier_index");
+        echo "\" class=\"nav-link px-2 text-muted\">PROJETS</a></li>
+      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">OFFRES</a></li>
+      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">DEVIS/CONTACT</a></li>
+      <li class=\"nav-item\"><a href=\"";
+        // line 123
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("aboutus");
+        echo "\" class=\"nav-link px-2 text-muted\">ABOUT US</a></li>
     </ul>
+    <p class=\"text-center text-muted\">&copy; 2021 Company, Inc</p>
   </footer>
+</div>
+</div>
 </html>
 ";
         
@@ -246,7 +280,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     }
 
-    // line 100
+    // line 108
     public function block_header($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -264,7 +298,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     }
 
-    // line 101
+    // line 109
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -282,7 +316,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     }
 
-    // line 102
+    // line 110
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -313,7 +347,7 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 
     public function getDebugInfo()
     {
-        return array (  286 => 102,  268 => 101,  250 => 100,  238 => 10,  233 => 9,  223 => 8,  204 => 7,  175 => 103,  172 => 102,  169 => 101,  167 => 100,  93 => 29,  89 => 28,  85 => 27,  81 => 26,  69 => 17,  62 => 12,  60 => 8,  56 => 7,  48 => 1,);
+        return array (  320 => 110,  302 => 109,  284 => 108,  272 => 10,  267 => 9,  257 => 8,  238 => 7,  220 => 123,  214 => 120,  210 => 119,  200 => 111,  197 => 110,  194 => 109,  192 => 108,  122 => 40,  117 => 38,  112 => 37,  106 => 35,  102 => 34,  100 => 33,  96 => 31,  91 => 30,  85 => 28,  82 => 27,  69 => 17,  62 => 12,  60 => 8,  56 => 7,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -330,25 +364,33 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
 \t\t{{encore_entry_link_tags('haiku') }}
 \t\t{% endblock %}
     </head>
-    <body>
+    <body style=\"background:#161616;\">
 
-    <nav class=\"navbar navbar-light bg-light fixed-top\" aria-label=\"First navbar example\">
+    <nav class=\"navbar  fixed-top\" style=\"background:#161616;\" aria-label=\"First navbar example\">
         <div class=\"container-fluid\">
-          <a class=\"navbar-brand\" style=\"font-size:30pt;\" href={{ path('home') }}>LEGERMAIN</a>
-          <button class=\"navbar-toggler\" onclick=\"openNav()\" >
-            <span class=\"navbar-toggler-icon\"></span>
+          <a class=\"navbar-brand\" style=\"font-size:30pt;color: #C5A476;\" href={{ path('home') }}>LEGERMAIN</a>
+          <button class=\"navbar-toggler\" style=\"color: #C5A476;\" onclick=\"openNav()\" >
+        <span class=\"navbar-toggler-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" enable-background=\"new 0 0 297 297\" viewBox=\"0 0 297 297\"><path d=\"M280.214 39.211H16.786C7.531 39.211 0 46.742 0 55.997v24.335c0 9.256 7.531 16.787 16.786 16.787h263.428c9.255 0 16.786-7.531 16.786-16.787V55.997C297 46.742 289.469 39.211 280.214 39.211zM280.214 119.546H16.786C7.531 119.546 0 127.077 0 136.332v24.336c0 9.255 7.531 16.786 16.786 16.786h263.428c9.255 0 16.786-7.531 16.786-16.786v-24.336C297 127.077 289.469 119.546 280.214 119.546zM280.214 199.881H16.786C7.531 199.881 0 207.411 0 216.668v24.335c0 9.255 7.531 16.786 16.786 16.786h263.428c9.255 0 16.786-7.531 16.786-16.786v-24.335C297 207.411 289.469 199.881 280.214 199.881z\" fill=\"#c5a476\" class=\"color000 svgShape\" style=\"
+        \"></path></svg></span>
           </button>
         </div>
     </nav>
 
         <div id=\"mySidenav\" class=\"sidenav\">
-          <a href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>
-          <a href=\"{{ path('home') }}\"><box-icon name='home'>ACCUEIL</box-icon></a>
-          <a href=\"{{ path('login')}}\">SE CONNECTER</a>
-          <a href=\"{{ path('app_register')}}\">S'INSCRIRE</a>
-          <a href=\"{{ path('chantier_index') }}\">PROJETS</a>
-          <a href=\"#\">OFFRES</a>
-          <a href=\"#\">DEVIS/CONTACT</a>
+          <a style=\"color: #C5A476;\" href=\"javascript:void(0)\" class=\"closebtn\" onclick=\"closeNav()\">&times;</a>
+          {% if is_granted('ROLE_ADMIN') %} {#SI ON EST CONNECTER#}
+            <a style=\"color: #C5A476;\" href=\"{{ path('app_admin')}}\">PANNEL ADMINISTRATION</a>
+          {% endif %}
+          <a style=\"color: #C5A476;\" href=\"{{ path('home') }}\"> HOME </a>
+          <a style=\"color: #C5A476;\" href=\"{{ path('chantier_index') }}\">PROJETS</a>
+          <a style=\"color: #C5A476;\" href=\"#\">OFFRES</a> {#TODO#}
+          <a style=\"color: #C5A476;\" href=\"#\">DEVIS/CONTACT</a> {#TODO#}
+          {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %} {#SI ON EST CONNECTER#}
+            <a style=\"color: #C5A476;\" href=\"{{ path('app_logout')}}\">SE DECONNECTER</a>
+          {% else %}
+            <a style=\"color: #C5A476;\" href=\"{{ path('login')}}\">SE CONNECTER</a>
+            <a style=\"color: #C5A476;\" href=\"{{ path('app_register')}}\">S'INSCRIRE</a>
+          {% endif %}
         </div>
         <style>
 /* The side navigation menu */
@@ -415,29 +457,29 @@ class __TwigTemplate_9a12077caf9fc002ee825b08718de522a90317ddbbc8734eb23457d38da
           document.getElementById(\"main\").style.marginLeft = \"0\";
         }
         </script>
-    #}
+
 
         {% block header %}{% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
     </body>
-
+    <div style=\"background:#222;\">
 <div class=\"container\">
-  <footer class=\"d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top\">
-    <p class=\"col-md-4 mb-0 text-muted\">&copy; 2021 Company, Inc</p>
-
-    <a href=\"/\" class=\"col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none\">
+  <footer class=\"py-3 \" >
+    <a href=\"/\" class=\"col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-3 ms-auto me-md-auto link-dark text-decoration-none\">
       <svg width=\"24\" height=\"24\" xmlns=\"http://www.w3.org/2000/svg\" fill-rule=\"evenodd\" clip-rule=\"evenodd\"><path d=\"M13 24h-2v-5.126c-.806-.208-1.513-.661-2.039-1.274-.602.257-1.265.4-1.961.4-2.76 0-5-2.24-5-5 0-1.422.595-2.707 1.55-3.617-.348-.544-.55-1.19-.55-1.883 0-1.878 1.483-3.413 3.341-3.496.823-2.332 3.047-4.004 5.659-4.004 2.612 0 4.836 1.672 5.659 4.004 1.858.083 3.341 1.618 3.341 3.496 0 .693-.202 1.339-.55 1.883.955.91 1.55 2.195 1.55 3.617 0 2.76-2.24 5-5 5-.696 0-1.359-.143-1.961-.4-.526.613-1.233 1.066-2.039 1.274v5.126z\"/></svg>
     </a>
-
-    <ul class=\"nav col-md-4 justify-content-end\">
-      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">Home</a></li>
-      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">Features</a></li>
-      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">Pricing</a></li>
-      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">FAQs</a></li>
-      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">About</a></li>
+    <ul class=\"nav justify-content-center border-bottom pb-3 mb-3\">
+      <li class=\"nav-item\"><a href=\"{{ path('home') }}\" class=\"nav-link px-2 text-muted\">HOME</a></li>
+      <li class=\"nav-item\"><a href=\"{{ path('chantier_index') }}\" class=\"nav-link px-2 text-muted\">PROJETS</a></li>
+      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">OFFRES</a></li>
+      <li class=\"nav-item\"><a href=\"#\" class=\"nav-link px-2 text-muted\">DEVIS/CONTACT</a></li>
+      <li class=\"nav-item\"><a href=\"{{ path('aboutus') }}\" class=\"nav-link px-2 text-muted\">ABOUT US</a></li>
     </ul>
+    <p class=\"text-center text-muted\">&copy; 2021 Company, Inc</p>
   </footer>
+</div>
+</div>
 </html>
 ", "base.html.twig", "/var/www/private/L3/stabs/templates/base.html.twig");
     }

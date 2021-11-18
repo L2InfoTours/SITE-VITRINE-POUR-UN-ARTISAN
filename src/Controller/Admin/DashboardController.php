@@ -21,7 +21,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 class DashboardController extends AbstractDashboardController
 {
     /**
-     * @Route("/admin")
+     * @Route("/admin", name="app_admin")
      */
     public function index(): Response
     {
