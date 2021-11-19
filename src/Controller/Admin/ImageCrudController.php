@@ -12,6 +12,7 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
@@ -36,6 +37,7 @@ class ImageCrudController extends AbstractCrudController
             ->setFormType(VichImageType::class)
             ->hideOnIndex()
             ->setFormTypeOption('allow_delete', false),
+            AssociationField::new('chantier'),
         ];
     }
     

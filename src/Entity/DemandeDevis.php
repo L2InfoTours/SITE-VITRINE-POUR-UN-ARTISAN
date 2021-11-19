@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\DemandeDevisRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @ORM\Entity(repositoryClass=DemandeDevisRepository::class)
  */
@@ -34,6 +36,7 @@ class DemandeDevis
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Regex(pattern="/^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/", message="Numéro de téléphone incorrect ou non français") 
      */
     private $telephone;
 

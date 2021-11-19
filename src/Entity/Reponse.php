@@ -8,6 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=ReponseRepository::class)
@@ -57,6 +59,7 @@ class Reponse
 
     /**
      * @ORM\Column(type="decimal", precision=10, scale=0)
+     * @Assert\Regex(pattern="/^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/", message="Numéro de téléphone incorrect ou non français") 
      */
     private $telephone;
 

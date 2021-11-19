@@ -18,7 +18,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
-// use App\Form\ImageType;
 
 class OffreCrudController extends AbstractCrudController
 {
