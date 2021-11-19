@@ -52,32 +52,30 @@ return [
                     .')'
                     .'|error/(\\d+)(?:\\.([^/]++))?(*:159)'
                 .')'
-                .'|/chantier/(?'
-                    .'|chantier/([^/]++)(*:198)'
-                    .'|([^/]++)(?'
-                        .'|/edit(*:222)'
-                        .'|(*:230)'
-                    .')'
+                .'|/chantier/([^/]++)(?'
+                    .'|(*:189)'
+                    .'|/edit(*:202)'
+                    .'|(*:210)'
                 .')'
                 .'|/demande/devis/([^/]++)(?'
+                    .'|(*:245)'
+                    .'|/edit(*:258)'
                     .'|(*:266)'
-                    .'|/edit(*:279)'
-                    .'|(*:287)'
                 .')'
                 .'|/image/([^/]++)(?'
+                    .'|(*:293)'
+                    .'|/edit(*:306)'
                     .'|(*:314)'
-                    .'|/edit(*:327)'
-                    .'|(*:335)'
                 .')'
                 .'|/type/chantier/([^/]++)(?'
+                    .'|(*:349)'
+                    .'|/edit(*:362)'
                     .'|(*:370)'
-                    .'|/edit(*:383)'
-                    .'|(*:391)'
                 .')'
                 .'|/user/([^/]++)(?'
+                    .'|(*:396)'
+                    .'|/edit(*:409)'
                     .'|(*:417)'
-                    .'|/edit(*:430)'
-                    .'|(*:438)'
                 .')'
             .')/?$}sDu',
     ],
@@ -89,21 +87,21 @@ return [
         114 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         124 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         159 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        198 => [[['_route' => 'chantier_show', '_controller' => 'App\\Controller\\ChantierController::show'], ['id'], null, null, false, true, null]],
-        222 => [[['_route' => 'chantier_edit', '_controller' => 'App\\Controller\\ChantierController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        230 => [[['_route' => 'chantier_delete', '_controller' => 'App\\Controller\\ChantierController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        266 => [[['_route' => 'demande_devis_show', '_controller' => 'App\\Controller\\DemandeDevisController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        279 => [[['_route' => 'demande_devis_edit', '_controller' => 'App\\Controller\\DemandeDevisController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        287 => [[['_route' => 'demande_devis_delete', '_controller' => 'App\\Controller\\DemandeDevisController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        314 => [[['_route' => 'image_show', '_controller' => 'App\\Controller\\ImageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        327 => [[['_route' => 'image_edit', '_controller' => 'App\\Controller\\ImageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        335 => [[['_route' => 'image_delete', '_controller' => 'App\\Controller\\ImageController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        370 => [[['_route' => 'type_chantier_show', '_controller' => 'App\\Controller\\TypeChantierController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        383 => [[['_route' => 'type_chantier_edit', '_controller' => 'App\\Controller\\TypeChantierController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        391 => [[['_route' => 'type_chantier_delete', '_controller' => 'App\\Controller\\TypeChantierController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        417 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        430 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        438 => [
+        189 => [[['_route' => 'chantier_show', '_controller' => 'App\\Controller\\ChantierController::show'], ['id'], null, null, false, true, null]],
+        202 => [[['_route' => 'chantier_edit', '_controller' => 'App\\Controller\\ChantierController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        210 => [[['_route' => 'chantier_delete', '_controller' => 'App\\Controller\\ChantierController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        245 => [[['_route' => 'demande_devis_show', '_controller' => 'App\\Controller\\DemandeDevisController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        258 => [[['_route' => 'demande_devis_edit', '_controller' => 'App\\Controller\\DemandeDevisController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        266 => [[['_route' => 'demande_devis_delete', '_controller' => 'App\\Controller\\DemandeDevisController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        293 => [[['_route' => 'image_show', '_controller' => 'App\\Controller\\ImageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        306 => [[['_route' => 'image_edit', '_controller' => 'App\\Controller\\ImageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        314 => [[['_route' => 'image_delete', '_controller' => 'App\\Controller\\ImageController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        349 => [[['_route' => 'type_chantier_show', '_controller' => 'App\\Controller\\TypeChantierController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        362 => [[['_route' => 'type_chantier_edit', '_controller' => 'App\\Controller\\TypeChantierController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        370 => [[['_route' => 'type_chantier_delete', '_controller' => 'App\\Controller\\TypeChantierController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        396 => [[['_route' => 'user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        409 => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        417 => [
             [['_route' => 'user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

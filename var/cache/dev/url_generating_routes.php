@@ -17,7 +17,7 @@ return [
     'app_admin' => [[], ['_controller' => 'App\\Controller\\Admin\\DashboardController::index'], [], [['text', '/admin']], [], []],
     'chantier_index' => [[], ['_controller' => 'App\\Controller\\ChantierController::index'], [], [['text', '/chantier/']], [], []],
     'chantier_new' => [[], ['_controller' => 'App\\Controller\\ChantierController::new'], [], [['text', '/chantier/new']], [], []],
-    'chantier_show' => [['id'], ['_controller' => 'App\\Controller\\ChantierController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/chantier/chantier']], [], []],
+    'chantier_show' => [['id'], ['_controller' => 'App\\Controller\\ChantierController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/chantier']], [], []],
     'chantier_edit' => [['id'], ['_controller' => 'App\\Controller\\ChantierController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/chantier']], [], []],
     'chantier_delete' => [['id'], ['_controller' => 'App\\Controller\\ChantierController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/chantier']], [], []],
     'demande_devis_index' => [[], ['_controller' => 'App\\Controller\\DemandeDevisController::index'], [], [['text', '/demande/devis/']], [], []],
