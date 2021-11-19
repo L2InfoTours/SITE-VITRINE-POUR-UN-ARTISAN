@@ -150,7 +150,7 @@ class __TwigTemplate_4a0ec019a5276ff69517826055f5f8bdae11d2b9cec8196484e1b09f039
             echo "</h6>
               <p class=\"card-text\" style=\"  white-space: normal;overflow: hidden;text-overflow: ellipsis;max-height: 105px;min-height: 105px;\">";
             // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["chantier"], "contenu", [], "any", false, false, false, 47), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["chantier"], "description", [], "any", false, false, false, 47), "html", null, true);
             echo "</p>
               <div class=\"d-flex justify-content-between align-items-center\">
                 <div class=\"btn-group d-grid gap-2 col-12 mx-auto\">
@@ -285,7 +285,7 @@ class __TwigTemplate_4a0ec019a5276ff69517826055f5f8bdae11d2b9cec8196484e1b09f039
 
             <div class=\"card-body\">
             <h6>{{ chantier.nom }}</h6>
-              <p class=\"card-text\" style=\"  white-space: normal;overflow: hidden;text-overflow: ellipsis;max-height: 105px;min-height: 105px;\">{{ chantier.contenu}}</p>
+              <p class=\"card-text\" style=\"  white-space: normal;overflow: hidden;text-overflow: ellipsis;max-height: 105px;min-height: 105px;\">{{ chantier.description}}</p>
               <div class=\"d-flex justify-content-between align-items-center\">
                 <div class=\"btn-group d-grid gap-2 col-12 mx-auto\">
                 <a href=\"{{path('chantier_show',{'id': chantier.id}) }}\" class=\"btn btn-sm btn-outline-secondary\">View</a>

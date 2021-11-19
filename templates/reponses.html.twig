@@ -1,34 +1,33 @@
 {% for reponse in field.value %}
                                         
     <div class="field-collection-item field-collection-item-complex">
-                    <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Offre_reponses{{reponse.id}}-contents" aria-expanded="false">
-                        <i class="fas fw fa-chevron-right form-collection-item-collapse-marker"></i>
-                        {{reponse.nom | upper}} {{reponse.prenom}}
-                    </button>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Offre_reponses{{reponse.id}}-contents" aria-expanded="false">
+                    <i class="fas fw fa-chevron-right form-collection-item-collapse-marker"></i>
+                    {{reponse.nom | upper}} {{reponse.prenom}}
+                </button>
 
-                                    </h2>
-                <div id="Offre_reponses{{reponse.id}}-contents" class="accordion-collapse collapse" style="">
-                    <div class="accordion-body">
-                            <div class="form-widget-compound">
-        
-        <div id="Offre_reponses{{reponse.id}}">    
-    <div class="">
-        <div class=" form-group"><label for="Offre_reponses{{reponse.id}}_nom" class="form-control-label">Nom</label><div class="form-widget">
-            <text class="form-control">{{reponse.nom | upper}}</text>
-        </div>
-        </div>
-    </div>
-
-                <div class="flex-fill"></div>
-        
-    <div class="">
-        <div class=" form-group"><label for="Offre_reponses{{reponse.id}}_prenom" class="form-control-label">Prenom</label><div class="form-widget">
-            <text class="form-control">{{reponse.prenom}}</text>
-        </div>
-        </div>
-    </div>
+            </h2>
+            <div id="Offre_reponses{{reponse.id}}-contents" class="accordion-collapse collapse" style="">
+                <div class="accordion-body">
+                    <div class="form-widget-compound">
+                        <div id="Offre_reponses{{reponse.id}}">    
+                            <div class="">
+                                <div class=" form-group"><label for="Offre_reponses{{reponse.id}}_nom" class="form-control-label">Nom</label>
+                                    <div class="form-widget">
+                                        <text class="form-control">{{reponse.nom | upper}}</text>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-fill"></div>
+                                <div class="">
+                                    <div class=" form-group"><label for="Offre_reponses{{reponse.id}}_prenom" class="form-control-label">Prenom</label>
+                                        <div class="form-widget">
+                                            <text class="form-control">{{reponse.prenom}}</text>
+                                        </div>
+                                    </div>
+                                </div>
 
                 <div class="flex-fill"></div>
                 
@@ -93,6 +92,4 @@
                                 
                     </div>
         </div>
-    </div>
-
 {% endfor %}

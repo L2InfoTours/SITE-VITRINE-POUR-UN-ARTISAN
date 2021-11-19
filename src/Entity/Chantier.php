@@ -27,7 +27,7 @@ class Chantier
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $contenu;
+    private $description;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -80,14 +80,14 @@ class Chantier
         return $this;
     }
 
-    public function getContenu(): ?string
+    public function getDescription(): ?string
     {
-        return $this->contenu;
+        return $this->description;
     }
 
-    public function setContenu(?string $contenu): self
+    public function setDescription(?string $description): self
     {
-        $this->contenu = $contenu;
+        $this->description = $description;
 
         return $this;
     }

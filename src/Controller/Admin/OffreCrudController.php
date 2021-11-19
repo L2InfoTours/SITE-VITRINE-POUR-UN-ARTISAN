@@ -9,10 +9,12 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 
@@ -44,11 +46,11 @@ class OffreCrudController extends AbstractCrudController
                 'Bac+5 +' => 'Bac+5 +',
             ]),
             'lieu',
-            'intitule',
-            'mission',
+            TextareaField::new('intitule'),
+            TextEditorField::new('mission'),
             MoneyField::new('remuneration', 'Rémunération')
             ->setCurrency('EUR'),
-            'profile',
+            TextEditorField::new('profile'),
             ChoiceField::new('type', "Type d'offre")->setChoices([
                 'Stage' => 'Stage',
                 'Alternance' => 'Alternance',

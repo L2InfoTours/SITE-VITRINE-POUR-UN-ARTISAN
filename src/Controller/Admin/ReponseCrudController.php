@@ -30,6 +30,7 @@ class ReponseCrudController extends AbstractCrudController
             IdField::new('id', 'Date de création')
             ->setValue(false)
             ->hideOnForm(),
+            AssociationField::new('offre'),
             'nom',
             'prenom',
             // ImageField::new('cv')
@@ -45,7 +46,6 @@ class ReponseCrudController extends AbstractCrudController
             TextEditorField::new('lettre_motivation'),
             TelephoneField::new('telephone', 'Téléphone'),
             'email',
-            AssociationField::new('offre'),
             
         ];
     }

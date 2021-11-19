@@ -78,6 +78,7 @@ class DashboardController extends AbstractDashboardController
     {
         return [
             MenuItem::linkToDashboard('Information', 'fa fa-info-circle'),
+            MenuItem::linkToRoute('Retourner sur le site', 'fa fa-reply', 'home'),
 
             MenuItem::section('Devis'),
             MenuItem::linkToCrud('Demande de devis', 'fa fa-comment', DemandeDevis::class),
@@ -86,16 +87,10 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Chantier', 'fa fa-hammer', Chantier::class),
             MenuItem::linkToCrud('Type de chantier','fa fa-tags', TypeChantier::class),
             MenuItem::linkToCrud('Image', 'fa fa-images', Image::class),
+            
             MenuItem::section('Offre'),
             MenuItem::linkToCrud('Offre', 'fa fa-file', Offre::class),
             MenuItem::linkToCrud('Reponse', 'fa fa-reply', Reponse::class),
         ];
-    }
-
-    // public function configureCrud(Crud $crud): Crud
-    // {
-    //     return $crud
-    //         ->setDateFormat('dd/MM/yyyy');
-    // }
-    
+    }    
 }

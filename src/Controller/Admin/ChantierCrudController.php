@@ -11,6 +11,7 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use App\Form\ImageType;
@@ -35,9 +36,9 @@ class ChantierCrudController extends AbstractCrudController
             ->setColumns(1)
             ->hideOnForm(),
             'nom',
-            'contenu',
+            TextEditorField::new('description'),
             'adresse',
-            AssociationField::new('types')
+            AssociationField::new('types', 'Types de chantier')
             ->formatValue(function ($value, $entity) {
                 $str = $entity->getTypes()[0];
                 for ($i = 1; $i < $entity->getTypes()->count(); $i++) {

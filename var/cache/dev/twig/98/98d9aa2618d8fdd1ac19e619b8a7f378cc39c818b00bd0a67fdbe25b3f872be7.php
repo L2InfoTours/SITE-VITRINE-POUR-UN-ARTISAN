@@ -65,67 +65,39 @@ class __TwigTemplate_e514f1f489c196ccd2fd7bda3aff282f3b9c03d39ed76a1724f5cf97998
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1 class=\"mt-5 ms-5 mb-5 \">";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 4, $this->source); })()), "nom", [], "any", false, false, false, 4), "html", null, true);
-        echo "</h1>
-
-  <div class=\"container \">
-    <hr class=\"featurette-divider mb-5\">
-
+        echo "  <div class=\"container mt-5 \">
     <div class=\"row featurette\">
       <div class=\"col-md-7 order-md-2\">
 
-     <table class=\"table \">
+     <table class=\"table table-borderless \">
              <tbody>
                  <tr>
-                     <th>Id</th>
-                     <td>";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 16, $this->source); })()), "id", [], "any", false, false, false, 16), "html", null, true);
+                     <td class=\"uppercase fs-3 text-white\">";
+        // line 11
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 11, $this->source); })()), "nom", [], "any", false, false, false, 11), "html", null, true);
         echo "</td>
                  </tr>
                  <tr>
-                     <th>Nom</th>
-                     <td>";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 20, $this->source); })()), "nom", [], "any", false, false, false, 20), "html", null, true);
+                     <td class=\"uppercase fs-6 text-white\" >";
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 14, $this->source); })()), "adresse", [], "any", false, false, false, 14), "html", null, true);
         echo "</td>
                  </tr>
                  <tr>
-                     <th>Contenu</th>
-                     <td>";
-        // line 24
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 24, $this->source); })()), "contenu", [], "any", false, false, false, 24), "html", null, true);
+                     <td class=\"text-white\">";
+        // line 17
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 17, $this->source); })()), "description", [], "any", false, false, false, 17), "html", null, true);
         echo "</td>
                  </tr>
-                 <tr>
-                     <th>Adresse</th>
-                     <td>";
-        // line 28
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 28, $this->source); })()), "adresse", [], "any", false, false, false, 28), "html", null, true);
-        echo "</td>
-                 </tr>
+
              </tbody>
          </table>
-    <a href=\"";
-        // line 32
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("chantier_index");
-        echo "\">back to list</a>
 
-    <a href=\"";
-        // line 34
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("chantier_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 34, $this->source); })()), "id", [], "any", false, false, false, 34)]), "html", null, true);
-        echo "\">edit</a>
-
-    ";
-        // line 36
-        echo twig_include($this->env, $context, "chantier/_delete_form.html.twig");
-        echo "
      </div>
       <div class=\"col-md-5 order-md-1\">
     <img src=\"";
-        // line 39
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("/uploads/images/chantier/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 39, $this->source); })()), "getImages", [], "method", false, false, false, 39), 0, [], "array", false, false, false, 39), "getImage", [], "method", false, false, false, 39))), "html", null, true);
+        // line 25
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("/uploads/images/chantier/" . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 25, $this->source); })()), "getImages", [], "method", false, false, false, 25), 0, [], "array", false, false, false, 25), "getImage", [], "method", false, false, false, 25))), "html", null, true);
         echo "\" class=\"img-thumbnail\" alt=\"...\">
       </div>
     </div>
@@ -136,17 +108,17 @@ class __TwigTemplate_e514f1f489c196ccd2fd7bda3aff282f3b9c03d39ed76a1724f5cf97998
 <!-- Gallery -->
 <div class=\"row\">
   ";
-        // line 48
+        // line 34
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 48, $this->source); })()), "getImages", [], "method", false, false, false, 48));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["chantier"]) || array_key_exists("chantier", $context) ? $context["chantier"] : (function () { throw new RuntimeError('Variable "chantier" does not exist.', 34, $this->source); })()), "getImages", [], "method", false, false, false, 34));
         foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-            // line 49
+            // line 35
             echo "  ";
-            // line 50
+            // line 36
             echo "  <div class=\"col-lg-4 col-6\">
         <img class=\"w-100 shadow-1-strong rounded mb-4 img-fluid img-aspect lightbox\" src=\"";
-            // line 51
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("/uploads/images/chantier/" . twig_get_attribute($this->env, $this->source, $context["image"], "getImage", [], "method", false, false, false, 51))), "html", null, true);
+            // line 37
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("/uploads/images/chantier/" . twig_get_attribute($this->env, $this->source, $context["image"], "getImage", [], "method", false, false, false, 37))), "html", null, true);
             echo "\" alt=\"img\" style=\"object-fit: cover;\" />
 </div>
     ";
@@ -154,8 +126,9 @@ class __TwigTemplate_e514f1f489c196ccd2fd7bda3aff282f3b9c03d39ed76a1724f5cf97998
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 54
+        // line 40
         echo "
+</div>
 </div>
 <script>
 const modal = {
@@ -334,7 +307,7 @@ img.addEventListener('click',()=>{
 
     public function getDebugInfo()
     {
-        return array (  158 => 54,  149 => 51,  146 => 50,  144 => 49,  140 => 48,  128 => 39,  122 => 36,  117 => 34,  112 => 32,  105 => 28,  98 => 24,  91 => 20,  84 => 16,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  130 => 40,  121 => 37,  118 => 36,  116 => 35,  112 => 34,  100 => 25,  89 => 17,  83 => 14,  77 => 11,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -342,39 +315,25 @@ img.addEventListener('click',()=>{
         return new Source("{% extends 'present.html.twig' %}
 
 {% block body %}
-    <h1 class=\"mt-5 ms-5 mb-5 \">{{ chantier.nom}}</h1>
-
-  <div class=\"container \">
-    <hr class=\"featurette-divider mb-5\">
-
+  <div class=\"container mt-5 \">
     <div class=\"row featurette\">
       <div class=\"col-md-7 order-md-2\">
 
-     <table class=\"table \">
+     <table class=\"table table-borderless \">
              <tbody>
                  <tr>
-                     <th>Id</th>
-                     <td>{{ chantier.id }}</td>
+                     <td class=\"uppercase fs-3 text-white\">{{ chantier.nom }}</td>
                  </tr>
                  <tr>
-                     <th>Nom</th>
-                     <td>{{ chantier.nom }}</td>
+                     <td class=\"uppercase fs-6 text-white\" >{{ chantier.adresse }}</td>
                  </tr>
                  <tr>
-                     <th>Contenu</th>
-                     <td>{{ chantier.contenu }}</td>
+                     <td class=\"text-white\">{{ chantier.description }}</td>
                  </tr>
-                 <tr>
-                     <th>Adresse</th>
-                     <td>{{ chantier.adresse }}</td>
-                 </tr>
+
              </tbody>
          </table>
-    <a href=\"{{ path('chantier_index') }}\">back to list</a>
 
-    <a href=\"{{ path('chantier_edit', {'id': chantier.id}) }}\">edit</a>
-
-    {{ include('chantier/_delete_form.html.twig') }}
      </div>
       <div class=\"col-md-5 order-md-1\">
     <img src=\"{{ asset(\"/uploads/images/chantier/#{chantier.getImages()[0].getImage()}\") }}\" class=\"img-thumbnail\" alt=\"...\">
@@ -393,6 +352,7 @@ img.addEventListener('click',()=>{
 </div>
     {% endfor %}
 
+</div>
 </div>
 <script>
 const modal = {
