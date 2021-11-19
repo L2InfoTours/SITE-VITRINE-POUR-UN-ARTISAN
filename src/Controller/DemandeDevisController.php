@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/demande/devis')]
 class DemandeDevisController extends AbstractController
 {
-    #[Route('/', name: 'demande_devis_index', methods: ['GET'])]
+    #[Route('/', name: 'demande_devis_new', methods: ['GET'])]
     public function index(DemandeDevisRepository $demandeDevisRepository): Response
     {
         return $this->render('demande_devis/index.html.twig', [
@@ -33,13 +33,13 @@ class DemandeDevisController extends AbstractController
             $entityManager->persist($demandeDevi);
             $entityManager->flush();
 
-            return $this->redirectToRoute('demande_devis_index', [
+            return $this->redirectToRoute('demande_devis_new', [
             ], Response::HTTP_SEE_OTHER);
         }
         
         return $this->renderForm('demande_devis/new.html.twig', [
             'demande_devi' => $demandeDevi,
-            "titre" => "contactez-nous",
+            "titre" => "Demande de devis",
             'form' => $form,
         ]);
     }
