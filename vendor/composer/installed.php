@@ -5,9 +5,9 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '2befdac04cfe1555bd302316cfc46dd783f6675b',
+        'reference' => 'c443f7c55456850e4e66429d4db088ba65ecb2e8',
         'name' => '__root__',
-        'dev' => false,
+        'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '2befdac04cfe1555bd302316cfc46dd783f6675b',
+            'reference' => 'c443f7c55456850e4e66429d4db088ba65ecb2e8',
             'dev_requirement' => false,
         ),
         'composer/package-versions-deprecated' => array(
@@ -541,6 +541,15 @@
             'reference' => 'c1f83da2296741110be35dd779f2a9e412cec466',
             'dev_requirement' => false,
         ),
+        'symfony/maker-bundle' => array(
+            'pretty_version' => 'v1.33.0',
+            'version' => '1.33.0.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/maker-bundle',
+            'aliases' => array(),
+            'reference' => 'f093d906c667cba7e3f74487d9e5e55aaf25a031',
+            'dev_requirement' => true,
+        ),
         'symfony/messenger' => array(
             'pretty_version' => 'v5.3.9',
             'version' => '5.3.9.0',
@@ -885,6 +894,15 @@
             'aliases' => array(),
             'reference' => '2ded877ab0574d8b646f4eb3f716f8ed7ee7f392',
             'dev_requirement' => false,
+        ),
+        'symfony/web-profiler-bundle' => array(
+            'pretty_version' => 'v5.3.8',
+            'version' => '5.3.8.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/web-profiler-bundle',
+            'aliases' => array(),
+            'reference' => '9ba1e05fdc7a46979047ba6c8949bd35e3a386a5',
+            'dev_requirement' => true,
         ),
         'symfony/webpack-encore-bundle' => array(
             'pretty_version' => 'v1.12.0',

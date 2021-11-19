@@ -1,3 +1,5 @@
+import './styles/haiku.css';
+
 class HaikuElement extends HTMLElement{
 	constructor(){
 		super()
@@ -28,6 +30,7 @@ class SwitchNightMode extends HaikuElement{
 		  border-radius: 2em;
 		  border: 1px solid var(--blue-border);
 		  transition: all 0.6s ease;
+		  overflow:hidden;
 	  }
 	  .nightmode input[type="checkbox"] {
 		display: none;
@@ -135,6 +138,7 @@ class SwitchNightMode extends HaikuElement{
 	  `
 	constructor(){
 		super()
+		this.style.display = "block"
 		var style = document.createElement('style')
 		style.innerHTML = SwitchNightMode.style
 		this.shadowRoot.innerHTML = `<div class="nightmode"><input id="night-toggle" value="false" onchange="document.body.classList.toggle('night');localStorage.setItem('nightmode',localStorage.getItem('nightmode')=='false')" type="checkbox"><label for="night-toggle"><span></span></label></div>`
@@ -151,23 +155,27 @@ class SwitchNightMode extends HaikuElement{
 
 window.customElements.define("switch-mode-night",SwitchNightMode)
 
-class FilterNode extends HaikuElement{
+class ImageAspect extends HaikuElement{
 	constructor(){
 		super()
-		var errorText = this.getAttribute('error-message')||this.getAttribute('aria-errormessage')
-		var fil = this.getAttribute('error-message')||this.getAttribute('aria-errormessage')
-		var script = document.createElement('script')
-		script.innerHTML = FilterNode.script
-		this.shadowRoot.appendChild(script)
-		var errorDiv = document.createElement('div')
-		errorDiv.className = "filter error"
-		errorDiv.style="display:none;margin: auto;font-weight: bold;"
-		errorDiv.innerHTML = errorText
-		this.shadowRoot.appendChild(errorDiv)
+		this.style.width = this.getAttribute('width')
+		this.style.height = this.getAttribute('height')
+		var parent = document.createElement('div')
+		parent.style = `width:100%;aspect-ratio:${this.getAttribute('aspect')||"16/9"};overflow:hidden;`
+		var src = this.getAttribute('src')
+		if(src){
+			var img = new Image()
+			img.src = src
+			img.style = "object-fit:cover;width:100%;height:100%;"
+			parent.appendChild(img)
+		}else{
+			parent.innerHTML = `<svg style="cover;width:100%;height:100%;" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>`
+		}
+		this.shadowRoot.appendChild(parent)
 	}
 }
 
-window.customElements.define("filter-node",FilterNode)
+window.customElements.define("img-aspect",ImageAspect)
 
 const filtred = document.querySelector("#filtred")
 const filters = document.querySelectorAll("input.filter")

@@ -2,7 +2,7 @@
 /.env.local.php
 /.env.*.local
 /.env
-
+var/cache/*
 ###> symfony/framework-bundle ###
 /var/
 /vendor/
@@ -12,6 +12,10 @@
 /npm/
 
 /public/uploads/
+<<<<<<< Updated upstream
 !/var/cache
 /var/cache/*
 !/var/cache/.gitkeep
+=======
+
+>>>>>>> Stashed changes

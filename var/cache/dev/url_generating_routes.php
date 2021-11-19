@@ -25,7 +25,7 @@ return [
     'demande_devis_show' => [['id'], ['_controller' => 'App\\Controller\\DemandeDevisController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/demande/devis']], [], []],
     'demande_devis_edit' => [['id'], ['_controller' => 'App\\Controller\\DemandeDevisController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/demande/devis']], [], []],
     'demande_devis_delete' => [['id'], ['_controller' => 'App\\Controller\\DemandeDevisController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/demande/devis']], [], []],
-    'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/home']], [], []],
+    'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'image_index' => [[], ['_controller' => 'App\\Controller\\ImageController::index'], [], [['text', '/image/']], [], []],
     'image_new' => [[], ['_controller' => 'App\\Controller\\ImageController::new'], [], [['text', '/image/new']], [], []],
     'image_show' => [['id'], ['_controller' => 'App\\Controller\\ImageController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/image']], [], []],
