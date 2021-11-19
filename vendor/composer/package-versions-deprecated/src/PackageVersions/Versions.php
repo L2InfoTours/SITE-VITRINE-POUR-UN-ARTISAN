@@ -126,12 +126,10 @@ final class Versions
   'twbs/bootstrap' => 'v5.0.2@688bce4fa695cc360a0d084e34f029b0c192b223',
   'twig/twig' => 'v3.3.3@a27fa056df8a6384316288ca8b0fa3a35fdeb569',
   'vich/uploader-bundle' => '1.18.0@c5250c8d6a072960250ce5130e68a5693b3b48dd',
-  'symfony/maker-bundle' => 'v1.33.0@f093d906c667cba7e3f74487d9e5e55aaf25a031',
-  'symfony/web-profiler-bundle' => 'v5.3.8@9ba1e05fdc7a46979047ba6c8949bd35e3a386a5',
-  'symfony/polyfill-ctype' => '*@78f014bd162dad96ff3ecbcfc8ff8ee8473948bf',
-  'symfony/polyfill-iconv' => '*@78f014bd162dad96ff3ecbcfc8ff8ee8473948bf',
-  'symfony/polyfill-php72' => '*@78f014bd162dad96ff3ecbcfc8ff8ee8473948bf',
-  '__root__' => 'dev-main@78f014bd162dad96ff3ecbcfc8ff8ee8473948bf',
+  'symfony/polyfill-ctype' => '*@2befdac04cfe1555bd302316cfc46dd783f6675b',
+  'symfony/polyfill-iconv' => '*@2befdac04cfe1555bd302316cfc46dd783f6675b',
+  'symfony/polyfill-php72' => '*@2befdac04cfe1555bd302316cfc46dd783f6675b',
+  '__root__' => 'dev-main@2befdac04cfe1555bd302316cfc46dd783f6675b',
 );
 
     private function __construct()
