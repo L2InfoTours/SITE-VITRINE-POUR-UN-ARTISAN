@@ -7,11 +7,14 @@ use App\Entity\Reponse;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 use Vich\UploaderBundle\Form\Type\VichFileType;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
 class ReponseCrudController extends AbstractCrudController
 {
@@ -24,6 +27,9 @@ class ReponseCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            IdField::new('id', 'Date de création')
+            ->setValue(false)
+            ->hideOnForm(),
             'nom',
             'prenom',
             // ImageField::new('cv')
@@ -42,6 +48,12 @@ class ReponseCrudController extends AbstractCrudController
             AssociationField::new('offre'),
             
         ];
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setDefaultSort(['id' => 'DESC']);
     }
     
 }

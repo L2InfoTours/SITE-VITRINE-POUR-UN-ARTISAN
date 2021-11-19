@@ -25,7 +25,9 @@ class DemandeDevisCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
+            IdField::new('id', 'Date de création')
+            ->setValue(false)
+            ->hideOnForm(),
             'nom',
             'adresse',
             TextEditorField::new('description'),
@@ -41,6 +43,12 @@ class DemandeDevisCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         return $actions->add(Crud::PAGE_INDEX, 'detail');
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setDefaultSort(['id' => 'DESC']);
     }
     
 }

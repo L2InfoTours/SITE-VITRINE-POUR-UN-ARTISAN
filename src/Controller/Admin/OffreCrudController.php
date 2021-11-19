@@ -8,6 +8,7 @@ use App\Form\ReponseType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
@@ -30,9 +31,11 @@ class OffreCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            IdField::new('id', 'Date de création')
+            ->setValue(false)
+            ->hideOnForm(),
             DateField::new('date')
-            ->onlyOnIndex()
-            ->setFormat('dd/MM/yyyy'),
+            ->onlyOnIndex(),
             ChoiceField::new('niveau_etude', 'Niveau d\'études')->setChoices([
                 'Bac+1' => 'Bac+1',
                 'Bac+2' => 'Bac+2',
@@ -70,5 +73,12 @@ class OffreCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         return $actions->add(Crud::PAGE_INDEX, 'detail');
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setDefaultSort(['id' => 'DESC'])
+            ->setDateFormat('dd/MM/yyyy');
     }
 }

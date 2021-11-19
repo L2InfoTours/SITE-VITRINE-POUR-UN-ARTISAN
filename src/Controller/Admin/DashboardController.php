@@ -91,4 +91,11 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Reponse', 'fa fa-reply', Reponse::class),
         ];
     }
+
+    // public function configureCrud(Crud $crud): Crud
+    // {
+    //     return $crud
+    //         ->setDateFormat('dd/MM/yyyy');
+    // }
+    
 }
