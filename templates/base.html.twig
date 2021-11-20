@@ -11,15 +11,14 @@
 		{{encore_entry_script_tags('haiku') }}
 		{% endblock %}
 	</head>
-	<body template=classic >
-
+	<body template=market >
 	<nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
 		<a class="navbar-brand" href="#">LEGERMAIN</a>
-        {#<div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
+		<div class="row navbar-menu">
+			<switch-mode-night></switch-mode-night>
+			<navbar-toggle class="navbar-toggler"></navbar-toggle>
+		</div>
+        {#
           <div class="collapse navbar-collapse" id="navbarsExample01">
             <ul class="navbar-nav me-auto mb-2">
               <li class="nav-item">
@@ -46,19 +45,15 @@
           </div>
         </div>
 		#}
-		<switch-mode-night></switch-mode-night>
-      </nav>
-
-
-<div class="position-relative overflow-hidden  text-center bg-light">
-    <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 fw-normal">titre</h1>
-      <p class="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-
-    </div>
-    <div class="product-device shadow-sm d-none d-md-block"></div>
-    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-  </div>
+				
+			</nav>
+			<header class="clean-block clean-hero bg-color" style="background-image:url('https://www.bwallpaperhd.com/wp-content/uploads/2020/05/LoneTree-1600x900.jpg');">
+				<div class="text">
+					<h1 class="uppercase">Titre</h1>
+					<p>And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.
+					</p>
+				</div>
+			</header>
 			<main>
 				{% block body %}{% endblock %}
 			</main>

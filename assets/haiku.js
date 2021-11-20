@@ -138,7 +138,6 @@ class SwitchNightMode extends HaikuElement{
 	  `
 	constructor(){
 		super()
-		this.style.display = "block"
 		var style = document.createElement('style')
 		style.innerHTML = SwitchNightMode.style
 		this.shadowRoot.innerHTML = `<div class="nightmode"><input id="night-toggle" value="false" onchange="document.body.classList.toggle('night');localStorage.setItem('nightmode',localStorage.getItem('nightmode')=='false')" type="checkbox"><label for="night-toggle"><span></span></label></div>`
@@ -154,6 +153,76 @@ class SwitchNightMode extends HaikuElement{
 }
 
 window.customElements.define("switch-mode-night",SwitchNightMode)
+
+class NavBarToggle extends HaikuElement{
+	static style = `
+	input {
+		display:none;
+	}
+	input ~ div{
+		width: 40px;
+		height: 40px;
+		margin: auto;
+	}
+	input ~ div span{
+		display:block;
+		height:2px;
+		border-radius:2px;
+		width:2em;
+		background:#eee;
+		position:relative;
+		transition:transform .6s ease;
+		left:50%;
+		transform: translate(-50%,-2.5px);
+	}
+	input ~ div span:nth-child(1){
+		top: 25%;
+	}
+	input ~ div span:nth-child(2){
+		top: 50%;
+	}
+	input ~ div span:nth-child(3){
+		top: 75%;
+	}
+	input:checked ~ div span:nth-child(1) {
+	  transform: translate(-50%,9px) rotate(45deg);
+	}
+	input:checked ~ div span:nth-child(2) {
+	  transform: translate(-50%,-2.5px) scale(0.1, 1);
+	}
+	input:checked ~ div span:nth-child(3) {
+	  transform: translate(-50%,-15px) rotate(-45deg);
+	}
+	`
+	constructor(){
+		super()
+		var input = document.createElement('input')
+		input.type = "checkbox"
+
+		var div = document.createElement('div')
+		var span1 = document.createElement('span')
+		var span2 = document.createElement('span')
+		var span3 = document.createElement('span')
+		var style = document.createElement('style')
+		style.innerHTML = NavBarToggle.style
+		this.shadowRoot.appendChild(style)
+
+		this.shadowRoot.appendChild(input)
+		this.shadowRoot.appendChild(div)
+
+		div.appendChild(span1)
+		div.appendChild(span2)
+		div.appendChild(span3)
+
+		this.style = "width:3em;height:3em;"
+
+		this.addEventListener('click',()=>{
+			input.checked = !input.checked
+		})
+	}
+}
+
+window.customElements.define("navbar-toggle",NavBarToggle)
 
 class ImageAspect extends HaikuElement{
 	constructor(){
