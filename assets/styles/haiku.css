@@ -66,10 +66,12 @@ body {
 	grid-template:"nav"3em "main"auto "footer"auto;
 }
 *[template=market]{
-	grid-template:"nav"3em "header"50vh "main"auto "footer"auto;
+	grid-template:"nav"2cm "header"auto "main"auto "footer"auto;
 }
 header{
 	grid-area: header;
+	min-height: 50vh;
+	max-height: 100vh;
 }
 nav{
 	background:#0000;
@@ -80,6 +82,7 @@ nav{
 	display: flex;
 	flex-direction: row;
 	z-index:666;
+	height: 1.5cm;
 }
 .navbar>*{
 	margin: auto;

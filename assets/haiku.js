@@ -346,6 +346,14 @@ class ImageAspect extends HaikuElement{
 
 window.customElements.define("img-aspect",ImageAspect)
 
+function UpdateTabber(){
+	const tabcontrolers = document.querySelectorAll("[open-tab]")
+	tabcontrolers.forEach(tabcontroler=>{
+		tabcontroler.addEventListener('click',(ev)=>{
+			location.assign(tabcontroler.getAttribute('open-tab'))
+		})
+	})
+}
 const filtred = document.querySelector("#filtred")
 const filters = document.querySelectorAll("input.filter")
 const filtererror = document.querySelector(".filter.error")
@@ -417,4 +425,5 @@ function UpdateFilter(){
 }
 window.addEventListener('load',()=>{
 	UpdateFilter()
+	UpdateTabber()
 })

@@ -13,13 +13,29 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/offre')]
 class ReponseController extends AbstractController
 {
-    #[Route('/', name: 'reponse_index', methods: ['GET'])]
-    public function index(ReponseRepository $reponseRepository): Response
+	#[Route('/', name: 'reponse_index', methods: ['GET'])]
+	public function index(): Response
+	{
+		$page = 0;
+		$id = 0;
+		return $this->search($id,$page);
+	}
+    #[Route('/reponse={id}&page={page}', name: 'reponse_search', methods: ['GET'])]
+    public function search(int $id,int $page): Response
     {
-        return $this->render('reponse/index.html.twig', [
-            'reponses' => $reponseRepository->findAll(),
-        ]);
-    }
+		$pageLength = 4;
+		$page = 0;
+		$id = 0;
+		$repo = $this->getDoctrine()->getRepository(Reponse::class);
+		$reponse = $repo->find($id);
+		$reponses = $repo->findAll();
+
+		return $this->render('reponse/index.html.twig', [
+			'reponses' => array_slice($reponses,$page,$pageLength),
+			'reponse' => $reponse,
+			'page'=>$page,
+		]);
+	}
 
     #[Route('/new', name: 'reponse_new', methods: ['GET', 'POST'])]
     public function new(Request $request): Response
@@ -42,13 +58,13 @@ class ReponseController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'reponse_show', methods: ['GET'])]
-    public function show(Reponse $reponse): Response
-    {
-        return $this->render('reponse/show.html.twig', [
-            'reponse' => $reponse,
-        ]);
-    }
+    // #[Route('/{id}', name: 'reponse_show', methods: ['GET'])]
+    // public function show(Reponse $reponse): Response
+    // {
+    //     return $this->render('reponse/show.html.twig', [
+    //         'reponse' => $reponse,
+    //     ]);
+    // }
 
     #[Route('/{id}/edit', name: 'reponse_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Reponse $reponse): Response
