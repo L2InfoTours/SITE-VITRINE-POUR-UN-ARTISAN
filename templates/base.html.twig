@@ -15,6 +15,7 @@
 	<nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
 		<a class="navbar-brand" href="#">LEGERMAIN</a>
 		<div class="row navbar-menu">
+			<input-search placeholder="Search" ></input-search>
 			<switch-mode-night></switch-mode-night>
 			<navbar-toggle class="navbar-toggler"></navbar-toggle>
 		</div>
@@ -45,15 +46,8 @@
           </div>
         </div>
 		#}
-				
 			</nav>
-			<header class="clean-block clean-hero bg-color" style="background-image:url('https://www.bwallpaperhd.com/wp-content/uploads/2020/05/LoneTree-1600x900.jpg');">
-				<div class="text">
-					<h1 class="uppercase">Titre</h1>
-					<p>And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.
-					</p>
-				</div>
-			</header>
+			{% block header %}{% endblock %}
 			<main>
 				{% block body %}{% endblock %}
 			</main>
