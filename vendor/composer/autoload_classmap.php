@@ -38,6 +38,8 @@ return array(
     'App\\Form\\DemandeDevisType' => $baseDir . '/src/Form/DemandeDevisType.php',
     'App\\Form\\ImageType' => $baseDir . '/src/Form/ImageType.php',
     'App\\Form\\RegistrationFormType' => $baseDir . '/src/Form/RegistrationFormType.php',
+    'App\\Form\\Reponse1Type' => $baseDir . '/src/Form/Reponse1Type.php',
+    'App\\Form\\ReponseFormType' => $baseDir . '/src/Form/ReponseFormType.php',
     'App\\Form\\ReponseType' => $baseDir . '/src/Form/ReponseType.php',
     'App\\Form\\TypeChantierType' => $baseDir . '/src/Form/TypeChantierType.php',
     'App\\Form\\UserType' => $baseDir . '/src/Form/UserType.php',

@@ -566,6 +566,8 @@ class ComposerStaticInitb627ac94a30820bf176b285ee34d3ca5
         'App\\Form\\DemandeDevisType' => __DIR__ . '/../..' . '/src/Form/DemandeDevisType.php',
         'App\\Form\\ImageType' => __DIR__ . '/../..' . '/src/Form/ImageType.php',
         'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
+        'App\\Form\\Reponse1Type' => __DIR__ . '/../..' . '/src/Form/Reponse1Type.php',
+        'App\\Form\\ReponseFormType' => __DIR__ . '/../..' . '/src/Form/ReponseFormType.php',
         'App\\Form\\ReponseType' => __DIR__ . '/../..' . '/src/Form/ReponseType.php',
         'App\\Form\\TypeChantierType' => __DIR__ . '/../..' . '/src/Form/TypeChantierType.php',
         'App\\Form\\UserType' => __DIR__ . '/../..' . '/src/Form/UserType.php',
