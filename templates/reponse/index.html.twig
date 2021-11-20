@@ -1,46 +1,81 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Reponse index{% endblock %}
-
 {% block body %}
-    <h1>Repondre à l'offre</h1>
 
-
-    <table class="table">
-       <div class="name">
-            <label for="validationDefault01" class="form-label">Nom</label>
-            <input type="text" class="form-reponse" id="validationDefault01" value="Nom" required>
+    {%for reponse in reponses %}
+        {{reponse}}
+    {% endfor %}
+    <div class="container">
+    <div class="card mb-5" style="width: 30rem;">
+      <div class="card-body">
+        <h5 class="card-title">Charpantier</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <ul>
+          <li>are unaffected by this style</li>
+          <li>will still show a bullet</li>
+          <li>and have appropriate left margin</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="card mb-5" style="width: 30rem;">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <ul>
+              <li>are unaffected by this style</li>
+              <li>will still show a bullet</li>
+              <li>and have appropriate left margin</li>
+            </ul>
           </div>
-          <div class="prénom">
-              <label for="validationDefault01" class="form-label">Prénom</label>
-              <input type="text" class="form-reponse" id="validationDefault01" value="Prenom" required>
+        </div>
+        </div>
+        <div class="container">
+            <div class="card mb-5" style="width: 30rem;">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <ul>
+                  <li>are unaffected by this style</li>
+                  <li>will still show a bullet</li>
+                  <li>and have appropriate left margin</li>
+                </ul>
+              </div>
             </div>
-
-        <tbody>
-        {% for reponse in reponses %}
-        <div>
-            <tr>
-                <td>{{ reponse.id }}</td>
-                <td>{{ reponse.nom }}</td>
-                <td>{{ reponse.prenom }}</td>
-                <td>{{ reponse.cv }}</td>
-                <td>{{ reponse.lettreMotivation }}</td>
-                <td>{{ reponse.telephone }}</td>
-                <td>{{ reponse.email }}</td>
-                <td>
-                    <a href="{{ path('reponse_show', {'id': reponse.id}) }}">show</a>
-                    <a href="{{ path('reponse_edit', {'id': reponse.id}) }}">edit</a>
-                </td>
-            </tr>
             </div>
-        {% else %}
-            <tr>
+            <div class="container">
+                <div class="card mb-5" style="width: 30rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <ul>
+                      <li>are unaffected by this style</li>
+                      <li>will still show a bullet</li>
+                      <li>and have appropriate left margin</li>
+                    </ul>
+                  </div>
+                </div>
+                </div>
+                <div class="container">
+                    <div class="card mb-5" style="width: 30rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <ul>
+                          <li>are unaffected by this style</li>
+                          <li>will still show a bullet</li>
+                          <li>and have appropriate left margin</li>
+                        </ul>
+                      </div>
+                    </div>
+                    </div>
+                    <div open-tab="{tabname}">...</div>
+                    <div tab-name="{tabname}">{tabcontent}</div>
+                    <tab-content></tab-content
 
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('reponse_new') }}">Create new</a>
 {% endblock %}
