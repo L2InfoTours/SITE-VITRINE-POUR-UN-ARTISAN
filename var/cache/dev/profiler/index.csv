@@ -3244,3 +3244,8 @@ e8bc13,127.0.0.1,GET,http://127.0.0.1:8000/,1637249981,,404
 43154f,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5COffreCrudController&menuIndex=7&submenuIndex=-1,1637329717,,200
 f452cd,127.0.0.1,GET,http://127.0.0.1:8000/admin?crudAction=batchDelete&crudControllerFqcn=App%5CController%5CAdmin%5COffreCrudController&menuIndex=7&referrer=%3FcrudAction%3Dindex%26crudControllerFqcn%3DApp%255CController%255CAdmin%255COffreCrudController%26menuIndex%3D7%26submenuIndex%3D-1&submenuIndex=-1,1637329740,0778eb,409
 0778eb,127.0.0.1,POST,http://127.0.0.1:8000/admin?crudAction=batchDelete&crudControllerFqcn=App%5CController%5CAdmin%5COffreCrudController&menuIndex=7&referrer=%3FcrudAction%3Dindex%26crudControllerFqcn%3DApp%255CController%255CAdmin%255COffreCrudController%26menuIndex%3D7%26submenuIndex%3D-1&submenuIndex=-1,1637329740,,409
+af41eb,127.0.0.1,GET,http://127.0.0.1:8000/,1637410696,,404
+93a4a2,127.0.0.1,GET,http://127.0.0.1:8000/favicon.ico,1637410712,5221d3,404
+5221d3,127.0.0.1,GET,http://127.0.0.1:8000/favicon.ico,1637410712,,404
+29ada0,127.0.0.1,GET,http://127.0.0.1:8000/offre/,1637410719,,200
+21473b,127.0.0.1,GET,http://127.0.0.1:8000/offre/,1637410720,,200
