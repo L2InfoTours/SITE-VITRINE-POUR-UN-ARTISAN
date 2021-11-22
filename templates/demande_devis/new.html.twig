@@ -1,11 +1,111 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block title %}New DemandeDevis{% endblock %}
 
 {% block body %}
-    <h1>Create new DemandeDevis</h1>
+        
 
-    {{ include('demande_devis/_form.html.twig') }}
+    
+     
 
-    <a href="{{ path('demande_devis_index') }}">back to list</a>
+
+    {{ form_start(form) }}
+
+    <div class ="row bg-dark p-3">
+
+        <div class="row">
+            <div class="col p-3"><hr class="bg-light"></div>
+            <h1 class="col-auto text-light">Nouvelle demande de devis</h1>
+            <div class="col p-3"><hr class="bg-light"></div>
+        </div>
+
+
+
+        <div class="col-5 my-2 p-4 d-flex flex-column position-static" style="margin-left=3%">
+
+            <label class="form-label my-2 text-light">Nom</label> 
+            <div>{{ form_widget(form.nom, {'attr':{'class':'form-control'}}) }}</div>
+            <label class="form-label my-2 text-light">Telephone </label>
+            <div>{{ form_widget(form.telephone, {'attr':{'class':'form-control'}}) }} </div> 
+
+        </div>
+
+        <div class="col-2 ">
+            <div class="vr bg-secondary" style="min-height: 100%; width: 5px; margin-left: 50%">
+            </div>
+        </div>
+
+        <div class="col-5 my-2 p-4 d-flex flex-column position-static">
+
+            <label class="form-label my-2 text-light">Adresse  </label>
+            <div> {{ form_widget(form.adresse, {'attr':{'class':'form-control'}}) }} </div>
+            <label class="form-label my-2 text-light">Email </label>
+            <div> {{ form_widget(form.email, {'attr':{'class':'form-control'}}) }} </div>
+            
+        </div>
+        
+
+        <div class=" my-2 p-4 ">
+        <label class="form-label text-light"> Description </label>
+        <div>{{ form_widget(form.description, {'attr': {'rows':"5", 'class':'col-12 form-control'} })}}</div>
+  
+  
+  
+    </div>
+ 
+      <button type="submit" class="btn btn-dark" style="width: 50%;left: 50%;position: relative;transform: translate(-50%);border:solid">Enregistrer</button>
+
+
+      
+     <div class="row my-2">
+            <div class="col p-3"><hr class="bg-light"></div>
+            <h1 class="col-auto text-light">Contact</h1>
+            <div class="col p-3"><hr class="bg-light"></div>
+    </div>
+
+    </div>
+             
+
+        {{ form_rest(form) }}
+
+        
+      
+    {{form_end(form)}}
+
+
+
+
+
+
+
+
+
+
+    <div class="row bg-secondary p-3">
+
+
+        <div class="col-5 d-flex flex-column position-static">
+            
+                <div class="map-responsive mx-4" style="width: 100%;height: 100%;">
+                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=72140+Rouez" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            
+        </div>
+
+        <div class="col-2">
+             <div class="vr bg-dark" style="min-height: 100%; width: 5px; margin-left: 50%">
+            </div>
+        </div>
+
+        <div class="col-5 d-flex flex-column position-static">
+            <ul class="list-group list-group-flush bg-secondary">
+                <li class="list-group-item bg-transparent text-light my-2">Telephone <br>07 55 48 46 17</li>
+                <li class="list-group-item bg-transparent text-light my-2">Addresse <br>2693 Metz Lane</li>
+                <li class="list-group-item bg-transparent text-light my-2">Horaire de travail <br>7h00 - 18h00</li>
+            </ul>
+        </div>
+
+    </div>
 {% endblock %}
