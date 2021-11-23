@@ -30,7 +30,7 @@
         "symfony/yaml": "5.3.*",
         "symfonycasts/verify-email-bundle": "^1.5",
         "twbs/bootstrap": "5.0.2",
-        "symfony/maker-bundle": "^1.36",
+        "symfony/maker-bundle": "^1.33",
         "vich/uploader-bundle": "^1.18"
     },
     "config": {
@@ -61,10 +61,8 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
-            "@auto-scripts"
         ],
         "post-update-cmd": [
-            "@auto-scripts"
         ]
     },
     "conflict": {
