@@ -13,53 +13,8 @@
       </div>
       <div class="col-md-10 mx-auto col-lg-5">
        {{encore_entry_link_tags('signin') }}
-           {# {% for error in errors %}
-               <div class="alert alert-danger" role="alert">{{ error }}</div>
-           {% endfor %} #}
-           {# {% if form.isSubmitted() %} #}
-           <div class="alert alert-danger" role="alert">{{ errors }}</div>
-           {# {% endif %} #}
-               {# <main class="form-register">
-           <form action="{{ path('app_register') }}" method="post">
-               <div class="form-floating">
-                   <input type="email" class="form-control" id="username" name="_username" placeholder="name@example.com">
-                   <label for="username">Email address</label>
-               </div>
-               <div class="form-floating">
-                   <input type="password" class="form-control" id="password" name="_password" placeholder="Password">
-                   <label for="password">Password</label>
-               </div>
-               <input type="hidden" name="_csrf_token" value="{{ csrf_token('register') }}">
-
-               <div class="checkbox mb-3">
-                   <label>
-                       <input type="checkbox" value="remember-me"> Remember me
-                   </label>
-               </div>
-               <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-           </form>
-           </main> #}
-
-           {# <form action="{{ path('app_register') }}" method="post">
-               <div><label for="registration_form_email" class="required">Email</label><input type="email" id="registration_form_email" name="registration_form[email]" required="required"></div>
-               <div><label for="registration_form_plainPassword" class="required">Password</label><input type="password" id="registration_form_plainPassword" name="registration_form[plainPassword]" required="required" autocomplete="new-password"></div>
-               <div><label for="registration_form_agreeTerms" class="required">Agree terms</label><input type="checkbox" id="registration_form_agreeTerms" name="registration_form[agreeTerms]" required="required" value="1"></div>
-               <button type="submit" class="btn">Register</button>
-               <input type="hidden" name="_csrf_token" value="{{ csrf_token('app_register') }}">
-           <input type="hidden" id="registration_form__token" name="registration_form[_token]" value="{{ csrf_token('app_register') }}">
-           </form> #}
        <main class="form-signin">
-       {% if form_errors(registrationForm) %}
-            <div class="alert alert-danger">        
-                {{ form_errors(registrationForm) }}
-            </div>
-        {% endif %}
            {{ form_start(registrationForm) }}
-           {% if form_errors(registrationForm) %}
-            <div class="alert alert-danger">        
-                {{ form_errors(registrationForm) }}
-            </div>
-        {% endif %}
            {% set formErrors = registrationForm.vars.errors.form.getErrors(true) %}
                                                 
             {# If there are errors in the form, display them in this unorganized list #}
@@ -68,20 +23,6 @@
                         <div class="alert alert-danger" role="alert">{{ error.message }}</div>
                     {% endfor %}
             {% endif %}
-
-           {% if not registrationForm.vars.valid %}
-            <ul>
-                {# Loop through every form item #}
-                {% for child in registrationForm.children %}
-                    {# Display the errors of the form item #}
-                    {%for error in child.vars.errors%}
-                        <li>{{error.message}}</li>
-                    {%endfor%}
-                {%endfor%}
-            </ul>
-            {%endif%}
-           {{ form_errors(registrationForm) }}
-           {{form_errors(registrationForm.plainPassword )}}
            
                <div class="form-floating">
                    {{ form_widget(registrationForm.email, { 'attr': {'placeholder': 'name@example.com', 'class' : 'form-control form-control-danger'} }) }}
