@@ -13,9 +13,12 @@
       </div>
       <div class="col-md-10 mx-auto col-lg-5">
        {{encore_entry_link_tags('signin') }}
-           {% for flashError in app.flashes('verify_email_error') %}
-               <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-           {% endfor %}
+           {# {% for error in errors %}
+               <div class="alert alert-danger" role="alert">{{ error }}</div>
+           {% endfor %} #}
+           {# {% if form.isSubmitted() %} #}
+           <div class="alert alert-danger" role="alert">{{ errors }}</div>
+           {# {% endif %} #}
                {# <main class="form-register">
            <form action="{{ path('app_register') }}" method="post">
                <div class="form-floating">
@@ -46,8 +49,40 @@
            <input type="hidden" id="registration_form__token" name="registration_form[_token]" value="{{ csrf_token('app_register') }}">
            </form> #}
        <main class="form-signin">
-
+       {% if form_errors(registrationForm) %}
+            <div class="alert alert-danger">        
+                {{ form_errors(registrationForm) }}
+            </div>
+        {% endif %}
            {{ form_start(registrationForm) }}
+           {% if form_errors(registrationForm) %}
+            <div class="alert alert-danger">        
+                {{ form_errors(registrationForm) }}
+            </div>
+        {% endif %}
+           {% set formErrors = registrationForm.vars.errors.form.getErrors(true) %}
+                                                
+            {# If there are errors in the form, display them in this unorganized list #}
+            {% if formErrors|length %}
+                    {% for error in formErrors %}
+                        <div class="alert alert-danger" role="alert">{{ error.message }}</div>
+                    {% endfor %}
+            {% endif %}
+
+           {% if not registrationForm.vars.valid %}
+            <ul>
+                {# Loop through every form item #}
+                {% for child in registrationForm.children %}
+                    {# Display the errors of the form item #}
+                    {%for error in child.vars.errors%}
+                        <li>{{error.message}}</li>
+                    {%endfor%}
+                {%endfor%}
+            </ul>
+            {%endif%}
+           {{ form_errors(registrationForm) }}
+           {{form_errors(registrationForm.plainPassword )}}
+           
                <div class="form-floating">
                    {{ form_widget(registrationForm.email, { 'attr': {'placeholder': 'name@example.com', 'class' : 'form-control form-control-danger'} }) }}
                    {{ form_label(registrationForm.email, "Adresse mail") }}
@@ -78,12 +113,17 @@
                        </div>
                        </div>
                </div>
-               <button type="submit" class="w-100 btn btn-lg btn-primary">S'inscrire</button>
+               <button type="submit" onclick="showErrors()"class="w-100 btn btn-lg btn-primary form_submit">S'inscrire</button>
            {{ form_end(registrationForm) }}
       </div>
     </div>
   </div>
 
+<script>
+function showErrors(){
+    console.log({{ form_errors(registrationForm) }});  
+}
 
+</script>
 
 {% endblock %}
