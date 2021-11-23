@@ -20,7 +20,7 @@ class Offre
     private $id;
 
     /**
-     * @ORM\Column(type="date", options={"default":"now()"})
+     * @ORM\Column(type="date", options={})
      */
     private $date;
 
