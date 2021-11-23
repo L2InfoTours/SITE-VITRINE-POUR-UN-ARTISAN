@@ -10,9 +10,20 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ @font-face {
+	font-family: 'Josefin Slab';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/josefinslab/v13/lW-swjwOK3Ps5GSJlNNkMalNpiZe_ldbOR4W776rR349Kg.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
 :root{
-	--rgb-color:204, 170, 119;
-	--rgb-color:111, 95, 72;
+	--rgb-colorD:111, 95, 72;
+	--rgb-colorL:204, 170, 119;
+
+	--rgb-color:var(--rgb-colorD);
+	
 	--rgb-dark:34,34,34;
 	--rgb-light:221,221,221;
 	--a-text:.7;
@@ -20,10 +31,11 @@
 *{
 	transition: background .5s,border .5s,color .5s ;
 	box-sizing: border-box;
+	scrollbar-width: thin;
+	scrollbar-color: rgb(var(--color)) rgb(var(--dark));
+	scroll-behavior: smooth;
 }
-.bg-light,body{
-	--rgb-color:111, 95, 72;
-
+.bg-light,html{
 	--color:var(--rgb-color);
 	--light:var(--rgb-light);
 	--dark:var(--rgb-dark);
@@ -33,9 +45,9 @@
 	--light:var(--rgb-color);
 	--dark:var(--rgb-dark);
 }
-.bg-dark,body.night,section.alternative:nth-child(2n){
+.bg-dark,html.night,section.alternative:nth-child(2n){
 
-	--rgb-color:204, 170, 119;
+	--rgb-color:var(--rgb-colorL);
 
 	--color:var(--rgb-color);
 	--light:var(--rgb-dark);
@@ -45,11 +57,12 @@
 	background:rgba(var(--light),1);
 	color:rgba(var(--dark),var(--a-text));
 }
-body.night section.alternative:nth-child(2n){
+html.night section.alternative:nth-child(2n){
 	--color:var(--rgb-light);
 	--light:var(--rgb-color);
 	--dark:var(--rgb-dark);
 }
+
 body {
 	overflow-x:hidden;
 	margin:auto;
@@ -57,7 +70,9 @@ body {
 	min-height: 100vh;
 	max-height: 100%;
 	height: 100%;
-	font-family: Yu Gothic,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	/* font-family:'Josefin Slab',serif; */
+	font-family:Yu Gothic,Impact;
+	/* Yu Gothic,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif */
 }
 [template]{
 	display:grid;
@@ -82,7 +97,7 @@ nav{
 	display: flex;
 	flex-direction: row;
 	z-index:666;
-	height: 1.5cm;
+	/* height: 1.5cm; */
 }
 .navbar>*{
 	margin: auto;
@@ -90,6 +105,9 @@ nav{
 nav .navbar-brand {
 	color:var(--color);
 	text-decoration:none;
+	font-size: 25pt;
+	font-weight: 700;
+	font-family:'Josefin Slab',serif;
 }
 nav .navbar-toggler {
 	width:3em;
@@ -98,6 +116,43 @@ nav .navbar-toggler {
 	margin:auto;
 	border:none;
 	background:#0000;
+}
+
+.border-top{border-top:solid 5px rgb(var(--color));}
+.border-left{border-left:solid 5px rgb(var(--color));}
+.border-bottom{border-bottom:solid 5px rgb(var(--color));}
+.border-right{border-right:solid 5px rgb(var(--color));}
+
+.navbar-collapsed{
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	background: rgb(var(--light));
+	color:rgb(var(--color));
+	top: 2cm;
+	padding: 0 10px;
+	text-align: center;
+	height:0;
+	width: 100%;
+	overflow: hidden;
+	right: 0;
+	transition: height ease-in-out 1s,width ease-in-out 1s,background ease-in-out .7s;
+	z-index: 444;
+	padding-top: .5cm !important;
+}
+.navbar-collapsed:not(.open){
+	border-style:none;
+}
+.navbar-collapsed.open{
+	height:100%;
+}
+.nav-item{
+	color:rgb(var(--color));
+	text-decoration:none;
+	width: 50%;
+	margin: 1em auto;
+	text-overflow: ellipsis;
+	overflow-wrap: initial;
 }
 p{color: rgba(var(--dark),var(--a-text));}
 main {
@@ -111,22 +166,31 @@ h1{
 	font-size:30pt;
 	font-weight:700;
 }
-body.night footer{
+footer{
+	--color:var(--rgb-colorL);
+	--light:var(--rgb-dark);
+	--dark:var(--rgb-light);
+}
+/* html.night footer{
 	--color:var(--rgb-dark);
-	--light:var(--rgb-light);
-	--dark:var(--rgb-color);
+	--light:var(--rgb-colorL);
+	--dark:var(--rgb-light);
+} */
+.shadow{
+	box-shadow: 5px 5px 0px 1px rgba(var(--dark),var(--a-text));
+}
+img-aspect.shadow,block{
+	display: block;
+	width: 100%;
 }
 footer{
+	/* background:rgba(var(--light),1); */
+	/* color:rgba(var(--dark),var(--a-text)); */
 	grid-area:footer;
-	background:rgb(var(--dark));
-	color:rgb(var(--light));
 	display: grid;
 	padding: 30px;
 	text-align: center;
 	grid-template:"menus"auto "rows" "copyright"2em;
-}
-.border-top{
-	border-top:solid 5px rgb(var(--color));
 }
 footer .container{
 	list-style:none;
@@ -192,6 +256,22 @@ footer a{
 }
 input{
 	border:none;
+}
+.form-label{
+	padding: 7px;
+}
+.form-control{
+	padding: 7px;
+	border-radius: 7px;
+}
+.form-submit{
+	margin-top: 30px;
+}
+.centred{
+	margin: auto;
+}
+.centred-line{
+	margin:0 auto;
 }
 /* == Boot trap == */
 .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,
@@ -292,7 +372,7 @@ input{
     z-index: 1;
 }
 .clean-hero{
-	color:rgba(var(--light),.85);
+	color:rgba(var(--light),.5);
 }
 .clean-block{
 	position: relative;
@@ -312,6 +392,8 @@ input{
 	z-index: 2;
 	padding: 40px 15px;
 	text-shadow: 1px 1px 1px rgba(0,0,0,.15);
+	font-weight: 500;
+	font-size: 1.1em;
 }
 .navbar-menu>*:not(.navbar-toggler){
 	display: none;
@@ -330,9 +412,19 @@ input{
 	.col-md-10 {width: 83.333333%;}
 	.col-md-11 {width: 91.666667%;}
 	.col-md-12 {width: 100%;}
-	.col{
-		flex-direction:row;
+	.navbar-collapsed.right{
+		height:100%;
+		width:0;
+		padding:0;
+		right:0;
 	}
+	.navbar-collapsed.right.open{
+		width:50vmin;
+	}
+	.border-md-top{border-top:solid 5px rgb(var(--color));}
+	.border-md-left{border-left:solid 5px rgb(var(--color));}
+	.border-md-bottom{border-bottom:solid 5px rgb(var(--color));}
+	.border-md-right{border-right:solid 5px rgb(var(--color));}
 }
 /* Device Large */
 @media (min-width: 992px) {
@@ -366,6 +458,11 @@ input{
 	.col-lg-10 {width: 83.333333%;}
 	.col-lg-11 {width: 91.666667%;}
 	.col-lg-12 {width: 100%;}
+
+	.border-lg-top{border-top:solid 5px rgb(var(--color));}
+	.border-lg-left{border-left:solid 5px rgb(var(--color));}
+	.border-lg-bottom{border-bottom:solid 5px rgb(var(--color));}
+	.border-lg-right{border-right:solid 5px rgb(var(--color));}
 }
 /* == Symfony == */
 .sf-toolbar{
@@ -376,5 +473,11 @@ input{
 	width: min-content;
 }
 .navbar-menu>*{
-	margin: 1em;
+	margin:0 1em;
+}
+.short{
+	margin: auto;
+}
+.short > *{
+	margin:20px;
 }

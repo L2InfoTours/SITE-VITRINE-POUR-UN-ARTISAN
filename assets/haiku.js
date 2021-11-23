@@ -140,9 +140,11 @@ class SwitchNightMode extends HaikuElement{
 		super()
 		var style = document.createElement('style')
 		style.innerHTML = SwitchNightMode.style
-		this.shadowRoot.innerHTML = `<div class="nightmode"><input id="night-toggle" value="false" onchange="document.body.classList.toggle('night');localStorage.setItem('nightmode',localStorage.getItem('nightmode')=='false')" type="checkbox"><label for="night-toggle"><span></span></label></div>`
+		this.shadowRoot.innerHTML = `<div class="nightmode"><input id="night-toggle" value="false" onchange="document.body.parentElement.classList.toggle('night');localStorage.setItem('nightmode',localStorage.getItem('nightmode')=='false')" type="checkbox"><label for="night-toggle"><span></span></label></div>`
 		if(localStorage.getItem("nightmode")=="true"){
-			document.body.classList.add("night")
+			// document.body.classList.add("night")
+			document.body.parentElement.classList.add("night")
+			console.log(document.body.parentElement)
 			this.shadowRoot.querySelector('input').checked = true
 		}
 		this.shadowRoot.appendChild(style)
@@ -160,18 +162,18 @@ class NavBarToggle extends HaikuElement{
 		display:none;
 	}
 	input ~ div{
-		width: 40px;
-		height: 40px;
+		width: 100%;
+		height: 100%;
 		margin: auto;
 	}
 	input ~ div span{
 		display:block;
 		height:2px;
 		border-radius:2px;
-		width:2em;
+		width:100%;
 		background:#eee;
 		position:relative;
-		transition:transform .6s ease,width .6s ease;
+		transition:transform .6s ease,width .6s ease,top .6s ease;
 		left:50%;
 		transform: translate(-50%,-2.5px);
 	}
@@ -185,13 +187,15 @@ class NavBarToggle extends HaikuElement{
 		top: 75%;
 	}
 	input:checked ~ div span:nth-child(1) {
-	  transform: translate(-50%,9px) rotate(45deg);
+	  transform: translate(-50%,2px) rotate(45deg);
+	  top: 50%;
 	}
 	input:checked ~ div span:nth-child(2) {
 	  width:0;
 	}
 	input:checked ~ div span:nth-child(3) {
-	  transform: translate(-50%,-15px) rotate(-45deg);
+	  transform: translate(-50%,-2px) rotate(-45deg);
+	  top: 50%;
 	}
 	`
 	constructor(){
@@ -214,11 +218,18 @@ class NavBarToggle extends HaikuElement{
 		div.appendChild(span2)
 		div.appendChild(span3)
 
-		this.style = "width:3em;height:3em;"
+		this.style = "width:30px;height:30px;"
 
 		this.addEventListener('click',()=>{
 			input.checked = !input.checked
+			this.switchMenu(input.checked)
 		})
+	}
+	switchMenu(value){
+		var menu = this.getAttribute('menu')
+		var v = "open"
+		var cls = document.getElementById(menu).classList
+		value?cls.add(v):cls.remove(v)
 	}
 }
 
@@ -345,6 +356,28 @@ class ImageAspect extends HaikuElement{
 }
 
 window.customElements.define("img-aspect",ImageAspect)
+
+class ImageMap extends ImageAspect{
+	constructor(){
+		super()
+		var img = this.shadowRoot.querySelector('img')
+		var ctx = document.createElement('canvas').getContext('2d')
+		
+		var canvas = ctx.canvas
+		canvas.style = img.style
+		
+		canvas.width = this.offsetWidth||window.innerWidth
+		canvas.height = this.offsetHeight||window.innerHeight
+
+		this.context = ctx
+	}
+	requestImage(){
+		var img = new Image()
+		img.src = `https://tile.openstreetmap.org/${z}/${x}/${y}.png`
+	}
+}
+
+window.customElements.define("img-map",ImageMap)
 
 function UpdateTabber(){
 	const tabcontrolers = document.querySelectorAll("[open-tab]")

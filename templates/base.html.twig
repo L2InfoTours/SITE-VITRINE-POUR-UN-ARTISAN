@@ -12,51 +12,28 @@
 		{% endblock %}
 	</head>
 	<body template=market >
-	<nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
+	<nav class="navbar navbar-dark bg-dark border-bottom" aria-label="First navbar example">
 		<a class="navbar-brand" href="#">LEGERMAIN</a>
 		<div class="row navbar-menu">
-			<input-search placeholder="Search" ></input-search>
-			<switch-mode-night></switch-mode-night>
-			<navbar-toggle class="navbar-toggler"></navbar-toggle>
+			
+			<navbar-toggle class="navbar-toggler" menu="navbar"></navbar-toggle>
 		</div>
-        {#
-          <div class="collapse navbar-collapse" id="navbarsExample01">
-            <ul class="navbar-nav me-auto mb-2">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form>
-              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-            </form>
-          </div>
-        </div>
-		#}
 			</nav>
+		<aside class="navbar-collapsed right border-bottom border-md-left" id="navbar">
+			<switch-mode-night class="centred-line" ></switch-mode-night>
+			<a class="nav-item" href="/">Home</a>
+			<a class="nav-item" href="/demande/devis/new">Contact</a>
+		</aside>
 			{% block header %}{% endblock %}
 			<main>
 				{% block body %}{% endblock %}
 			</main>
-			<footer class="border-top">
+			<footer class="border-top bg-dark">
 				<p class="footer-copyright">&copy; 2021 Company, Inc</p>
 				<div class="container rows">
 					<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M13 24h-2v-5.126c-.806-.208-1.513-.661-2.039-1.274-.602.257-1.265.4-1.961.4-2.76 0-5-2.24-5-5 0-1.422.595-2.707 1.55-3.617-.348-.544-.55-1.19-.55-1.883 0-1.878 1.483-3.413 3.341-3.496.823-2.332 3.047-4.004 5.659-4.004 2.612 0 4.836 1.672 5.659 4.004 1.858.083 3.341 1.618 3.341 3.496 0 .693-.202 1.339-.55 1.883.955.91 1.55 2.195 1.55 3.617 0 2.76-2.24 5-5 5-.696 0-1.359-.143-1.961-.4-.526.613-1.233 1.066-2.039 1.274v5.126z"/></svg>
 				</div>
-				<div class="container menus">
+				<div class="row short">
 					<a href="#" class="nav-link px-2 text-muted">Home</a>
 					<a href="#" class="nav-link px-2 text-muted">Features</a>
 					<a href="#" class="nav-link px-2 text-muted">Pricing</a>
