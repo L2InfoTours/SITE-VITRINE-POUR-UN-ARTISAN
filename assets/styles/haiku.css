@@ -463,6 +463,17 @@ input{
 	.border-lg-left{border-left:solid 5px rgb(var(--color));}
 	.border-lg-bottom{border-bottom:solid 5px rgb(var(--color));}
 	.border-lg-right{border-right:solid 5px rgb(var(--color));}
+	.navbar-toggler{
+		display: none;
+	}
+	.navbar-collapsed{
+		height: 2cm;
+		width: 50%;
+		top: 0;
+		z-index: 999;
+		flex-direction: row;
+		background: #0000;
+	}
 }
 /* == Symfony == */
 .sf-toolbar{
