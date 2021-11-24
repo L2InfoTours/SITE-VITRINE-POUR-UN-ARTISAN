@@ -88,8 +88,9 @@
 	background-color: var(--bs-body-bg);
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	
   }
-  
+
   hr {
 	margin: 1rem 0;
 	color: inherit;
@@ -645,8 +646,8 @@
   .img-fluid {
 	max-width: 100%;
 	height: auto;
+	height:15vw;
   }
-  
   .img-thumbnail {
 	padding: 0.25rem;
 	background-color: #fff;
@@ -11586,9 +11587,27 @@
   .list-group {
 	font-size: 0.9625rem;
   }
+    .img-aspect{
+            height: 20vw ;
+    }
+    .padding-10{
+        padding:20px;
+    }
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {}
 
-  .margin-left-button{
-      float: right;
-      margin-right: 1em;
-  }
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {}
 
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {}
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        .img-aspect{
+            height:15vw;
+    }
+    .padding-10{
+            padding:100px;
+        }
+}

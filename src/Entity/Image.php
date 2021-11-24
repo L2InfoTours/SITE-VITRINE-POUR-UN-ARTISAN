@@ -111,6 +111,18 @@ class Image
         return $this;
     }
 
+    public function getTypeChantier(): ?TypeChantier
+    {
+        return $this->typechantier;
+    }
+
+    public function setTypeChantier(?TypeChantier $typechantier): self
+    {
+        $this->typechantier = $typechantier;
+
+        return $this;
+    }
+
     public function getChantier(): ?Chantier
     {
         return $this->chantier;
