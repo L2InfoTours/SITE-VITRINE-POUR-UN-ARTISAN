@@ -254,8 +254,18 @@ footer a{
     max-height: 5vmin;
     max-width: 5vmin;
 }
-input{
+a[href]{
+	color:rgb(var(--color));
+	font-size: 1.1em;
+	text-decoration: none;
+}
+input,textarea{
 	border:none;
+	box-shadow: inset ;
+}
+.input-group{
+	display: grid;
+	grid-template-columns:1fr 1fr;
 }
 .form-label{
 	padding: 7px;
@@ -272,6 +282,20 @@ input{
 }
 .centred-line{
 	margin:0 auto;
+}
+dialog{
+	position: fixed;
+    width: 80%;
+	pointer-events: auto;
+	background-color: rgb(var(--light));
+	/* --dark: --light; */
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 0.3rem;
+	outline: 0;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	left: 50%;
 }
 /* == Boot trap == */
 .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,
@@ -351,6 +375,20 @@ input{
 	height: 100%;
 	border-radius:0 0 0 0;
 }
+.form-floating > label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	padding: 1rem 1.1rem;
+	pointer-events: none;
+	border: 1px solid transparent;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	transition: opacity 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+	transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+	transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+}
 .text-start {
 	text-align: left !important;
 }
@@ -412,7 +450,7 @@ input{
 	.col-md-10 {width: 83.333333%;}
 	.col-md-11 {width: 91.666667%;}
 	.col-md-12 {width: 100%;}
-	.navbar-collapsed.right{
+	.navbar-collapsed.right:not(.open){
 		height:100%;
 		width:0;
 		padding:0;
@@ -420,6 +458,9 @@ input{
 	}
 	.navbar-collapsed.right.open{
 		width:50vmin;
+	}
+	.row-md{
+		flex-direction: row;
 	}
 	.border-md-top{border-top:solid 5px rgb(var(--color));}
 	.border-md-left{border-left:solid 5px rgb(var(--color));}
@@ -467,12 +508,14 @@ input{
 		display: none;
 	}
 	.navbar-collapsed{
-		height: 2cm;
-		width: 50%;
+		height: 2cm!important;
+		width: 50% !important;
 		top: 0;
 		z-index: 999;
+		padding-top: 0!important;
 		flex-direction: row;
 		background: #0000;
+		border: none;
 	}
 }
 /* == Symfony == */
@@ -490,5 +533,10 @@ input{
 	margin: auto;
 }
 .short > *{
-	margin:20px;
+	margin:5px;
+}
+body.dialog-focus>main>:not(dialog[open]){
+	filter:blur(5px);
+	pointer-events: none;
+	user-select: none;
 }
