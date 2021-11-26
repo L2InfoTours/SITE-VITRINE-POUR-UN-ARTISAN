@@ -284,6 +284,14 @@ input,textarea{
 .centred-line{
 	margin:0 auto;
 }
+.alert{
+	background: #f66a;
+	border: #f00 solid 2px;
+	padding: 5px;
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+}
 dialog{
 	position: fixed;
     width: 80%;
@@ -304,6 +312,7 @@ dialog{
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
 }
+
 .col-1 {width: 8.3333333%;}
 .col-2 {width: 16.666667%;}
 .col-3 {width: 25%;}

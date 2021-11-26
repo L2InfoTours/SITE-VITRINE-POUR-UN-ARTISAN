@@ -464,8 +464,8 @@ function UpdateInputs(){
 	checkboxes.forEach(checkbox=>{
 		checkbox.style.display = "none"
 		const close = ()=>{
-			ctx.strokeStyle = "#f00"
-			ctx.stroke(new Path2D("M0,0L100,100M0,100L100,0"))
+			// ctx.strokeStyle = "#f00"
+			// ctx.stroke(new Path2D("M0,0L100,100M0,100L100,0"))
 		}
 		var ctx = document.createElement("canvas").getContext('2d')
 		ctx.canvas.width = ctx.canvas.height = 100
@@ -487,7 +487,7 @@ function UpdateInputs(){
 		checkbox.update = update
 		checkbox.addEventListener('change',()=>{update()})		
 		close()
-		ctx.canvas.style = "width:2em;border:rgb(var(--color)) solid .2em;border-radius:1em;"
+		ctx.canvas.style = "width:2em;height:2em;border:rgb(var(--color)) solid .2em;border-radius:.2em;"
 		checkbox.after(ctx.canvas)
 	})
 }
