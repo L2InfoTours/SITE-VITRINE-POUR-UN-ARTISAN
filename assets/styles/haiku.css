@@ -129,22 +129,23 @@ nav .navbar-toggler {
 	flex-direction: column;
 	background: rgb(var(--light));
 	color:rgb(var(--color));
-	top: 2cm;
-	padding: 0 10px;
 	text-align: center;
 	height:0;
 	width: 100%;
 	overflow: hidden;
 	right: 0;
-	transition: height ease-in-out 1s,width ease-in-out 1s,background ease-in-out .7s;
+	transition: height ease-in-out 1s,width ease-in-out 1s,background ease-in-out .7s, padding-top ease-in-out 1s;
 	z-index: 444;
-	padding-top: .5cm !important;
+	
 }
 .navbar-collapsed:not(.open){
 	border-style:none;
 }
 .navbar-collapsed.open{
 	height:100%;
+	top: 1cm;
+	padding: 0 10px;
+	padding-top: 1.5cm !important;
 }
 .nav-item{
 	color:rgb(var(--color));
@@ -241,7 +242,7 @@ footer a{
 }
 .card{
 	position: relative;
-	padding: .1cm;
+	padding: .5cm;
 	margin: .5cm auto;
 }
 .card .icon{
