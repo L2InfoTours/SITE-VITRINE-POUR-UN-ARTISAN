@@ -24,7 +24,9 @@
 				{{ form_widget(registrationForm.plainPassword, {'attr' : {'placeholder': 'password', 'class' : 'form-control form-control-danger'},label: 'Password'}) }}
 			</div>
 			<div class="row row-md short form-label">
-				<a href="#CGU">Accpeter les Conditions d'utilisation</a>
+				{{ form_widget(registrationForm.agreeTerms,{'attr' : {}}) }}
+				{{ form_label(registrationForm.agreeTerms, "Accepter") }}
+				<a href="#CGU">les Conditions d'utilisation (voir ici)</a>
 			</div>
 			<div class="row form-label">
 				<button class="btn outline">S'inscrire</button>
@@ -36,10 +38,9 @@
 	<div class="col">
 		<h5>Conditions d'utilisation</h5>
 		<p class="col-12">Lors de l'inscription sur le Site, cette acceptation sera confirmée par le fait de cocher la case correspondant à la phrase suivante : « Je reconnais avoir lu et accepté les Conditions Générales d'Utilisation »</p>
-		<div class="row">
-			{{ form_widget(registrationForm.agreeTerms,{'attr' : {'onchange':"console.log(this);this.checked?document.querySelector(\'#CGU\').close():console.log(this.checked)",}}) }}
-			{{ form_label(registrationForm.agreeTerms, "Accepter") }}
-		</div>
+		<button onclick="document.querySelector('#CGU').close();document.querySelector('#registration_form_agreeTerms').checked = true;document.querySelector('#registration_form_agreeTerms').update()" class="btn outline">
+		J'ai lu les conditions et les accepte
+		</button>
 	</div>
 </dialog>
 {{ form_end(registrationForm) }}

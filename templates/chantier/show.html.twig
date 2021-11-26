@@ -161,17 +161,21 @@ window.addEventListener("load",()=>{
     var p = Math.min(window.innerWidth,window.innerHeight)/10;
     modal.div.style.padding = `${p}px`
     modal.padding = p
+var slideshow = document.querySelectorAll('img-aspect.lightbox[src]')
+slideshow = [...slideshow].map(x=>{
+	console.log(x)
+	return x.image
 })
-const slideshow = document.querySelectorAll('img-aspect.lightbox[src]')
-slideshow.forEach((img,n)=> {
-img.addEventListener('click',()=>{
-                event.preventDefault();
-                var element = event.target;
-                if(modal.isClosed){
-                    modal.open()
-                    modal.slideshow(slideshow,n)
-                }
-    });
+	slideshow.forEach((img,n)=> {
+	img.addEventListener('click',(event)=>{
+	                event.preventDefault();
+	                var element = event.target;
+	                if(modal.isClosed){
+	                    modal.open()
+	                    modal.slideshow(slideshow,n)
+	                }
+	    });
+	})
 })
 </script>
 <!-- Gallery -->
