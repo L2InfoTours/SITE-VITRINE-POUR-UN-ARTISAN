@@ -1,5 +1,7 @@
 {% extends 'present.html.twig' %}
-
+{% 
+set image = asset("/uploads/images/chantier/#{chantier.getImages()[0].getImage()}")
+ %}
 {% block body %}
 <section >
 	<div class="row">
