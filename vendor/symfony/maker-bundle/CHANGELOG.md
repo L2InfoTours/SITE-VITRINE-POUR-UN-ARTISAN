@@ -1,5 +1,85 @@
 # Changelog
 
+## [v1.36.3](https://github.com/symfony/maker-bundle/releases/tag/v1.36.3)
+
+*November 22nd, 2021*
+
+### Bug Fix
+
+- [#1017](https://github.com/symfony/maker-bundle/pull/1017) - [reset-password] fix missing entity manager di - *@jrushlow*
+
+## [v1.36.2](https://github.com/symfony/maker-bundle/releases/tag/v1.36.2)
+
+*November 22nd, 2021*
+
+### Bug Fix
+
+- [#1016](https://github.com/symfony/maker-bundle/pull/1016) - Fix PHP 8.1 deprecations - *@derrabus*
+
+## [v1.36.1](https://github.com/symfony/maker-bundle/releases/tag/v1.36.1)
+
+*November 16th, 2021*
+
+### Bug Fix
+
+- [#1014](https://github.com/symfony/maker-bundle/pull/1014) - hiding php8 file so it doesn't throw autoloading warning - *@weaverryan*
+
+## [v1.36.0](https://github.com/symfony/maker-bundle/releases/tag/v1.36.0)
+
+*November 16th, 2021*
+
+### Feature
+
+- [#1010](https://github.com/symfony/maker-bundle/pull/1010) - Raising minimum Symfony version to 4.4 & refactoring of internal test classes - *@weaverryan*
+
+### Bug Fix
+
+- [#1010](https://github.com/symfony/maker-bundle/pull/1010) - Various fixes for deprecated code that was generated & fixes for Symfony 6 - *@weaverryan*
+- [#993](https://github.com/symfony/maker-bundle/pull/993) - Avoid iterating on null for DoctrineBundle 2.2 and lower - *@weaverryan*
+- [#1004](https://github.com/symfony/maker-bundle/pull/1004) - Fix FQCN of 'security.authentication.success' event - *@AlexBevilacqua*
+
+## [v1.35.0](https://github.com/symfony/maker-bundle/releases/tag/v1.35.0)
+
+*November 12th, 2021*
+
+### Feature
+
+- [#1006](https://github.com/symfony/maker-bundle/pull/1006) - Allowing Symfony 6 - *@tacman*
+
+### Bug Fix
+
+- [#992](https://github.com/symfony/maker-bundle/pull/992) - Renaming variable $userPasswordHasherInterface -> $userPasswordHasher - *@weaverryan*
+
+## [v1.34.1](https://github.com/symfony/maker-bundle/releases/tag/v1.34.1)
+
+*October 17th, 2021*
+
+### Bug Fix
+
+- [#991](https://github.com/symfony/maker-bundle/pull/991) - Check if json_array type exists before unsetting it - *@HypeMC*
+- [#988](https://github.com/symfony/maker-bundle/pull/988) - Fixed typo in Security52EmptyAuthenticator - *@lyrixx*
+
+## [v1.34.0](https://github.com/symfony/maker-bundle/releases/tag/v1.34.0)
+
+*September 27th, 2021*
+
+### Feature
+
+- [#978](https://github.com/symfony/maker-bundle/pull/978) - Adding Entity attribute support - *@simonmarx*, *@geekimo*, *@adlpz*, *@weaverryan*, *@jrushlow*
+- [#970](https://github.com/symfony/maker-bundle/pull/970) - make PhpCompatUtil::getPhpVersion() public - *@nikophil*
+- [#968](https://github.com/symfony/maker-bundle/pull/968) - [make:entity] APIP: use new attribute if exists - *@nikophil*
+- [#963](https://github.com/symfony/maker-bundle/pull/963) - add return types for symfony 6 - *@jrushlow*
+- [#925](https://github.com/symfony/maker-bundle/pull/925) - [templates] Add void return types - *@seb-jean*
+- [#923](https://github.com/symfony/maker-bundle/pull/923) - use password hasher for make:registration & make:reset-password, includes other improvements - *@jrushlow*
+
+### Bug Fix
+
+- [#974](https://github.com/symfony/maker-bundle/pull/974) - Fix method call definition - *@ajgarlag*
+- [#973](https://github.com/symfony/maker-bundle/pull/973) - Fix we we typo - *@karser*
+- [#933](https://github.com/symfony/maker-bundle/pull/933) - [make:entity] Remove deprecated json_array type from available list types. - *@bdaler*
+- [#930](https://github.com/symfony/maker-bundle/pull/930) - Add all missed dependencies to make:reset-password - *@upyx*
+- [#870](https://github.com/symfony/maker-bundle/pull/870) - [make:crud] Fix templates path use in include - *@leblanc-simon*
+
 ## [v1.33.0](https://github.com/symfony/maker-bundle/releases/tag/v1.33.0)
 
 *June 30th, 2021*

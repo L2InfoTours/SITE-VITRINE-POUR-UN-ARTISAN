@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4379079544b641e332fd39df3df0a8977f8ed7b9',
+        'reference' => '0a77836c650d68c4ee289c12d8aa3bee59444eb8',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4379079544b641e332fd39df3df0a8977f8ed7b9',
+            'reference' => '0a77836c650d68c4ee289c12d8aa3bee59444eb8',
             'dev_requirement' => false,
         ),
         'composer/package-versions-deprecated' => array(
@@ -542,12 +542,12 @@
             'dev_requirement' => false,
         ),
         'symfony/maker-bundle' => array(
-            'pretty_version' => 'v1.33.0',
-            'version' => '1.33.0.0',
+            'pretty_version' => 'v1.36.3',
+            'version' => '1.36.3.0',
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../symfony/maker-bundle',
             'aliases' => array(),
-            'reference' => 'f093d906c667cba7e3f74487d9e5e55aaf25a031',
+            'reference' => '0f40c826c0725208c254ddcd3481690e6c7e5047',
             'dev_requirement' => true,
         ),
         'symfony/messenger' => array(

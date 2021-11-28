@@ -30,7 +30,6 @@
         "symfony/yaml": "5.3.*",
         "symfonycasts/verify-email-bundle": "^1.5",
         "twbs/bootstrap": "5.0.2",
-        "symfony/maker-bundle": "^1.36",
         "vich/uploader-bundle": "^1.18"
     },
     "config": {
@@ -77,7 +76,7 @@
         }
     },
     "require-dev": {
-        "symfony/maker-bundle": "^1.33",
+        "symfony/maker-bundle": "^1.36",
         "symfony/stopwatch": "5.3.*",
         "symfony/web-profiler-bundle": "5.3.*"
     }
