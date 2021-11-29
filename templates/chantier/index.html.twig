@@ -14,11 +14,11 @@
 	</div>
 </section>
 <section>
-	<div class="row" id="filtred">
+	<div class="grid-4" id="filtred">
 	{% for chantier in projects %}
-		<div class="col-lg-3 {% for type in chantier.getTypes() %} {{type.getType()}}{% endfor %} filter">
+		<div class="col-lg-12 {% for type in chantier.getTypes() %} {{type.getType()}}{% endfor %} filter">
 			<div class="card shadow">
-				<img src="{{ asset("/uploads/images/chantier/#{chantier.getImages()[0].getImage()}") }}" alt="img">
+				<img-aspect aspect="16/9" crop="cover"  src="{{ asset("/uploads/images/chantier/#{chantier.getImages()[0].getImage()}") }}" alt="img"></img-aspect>
 				<h6>{{ chantier.nom }}</h6>
 				<p class="card-text" style="white-space: normal;overflow: hidden;text-overflow: ellipsis;max-height: 105px;min-height: 105px;">{{ chantier.description}}</p>
 				<div class="col">

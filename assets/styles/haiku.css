@@ -306,6 +306,11 @@ dialog{
 	transform: translate(-50%,-50%);
 	left: 50%;
 }
+.grid-4{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 50px;
+}
 /* == Boot trap == */
 .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,
 .col-7,.col-8,.col-9,.col-10,.col-11,.col-12{
@@ -448,6 +453,11 @@ dialog{
 }
 /* Device medium */
 @media (min-width: 576px){
+	.grid-4{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 50px;
+	}
 	.col-md-1 {width: 8.3333333%;}
 	.col-md-2 {width: 16.666667%;}
 	.col-md-3 {width: 25%;}
@@ -479,6 +489,11 @@ dialog{
 }
 /* Device Large */
 @media (min-width: 992px) {
+	.grid-4{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-gap: 50px;
+	}
 	.navbar-menu>*:not(.navbar-toggler){
 		display: block;
 	}
