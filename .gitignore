@@ -4,17 +4,10 @@
 /.env
 var/cache/*
 ###> symfony/framework-bundle ###
-/var/
-/vendor/
-/public/bundles/
-###< symfony/framework-bundle ###
+
 /node_modules/
-/npm/
 
+/public/bundles/
 /public/uploads/
-<<<<<<< Updated upstream
 
-!/var/cache/.gitkeep
-=======
-
->>>>>>> Stashed changes
+/var/
