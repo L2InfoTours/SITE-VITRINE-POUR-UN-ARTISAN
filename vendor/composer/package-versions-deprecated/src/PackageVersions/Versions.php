@@ -128,10 +128,10 @@ final class Versions
   'twig/twig' => 'v3.3.3@a27fa056df8a6384316288ca8b0fa3a35fdeb569',
   'vich/uploader-bundle' => '1.18.0@c5250c8d6a072960250ce5130e68a5693b3b48dd',
   'symfony/web-profiler-bundle' => 'v5.3.8@9ba1e05fdc7a46979047ba6c8949bd35e3a386a5',
-  'symfony/polyfill-ctype' => '*@d4678bcac4783c710a407c4d998bbdd040561051',
-  'symfony/polyfill-iconv' => '*@d4678bcac4783c710a407c4d998bbdd040561051',
-  'symfony/polyfill-php72' => '*@d4678bcac4783c710a407c4d998bbdd040561051',
-  '__root__' => 'dev-main@d4678bcac4783c710a407c4d998bbdd040561051',
+  'symfony/polyfill-ctype' => '*@48ae1a1c0657152b71e2cab1f2824e4bbea69561',
+  'symfony/polyfill-iconv' => '*@48ae1a1c0657152b71e2cab1f2824e4bbea69561',
+  'symfony/polyfill-php72' => '*@48ae1a1c0657152b71e2cab1f2824e4bbea69561',
+  '__root__' => 'dev-main@48ae1a1c0657152b71e2cab1f2824e4bbea69561',
 );
 
     private function __construct()
