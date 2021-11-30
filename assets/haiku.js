@@ -336,6 +336,7 @@ class InputSearch extends HaikuElement{
 window.customElements.define("input-search",InputSearch)
 
 class ImageAspect extends HaikuElement{
+	#img = null
 	constructor(){
 		super()
 		this.style.width = this.getAttribute('width')
@@ -344,14 +345,15 @@ class ImageAspect extends HaikuElement{
 		parent.style = `width:100%;aspect-ratio:${this.getAttribute('aspect')||"16/9"};overflow:hidden;`
 		var src = this.getAttribute('src')
 		if(src){
-			var img = new Image()
-			img.src = src
-			img.style = "object-fit:cover;width:100%;height:100%;"
-			parent.appendChild(img)
+			this.#img = new Image()
+			this.#img.src = src
+			this.#img.style = "object-fit:cover;width:100%;height:100%;"
+			parent.appendChild(this.#img)
 		}else{
 			parent.innerHTML = `<svg style="cover;width:100%;height:100%;" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>`
 		}
 		this.shadowRoot.appendChild(parent)
+		this.image = this.#img
 	}
 }
 
@@ -456,7 +458,62 @@ function UpdateFilter(){
 		
 	})
 }
+function UpdateInputs(){
+	// checkbox
+	const checkboxes = document.querySelectorAll('input[type=checkbox]')
+	checkboxes.forEach(checkbox=>{
+		checkbox.style.display = "none"
+		const close = ()=>{
+			// ctx.strokeStyle = "#f00"
+			// ctx.stroke(new Path2D("M0,0L100,100M0,100L100,0"))
+		}
+		var ctx = document.createElement("canvas").getContext('2d')
+		ctx.canvas.width = ctx.canvas.height = 100
+		ctx.lineWidth = 20
+		ctx.canvas.checked = false
+		const update = ()=>{
+			ctx.clearRect(0,0,100,100)
+			if(ctx.canvas.checked = checkbox.checked){
+				ctx.strokeStyle = "#0c2"
+				ctx.stroke(new Path2D("M0,25L30,75L100,25"))
+			}else{
+				close()
+			}
+			ctx.canvas.dispatchEvent(new Event("change",{}))
+		}
+		ctx.canvas.addEventListener('click',()=>{checkbox.checked = !checkbox.checked;update()})
+		ctx.canvas.onchange = checkbox.onchange
+		checkbox.onchange = null
+		checkbox.update = update
+		checkbox.addEventListener('change',()=>{update()})		
+		close()
+		ctx.canvas.style = "width:2em;height:2em;border:rgb(var(--color)) solid .2em;border-radius:.2em;"
+		checkbox.after(ctx.canvas)
+	})
+}
+function UpdateDialog(){
+	var hash = location.hash
+	if(hash.length<1)return
+	hash = document.querySelector(hash)
+	if(hash && hash.tagName == "DIALOG"){
+		hash.setAttribute('open',"true")
+		hash.close = function(){
+			this.removeAttribute('open')
+			document.body.classList.remove("dialog-focus")
+			location.hash = ""
+		}
+		document.body.classList.add("dialog-focus")
+	}
+}
+function $(selector){
+	return document.querySelector(selector)
+}
 window.addEventListener('load',()=>{
 	UpdateFilter()
 	UpdateTabber()
+	UpdateInputs()
+	UpdateDialog()
+})
+window.addEventListener('hashchange',()=>{
+	UpdateDialog()
 })

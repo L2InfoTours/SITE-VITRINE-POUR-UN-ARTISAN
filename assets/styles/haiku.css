@@ -129,22 +129,23 @@ nav .navbar-toggler {
 	flex-direction: column;
 	background: rgb(var(--light));
 	color:rgb(var(--color));
-	top: 2cm;
-	padding: 0 10px;
 	text-align: center;
 	height:0;
 	width: 100%;
 	overflow: hidden;
 	right: 0;
-	transition: height ease-in-out 1s,width ease-in-out 1s,background ease-in-out .7s;
+	transition: height ease-in-out 1s,width ease-in-out 1s,background ease-in-out .7s, padding-top ease-in-out 1s;
 	z-index: 444;
-	padding-top: .5cm !important;
+	
 }
 .navbar-collapsed:not(.open){
 	border-style:none;
 }
 .navbar-collapsed.open{
 	height:100%;
+	top: 1cm;
+	padding: 0 10px;
+	padding-top: 1.5cm !important;
 }
 .nav-item{
 	color:rgb(var(--color));
@@ -241,7 +242,7 @@ footer a{
 }
 .card{
 	position: relative;
-	padding: .1cm;
+	padding: .5cm;
 	margin: .5cm auto;
 }
 .card .icon{
@@ -254,8 +255,18 @@ footer a{
     max-height: 5vmin;
     max-width: 5vmin;
 }
-input{
+a[href]{
+	color:rgb(var(--color));
+	font-size: 1.1em;
+	text-decoration: none;
+}
+input,textarea{
 	border:none;
+	box-shadow: inset ;
+}
+.input-group{
+	display: grid;
+	grid-template-columns:1fr 1fr;
 }
 .form-label{
 	padding: 7px;
@@ -273,12 +284,40 @@ input{
 .centred-line{
 	margin:0 auto;
 }
+.alert{
+	background: #f66a;
+	border: #f00 solid 2px;
+	padding: 5px;
+	border-radius: 5px;
+	color: #fff;
+	text-align: center;
+}
+dialog{
+	position: fixed;
+    width: 80%;
+	pointer-events: auto;
+	background-color: rgb(var(--light));
+	/* --dark: --light; */
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 0.3rem;
+	outline: 0;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	left: 50%;
+}
+.grid-4{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 50px;
+}
 /* == Boot trap == */
 .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,
 .col-7,.col-8,.col-9,.col-10,.col-11,.col-12{
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
 }
+
 .col-1 {width: 8.3333333%;}
 .col-2 {width: 16.666667%;}
 .col-3 {width: 25%;}
@@ -351,6 +390,20 @@ input{
 	height: 100%;
 	border-radius:0 0 0 0;
 }
+.form-floating > label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	padding: 1rem 1.1rem;
+	pointer-events: none;
+	border: 1px solid transparent;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	transition: opacity 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+	transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+	transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+}
 .text-start {
 	text-align: left !important;
 }
@@ -400,6 +453,11 @@ input{
 }
 /* Device medium */
 @media (min-width: 576px){
+	.grid-4{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 50px;
+	}
 	.col-md-1 {width: 8.3333333%;}
 	.col-md-2 {width: 16.666667%;}
 	.col-md-3 {width: 25%;}
@@ -412,7 +470,7 @@ input{
 	.col-md-10 {width: 83.333333%;}
 	.col-md-11 {width: 91.666667%;}
 	.col-md-12 {width: 100%;}
-	.navbar-collapsed.right{
+	.navbar-collapsed.right:not(.open){
 		height:100%;
 		width:0;
 		padding:0;
@@ -421,6 +479,9 @@ input{
 	.navbar-collapsed.right.open{
 		width:50vmin;
 	}
+	.row-md{
+		flex-direction: row;
+	}
 	.border-md-top{border-top:solid 5px rgb(var(--color));}
 	.border-md-left{border-left:solid 5px rgb(var(--color));}
 	.border-md-bottom{border-bottom:solid 5px rgb(var(--color));}
@@ -428,6 +489,11 @@ input{
 }
 /* Device Large */
 @media (min-width: 992px) {
+	.grid-4{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-gap: 50px;
+	}
 	.navbar-menu>*:not(.navbar-toggler){
 		display: block;
 	}
@@ -463,6 +529,19 @@ input{
 	.border-lg-left{border-left:solid 5px rgb(var(--color));}
 	.border-lg-bottom{border-bottom:solid 5px rgb(var(--color));}
 	.border-lg-right{border-right:solid 5px rgb(var(--color));}
+	.navbar-toggler{
+		display: none;
+	}
+	.navbar-collapsed{
+		height: 2cm!important;
+		width: 50% !important;
+		top: 0;
+		z-index: 999;
+		padding-top: 0!important;
+		flex-direction: row;
+		background: #0000;
+		border: none;
+	}
 }
 /* == Symfony == */
 .sf-toolbar{
@@ -479,5 +558,10 @@ input{
 	margin: auto;
 }
 .short > *{
-	margin:20px;
+	margin:5px;
+}
+body.dialog-focus>main>:not(dialog[open]){
+	filter:blur(5px);
+	pointer-events: none;
+	user-select: none;
 }

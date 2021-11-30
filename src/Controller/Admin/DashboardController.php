@@ -37,8 +37,8 @@ class DashboardController extends AbstractDashboardController
 
     public function configureDashboard(): Dashboard
     {
-        $hasAccess = $this->isGranted('ROLE_ADMIN');
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        // $hasAccess = $this->isGranted('ROLE_ADMIN');
+        // $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return Dashboard::new()
             // the name visible to end users
             //->setTitle('ABC Legermain')

@@ -13,8 +13,7 @@ var/cache/*
 
 /public/uploads/
 <<<<<<< Updated upstream
-!/var/cache
-/var/cache/*
+
 !/var/cache/.gitkeep
 =======
 

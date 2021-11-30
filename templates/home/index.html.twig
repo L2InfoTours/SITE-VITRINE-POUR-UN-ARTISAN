@@ -1,4 +1,7 @@
 {% extends "present.html.twig" %}
+{% 
+set image = asset("/uploads/images/chantier/axe-gf8c7c0844_640.jpg")
+ %}
 {% block body %}
 	<section class="row clean-block">
 		<div class="col-lg-5 col-10" >
@@ -8,7 +11,7 @@
 		</p>
 		<button type="button" class="btn outline uppercase" onclick=location.assign('/chantier') >choisir un projet</button>
 		</div>
-		<img-aspect class="big-img col-lg-5 col-10" aspect="4/3" crop="cover" src="" >
+		<img-aspect class="big-img col-lg-5 col-10" aspect="16/9" crop="cover" src="" >
 	</section>
 	<section class="clean-block alternative">
 		<div class="text">
@@ -25,6 +28,6 @@
 		</p>
 		<button type="button" class="btn outline uppercase" onclick=location.assign('/chantier') >choisir un projet</button>
 		</div>
-		<img-aspect class="big-img col-lg-5 col-10" aspect="4/3" crop="cover" src="" >
+		<img-aspect class="big-img col-lg-5 col-10" aspect="16/9" crop="cover" src="" >
 	</section>
 {% endblock %}

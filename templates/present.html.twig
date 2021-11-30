@@ -1,6 +1,7 @@
 {% extends "base.html.twig" %}
+
 {% block header %}
-<header class="clean-block clean-hero" style="background-image:url('https://www.bwallpaperhd.com/wp-content/uploads/2020/05/LoneTree-1600x900.jpg');">
+<header class="clean-block clean-hero" style="background-image:url('{{image|default('default image')}}');">
 				<div class="text">
 					<h1 class="uppercase">{{titre}}</h1>
 					<p>And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.
