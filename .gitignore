@@ -11,3 +11,5 @@ var/cache/*
 /public/uploads/
 
 /var/
+/vendor/
+/public/build/
