@@ -10,6 +10,10 @@ class HaikuElement extends HTMLElement{
 class SwitchNightMode extends HaikuElement{
 	static style = `
 	.nightmode{
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
 		  /** sunny side **/
 		  --blue-background: #C2E9F6;
 		  --blue-border: #72cce3;
@@ -460,7 +464,7 @@ function UpdateFilter(){
 }
 function UpdateInputs(){
 	// checkbox
-	const checkboxes = document.querySelectorAll('input[type=checkbox]')
+	const checkboxes = document.querySelectorAll('input[type=checkbox]:not([hidden])')
 	checkboxes.forEach(checkbox=>{
 		checkbox.style.display = "none"
 		const close = ()=>{

@@ -1,5 +1,13 @@
 {% extends 'present.html.twig' %}
+{% 
+set image = asset("/images/contact.jpg")
+ %}
 {% block title %}New DemandeDevis{% endblock %}
+{% set description %}
+Pour nous contacter afin d'obtenir un renseignement ou un devis, vous pouvez remplir
+le formulaire en bas de cette page ou nous appeler au numéro de téléphone ci-dessous. 
+Nous vous répondrons dans les plus brefs délais.
+{% endset %}
 {% block body %}
 <section class="bg-dark">
 	{{ form_start(form) }}
@@ -39,8 +47,8 @@
 <section class="col">
 	<h1 class="text-center">Contact</h1>
 	<div class="row">
-		<div class="col-5">
-			<img-aspect class="big-img block shadow col-lg-5 col-10" aspect="4/3" crop="cover" src="">
+		<div class="col-12 col-lg-5">
+			<div id="map" style=" height: 360px;min-width:480px; overflow:hidden;"></div>
 		</div>
 		<div class="col-10 col-lg-5">
 			<ul class="">
@@ -60,4 +68,20 @@
 		</div>
 	</div>
 </section>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+{{encore_entry_script_tags('leaflet') }}
+<script>
+window.addEventListener('load',()=>{
+	var map = L.map('map').setView([51.505, -0.09], 13);
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+
+	L.marker([51.5, -0.09]).addTo(map)
+	    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+	    .openPopup();
+})
+</script>
 {% endblock %}

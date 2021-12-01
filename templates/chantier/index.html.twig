@@ -1,22 +1,26 @@
 {% extends "present.html.twig" %}
+{% 
+set image = asset("/images/projets.jpg")
+ %}
 {% block body %}
 <section>
 	<div class="row">
 		{% for type in types %}
 			<div class="col" onclick="document.getElementById('{{type}}').click()">
-				<input type="checkbox"  style="display:none;" id="{{type}}" onclick="doFilter()" class="filter">
+				<input type="checkbox"  style="display:none;" hidden id="{{type}}" onclick="doFilter()" class="filter">
 				<div class="card bg-dark rounded shadow" style="background-image: url('unsplash-photo-1.jpg');">
-				<div class="col text-shadow">
-					<h2>{{type}}</h2>
+					<div class="col text-shadow">
+						<h2>{{type}}</h2>
+					</div>
 				</div>
 			</div>
 		{% endfor %}
 	</div>
 </section>
 <section>
-	<div class="grid-4" id="filtred">
+	<div class="grid" id="filtred">
 	{% for chantier in projects %}
-		<div class="col-lg-12 {% for type in chantier.getTypes() %} {{type.getType()}}{% endfor %} filter">
+		<div class="col-lg-12 {% for type in chantier.getTypes() %} {{type.getType()}}{% endfor %} filter" style="max-width:480px;margin: auto;">
 			<div class="card shadow">
 				<img-aspect aspect="16/9" crop="cover"  src="{{ asset("/uploads/images/chantier/#{chantier.getImages()[0].getImage()}") }}" alt="img"></img-aspect>
 				<h6>{{ chantier.nom }}</h6>

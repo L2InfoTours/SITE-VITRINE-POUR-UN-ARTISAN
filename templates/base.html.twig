@@ -1,8 +1,13 @@
+{%
+set icon = asset("/images/logo.png")
+%}
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="{{icon}}" />
 		<meta charset="UTF-8">
 		<title>{% block title %}Welcome!{% endblock %}</title>
 		{% block stylesheets %}
@@ -12,18 +17,31 @@
 		{% endblock %}
 	</head>
 	<body template=market >
-	<nav class="navbar navbar-dark bg-dark border-bottom" aria-label="First navbar example">
-		<a class="navbar-brand" href="#">LEGERMAIN</a>
-		<div class="row navbar-menu">
-			
+	<nav class="navbar navbar-dark bg-dark border-bottom short">
+		<div class="grid">
+			<img src="{{icon}}" style="height: 2em;margin-right:1em;"/>
+			<a class="navbar-brand" href="#">LEGERMAIN</a>
+		</div>
+		<div class="row navbar-menu" style="width: 100%;">
+			<div id="navbar" class="navbar-nav navbar-collapsed right border-bottom border-md-left">
+				<switch-mode-night class="centred-line" ></switch-mode-night>
+				{% if is_granted('ROLE_ADMIN') %} {# SI ON EST CONNECTER EN TANT QU'ADMIN #}
+					<a class="nav-item" href="{{ path('app_admin')}}">PANNEL ADMINISTRATION</a>
+				{% endif %}
+					<a class="nav-item" href="{{ path('home') }}"> HOME </a>
+					<a class="nav-item" href="{{ path('chantier_index') }}">PROJETS</a>
+					<a class="nav-item" href="#">OFFRES</a> {#TODO#}
+					<a class="nav-item" href="#">DEVIS/CONTACT</a> {#TODO#}
+				{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %} {#SI ON EST CONNECTER#}
+					<a class="nav-item" href="{{ path('app_logout')}}">SE DECONNECTER</a>
+				{% else %}
+					<a class="nav-item" href="{{ path('login')}}">SE CONNECTER</a>
+					<a class="nav-item" href="{{ path('app_register')}}">S'INSCRIRE</a>
+				{% endif %}
+			</div>
 			<navbar-toggle class="navbar-toggler" menu="navbar"></navbar-toggle>
 		</div>
 			</nav>
-		<aside class="navbar-collapsed right border-bottom border-md-left" id="navbar">
-			<switch-mode-night class="centred-line" ></switch-mode-night>
-			<a class="nav-item" href="/">Home</a>
-			<a class="nav-item" href="/demande/devis/new">Contact</a>
-		</aside>
 			{% block header %}{% endblock %}
 			<main>
 				{% block body %}{% endblock %}
@@ -34,11 +52,11 @@
 					<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M13 24h-2v-5.126c-.806-.208-1.513-.661-2.039-1.274-.602.257-1.265.4-1.961.4-2.76 0-5-2.24-5-5 0-1.422.595-2.707 1.55-3.617-.348-.544-.55-1.19-.55-1.883 0-1.878 1.483-3.413 3.341-3.496.823-2.332 3.047-4.004 5.659-4.004 2.612 0 4.836 1.672 5.659 4.004 1.858.083 3.341 1.618 3.341 3.496 0 .693-.202 1.339-.55 1.883.955.91 1.55 2.195 1.55 3.617 0 2.76-2.24 5-5 5-.696 0-1.359-.143-1.961-.4-.526.613-1.233 1.066-2.039 1.274v5.126z"/></svg>
 				</div>
 				<div class="row short">
-					<a href="#" class="nav-link px-2 text-muted">Home</a>
-					<a href="#" class="nav-link px-2 text-muted">Features</a>
-					<a href="#" class="nav-link px-2 text-muted">Pricing</a>
-					<a href="#" class="nav-link px-2 text-muted">FAQs</a>
-					<a href="#" class="nav-link px-2 text-muted">About</a>
+					<a href="{{ path('home') }}" class="nav-link">HOME</a>
+					<a href="{{ path('chantier_index') }}" class="nav-link">PROJETS</a>
+					<a href="#" class="nav-link">OFFRES</a>
+					<a href="#" class="nav-link">DEVIS/CONTACT</a>
+					<a href="{{ path('aboutus') }}" class="nav-link">ABOUT US</a>
 				</div>
 			</footer>
 			{% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
