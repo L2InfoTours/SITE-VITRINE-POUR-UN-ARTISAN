@@ -4,14 +4,12 @@ set image = asset("/images/projets.jpg")
  %}
 {% block body %}
 <section>
-	<div class="row">
+	<div class="grid" style="gap: 65px;" >
 		{% for type in types %}
-			<div class="col" onclick="document.getElementById('{{type}}').click()">
-				<input type="checkbox"  style="display:none;" hidden id="{{type}}" onclick="doFilter()" class="filter">
-				<div class="card bg-dark rounded shadow" style="background-image: url('unsplash-photo-1.jpg');">
-					<div class="col text-shadow">
-						<h2>{{type}}</h2>
-					</div>
+			<div class="card bg-dark rounded shadow-hover" onclick="document.getElementById('{{type}}').click()" style="width: 360px;height: 480px;background-image: url('{{ asset("/images/#{type}.jpg") }}');">
+			<input type="checkbox"  style="display:none;" hidden id="{{type}}" onclick="doFilter()" class="filter">
+				<div class="col text-shadow">
+					<h2 class="centred" >{{type}}</h2>
 				</div>
 			</div>
 		{% endfor %}

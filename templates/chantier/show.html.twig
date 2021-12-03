@@ -1,7 +1,7 @@
 {% extends 'present.html.twig' %}
-{% 
-set image = asset("/images/chantiers.jpg")
- %}
+{% set title = chantier.nom %}
+{% set description = chantier.description %}
+{% set image = asset("/images/chantiers.jpg") %}
 {% block body %}
 <section >
 	<div class="row">
@@ -181,6 +181,11 @@ slideshow = [...slideshow].map(x=>{
 })
 </script>
 <!-- Gallery -->
+<script src="{{asset("/scripts/haiku.js")}}"></script>
 
-
+<div class="row">
+	<div class="centred">
+		<script>haiku.network.twitter.username = "LEGERMAIN";haiku.network.share()</script>
+	</div>
+</div>
 {% endblock %}

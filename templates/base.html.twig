@@ -9,7 +9,10 @@ set icon = asset("/images/logo.png")
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="{{icon}}" />
 		<meta charset="UTF-8">
-		<title>{% block title %}Welcome!{% endblock %}</title>
+		<meta name="title" content="{{title|default('LEGERMAIN')}}">
+		<meta name="description" content="{{description|default('le site vitrine LEGERMAIN officiel')}}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>{{title|default('LEGERMAIN')}}</title>
 		{% block stylesheets %}
 		{{ encore_entry_link_tags('app') }}
 		{{encore_entry_link_tags('haiku') }}
@@ -17,32 +20,33 @@ set icon = asset("/images/logo.png")
 		{% endblock %}
 	</head>
 	<body template=market >
-	<nav class="navbar navbar-dark bg-dark border-bottom short">
-		<div class="grid">
-			<img src="{{icon}}" style="height: 2em;margin-right:1em;"/>
-			<a class="navbar-brand" href="#">LEGERMAIN</a>
-		</div>
-		<div class="row navbar-menu" style="width: 100%;">
+	<nav class="navbar navbar-dark bg-dark border-bottom">
+		<img src="{{icon}}" style="height: 2em;margin-right:1em;"/>
+		<a class="navbar-brand" href="#">LEGERMAIN</a>
+		<div class="row navbar-menu uppercase" style="width: 100%;">
 			<div id="navbar" class="navbar-nav navbar-collapsed right border-bottom border-md-left">
-				<switch-mode-night class="centred-line" ></switch-mode-night>
 				{% if is_granted('ROLE_ADMIN') %} {# SI ON EST CONNECTER EN TANT QU'ADMIN #}
 					<a class="nav-item" href="{{ path('app_admin')}}">PANNEL ADMINISTRATION</a>
 				{% endif %}
 					<a class="nav-item" href="{{ path('home') }}"> HOME </a>
 					<a class="nav-item" href="{{ path('chantier_index') }}">PROJETS</a>
 					<a class="nav-item" href="#">OFFRES</a> {#TODO#}
-					<a class="nav-item" href="#">DEVIS/CONTACT</a> {#TODO#}
+					<a class="nav-item" href="{{ path('demande_devis_new') }}">DEVIS/CONTACT</a> {#TODO#}
+					<a href="{{ path('aboutus') }}" class="nav-item">A Propos de Nous</a>
 				{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %} {#SI ON EST CONNECTER#}
 					<a class="nav-item" href="{{ path('app_logout')}}">SE DECONNECTER</a>
 				{% else %}
 					<a class="nav-item" href="{{ path('login')}}">SE CONNECTER</a>
 					<a class="nav-item" href="{{ path('app_register')}}">S'INSCRIRE</a>
 				{% endif %}
+				<navbar-toggle class="navbar-toggler" menu="navbar"></navbar-toggle>
 			</div>
-			<navbar-toggle class="navbar-toggler" menu="navbar"></navbar-toggle>
 		</div>
 			</nav>
 			{% block header %}{% endblock %}
+			<div class="floating bottom left">
+				<switch-mode-night class="centred-line" ></switch-mode-night>
+			</div>
 			<main>
 				{% block body %}{% endblock %}
 			</main>

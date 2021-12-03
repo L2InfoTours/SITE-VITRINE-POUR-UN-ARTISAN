@@ -2,26 +2,148 @@
 <html>
 <head>
 	<meta charset='utf-8'>
+	<meta name="description" content="Mon premier Site Haiku"/>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<title>Page Title</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel='stylesheet' type='text/css' media='screen' href='../assets/styles/haiku.css'>
-	<script src='../assets/haiku.js'></script>
+	<script>
+if(! window.$)
+	$ = function(selector){
+		return document.querySelector(selector)
+	}
+$.create = function(tagName="div",innerHTML="",optn={}){
+	var element = document.createElement(tagName)
+	element.innerHTML = innerHTML
+
+	Object.keys(optn).forEach(key=>{
+		var value = optn[key]
+		if(value)
+			element.setAttribute(key,value)
+	})
+
+	element.toString = element[Symbol.toString] = element[Symbol.toStringTag] = function(){
+		console.log("str")
+		return this.outerHTML
+	}
+	element[Symbol.toPrimitive] = function(hind){
+		if(typeof hind == "string"){
+			return this.outerHTML
+		}
+		return this
+	}
+	return element
+}
+$.createURL = function(optn = {}){
+	var opt = {}
+
+	opt.protocol = optn.protocol||location.protocol
+	opt.hostname = optn.hostname||location.hostname
+	if(opt.hostname == location.hostname){
+		opt.port = location.port
+		if(! opt.port.startsWith(':'))opt.port = `:${opt.port}`
+	}else{
+		opt.port = optn.port||""
+	}
+	opt.pathname = optn.pathname||location.pathname
+	opt.body = optn.body||null
+
+	console.log(optn,opt)
+	
+	var body = ""
+
+	if(opt.protocol.endsWith(':'))opt.protocol.slice(0,-1)
+	if(opt.pathname.startsWith('/'))opt.pathname.slice(1)
+	
+	if(opt.body){
+		body += "?"
+		Object.keys(opt.body).forEach((key,n)=>{
+			var value = opt.body[key]
+			key = encodeURI(key)
+			value = encodeURI(value)
+			if(value){
+				body += `${(n!=0?'&':"")}${key}=${value}`
+			}
+		})
+	}
+	if(! /file/.test(opt.protocol)){
+		return `${opt.protocol}://${opt.hostname}${opt.port}/${opt.pathname}${body}`
+	}else{
+		return `file:://${opt.port}${opt.pathname}`
+	}
+}
+$.createLink = function(text,url="#",optn = {}){
+	var opt = Object.assign({},optn)
+	opt.href = url
+	opt.target = opt.target||(optn.newtab?"_blank":null)
+	return $.create("a",text,opt)
+}
+$.network = {
+	twitter:{
+		protocol:"https",
+		hostname:"twitter.com",
+		pathname:"share",
+		body:{
+			url:$.createURL(),
+			text:($("meta[name=description]")?.getAttribute("content")||$("main")?.textContent||document.body.textContent||"... No CONTENT").trim(),
+			via:"username",
+		},
+		set username(username){
+			this.body.via = username
+		},
+		background: "#55ACEE",
+		color: "white",
+	},
+	facebook:{
+		protocol:"https",
+		hostname:"facebook.com",
+		pathname:"sharer/sharer.php",
+		body:{
+			u:$.createURL(),
+		},
+		background: "#3B5998",
+		color: "white",
+	},
+	linkedin:{
+		protocol:"https",
+		hostname:"linkedin.com",
+		pathname:"shareArticle",
+		body:{
+			url:$.createURL(),
+			source:$.createURL(),
+			title:($("meta[name=title]")?.getAttribute("content")||$("title")?.textContent||"... No TITLE").trim(),
+			summary:($("meta[name=description]")?.getAttribute("content")||$("main")?.textContent||document.body.textContent||"... No CONTENT").trim(),
+		},
+		
+		background: "#007bb5",
+		color: "white",
+	},
+	share:function(){
+		var networks = []
+		Object.keys($.network).forEach(key=>{
+			
+			if(typeof $.network[key] == "object"){
+				var a = $.createLink("",$.createURL($.network[key]),{
+					class:`icon network fa fa-${key}`,
+				})
+				a.style = `margin: 10px;padding: 5px;border-radius: 50%;background: ${$.network[key].background};color: ${$.network[key].color};width: 1.5em;height: 1.5em;text-align: center;`
+				networks.push(a)
+			}else{
+				console.log(key,$.network[key])
+			}
+		})
+		document.write(networks.join(''))
+	}
+}
+	</script>
 </head>
 <body>
-	<switch-mode-night></switch-mode-night>
-	<div type="filters-category" filterfor="filtering" fillonempty>
-		<div category="door" >Door</div>
-		<div category="window" >Window</div>
-		<div category="carpet" >Carpet</div>
-	</div>
-	<div type="filters-sorting" id="filtering">
-		<div categories="door carpet" >Item 1</div>
-		<div categories="window carpet" >Item 2</div>
-		<div categories="door" >Item 3</div>
-		<div categories="window carpet" >Item 4</div>
-		<div categories="carpet" >Item 5</div>
-	</div>
-
+	mon premier site haiku
+	<script>
+		$.network.twitter.username = "LEGERMAIN"
+		$.network.share()
+		</script>
+	
 </body>
 </html>

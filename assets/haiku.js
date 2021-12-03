@@ -509,9 +509,6 @@ function UpdateDialog(){
 		document.body.classList.add("dialog-focus")
 	}
 }
-function $(selector){
-	return document.querySelector(selector)
-}
 window.addEventListener('load',()=>{
 	UpdateFilter()
 	UpdateTabber()
