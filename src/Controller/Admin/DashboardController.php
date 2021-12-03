@@ -28,17 +28,12 @@ class DashboardController extends AbstractDashboardController
         // you can also render some template to display a proper Dashboard
         // (tip: it's easier if your template extends from @EasyAdmin/page/content.html.twig)
         return $this->render('admin/index.html.twig');
-        // return parent::index();
-        // // redirect to some CRUD controller
-        // $routeBuilder = $this->get(AdminUrlGenerator::class);
-
-        // return $this->redirect($routeBuilder->setController(ChantierCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
     {
-        // $hasAccess = $this->isGranted('ROLE_ADMIN');
-        // $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        $hasAccess = $this->isGranted('ROLE_ADMIN');
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return Dashboard::new()
             // the name visible to end users
             //->setTitle('ABC Legermain')
