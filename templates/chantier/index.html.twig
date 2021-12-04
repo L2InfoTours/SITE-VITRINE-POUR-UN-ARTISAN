@@ -27,7 +27,7 @@ set image = asset("/images/projets.jpg")
 				<h6>{{ chantier.nom }}</h6>
 				<p class="card-text" style="white-space: normal;overflow: hidden;text-overflow: ellipsis;max-height: 105px;min-height: 105px;">{{ chantier.description | striptags}}</p>
 				<div class="col">
-					<a href="{{path('chantier_show',{'id': chantier.id}) }}" class="btn outline centred">View</a>
+					<a href="{{path('chantier_show',{'id': chantier.id}) }}" class="btn outline centred">Voir plus</a>
 				</div>
 			</div>
 		</div>

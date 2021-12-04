@@ -12,7 +12,7 @@ La couverture en zinc, qu'elle soit à joint debout ou à tasseaux,
 ainsi que tous types d'habillages en zinc font partie de nos compétences.
 Les couvertures en bac acier également.
 		</p>
-		<button type="button" class="btn outline uppercase" onclick=location.assign('/chantier') >choisir un projet</button>
+		<button type="button" class="btn outline uppercase" onclick=location.assign({{ path('chantier_index') }}) >choisir un projet</button>
 		</div>
 		<img-aspect class="big-img col-lg-5 col-10" aspect="16/9" crop="cover" src="{{asset("/images/couverture-charpente.jpg")}}" >
 	</section>
@@ -25,7 +25,7 @@ Nous mettons à vos services nos compétences et notre expertise dans des domain
 L’entreprise ABC Legermain est qualifiée 
 <a href="https://www.qualibat.com/"  target="_blank" rel="noopener noreferrer">QUALIBAT</a>
 .</p>
-			<button type="button" onclick=location.assign('/aboutus') class="btn outline uppercase">lire la suite</button>
+			<button type="button" onclick=location.assign({{ path('aboutus') }}) class="btn outline uppercase">lire la suite</button>
 		</div>
 	</section>
 	<section class="row-reverse clean-block">
@@ -38,7 +38,7 @@ vous ne serez jamais seul. Une question, un doute, un avis, un souci ? Depuis, T
 notre service client est à votre disposition et vous prête une oreille vraiment attentive, 
 pour vous apporter des solutions personnalisées.
 		</p>
-		<button type="button" class="btn outline uppercase" onclick=location.assign('/chantier') >choisir un projet</button>
+		<button type="button" class="btn outline uppercase" onclick=location.assign({{ path('demande_devis_new') }}) >choisir un projet</button>
 		</div>
 		<img-aspect class="big-img col-lg-5 col-10" aspect="16/9" crop="cover" src="{{asset("/images/couverture-zinguerie.jpg")}}" >
 	</section>

@@ -54,7 +54,7 @@ set icon = asset("/images/logo.png")
 				{% block body %}{% endblock %}
 			</main>
 			<footer class="border-top bg-dark">
-				<p class="footer-copyright">&copy; 2021 Company, Inc</p>
+				<p class="footer-copyright">&copy; 2021 ABC Legermain, Inc</p>
 				<div class="container rows">
 					<img src="{{icon}}" style="height: 2em;" onclick="location.assign(this.getAttribute('href'))" href="{{ path('home') }}"/>
 				</div>
@@ -62,8 +62,8 @@ set icon = asset("/images/logo.png")
 					<a href="{{ path('home') }}" class="nav-link">ACCUEIL</a>
 					<a href="{{ path('chantier_index') }}" class="nav-link">PROJETS</a>
 					<a href="{{ path('aboutus') }}" class="nav-link">A Propos De Nous</a>
-					<a href="#" class="nav-link">DEVIS/CONTACT</a>
-					<a href="#" class="nav-link">OFFRES</a>
+					<a href="{{ path('demande_devis_new') }}" class="nav-link">DEVIS/CONTACT</a>
+					<a href="{{ path('reponse_index') }}" class="nav-link">OFFRES</a>
 				</div>
 			</footer>
 			{% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
