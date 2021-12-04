@@ -1,12 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'present.html.twig' %}
+{%
+set title = "Repondre à une OFFRES"
+%}
 
-{% block title %}Hello ReponseController!{% endblock %}
 
 {% block body %}
 <section >
 	{{ form_start(form) }}
 	<div class="col ">
-		<h1 class="text-center">Nouvelle demande de devis</h1>
+		<h1 class="text-center uppercase">{{title}}</h1>
 		<div class="row">
 			<div class="col-10 col-lg-4 col ">
 				<div class="col ">
