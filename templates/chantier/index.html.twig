@@ -7,12 +7,12 @@ set image = asset("/images/projets.jpg")
  %}
 {% block body %}
 <section>
-	<div class="grid" style="gap: 65px;" >
+	<div class="grid small-sm" style="gap: 35px;" >
 		{% for type in types %}
-			<div class="card bg-dark rounded shadow-hover" onclick="document.getElementById('{{type}}').click()" style="width: 360px;height: 480px;background-image: url('{{ asset("/uploads/images/typechantier/#{type.getImage()}") }}');">
-			<input type="checkbox"  style="display:none;" hidden id="{{type}}" onclick="doFilter()" class="filter">
+			<div class="card col-3 bg-dark rounded cover" onclick="document.getElementById('{{type}}').click()" style="background-image: url('{{ asset("/images/typechantier/#{type.getImage()}") }}');height:100%;min-width: min-content;">
+			<input type="checkbox" style="display:none;" hidden id="{{type}}" onclick="doFilter()" class="filter">
 				<div class="col text-shadow">
-					<h2 class="centred" >{{type}}</h2>
+					<h2 class="text-center" >{{type}}</h2>
 				</div>
 			</div>
 		{% endfor %}

@@ -572,6 +572,9 @@ dialog .title{
 	.hide-sm{
 		display: none;
 	}
+	.small-sm{
+		font-size: 10px;
+	}
 }
 /* Device medium */
 @media (min-width: 576px){
