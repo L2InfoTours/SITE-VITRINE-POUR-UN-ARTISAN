@@ -156,6 +156,13 @@ nav .navbar-toggler {
 	margin: 1em auto;
 	text-overflow: ellipsis;
 	overflow-wrap: initial;
+	opacity: .9;
+	transition: all .1s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.nav-item:hover{
+	filter: brightness(110%) saturate(110%);
+	transform: scale(1.1) translateY(-10%);
+	opacity:1;
 }
 p{color: rgba(var(--dark),var(--a-text));}
 main {
@@ -407,6 +414,29 @@ dialog .title{
 	flex-wrap: wrap;
 	gap: 15px;
 }
+.offre {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+	position: relative;
+}
+.offre h2{
+	margin:0;
+	margin-bottom: 1em;
+}
+.offre div{
+	margin-left: 1em;
+}
+.datetime{
+	font-size: small;
+	opacity:.9;
+	color:rgba(var(--dark),.5);
+}
+.offre .datetime{
+	position: absolute;
+	bottom: 0;
+	right: 1em;
+}
 /* == Boot trap == */
 .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,
 .col-7,.col-8,.col-9,.col-10,.col-11,.col-12{
@@ -537,6 +567,12 @@ dialog .title{
 .navbar-menu>*:not(.navbar-toggler){
 	display: none;
 }
+/* Device Small */
+@media (max-width: 576px){
+	.hide-sm{
+		display: none;
+	}
+}
 /* Device medium */
 @media (min-width: 576px){
 	.grid-4{
@@ -578,7 +614,7 @@ dialog .title{
 	.border-md-left{border-left:solid 5px rgb(var(--color));}
 	.border-md-bottom{border-bottom:solid 5px rgb(var(--color));}
 	.border-md-right{border-right:solid 5px rgb(var(--color));}
-
+	.hide-md{display:none;}
 }
 /* Device Large */
 @media (min-width: 992px) {
@@ -651,6 +687,7 @@ dialog .title{
 	.navbar-nav.navbar-collapsed .nav-item{
 		width: fit-content;
 	}
+	.hide-lg{display:none;}
 }
 /* == Symfony == */
 .sf-toolbar{
@@ -676,6 +713,9 @@ dialog .title{
 .navbar-nav.navbar-collapsed.open{
 	z-index: -444;
 	
+}
+.offre{
+	padding: .2em;
 }
 /* html5 */
 body.dialog-focus>main>:not(dialog[open]){

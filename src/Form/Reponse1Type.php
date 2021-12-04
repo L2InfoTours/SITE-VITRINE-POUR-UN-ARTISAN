@@ -2,10 +2,12 @@
 
 namespace App\Form;
 
+use App\Entity\Offre;
 use App\Entity\Reponse;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class Reponse1Type extends AbstractType
 {
@@ -19,7 +21,9 @@ class Reponse1Type extends AbstractType
             ->add('lettre_motivation')
             ->add('telephone')
             ->add('email')
-            ->add('offre')
+            ->add('offre',EntityType::class,[
+				'class' => Offre::class,
+			])
         ;
     }
 
