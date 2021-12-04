@@ -3,11 +3,15 @@
 {% set description = chantier.description %}
 {% set image = asset("/images/chantiers.jpg") %}
 {% block body %}
+<script src="{{asset("/scripts/haiku.js")}}"></script>
 <section >
 	<div class="row">
 		<img-aspect class="big-img col-lg-5 col-10" aspect="16/9" crop="cover" src="{{ asset("/uploads/images/chantier/#{chantier.getImages()[0].getImage()}") }}" ></img-aspect>
 		<div class="col-md-6">
-			<h1 class="uppercase">{{chantier.nom}}</h1>
+			<div class="row">
+				<script>haiku.network.twitter.username = "LEGERMAIN";haiku.network.share()</script>
+			</div>
+			<h1 style="margin: 0;" class="uppercase">{{chantier.nom}}</h1>
 			<h2 class="uppercase">{{chantier.adresse}}</h2>
 			<p>
 				{{chantier.description | striptags}}
@@ -17,7 +21,7 @@
 </section>
 <section>
 	<h1 class="text-center">Photos</h1>
-	<div class="row">
+	<div class="grid">
 		{% for image in chantier.getImages() %}
 			<img-aspect class="col-lg-4 col-6 lightbox" aspect="16/9" crop="cover" src="{{ asset("/uploads/images/chantier/#{image.getImage()}") }}" ></img-aspect>
 		{% endfor %}
@@ -181,11 +185,4 @@ slideshow = [...slideshow].map(x=>{
 })
 </script>
 <!-- Gallery -->
-<script src="{{asset("/scripts/haiku.js")}}"></script>
-
-<div class="row">
-	<div class="centred">
-		<script>haiku.network.twitter.username = "LEGERMAIN";haiku.network.share()</script>
-	</div>
-</div>
 {% endblock %}

@@ -192,10 +192,11 @@ footer{
 }
 .shadow-hover{
 	box-shadow: 1px 1px 0px 1px rgba(var(--dark),var(--a-text));
-	transform: scale(1.12);
+	transition: all .1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .shadow-hover:hover{
-	box-shadow: 5px 5px 5px 5px rgba(var(--dark),var(--a-text));
+	box-shadow: 5px 5px 5px 5px #0008;
+	transform: scale(1.12);
 }
 img-aspect.shadow,block{
 	display: block;
@@ -490,6 +491,23 @@ dialog .title{
 }
 .cover{
 	background-size:cover;
+}
+.contain{
+	background-size: contain;
+}
+.overlay{
+	background-blend-mode: color-dodge;
+	transition: all .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.overlay:hover{
+	background-blend-mode: initial;
+	transform: scale(1.1);
+	background-color: rgb(var(--color));
+	color: #0000;
+}
+.contain.overlay{
+	background-repeat: no-repeat;
+	background-position: center;
 }
 .rounded{
 	border-radius: .5cm;

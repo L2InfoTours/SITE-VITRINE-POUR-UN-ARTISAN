@@ -9,7 +9,7 @@ set image = asset("/images/projets.jpg")
 <section>
 	<div class="grid small-sm" style="gap: 35px;" >
 		{% for type in types %}
-			<div class="card col-3 bg-dark rounded cover" onclick="document.getElementById('{{type}}').click()" style="background-image: url('{{ asset("/images/typechantier/#{type.getImage()}") }}');height:100%;min-width: min-content;">
+			<div class="card col-3 bg-dark rounded contain overlay shadow-hover" onclick="document.getElementById('{{type}}').click()" style="background-image: url('{{ asset("/images/typechantier/#{type.getImage()}") }}');height:100%;min-width: min-content;">
 			<input type="checkbox" style="display:none;" hidden id="{{type}}" onclick="doFilter()" class="filter">
 				<div class="col text-shadow">
 					<h2 class="text-center" >{{type}}</h2>
@@ -21,8 +21,8 @@ set image = asset("/images/projets.jpg")
 <section>
 	<div class="grid" id="filtred">
 	{% for chantier in projects %}
-		<div class="col-lg-12 {% for type in chantier.getTypes() %} {{type.getType()}}{% endfor %} filter" style="max-width:480px;margin: auto;">
-			<div class="card shadow">
+		<div class="col-12 col-md-4 col-lg-3 {% for type in chantier.getTypes() %} {{type.getType()}}{% endfor %} filter" style="max-width:480px;margin: auto;">
+			<div class="card shadow-hover">
 				<img-aspect aspect="16/9" crop="cover"  src="{{ asset("/uploads/images/chantier/#{chantier.getImages()[0].getImage()}") }}" alt="img"></img-aspect>
 				<h6>{{ chantier.nom }}</h6>
 				<p class="card-text" style="white-space: normal;overflow: hidden;text-overflow: ellipsis;max-height: 105px;min-height: 105px;">{{ chantier.description | striptags}}</p>

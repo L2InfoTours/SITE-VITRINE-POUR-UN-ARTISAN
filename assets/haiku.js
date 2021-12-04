@@ -285,6 +285,7 @@ class TipBox extends HaikuElement{
 		this.shadowRoot.appendChild(icon)
 		this.root.classList.add('tip-box-content')
 		this.root.style.display = "none"
+		this.root.style.minWidth = "max-content"
 
 		this.style = "width:30px;height:30px;"
 
