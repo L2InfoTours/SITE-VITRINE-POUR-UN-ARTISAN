@@ -3,19 +3,51 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+{{encore_entry_link_tags('signin') }}
+<section class="row">
+	<div class="col-7">
+		<h1 class="uppercase">inscrivez-vous sur LEGERMAIN</h1>
+		<p>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+	</div>
+	<div class="col-10 col-lg-5 outline rounded">
+		{% for flashError in app.flashes('verify_email_error') %}
+			<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+		{% endfor %}
+		<div class="form-signin">
+			{{ form_start(registrationForm) }}
+			<div class="input-group">
+				{{ form_label(registrationForm.email, "Adresse mail", {'label_attr':{'class':'form-label'}}) }}
+				{{ form_widget(registrationForm.email, { 'attr': {'placeholder': 'name@example.com', 'class' : 'form-control form-control-danger'} }) }}
+			</div>
+			<div class="input-group">
+				{{ form_label(registrationForm.plainPassword, 'Mot de passe', {'label_attr':{'class':'form-label'}}) }}
+				{{ form_widget(registrationForm.plainPassword, {'attr' : {'placeholder': 'password', 'class' : 'form-control form-control-danger'},label: 'Password'}) }}
+			</div>
+			<div class="row row-md short form-label">
+				{{ form_widget(registrationForm.agreeTerms,{'attr' : {}}) }}
+				{{ form_label(registrationForm.agreeTerms, "Accepter") }}
+				<a href="#CGU">les Conditions d'utilisation (voir ici)</a>
+			</div>
+			<div class="row form-label">
+				<button class="btn outline" onclick="showErrors()" >S'inscrire</button>
+			</div>
+		</div>
+	</div>
+</section>
+<dialog id="CGU" >
+	<div class="col">
+		<h5>Conditions d'utilisation</h5>
+		<p class="col-12">Lors de l'inscription sur le Site, cette acceptation sera confirmée par le fait de cocher la case correspondant à la phrase suivante : « Je reconnais avoir lu et accepté les Conditions Générales d'Utilisation »</p>
+		<button onclick="document.querySelector('#CGU').close();document.querySelector('#registration_form_agreeTerms').checked = true;document.querySelector('#registration_form_agreeTerms').update()" class="btn outline">
+		J'ai lu les conditions et les accepte
+		</button>
+	</div>
+</dialog>
+{{ form_end(registrationForm) }}
+<script>
+function showErrors(){
+    console.log({{ form_errors(registrationForm) }});  
+}
 
-    <h1>Register</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+</script>
 {% endblock %}

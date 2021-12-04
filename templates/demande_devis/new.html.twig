@@ -1,11 +1,85 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}New DemandeDevis{% endblock %}
-
+{% extends 'present.html.twig' %}
+{% set image = asset("/images/contact.jpg") %}
+{% set title = "Demandez un devis / Nous Contacter" %}
+{% set description %}
+Pour nous contacter afin d'obtenir un renseignement ou un devis, vous pouvez remplir
+le formulaire en bas de cette page ou nous appeler au numéro de téléphone ci-dessous. 
+Nous vous répondrons dans les plus brefs délais.
+{% endset %}
 {% block body %}
-    <h1>Create new DemandeDevis</h1>
+<section class="bg-dark">
+	{{ form_start(form) }}
+	<div class="col ">
+		<h1 class="text-center">Nouvelle demande de devis</h1>
+		<div class="row">
+			<div class="col-10 col-lg-4 col ">
+				<div class="col ">
+					<label class="form-label">Nom</label> 
+					{{ form_widget(form.nom, {'attr':{'class':'form-control'}}) }}
+				</div>
+				<div class="col ">
+					<label class="form-label">Telephone </label>
+					{{ form_widget(form.telephone, {'attr':{'class':'form-control'}}) }}
+				</div> 
+			</div>
+			<div class="col-10 col-lg-4 col ">
+				<div class="col ">
+					<label class="form-label">Adresse  </label>
+					{{ form_widget(form.adresse, {'attr':{'class':'form-control'}}) }}
+				</div>
+				<div class="col ">
+					<label class="form-label">Email </label>
+					{{ form_widget(form.email, {'attr':{'class':'form-control'}}) }}
+				</div>
+			</div>
+		</div>
+		<div class="col-10 col centred">
+			<label class="form-label text-light"> Description </label>
+			{{ form_widget(form.description, {'attr': {'rows':"5", 'class':'col-12 form-control'} })}}
+		</div>
+		<button type="submit" class="btn outline uppercase form-submit">Enregistrer</button>
+	</div>
+	{{ form_rest(form) }}
+	{{form_end(form)}}
+</section>
+<section class="col">
+	<h1 class="text-center">Contact</h1>
+	<div class="row">
+		<div class="col-12 col-lg-5">
+			<div id="map" style=" height: 360px;min-width:480px; overflow:hidden;"></div>
+		</div>
+		<div class="col-10 col-lg-5">
+			<ul class="">
+				<li>
+					<h5>Telephone</h5>
+					<p>07 55 48 46 17</p>
+				</li>
+				<li>
+					<h5>Addresse</h5>
+					<p>2693 Metz Lane</p>
+				</li>
+				<li>
+					<h5>Horaire de travail</h5>
+					<p>7h00 - 18h00</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+{{encore_entry_script_tags('leaflet') }}
+<script>
+window.addEventListener('load',()=>{
+	var map = L.map('map').setView([51.505, -0.09], 13);
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
 
-    {{ include('demande_devis/_form.html.twig') }}
-
-    <a href="{{ path('demande_devis_index') }}">back to list</a>
+	L.marker([51.5, -0.09]).addTo(map)
+	    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+	    .openPopup();
+})
+</script>
 {% endblock %}

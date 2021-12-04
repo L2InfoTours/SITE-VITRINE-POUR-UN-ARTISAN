@@ -21,18 +21,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 class DashboardController extends AbstractDashboardController
 {
     /**
-     * @Route("/admin")
+     * @Route("/admin", name="app_admin")
      */
     public function index(): Response
     {
         // you can also render some template to display a proper Dashboard
         // (tip: it's easier if your template extends from @EasyAdmin/page/content.html.twig)
         return $this->render('admin/index.html.twig');
-        // return parent::index();
-        // // redirect to some CRUD controller
-        // $routeBuilder = $this->get(AdminUrlGenerator::class);
-
-        // return $this->redirect($routeBuilder->setController(ChantierCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
@@ -77,17 +72,20 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         return [
-            MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
+            MenuItem::linkToDashboard('Information', 'fa fa-info-circle'),
+            MenuItem::linkToRoute('Retourner sur le site', 'fa fa-reply', 'home'),
 
-            MenuItem::section('Consulter'),
-            MenuItem::linkToCrud('DemandeDevis', 'fa fa-comment', DemandeDevis::class),
+            MenuItem::section('Devis'),
+            MenuItem::linkToCrud('Demande de devis', 'fa fa-comment', DemandeDevis::class),
 
-            MenuItem::section('Modifier'),
-            MenuItem::linkToCrud('Chantier', 'fa fa-tags', Chantier::class),
-            MenuItem::linkToCrud('TypeChantier','fa fa-comment', TypeChantier::class),
-            MenuItem::linkToCrud('Image', 'fa fa-comment', Image::class),
-            MenuItem::linkToCrud('Offre', 'fa fa-comment', Offre::class),
-            MenuItem::linkToCrud('Reponse', 'fa fa-comment', Reponse::class),
+            MenuItem::section('Chantier'),
+            MenuItem::linkToCrud('Chantier', 'fa fa-hammer', Chantier::class),
+            MenuItem::linkToCrud('Type de chantier','fa fa-tags', TypeChantier::class),
+            MenuItem::linkToCrud('Image', 'fa fa-images', Image::class),
+            
+            MenuItem::section('Offre'),
+            MenuItem::linkToCrud('Offre', 'fa fa-file', Offre::class),
+            MenuItem::linkToCrud('Reponse', 'fa fa-reply', Reponse::class),
         ];
-    }
+    }    
 }

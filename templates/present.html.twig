@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+
+{% block header %}
+<header class="clean-block clean-hero" style="background-image:url('{{image|default('default image')}}');">
+				<div class="text">
+					<h1 class="uppercase">{{titre}}</h1>
+					<p>{{description|default('')}}</p>
+				</div>
+			</header>
+{% endblock %}

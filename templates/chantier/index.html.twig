@@ -1,71 +1,38 @@
-{% extends "base.html.twig" %}
+{% extends "present.html.twig" %}
+{% 
+set image = asset("/images/projets.jpg")
+ %}
 {% block body %}
-<main>
-
-  <div class="container px-4 py-5 pt-lg-0" id="custom-cards">
-
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 border-bottom border-5">
-    {% for type in types %}
-      <div class="col" onclick="document.getElementById('{{type}}').click()"  >
-        <input type="checkbox"  style="display:block;" id="{{type}}" onclick="doFilter()" class="filter">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{type}}</h2>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                <small>Earth</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                <small>3d</small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-
-    </div>
-  </div>
-
-
-    <div class="container"  >
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="filtred">
-    {% for chantier in projects %}
-        <div class="col-lg-3 {% for type in chantier.getTypes() %} {{type.getType()}}{% endfor %} filter">
-          <div class="card shadow-sm">
-        <img src="{{ asset("/uploads/images/chantier/#{chantier.getImages()[0].getImage()}") }}" alt="img">
-
-
-            <div class="card-body">
-            <h6>{{ chantier.nom }}</h6>
-              <p class="card-text">{{ chantier.contenu}}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group d-grid gap-2 col-12 mx-auto">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    {% endfor %}
-    <div class="filter error" style="display:none;" >
-        Il n a R
-    <div>
-
-    </div>
-  </div>
-
-
-
-
-</main>
+<section>
+	<div class="grid" style="gap: 65px;" >
+		{% for type in types %}
+			<div class="card bg-dark rounded shadow-hover" onclick="document.getElementById('{{type}}').click()" style="width: 360px;height: 480px;background-image: url('{{ asset("/images/#{type}.jpg") }}');">
+			<input type="checkbox"  style="display:none;" hidden id="{{type}}" onclick="doFilter()" class="filter">
+				<div class="col text-shadow">
+					<h2 class="centred" >{{type}}</h2>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</section>
+<section>
+	<div class="grid" id="filtred">
+	{% for chantier in projects %}
+		<div class="col-lg-12 {% for type in chantier.getTypes() %} {{type.getType()}}{% endfor %} filter" style="max-width:480px;margin: auto;">
+			<div class="card shadow">
+				<img-aspect aspect="16/9" crop="cover"  src="{{ asset("/uploads/images/chantier/#{chantier.getImages()[0].getImage()}") }}" alt="img"></img-aspect>
+				<h6>{{ chantier.nom }}</h6>
+				<p class="card-text" style="white-space: normal;overflow: hidden;text-overflow: ellipsis;max-height: 105px;min-height: 105px;">{{ chantier.description}}</p>
+				<div class="col">
+					<a href="{{path('chantier_show',{'id': chantier.id}) }}" class="btn outline centred">View</a>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+	<div class="filter error" style="display:none;margin: auto;font-weight: bold;" >Il n'y a pas d'article dans le chantier sélectionné
+		<div>
+	</div>
+</section>
         <script type="text/javascript">
                     const filtred = document.querySelector("#filtred")
                     const filters = document.querySelectorAll("input.filter")

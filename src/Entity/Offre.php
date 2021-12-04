@@ -20,7 +20,7 @@ class Offre
     private $id;
 
     /**
-     * @ORM\Column(type="date", options={"default":"now()"})
+     * @ORM\Column(type="date", options={})
      */
     private $date;
 
@@ -64,10 +64,10 @@ class Offre
      */
     private $duree;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Admin::class, inversedBy="offres")
-     */
-    private $admin;
+    // /**
+    //  * @ORM\ManyToOne(targetEntity=Admin::class, inversedBy="offres")
+    //  */
+    // private $admin;
 
     /**
      * @ORM\OneToMany(targetEntity=Reponse::class, mappedBy="offre",cascade={"persist"})
@@ -202,17 +202,17 @@ class Offre
         return $this;
     }
 
-    public function getAdmin(): ?Admin
-    {
-        return $this->admin;
-    }
+    // public function getAdmin(): ?Admin
+    // {
+    //     return $this->admin;
+    // }
 
-    public function setAdmin(?Admin $admin): self
-    {
-        $this->admin = $admin;
+    // public function setAdmin(?Admin $admin): self
+    // {
+    //     $this->admin = $admin;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     /**
      * @return Collection|Reponse[]

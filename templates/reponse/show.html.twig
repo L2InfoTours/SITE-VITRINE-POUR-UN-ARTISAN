@@ -24,6 +24,10 @@
                 <td>{{ reponse.cv }}</td>
             </tr>
             <tr>
+                <th>UpdatedAt</th>
+                <td>{{ reponse.updatedAt ? reponse.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
                 <th>Lettre_motivation</th>
                 <td>{{ reponse.lettreMotivation }}</td>
             </tr>

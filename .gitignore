@@ -2,16 +2,14 @@
 /.env.local.php
 /.env.*.local
 /.env
-
+var/cache/*
 ###> symfony/framework-bundle ###
+
+/node_modules/
+
+/public/bundles/
+/public/uploads/
+
 /var/
 /vendor/
-/public/bundles/
-###< symfony/framework-bundle ###
-/node_modules/
-/npm/
-
-/public/uploads/
-!/var/cache
-/var/cache/*
-!/var/cache/.gitkeep
+/public/build/

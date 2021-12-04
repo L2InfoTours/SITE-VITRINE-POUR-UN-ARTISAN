@@ -1,25 +1,43 @@
-{# templates/login/index.html.twig #}
 {% extends 'base.html.twig' %}
 
-{# ... #}
+{% block title %}Login{% endblock %}
 
 {% block body %}
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-    <form action="{{ path('login') }}" method="post">
-        <label for="username">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}"/>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password"/>
-
-        {# If you want to control the URL the user is redirected to on success
-        <input type="hidden" name="_target_path" value="/account"/> #}
-
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-        <button type="submit">login</button>
-    </form>
-{% endblock %}
+{{encore_entry_link_tags('signin') }}
+<section class="row">
+	<div class="col-7">
+		<h1 class="uppercase">CONNECTEZ-VOUS SUR LEGERMAIN</h1>
+		<p>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+	</div>
+	<div class="col-10 col-lg-5 outline rounded">
+		{% if error %}
+			<div class="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
+		{% for flashError in app.flashes('verify_email_error') %}
+			<div class="alert" role="alert">{{ flashError }}</div>
+		{% endfor %}
+		<div class="form-signin">
+			<form action="{{ path('login') }}" method="post">
+				<div class="input-group">
+					<label for="username" class="form-label">Adresse mail</label>
+					<input type="email" class="form-control form-control-danger" id="username" name="_username" value="{{ last_username }}" placeholder="name@example.com">
+				</div>
+				<div class="input-group">
+					<label for="password" class="form-label">Mot de passe</label>
+					<input type="password" class="form-control" id="password" name="_password" placeholder="Password">
+				</div>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<div class="row">
+					<input type="checkbox" name="stay_connected">
+					<label>Rester Connecter</label>
+				</div>
+				<hr class="my-4">
+				<small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+				<div class="row form-label">
+					<button class="btn outline">Se Connecter</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+{% endblock%}
