@@ -9,7 +9,7 @@ set image = asset("/images/projets.jpg")
 <section>
 	<div class="grid" style="gap: 65px;" >
 		{% for type in types %}
-			<div class="card bg-dark rounded shadow-hover" onclick="document.getElementById('{{type}}').click()" style="width: 360px;height: 480px;background-image: url('{{ asset("/images/#{type}.jpg") }}');">
+			<div class="card bg-dark rounded shadow-hover" onclick="document.getElementById('{{type}}').click()" style="width: 360px;height: 480px;background-image: url('{{ asset("/uploads/images/typechantier/#{type.getImage()}") }}');">
 			<input type="checkbox"  style="display:none;" hidden id="{{type}}" onclick="doFilter()" class="filter">
 				<div class="col text-shadow">
 					<h2 class="centred" >{{type}}</h2>
