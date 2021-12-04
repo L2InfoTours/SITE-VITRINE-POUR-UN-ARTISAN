@@ -38,7 +38,6 @@ class ReponseCrudController extends AbstractCrudController
             // ->onlyOnIndex(),
             // ImageField::new('cv')
             // ->setBasePath($this->getParameter("app.path.reponse_cv")),
-            'cv',
             TextareaField::new('cvFile')
             ->setFormType(VichFileType::class)
             ->hideOnIndex()

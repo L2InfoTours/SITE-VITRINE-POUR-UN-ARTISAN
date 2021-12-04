@@ -51,7 +51,7 @@ class Image
     // ...
 
     public function __toString(){
-        return $this->titre;
+        return $this->image;
     }
 
     public function setImageFile(File $image = null)
