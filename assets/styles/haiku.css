@@ -348,6 +348,7 @@ input,textarea{
 	width: 100%;
 }
 .form-floating > label {
+	color: rgb(var(--rgb-dark));
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -389,7 +390,7 @@ dialog{
 	top: 50%;
 	transform: translate(-50%,-50%);
 	left: 50%;
-
+	z-index: 999;
 	
 	font-weight: bold;
 
