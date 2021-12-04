@@ -85,7 +85,7 @@ body {
 }
 header{
 	grid-area: header;
-	min-height: 50vh;
+	min-height: 70vh;
 	max-height: 100vh;
 }
 nav{
@@ -229,7 +229,16 @@ footer a{
 	text-decoration:none;
 	color:rgb(var(--color));
 }
-.col,
+.list{
+	list-style:none;
+}
+.list.separate>*:not(:first-child)::before{
+	content:"";
+	width: 100%;
+	height: 5px;
+	background-color:rgb(var(--color));
+}
+.col,.list
 .row-invert,.row-reverse,.row {
 	display:flex;
 	flex-direction:column;
@@ -242,6 +251,7 @@ footer a{
 	transform: scale(1.05);
 	margin: 5%;
 	z-index: 222;
+	border-radius:10px ;
 }
 .uppercase{
 	text-transform: uppercase;  
@@ -317,6 +327,42 @@ input,textarea{
 .form-submit{
 	margin-top: 30px;
 }
+.form-floating{
+	position: relative;
+	height: 3em;
+}
+.form-floating > .form-control{
+	width: 100%;
+	height: 100%;
+}
+.form-floating > .form-control:not(:focus){
+	padding-left: 50%;
+}
+.form-floating > .form-control:focus ~ label{
+	opacity: .65;
+	transform: scale(.85) translateY(-.5rem) translateX(.15rem);
+}
+.form-floating > .form-control:focus{
+	padding-top: 1.625rem;
+	padding-bottom: .625rem;
+	width: 100%;
+}
+.form-floating > label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	pointer-events: none;
+	border: 1px solid transparent;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	transition: opacity 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+	transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+	transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+}
+.input-group > label{
+	padding: 1rem 1.1rem;
+}
 .centred{
 	margin: auto;
 }
@@ -333,17 +379,26 @@ input,textarea{
 }
 dialog{
 	position: fixed;
-    width: 80%;
 	pointer-events: auto;
-	background-color: rgb(var(--light));
+	background-color: rgb(var(--rgb-light));
 	/* --dark: --light; */
 	background-clip: padding-box;
-	border: 1px solid rgba(0, 0, 0, 0.2);
+	border: 3px solid rgb(var(--rgb-dark));
 	border-radius: 0.3rem;
 	outline: 0;
 	top: 50%;
 	transform: translate(-50%,-50%);
 	left: 50%;
+
+	
+	font-weight: bold;
+
+}
+
+dialog .title{
+	margin-bottom: 10px;
+	font-size: 20px;
+	border-bottom: 3px solid rgb(var(--dark));
 }
 .grid{
 	display: flex;
@@ -430,20 +485,6 @@ dialog{
 	height: 100%;
 	border-radius:0 0 0 0;
 }
-.form-floating > label {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	padding: 1rem 1.1rem;
-	pointer-events: none;
-	border: 1px solid transparent;
-	-webkit-transform-origin: 0 0;
-	transform-origin: 0 0;
-	transition: opacity 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
-	transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
-	transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
-}
 .text-start {
 	text-align: left !important;
 }
@@ -481,12 +522,16 @@ dialog{
 	/* min-height: 100vw; */
 }
 .clean-block .text{
-	max-width: 640px;
+	max-width: 55em;
 	z-index: 2;
 	padding: 40px 15px;
 	text-shadow: 1px 1px 1px rgba(0,0,0,.15);
 	font-weight: 500;
 	font-size: 1.1em;
+}
+.block-heading{
+	margin-top: 5%;
+	margin-bottom: 10%;
 }
 .navbar-menu>*:not(.navbar-toggler){
 	display: none;
@@ -581,7 +626,6 @@ dialog{
 	.border-lg-right{border-right:solid 5px rgb(var(--color));}
 	.navbar-menu{
 		margin: 0;
-		width: max-content;
 	}
 	.navbar-toggler{
 		display: none;
@@ -612,9 +656,6 @@ dialog{
 	position: fixed;
 }
 /*priorities*/
-.navbar-menu{
-	width: min-content;
-}
 .navbar-menu>*{
 	margin:0 1em;
 }

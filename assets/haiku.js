@@ -145,7 +145,7 @@ class SwitchNightMode extends HaikuElement{
 		var style = document.createElement('style')
 		style.innerHTML = SwitchNightMode.style
 		this.shadowRoot.innerHTML = `<div class="nightmode"><input id="night-toggle" value="false" onchange="document.body.parentElement.classList.toggle('night');localStorage.setItem('nightmode',localStorage.getItem('nightmode')=='false')" type="checkbox"><label for="night-toggle"><span></span></label></div>`
-		if(localStorage.getItem("nightmode")=="true"){
+		if(localStorage.getItem("nightmode")=="true"||localStorage.getItem("nightmode")==null){
 			// document.body.classList.add("night")
 			document.body.parentElement.classList.add("night")
 			console.log(document.body.parentElement)
@@ -238,6 +238,69 @@ class NavBarToggle extends HaikuElement{
 }
 
 window.customElements.define("navbar-toggle",NavBarToggle)
+
+class TipBox extends HaikuElement{
+	static style = `
+	.tip-box-content{
+		position: absolute;
+		background: #222;
+		border: #eee 2px solid;
+		padding: 10px;
+		border-radius: 10px;
+		flex-direction: column;
+		transform:translate(-75%,2em);
+	}
+	.row{
+		display:flex;
+		flex-direction: row;
+	}
+	.col{
+		display:flex;
+		flex-direction: column;
+	}
+	.tip-box-content::after{
+
+	}
+	`
+	root = document.createElement('div')
+	constructor(){
+		super()
+		var input = document.createElement('input')
+		input.type = "checkbox"
+		input.style.display = "none"
+
+		var style = document.createElement('style')
+		style.innerHTML = TipBox.style
+		this.shadowRoot.appendChild(style)
+
+		var icon = document.createElement('i')
+		icon.classList.add('fa')
+		icon.classList.add(`fa-${this.getAttribute('icon')}`)
+		icon.innerHTML = this.getAttribute('icon')
+
+		this.shadowRoot.appendChild(input)
+		this.shadowRoot.appendChild(this.root)
+		this.shadowRoot.appendChild(icon)
+		this.root.classList.add('tip-box-content')
+		this.root.style.display = "none"
+
+		this.style = "width:30px;height:30px;"
+
+		icon.addEventListener('click',()=>{
+			input.checked = !input.checked
+			this.switchTip(input.checked)
+		})
+		var childs = [...this.children]
+		for(var child of childs){
+			child.remove()
+			this.root.appendChild(child)
+		}
+	}
+	switchTip(value){
+		this.root.style.display = value?"flex":"none"
+	}
+}
+window.customElements.define("tip-box",TipBox)
 
 class InputSearch extends HaikuElement{
 	static style = `
@@ -489,9 +552,9 @@ function UpdateInputs(){
 		ctx.canvas.onchange = checkbox.onchange
 		checkbox.onchange = null
 		checkbox.update = update
-		checkbox.addEventListener('change',()=>{update()})		
+		checkbox.addEventListener('change',()=>{update()})
 		close()
-		ctx.canvas.style = "width:2em;height:2em;border:rgb(var(--color)) solid .2em;border-radius:.2em;"
+		ctx.canvas.style = "width:1.5em;height:1.5em;border:rgb(var(--color)) solid .1em;border-radius:.2em;margin:1.2em;"
 		checkbox.after(ctx.canvas)
 	})
 }
