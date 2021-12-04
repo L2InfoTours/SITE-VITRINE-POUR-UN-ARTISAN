@@ -609,7 +609,7 @@ function UpdateInputs(){
 		checkbox.update = update
 		checkbox.addEventListener('change',()=>{update()})
 		close()
-		ctx.canvas.style = "width:1.5em;height:1.5em;border:rgb(var(--color)) solid .1em;border-radius:.2em;margin:1.2em;"
+		// ctx.canvas.style = "width:1.5em;height:1.5em;border:rgb(var(--color)) solid .1em;border-radius:.2em;margin:1.2em;"
 		checkbox.after(ctx.canvas)
 	})
 }
