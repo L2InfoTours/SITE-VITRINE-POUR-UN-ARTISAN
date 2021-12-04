@@ -38,10 +38,10 @@ class DashboardController extends AbstractDashboardController
             // the name visible to end users
             //->setTitle('ABC Legermain')
             // you can include HTML contents too (e.g. to link to an image)
-            ->setTitle('&#x1F333; ABC Legermain')
+            ->setTitle('<img src="/images/logo.png"> ABC Legermain</img>')
 
             // the path defined in this method is passed to the Twig asset() function
-            //->setFaviconPath('favicon.svg')
+            ->setFaviconPath("/images/logo.png")
 
             // the domain used by default is 'messages'
             //->setTranslationDomain('my-custom-domain')
