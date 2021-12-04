@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/offre')]
 class ReponseController extends AbstractController
 {
-	#[Route('/', name: 'reponse_index', methods: ['GET'])]
+	#[Route('/', name: 'reponse_index', methods: ['GET','POST'])]
 	public function index(): Response
 	{
 		$page = 0;
@@ -35,6 +35,7 @@ class ReponseController extends AbstractController
 			'offres' => array_slice($offres,$page,$pageLength),
 			'offre' => $offre,
 			'page'=>$page,
+			'message'=>'',
 		]);
 	}
 	#[Route('/postuler', name: 'reponse_new', methods: ['GET', 'POST'])]
@@ -46,13 +47,36 @@ class ReponseController extends AbstractController
 		$error = "";
 
 		if ($form->isSubmitted() && $form->isValid()) {
+			
+			$message="GOOD";
+			$file = $form['cv']->getData();
+
+			if ($file) {
+				$originalFilename = $file->getClientOriginalName();
+				//pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                $newFilename = 'CV-'.uniqid().'.'."pdf";//$file->guessExtension();
+                try {
+                    $file->move(
+                        $this->getParameter('cvs_directory'),
+                        $newFilename
+                    );
+					$reponse->setCvFile($newFilename);
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+			}
+			
+			// $reponse->setCvFile($file);
+
 			$entityManager = $this->getDoctrine()->getManager();
 			$entityManager->persist($reponse);
 			$entityManager->flush();
 
-			return $this->redirectToRoute('reponse_index', [], Response::HTTP_SEE_OTHER);
+			return $this->redirectToRoute('reponse_index', [
+				'message' => $message,
+			], Response::HTTP_SEE_OTHER);
 		}else{
-			$error = "UnValid";
+			// $error = $form;
 		}
 
 		return $this->renderForm('reponse/new.html.twig', [

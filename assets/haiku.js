@@ -450,6 +450,58 @@ class ImageMap extends ImageAspect{
 
 window.customElements.define("img-map",ImageMap)
 
+class DragDropFile extends HaikuElement{
+	#fileInput = document.createElement('input')
+	#area = document.createElement('div')
+	#value = null
+	constructor(){
+		super()
+		if(this.hasAttribute('for')){
+			var newfileInput = document.getElementById(this.getAttribute('for'))
+			if(newfileInput)
+				this.#fileInput = newfileInput
+		}
+		this.#fileInput.type = "file"
+		this.shadowRoot.append(this.#area)
+		this.#fileInput.addEventListener('change',(event)=>{
+			this.#value = this.#fileInput.files[0]
+			this.#change(event)
+		})
+		this.#area.addEventListener('click',()=>{
+			this.#fileInput.click()
+		})
+		this.#area.style = "background:#333;border:#eee;width:100%;height:100%;min-width:3em;min-height:3em;"
+		this.#area.innerHTML = "Click or Drop a File"
+		this.#area.addEventListener('dragover',(e)=>{e.preventDefault()})
+		this.#area.addEventListener('drop',(e)=>{
+			this.#value = DragEvent.dataTransfer
+			this.#change(e)
+			e.preventDefault()
+		})
+	}
+	#change(e){
+		this.setAttribute("value", this.value.name)
+		const dT = new DataTransfer()
+		dT.items.add(this.#value)
+		this.#area.innerHTML = this.#value.name
+		console.log(this.hasAttribute('for'))
+		if(this.hasAttribute('for')){
+			var newfileInput = document.getElementById(this.getAttribute('for'))
+			console.log(newfileInput,this.getAttribute('for'))
+			if(newfileInput)
+				this.#fileInput = newfileInput
+		}
+		
+		this.#fileInput.files = dT.files
+		this.dispatchEvent(new CustomEvent('change',e))
+	}
+	get value(){
+		this.#value.url ||= this.#value.src||URL.createObjectURL(this.#value)
+		return this.#value
+	}
+}
+window.customElements.define("input-dragdrop",DragDropFile)
+
 function UpdateTabber(){
 	const tabcontrolers = document.querySelectorAll("[open-tab]")
 	tabcontrolers.forEach(tabcontroler=>{

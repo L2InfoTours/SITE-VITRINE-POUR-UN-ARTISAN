@@ -108,10 +108,10 @@ class Reponse
         return $this;
     }
 
-    public function setCvFile(File $cv = null)
+    public function setCvFile($cv = null)
     {
-        $this->cvFile = $cv;
 		if ($cv) {
+			$this->cv = $cv;
 			$this->updatedAt = new \DateTime("now");
 		}
     }
