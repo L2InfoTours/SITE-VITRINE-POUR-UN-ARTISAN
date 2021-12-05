@@ -153,7 +153,7 @@ nav .navbar-toggler {
 	color:rgb(var(--color));
 	text-decoration:none;
 	width: 50%;
-	margin: 1em auto;
+	margin: auto;
 	text-overflow: ellipsis;
 	overflow-wrap: initial;
 	opacity: .9;
@@ -268,17 +268,16 @@ footer a{
 	grid-area: copyright;
 	text-align: center;
 }
+.ellipsis{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
 .card{
 	position: relative;
 	padding: .5cm;
 	margin: .5cm auto;
 	border: 3px solid;
-}
-.card-title{
-	height: 2em;
-	display: block ruby;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 .card-text{
 	white-space: normal;overflow: hidden;text-overflow: ellipsis;max-height: 105px;min-height: 105px;
@@ -399,7 +398,7 @@ dialog{
 	position: fixed;
 	pointer-events: auto;
 	background-color: rgb(var(--rgb-light));
-	/* --dark: --light; */
+	--dark: var(--rgb-dark);
 	background-clip: padding-box;
 	border: 3px solid rgb(var(--rgb-dark));
 	border-radius: 0.3rem;

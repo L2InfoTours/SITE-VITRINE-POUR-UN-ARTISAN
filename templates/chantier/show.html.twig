@@ -23,7 +23,7 @@
 	<h1 class="text-center">Photos</h1>
 	<div class="grid">
 		{% for image in chantier.getImages() %}
-			<img-aspect class="col-lg-4 col-6 lightbox" aspect="16/9" crop="cover" src="{{ asset("/uploads/images/chantier/#{image.getImage()}") }}" ></img-aspect>
+			<img-aspect class="col-lg-3 col-5 lightbox" aspect="16/9" crop="cover" src="{{ asset("/uploads/images/chantier/#{image.getImage()}") }}" style="margin: auto;" ></img-aspect>
 		{% endfor %}
 	</div>
 </section>

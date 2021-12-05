@@ -222,8 +222,6 @@ class NavBarToggle extends HaikuElement{
 		div.appendChild(span2)
 		div.appendChild(span3)
 
-		this.style = "width:30px;height:30px;"
-
 		this.addEventListener('click',()=>{
 			input.checked = !input.checked
 			this.switchMenu(input.checked)
@@ -286,8 +284,6 @@ class TipBox extends HaikuElement{
 		this.root.classList.add('tip-box-content')
 		this.root.style.display = "none"
 		this.root.style.minWidth = "max-content"
-
-		this.style = "width:30px;height:30px;"
 
 		icon.addEventListener('click',()=>{
 			input.checked = !input.checked
