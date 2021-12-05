@@ -22,7 +22,7 @@ set icon = asset("/images/logo.png")
 	<body template=market >
 	<nav class="navbar navbar-dark bg-dark border-bottom">
 		<img src="{{icon}}" style="height: 3em;margin:0;" onclick="location.assign(this.getAttribute('href'))" href="{{ path('home') }}"/>
-		<a class="navbar-brand" href="{{ path('home') }}">LEGERMAIN</a>
+		<a style="margin-left: .5em;" class="navbar-brand" href="{{ path('home') }}">LEGERMAIN</a>
 		<div class="grid navbar-menu uppercase col-lg-8">
 			<div id="navbar" class="navbar-nav navbar-collapsed right border-bottom border-md-left">
 				{% if is_granted('ROLE_ADMIN') %} {# SI ON EST CONNECTER EN TANT QU'ADMIN #}

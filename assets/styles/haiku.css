@@ -274,6 +274,12 @@ footer a{
 	margin: .5cm auto;
 	border: 3px solid;
 }
+.card-title{
+	height: 2em;
+	display: block ruby;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 .card-text{
 	white-space: normal;overflow: hidden;text-overflow: ellipsis;max-height: 105px;min-height: 105px;
 }
