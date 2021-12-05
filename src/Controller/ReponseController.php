@@ -25,8 +25,6 @@ class ReponseController extends AbstractController
 	public function search(int $id,int $page): Response
 	{
 		$pageLength = 4;
-		$page = 0;
-		$id = 0;
 		$repo = $this->getDoctrine()->getRepository(Offre::class);
 		$offre = $repo->find($id);
 		$offres = $repo->findAll();

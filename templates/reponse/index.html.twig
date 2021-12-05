@@ -12,6 +12,7 @@ set image = asset("/images/home.jpeg")
 		{% if message %}
 			<p class="alert alert-danger">{{message}}</p>
 		{% endif %}
+		{% if offres %}
 		<div class="col col-10 col-md-6">
 			{%for offre in offres %}
 			<div class="card offre outline rounded col-10" open-tab="offre={{ offre.id }}&page={{page+1}}">
@@ -19,13 +20,21 @@ set image = asset("/images/home.jpeg")
 				<p class="adress">{{ offre.lieu }}</p>
 				<div>{{ offre.mission }}</div>
 				<span class="datetime">{{ offre.date|date("m/d/Y") }}</span>
+				<button class="btn outline hide-md hide-lg" onclick="localStorage.setItem('offre',{{offre.id}});location.assign('/offre/postuler')" >Postuler</button>
             </div>
             {% endfor %}
+			{% if offre %}
             <div class="row">
                 <button class="btn outline" onclick="location.assign('offre={{ offre.id }}&page={{page-1}}')" >Precendante</button>
                 <button class="btn outline" onclick="location.assign('offre={{ offre.id }}&page={{page+1}}')" >Suivante</button>
         	</div>
+			{% else %}
+				<button class="btn outline" onclick="location.assign('offre')" >Precendante</button>
+                <button class="btn outline" onclick="location.assign('offre')" >Suivante</button>
+        	
+			{% endif %}
         </div>
+		{% if offre %}
         <div class="col-6 hide-sm">
 		<button class="btn outline" onclick="localStorage.setItem('offre',{{offre.id}});location.assign('/offre/postuler')" >Postuler</button>
 			<h2>{{ offre.intitule }}({{ offre.type }})</h2>
@@ -36,6 +45,12 @@ set image = asset("/images/home.jpeg")
 			<span class="datetime">{{ offre.duree }}</span>
 			<span class="datetime">{{ offre.date|date("m/d/Y") }}</span>
         </div>
+		{% else %}
+			<p class="alert alert-danger">Cette Offre n'est plus Disponible</p>
+		{% endif %}
+		{% else %}
+			<p class="alert alert-danger">Aucune Offres Disponibles</p>
+		{% endif %}
     </section>
 	
 {% endblock %}

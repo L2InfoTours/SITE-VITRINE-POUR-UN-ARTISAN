@@ -318,7 +318,6 @@ footer a{
 }
 a[href]{
 	color:rgb(var(--color));
-	font-size: 1.1em;
 	text-decoration: none;
 }
 input,textarea{
@@ -693,8 +692,6 @@ dialog .title{
 		display: none;
 	}
 	.navbar-collapsed,.navbar-collapsed.open{
-		height: 2cm!important;
-		/* width: 50% !important; */
 		top: 0;
 		z-index: 999;
 		padding-top: 0!important;
