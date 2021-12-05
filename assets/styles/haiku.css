@@ -107,7 +107,7 @@ body {
 	grid-template:"nav nav"var(--col-1) "main side"auto "footer footer"auto;
 }
 *[template=market]{
-	grid-template:"nav nav"var(--col-1) "header side"auto "main side"auto "footer footer"auto;
+	grid-template:"nav nav"var(--col-1) "header side"auto "main side"auto "footer footer"auto/auto 0px;
 }
 header{
 	grid-area: header;
@@ -788,7 +788,7 @@ dialog .title{
 	.navbar-nav.navbar-collapsed .nav-item{
 		width: fit-content;
 	}
-	.hide-lg{display:none;}
+	.hide-lg{display:none !important;}
 }
 /* == Symfony == */
 .sf-toolbar{
