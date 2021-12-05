@@ -268,17 +268,16 @@ footer a{
 	grid-area: copyright;
 	text-align: center;
 }
+.ellipsis{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
 .card{
 	position: relative;
 	padding: .5cm;
 	margin: .5cm auto;
 	border: 3px solid;
-}
-.card-title{
-	height: 2em;
-	display: block ruby;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 .card-text{
 	white-space: normal;overflow: hidden;text-overflow: ellipsis;max-height: 105px;min-height: 105px;
