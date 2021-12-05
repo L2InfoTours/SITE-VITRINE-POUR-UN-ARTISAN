@@ -1,0 +1,14 @@
+{% if is_granted('ROLE_ADMIN') %} {# SI ON EST CONNECTER EN TANT QU'ADMIN #}
+	<a class="nav-item" href="{{ path('app_admin')}}">PANEL ADMINISTRATION</a>
+{% endif %}
+	<a class="nav-item" href="{{ path('home') }}">ACCUEIL</a>
+	<a class="nav-item" href="{{ path('chantier_index') }}">PROJETS</a>
+	<a class="nav-item" href="{{ path('aboutus') }}">A Propos de Nous</a>
+	<a class="nav-item" href="{{ path('demande_devis_new') }}">DEVIS/CONTACT</a> {#TODO#}
+	<a class="nav-item" href="{{ path('reponse_index') }}">OFFRES</a>
+	{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %} {#SI ON EST CONNECTER#}
+		<a class="nav-item btn outline centred" href="{{ path('app_logout')}}">SE DECONNECTER</a>
+	{% else %}
+		<a class="nav-item btn outline centred" href="{{ path('login')}}">SE CONNECTER</a>
+	{% endif %}
+</div>
