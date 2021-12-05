@@ -231,6 +231,7 @@ class NavBarToggle extends HaikuElement{
 		var menu = this.getAttribute('menu')
 		var v = "open"
 		var cls = document.getElementById(menu).classList
+		cls.style.display = ""
 		value?cls.add(v):cls.remove(v)
 	}
 }

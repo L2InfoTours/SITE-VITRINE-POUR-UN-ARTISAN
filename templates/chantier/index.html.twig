@@ -6,10 +6,10 @@ set title = "PROJETS"
 set image = asset("/images/projets.jpg")
  %}
 {% block body %}
-<section>
+<section class="clean-block">
 	<div class="grid small-sm" style="gap: 35px;" >
 		{% for type in types %}
-			<div class="card col-3 bg-dark rounded cover overlay shadow-hover" onclick="document.getElementById('{{type}}').click()" style="background-image: url('{{ asset("/uploads/images/typechantier/#{type.getImage()}") }}');height:100%;min-width: min-content;">
+			<div class="card col-3 bg-dark rounded cover overlay shadow-hover" onclick="document.getElementById('{{type}}').click()" style="background-image: url('{{ asset("/images/typechantier/#{type.getImage()}") }}');height:100%;min-width: min-content;">
 			<input type="checkbox" style="display:none;" id="{{type}}" onclick="doFilter()" class="filter">
 				<div class="col text-shadow">
 					<h2 class="text-center" >{{type}}</h2>

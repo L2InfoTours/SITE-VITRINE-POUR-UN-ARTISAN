@@ -7,8 +7,8 @@
 	<a class="nav-item" href="{{ path('demande_devis_new') }}">DEVIS/CONTACT</a> {#TODO#}
 	<a class="nav-item" href="{{ path('reponse_index') }}">OFFRES</a>
 	{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %} {#SI ON EST CONNECTER#}
-		<a class="nav-item btn outline centred" href="{{ path('app_logout')}}">SE DECONNECTER</a>
+		<a class="nav-item" href="{{ path('app_logout')}}">SE DECONNECTER</a>
 	{% else %}
-		<a class="nav-item btn outline centred" href="{{ path('login')}}">SE CONNECTER</a>
+		<a class="nav-item" href="{{ path('login')}}">SE CONNECTER</a>
 	{% endif %}
 </div>

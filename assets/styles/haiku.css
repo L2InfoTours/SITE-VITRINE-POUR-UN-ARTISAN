@@ -51,6 +51,8 @@
 
 	--font-size:12pt;
 
+	--nav:10vh;
+
 }
 *{
 	transition: background var(--timing) var(--animed),
@@ -104,10 +106,10 @@ body {
 	display:grid;
 }
 *[template=classic]{
-	grid-template:"nav nav"var(--col-1) "main side"auto "footer footer"auto;
+	grid-template:"nav nav"var(--nav) "main side"auto "footer footer"auto;
 }
 *[template=market]{
-	grid-template:"nav nav"var(--col-1) "header side"auto "main side"auto "footer footer"auto/auto 0px;
+	grid-template:"nav nav"var(--nav) "header side"auto "main side"auto "footer footer"auto/auto 0px;
 }
 header{
 	grid-area: header;
@@ -124,11 +126,10 @@ nav{
 	display: flex;
 	flex-direction: row;
 	z-index:666;
-	/* height: 1.5cm; */
+	height:var(--nav);
 }
 .navbar>*{
 	margin: auto;
-	height: calc(var(--col-1) + var(--col-1-2));
 }
 nav .navbar-brand {
 	color:var(--color);
@@ -200,10 +201,12 @@ p{
 	padding-top: var(--col-1);
 	animation: navbar-collapsed-sm-open .5s var(--animed);
 }
+.btn.nav-item{
+	padding: 0 var(--font-size);
+}
 .nav-item{
 	color:rgb(var(--color));
 	text-decoration:none;
-	width: var(--col-6);
 	margin: auto;
 	margin-top: 0;
 	text-overflow: ellipsis;
@@ -493,28 +496,14 @@ dialog .title{
 	flex-wrap: wrap;
 	gap: var(--col-1-2);
 }
-.offre {
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-	position: relative;
-}
-.offre h2{
+.card h2{
 	margin:0;
-	margin-bottom: var(--col-1);
-}
-.card div{
-	margin-left: var(--col-1);
+	margin-bottom: var(--col-1-2);
 }
 .datetime{
 	font-size: small;
 	opacity:.9;
 	color:rgba(var(--dark),.5);
-}
-.card .datetime{
-	position: absolute;
-	bottom: 0;
-	right: var(--col-1);
 }
 /* == Boot trap == */
 .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,
@@ -551,7 +540,7 @@ dialog .title{
 	user-select: none;
 	background-color: rgb(var(--color));
 	border: none;
-	border-radius:var(--col-1-2);
+	border-radius:var(--font-size);
 	padding:var(--col-1-2) var(--col-1);
 	font-size: var(--font-size);
 	z-index: 0;
@@ -576,24 +565,22 @@ dialog .title{
 	background-size: contain;
 }
 .overlay{
-	background-blend-mode: color-dodge;
 	transition: all var(--timing) var(--animed);
 	user-select: none;
 	cursor:pointer;
 }
 .overlay:hover{
-	background-blend-mode: initial;
 	transform: scale(1.1);
 	background-color: rgb(var(--color));
-	color: #0000;
+	color: rgb(var(--color));
 }
 .contain.overlay{
 	background-repeat: no-repeat;
 	background-position: center;
 }
 .rounded{
-	border-radius: .5cm;
-	padding:.5cm;
+	border-radius: var(--font-size);
+	padding:var(--font-size);
 }
 .btn.outline:hover{
 	color:rgb(var(--light),var(--a-text));
@@ -601,20 +588,20 @@ dialog .title{
 }
 .btn.outline::before{
 	content:"";
-	width: var(--col-12);
+	width: 110%;
 	height: 0%;
 	position: absolute;
 	display: block;
-	left: 0;
-	bottom: 0;
+	left: -5%;
+	bottom: -5%;
 	background-color: rgb(var(--color));
 	z-index: -1;
-	border-radius:50% 50% 0 0;
+	border-radius:100% 100% 0 0;
 	transition: height var(--animed) var(--timing),
 	 border-radius var(--animed) var(--timing);
 }
 .btn.outline:hover::before{
-	height: var(--col-12);
+	height: 110%;
 	border-radius:0 0 0 0;
 }
 .text-start {
@@ -818,11 +805,11 @@ dialog .title{
 	z-index: -444;
 }
 input[type=checkbox]~canvas{
-	width: var(--col-1);
-    height: var(--col-1);
+	width: var(--font-size);
+    height: var(--font-size);
     border: rgb(var(--color)) solid .1em;
-    border-radius: var(--col-1-2);
-    margin: var(--col-2);
+    border-radius: var(--font-size);
+    margin: var(--font-size);
 }
 .card input[type=checkbox]~canvas{
 	position: absolute;

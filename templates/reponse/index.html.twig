@@ -15,7 +15,7 @@ set image = asset("/images/home.jpeg")
 		{% if offres %}
 		<div class="col col-10 col-md-6">
 			{%for offre in offres %}
-			<div class="card offre outline rounded col-10" open-tab="offre={{ offre.id }}&page={{page+1}}">
+			<div class="card col outline rounded col-10" open-tab="offre={{ offre.id }}&page={{page+1}}">
 				<h2>{{ offre.intitule }}({{ offre.type }})</h2>
 				<p class="adress">{{ offre.lieu }}</p>
 				<div>{{ offre.mission }}</div>
@@ -36,15 +36,17 @@ set image = asset("/images/home.jpeg")
         </div>
 		{% if offre %}
         <div class="col-6 hide-sm outline card">
-		<button class="btn outline floating right top" onclick="localStorage.setItem('offre',{{offre.id}});location.assign('/offre/postuler')" >Postuler</button>
+			<button class="btn outline floating right top" onclick="localStorage.setItem('offre',{{offre.id}});location.assign('/offre/postuler')" >Postuler</button>
 			<h2>{{ offre.intitule| striptags }}({{ offre.type| striptags }})</h2>
 			<p class="adress">{{ offre.lieu| striptags }}</p>
 			<p class="price">{{ offre.remuneration| striptags }}</p>
 			<hr>
 			<p class="profile">{{ offre.profile| striptags }}</p>
 			<p class="mission">{{ offre.mission| striptags }}</p>
-			<span class="datetime">{{ offre.duree| striptags }}</span>
-			<span class="datetime">{{ offre.date|date("m/d/Y") }}</span>
+			<div class=" floating bottom col-12 row input-group">
+				<span class="col-10 datetime">{{ offre.duree| striptags }}</span>
+				<span class="col-10 datetime">{{ offre.date|date("m/d/Y") }}</span>
+			</div>
         </div>
 		{% else %}
 			<p class="alert alert-danger">Cette Offre n'est plus Disponible</p>
