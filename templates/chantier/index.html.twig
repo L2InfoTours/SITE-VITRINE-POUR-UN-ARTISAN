@@ -22,7 +22,7 @@ set image = asset("/images/projets.jpg")
 	<div class="grid" id="filtred">
 	{% for chantier in projects %}
 		<div class="col-12 col-md-4 col-lg-3 {% for type in chantier.getTypes() %} {{type.getType()}}{% endfor %} filter" style="max-width:480px;margin: auto;">
-			<div class="card shadow-hover">
+			<div class="card col-8 col-lg-12 shadow-hover">
 				<img-aspect aspect="16/9" crop="cover"  src="{{ asset("/uploads/images/chantier/#{chantier.getImages()[0].getImage()}") }}" alt="img"></img-aspect>
 				<h3 class="uppercase card-title">{{ chantier.nom }}</h3>
 				<p class="card-text">{{ chantier.description | striptags}}</p>
