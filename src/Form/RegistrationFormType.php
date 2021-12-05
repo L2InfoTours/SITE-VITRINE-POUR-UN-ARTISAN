@@ -30,7 +30,7 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Veuiller entrer une adresse mail',
 					]),
 					new Email([
-						'message' => 'The email "{{ value }}" is not a valid email.',
+						'message' => 'L\'adresse mail {{ value }} n\'est pas valide',
 					])
                     ]
             ])
@@ -39,7 +39,7 @@ class RegistrationFormType extends AbstractType
                 'required' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'Vous devez accepter les conditions d\'utilisation.',
+                        'message' => 'Vous devez accepter les conditions d\'utilisation',
                     ]),
                 ],
             ])
