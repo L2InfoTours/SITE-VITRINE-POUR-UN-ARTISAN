@@ -19,21 +19,29 @@ set image = asset("/images/home.jpeg")
 		{% endfor %}
 		<div class="form-signin">
 			{{ form_start(registrationForm) }}
+			{% set formErrors = registrationForm.vars.errors.form.getErrors(true) %}
+                                                
+            {# If there are errors in the form, display them in this unorganized list #}
+            {% if formErrors|length %}
+                    {% for error in formErrors %}
+                        <div class="alert alert-danger" role="alert">{{ error.message }}</div>
+                    {% endfor %}
+            {% endif %}
 			<div class="form-floating">
-				{{ form_widget(registrationForm.email, { 'attr': {'placeholder': 'name@example.com', 'class' : 'form-control form-control-danger'} }) }}
+				{{ form_widget(registrationForm.email, { 'attr': {'placeholder': 'nom@exemple.com', 'class' : 'form-control form-control-danger'} }) }}
 				{{ form_label(registrationForm.email, "Adresse mail", {'label_attr':{'class':'form-label'}}) }}
 			</div>
 			<div class="form-floating">
-				{{ form_widget(registrationForm.plainPassword, {'attr' : {'placeholder': 'password', 'class' : 'form-control form-control-danger'},label: 'Password'}) }}
+				{{ form_widget(registrationForm.plainPassword, {'attr' : {'placeholder': 'Mot de passe', 'class' : 'form-control form-control-danger'},label: 'Password'}) }}
 				{{ form_label(registrationForm.plainPassword, 'Mot de passe', {'label_attr':{'class':'form-label'}}) }}
 			</div>
 			<div class="row row-md short form-label">
-				{{ form_widget(registrationForm.agreeTerms,{'attr' : {}}) }}
+				{{ form_widget(registrationForm.agreeTerms) }}
 				{{ form_label(registrationForm.agreeTerms, "Accepter") }}
-				<a href="#CGU">les Conditions d'utilisation (voir ici)</a>
+				<a href="#CGU">Conditions d'utilisation (voir ici)</a>
 			</div>
 			<div class="row form-label">
-				<button class="btn outline" onclick="showErrors()" >S'inscrire</button>
+				<button type="submit" class="btn outline" onclick="showErrors()" >S'inscrire</button>
 			</div>
 		</div>
 	</div>

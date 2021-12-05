@@ -26,7 +26,7 @@ class RegistrationFormType extends AbstractType
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuiller entrer une adresse mail',
-                    ])
+                    ]),
                     ]
             ])
             ->add('agreeTerms', CheckboxType::class, [

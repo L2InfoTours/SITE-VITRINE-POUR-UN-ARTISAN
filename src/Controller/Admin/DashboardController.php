@@ -36,7 +36,7 @@ class DashboardController extends AbstractDashboardController
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return Dashboard::new()
             // the name visible to end users
-            //->setTitle('ABC Legermain')
+            // ->setTitle('ABC Legermain')
             // you can include HTML contents too (e.g. to link to an image)
             ->setTitle('<img src="/images/logo.png"> ABC Legermain</img>')
 

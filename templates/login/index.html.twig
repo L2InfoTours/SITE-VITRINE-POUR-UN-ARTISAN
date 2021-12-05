@@ -23,11 +23,11 @@ set image = asset("/images/home.jpeg")
 		<div class="form-signin">
 			<form action="{{ path('login') }}" method="post">
 				<div class="form-floating">
-					<input type="email" class="form-control form-control-danger" id="username" name="_username" value="{{ last_username }}" placeholder="name@example.com">
+					<input type="" class="form-control form-control-danger" id="username" name="_username" value="{{ last_username }}" placeholder="nom@exemple.com">
 					<label for="username" class="form-label">Adresse mail</label>
 				</div>
 				<div class="form-floating">
-					<input type="password" class="form-control" id="password" name="_password" placeholder="Password">
+					<input type="password" class="form-control" id="password" name="_password" placeholder="Mot de passe">
 					<label for="password" class="form-label">Mot de passe</label>
 				</div>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
@@ -36,9 +36,9 @@ set image = asset("/images/home.jpeg")
 					<label>Rester Connecter</label>
 				</div>
 				<hr>
-				<a class="nav-item" href="{{ path('app_register')}}">je n'ai pas encore de compte</a>
+				<a class="nav-item" href="{{ path('app_register')}}">Je n'ai pas encore de compte</a>
 				<div class="row form-label">
-					<button class="btn outline">Se Connecter</button>
+					<button class="btn outline" type="submit">Se Connecter</button>
 				</div>
 			</form>
 		</div>
