@@ -806,8 +806,8 @@ dialog .title{
 	z-index: -444;
 }
 input[type=checkbox]~canvas{
-	width: var(--font-size);
-    height: var(--font-size);
+	width: calc(var(--font-size) * 1.5);
+    height: calc(var(--font-size) * 1.5);
     border: rgb(var(--color)) solid .1em;
     border-radius: var(--font-size);
     margin: var(--font-size);
@@ -818,8 +818,8 @@ input[type=checkbox]~canvas{
 	left: 0;
 	transform: translate(-100%,-100%);
 	background: rgb(var(--dark));
-	width: var(--font-size);
-	height: var(--font-size);
+	width: calc(var(--font-size) * 1.5);
+	height: calc(var(--font-size) * 1.5);
 	border-radius:50%;
 }
 .card-text{
