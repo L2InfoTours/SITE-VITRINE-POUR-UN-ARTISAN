@@ -153,7 +153,7 @@ nav .navbar-toggler {
 	color:rgb(var(--color));
 	text-decoration:none;
 	width: 50%;
-	margin: 1em auto;
+	margin: auto;
 	text-overflow: ellipsis;
 	overflow-wrap: initial;
 	opacity: .9;

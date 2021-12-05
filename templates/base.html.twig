@@ -23,7 +23,7 @@ set icon = asset("/images/logo.png")
 	<nav class="navbar short navbar-dark bg-dark border-bottom">
 		<img src="{{icon}}" style="height: 3em;margin:0;" onclick="location.assign(this.getAttribute('href'))" href="{{ path('home') }}"/>
 		<a style="margin-left: .5em;" class="navbar-brand" href="{{ path('home') }}">LEGERMAIN</a>
-		<div class="grid navbar-menu uppercase col-lg-8">
+		<div class="grid navbar-menu uppercase col-lg-8 short" style="margin-left:auto;">
 			<div id="navbar" class="navbar-nav navbar-collapsed right border-bottom border-md-left">
 				{% if is_granted('ROLE_ADMIN') %} {# SI ON EST CONNECTER EN TANT QU'ADMIN #}
 					<a class="nav-item" href="{{ path('app_admin')}}">PANNEL ADMINISTRATION</a>
@@ -39,9 +39,9 @@ set icon = asset("/images/logo.png")
 					<a class="nav-item btn outline centred" href="{{ path('login')}}">SE CONNECTER</a>
 				{% endif %}
 			</div>
-			<navbar-toggle class="navbar-toggler" menu="navbar" style = "width:30px;height:30px;margin-top: 0;margin-left:auto;"></navbar-toggle>
+			<navbar-toggle class="navbar-toggler" menu="navbar" style="margin: auto 25px auto 0;width:30px;height:30px;"></navbar-toggle>
 		</div>
-			<tip-box icon="cog">
+			<tip-box icon="cog" style="margin: auto 0;width:30px;height:30px;">
 				<h1>Parametres : </h1>
 				<div class="row input-group">
 					<p>Changer les couleurs</p>

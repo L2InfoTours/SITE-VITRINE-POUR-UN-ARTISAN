@@ -285,8 +285,6 @@ class TipBox extends HaikuElement{
 		this.root.style.display = "none"
 		this.root.style.minWidth = "max-content"
 
-		this.style = "width:30px;height:30px;"
-
 		icon.addEventListener('click',()=>{
 			input.checked = !input.checked
 			this.switchTip(input.checked)
