@@ -51,7 +51,7 @@
 
 	--font-size:12pt;
 
-	--nav:10vh;
+	--nav:5em;
 
 }
 *{
@@ -492,7 +492,7 @@ dialog .title{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	gap: var(--col-1-2);
+	gap: var(--font-size);
 }
 .card h2{
 	margin:0;
@@ -830,6 +830,7 @@ body.dialog-focus>main>:not(dialog[open]){
 }
 .preload{
 	position: fixed;
+	display: block;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);

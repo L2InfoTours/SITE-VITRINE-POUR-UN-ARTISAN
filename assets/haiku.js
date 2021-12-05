@@ -636,6 +636,7 @@ window.addEventListener('load',()=>{
 	preloads = document.querySelectorAll('.preload')
 	preloads.forEach(preload=>{
 		preload.classList.remove('preload')
+		preload.style.display="none"
 	})
 })
 window.addEventListener('beforeUnloadListener ',()=>{
