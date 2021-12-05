@@ -1,8 +1,12 @@
 {% extends 'present.html.twig' %}
 
 {%
-set title = "CONNECTEZ-VOUS SUR LEGERMAIN"
+set title = "BIENVENUE SUR LEGERMAIN"
 %}
+
+  {% set description %}
+CONNECTEZ-VOUS SUR NOTRE SITE LEGERMAIN
+  {% endset %}
 
 {%
 set image = asset("/images/home.jpeg")
@@ -13,7 +17,7 @@ set image = asset("/images/home.jpeg")
 <section class="row clean-block">
 	<div class="col-10 col-lg-5">
 		<img src="{{icon}}" style="height: 2em;" onclick="location.assign(this.getAttribute('href'))" href="{{ path('home') }}"/>
-		<h3>{{title}}</h3>
+		<h3>CONNECTEZ-VOUS SUR LEGERMAIN</h3>
 		{% if error %}
 			<div class="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 		{% endif %}

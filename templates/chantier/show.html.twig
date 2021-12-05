@@ -1,6 +1,10 @@
 {% extends 'present.html.twig' %}
-{% set title = "chantier" %}
-{% set description = chantier.description %}
+{% set title = "CHANTIER" %}
+
+  {% set description %}
+LA QUALITÉ À CHAQUE ÉTAPE
+  {% endset %}
+
 {% set image = asset("/images/chantiers.jpg") %}
 {% block body %}
 <script src="{{asset("/scripts/haiku.js")}}"></script>

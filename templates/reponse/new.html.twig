@@ -1,8 +1,11 @@
 {% extends 'present.html.twig' %}
 {%
-set title = "Repondre à une OFFRES"
+set title = "REPONDRE A UNE OFFRES"
 %}
+  {% set description %}
 
+Veuillez répondre complètement au formulaire pour que votre demande puisse être prise en compte. Les documents envoyés doivent être des PDF.
+  {% endset %}
 
 {% block body %}
 <section >
@@ -31,7 +34,7 @@ set title = "Repondre à une OFFRES"
 		{% for flashError in app.flashes('verify_email_error') %}
 			<div class="alert" role="alert">{{ flashError }}</div>
 		{% endfor %}
-		<h1 class="text-center uppercase">{{title}}</h1>
+		<h1 class="text-center uppercase">Indiquez vos coordonnées</h1>
 		<div class="row">
 				{{ form_widget(form.offre, {'attr':{'class':'form-control'}}) }}
 				<script>
