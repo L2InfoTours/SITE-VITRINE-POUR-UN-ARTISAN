@@ -427,6 +427,7 @@ input,textarea{
 }
 .form-floating > .input-group .form-control:focus ~ label{
 	opacity: .65;
+	padding: 0;
 	transform: scale(.85) translateY(-.5rem) translateX(.15rem);
 }
 .form-floating > .input-group .form-control:focus{
