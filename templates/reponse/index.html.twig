@@ -38,11 +38,13 @@ set image = asset("/images/home.jpeg")
 			{% endif %}
         </div>
 		{% if offre %}
-        <div class="col-6 hide-sm outline card">
+        <div class="col-6 hide-sm outline card" style="min-height: 480px;">
 			<button class="btn outline floating right top" onclick="localStorage.setItem('offre',{{offre.id}});location.assign('/offre/postuler')" >Postuler</button>
-			<h2>{{ offre.intitule| striptags }}({{ offre.type| striptags }})</h2>
-			<p class="adress">{{ offre.lieu| striptags }}</p>
-			<p class="price">{{ offre.remuneration| striptags }}</p>
+			<h2 class="col-8 ellipsis" >{{ offre.intitule| striptags }}({{ offre.type| striptags }})</h2>
+			<div class="col-12 row input-group">
+				<p class="adress">{{ offre.lieu| striptags }}</p>
+				<p class="price">{{ offre.remuneration| striptags }}</p>
+			</div>
 			<hr>
 			<p class="profile">{{ offre.profile| striptags }}</p>
 			<p class="mission">{{ offre.mission| striptags }}</p>

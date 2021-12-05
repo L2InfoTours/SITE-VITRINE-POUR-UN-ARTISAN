@@ -363,9 +363,6 @@ footer a{
 	z-index: 999;
 	padding: var(--col-1);
 }
-.card .floating.btn{
-	height: var(--col-1);
-}
 .card .floating{
 	position: absolute;
 }
@@ -793,7 +790,7 @@ dialog .title{
 	margin:5px;
 }
 .btn{
-	padding: calc(var(--col-1-2) /4) var(--col-1-2);
+	padding: var(--font-size);
 }
 .night .night-invert{
 	filter:invert();
