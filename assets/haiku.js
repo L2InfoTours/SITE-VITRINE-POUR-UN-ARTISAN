@@ -222,8 +222,6 @@ class NavBarToggle extends HaikuElement{
 		div.appendChild(span2)
 		div.appendChild(span3)
 
-		this.style = "width:30px;height:30px;"
-
 		this.addEventListener('click',()=>{
 			input.checked = !input.checked
 			this.switchMenu(input.checked)
