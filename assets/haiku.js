@@ -230,9 +230,9 @@ class NavBarToggle extends HaikuElement{
 	switchMenu(value){
 		var menu = this.getAttribute('menu')
 		var v = "open"
-		var cls = document.getElementById(menu).classList
+		var cls = document.getElementById(menu)
 		cls.style.display = ""
-		value?cls.add(v):cls.remove(v)
+		value?cls.classList.add(v):cls.classList.remove(v)
 	}
 }
 
@@ -627,11 +627,19 @@ function UpdateDialog(){
 		document.body.classList.add("dialog-focus")
 	}
 }
+let preloads;
 window.addEventListener('load',()=>{
 	UpdateFilter()
 	UpdateTabber()
 	UpdateInputs()
 	UpdateDialog()
+	preloads = document.querySelectorAll('.preload')
+	preloads.forEach(preload=>{
+		preload.classList.remove('preload')
+	})
+})
+window.addEventListener('beforeUnloadListener ',()=>{
+	preloads.forEach(preload=>{preload.classList.add('preload')})
 })
 window.addEventListener('hashchange',()=>{
 	UpdateDialog()

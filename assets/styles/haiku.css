@@ -222,6 +222,7 @@ p{
 p{color: rgba(var(--dark),var(--a-text));}
 main {
 	grid-area:main;
+	width: 100vw;
 }
 main section {
 	padding: var(--col-1) var(--font-size);
@@ -398,7 +399,7 @@ input,textarea{
 	border:none;
 	box-shadow: inset ;
 }
-:not(.form-floating) .input-group{
+:not(.form-floating)>.input-group{
 	display: grid;
 	grid-template-columns:1fr 1fr;
 }
@@ -817,8 +818,8 @@ input[type=checkbox]~canvas{
 	left: 0;
 	transform: translate(-100%,-100%);
 	background: rgb(var(--dark));
-	width: var(--col-2);
-	height: var(--col-2);
+	width: var(--font-size);
+	height: var(--font-size);
 	border-radius:50%;
 }
 .card-text{
@@ -830,8 +831,34 @@ body.dialog-focus>main>:not(dialog[open]){
 	pointer-events: none;
 	user-select: none;
 }
+.preload{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 100vmin;
+	height: 100vmin;
+	z-index: 1500;
+	animation: fade-in var(--timing) var(--animed);
+}
 /*animation*/
 
+@keyframes fade-in {
+	from{
+		opacity:0;
+	}
+	to{
+		opacity:1;
+	}
+}
+@keyframes fade-out {
+	from{
+		opacity:1;
+	}
+	to{
+		opacity:0;
+	}
+}
 @keyframes navbar-collapsed-sm-open {
 	0%{
 		height: 0%;

@@ -27,12 +27,14 @@ set image = asset("/images/home.jpeg")
 		<div class="form-signin">
 			<form action="{{ path('login') }}" method="post">
 				<div class="form-floating">
-					<input type="" class="form-control form-control-danger" id="username" name="_username" value="{{ last_username }}" placeholder="nom@exemple.com">
-					<label for="username" class="form-label">Adresse mail</label>
-				</div>
-				<div class="form-floating">
-					<input type="password" class="form-control" id="password" name="_password" placeholder="Mot de passe">
-					<label for="password" class="form-label">Mot de passe</label>
+					<div class="input-group">
+						<input type="" class="form-control form-control-danger" id="username" name="_username" value="{{ last_username }}" placeholder="nom@exemple.com">
+						<label for="username" class="form-label">Adresse mail</label>
+					</div>
+					<div class="input-group">
+						<input type="password" class="form-control" id="password" name="_password" placeholder="Mot de passe">
+						<label for="password" class="form-label">Mot de passe</label>
+					</div>
 				</div>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 				<div class="row">

@@ -21,7 +21,7 @@ set image = asset("/images/home.jpeg")
 			<div class="card col outline rounded col-10" open-tab="offre={{ offre.id }}&page={{page+1}}">
 				<h2>{{ offre.intitule }}({{ offre.type }})</h2>
 				<p class="adress">{{ offre.lieu }}</p>
-				<div>{{ offre.mission }}</div>
+				<div class="ellipsis" >{{ offre.mission }}</div>
 				<span class="datetime">{{ offre.date|date("m/d/Y") }}</span>
 				<button class="btn outline col-8 hide-md hide-lg" onclick="localStorage.setItem('offre',{{offre.id}});location.assign('/offre/postuler')" >Postuler</button>
             </div>

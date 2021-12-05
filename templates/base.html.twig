@@ -20,6 +20,7 @@ set icon = asset("/images/logo.png")
 		{% endblock %}
 	</head>
 	<body template=market >
+	<img src="{{asset('/images/logo.svg')}}" class="preload"/>
 	<nav class="navbar short navbar-dark bg-dark border-bottom">
 		<img src="{{icon}}" style="height: 3em;margin:0;" onclick="location.assign(this.getAttribute('href'))" href="{{ path('home') }}"/>
 		<a style="margin-left: .5em;" class="navbar-brand" href="{{ path('home') }}">LEGERMAIN</a>
