@@ -473,9 +473,12 @@ class DragDropFile extends HaikuElement{
 		})
 		this.#area.style = "background:#333;border:#eee;width:100%;height:100%;min-width:3em;min-height:3em;"
 		this.#area.innerHTML = "Click or Drop a File"
-		this.#area.addEventListener('dragover',(e)=>{e.preventDefault()})
+		this.#area.addEventListener('dragover',(e)=>{
+			e.preventDefault()
+			e.stopPropagation()
+		})
 		this.#area.addEventListener('drop',(e)=>{
-			this.#value = DragEvent.dataTransfer
+			this.#value = e.dataTransfer.files[0]|| DragEvent.dataTransfer
 			this.#change(e)
 			e.preventDefault()
 		})
