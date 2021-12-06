@@ -1,80 +1,59 @@
+{%
+set icon = asset("/images/logo.png")
+%}
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="{{icon}}" />
+		<meta charset="UTF-8">
+		<meta name="title" content="{{title|default('LEGERMAIN')}}">
+		<meta name="description" content="{{description|default('le site vitrine LEGERMAIN officiel')}}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>{{title|default('LEGERMAIN')}}</title>
+		{% block stylesheets %}
 		{{ encore_entry_link_tags('app') }}
 		{{encore_entry_link_tags('haiku') }}
+		{{encore_entry_script_tags('haiku') }}
 		{% endblock %}
-    </head>
-    <body>
-
-    <nav class="navbar navbar-dark bg-dark" aria-label="First navbar example">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">LEGERMAIN</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample01">
-            <ul class="navbar-nav me-auto mb-2">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form>
-              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-            </form>
-          </div>
-        </div>
-      </nav>
-
-
-<div class="position-relative overflow-hidden  text-center bg-light">
-    <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 fw-normal">{{titre}}</h1>
-      <p class="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-
-    </div>
-    <div class="product-device shadow-sm d-none d-md-block"></div>
-    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-  </div>
-
-        {% block body %}{% endblock %}
-        {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
-    </body>
-
-<div class="container">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md-4 mb-0 text-muted">&copy; 2021 Company, Inc</p>
-
-    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M13 24h-2v-5.126c-.806-.208-1.513-.661-2.039-1.274-.602.257-1.265.4-1.961.4-2.76 0-5-2.24-5-5 0-1.422.595-2.707 1.55-3.617-.348-.544-.55-1.19-.55-1.883 0-1.878 1.483-3.413 3.341-3.496.823-2.332 3.047-4.004 5.659-4.004 2.612 0 4.836 1.672 5.659 4.004 1.858.083 3.341 1.618 3.341 3.496 0 .693-.202 1.339-.55 1.883.955.91 1.55 2.195 1.55 3.617 0 2.76-2.24 5-5 5-.696 0-1.359-.143-1.961-.4-.526.613-1.233 1.066-2.039 1.274v5.126z"/></svg>
-    </a>
-
-    <ul class="nav col-md-4 justify-content-end">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-    </ul>
-  </footer>
+	</head>
+	<body template=market >
+	<img src="{{asset('/images/logo.svg')}}" class="preload"/>
+	<nav class="navbar short navbar-dark bg-dark border-bottom">
+		<img src="{{icon}}" style="height: 3em;margin:0;" onclick="location.assign(this.getAttribute('href'))" href="{{ path('home') }}"/>
+		<a style="margin-left: .5em;" class="navbar-brand" href="{{ path('home') }}">LEGERMAIN</a>
+		<div class="grid navbar-menu uppercase col-lg-11 short" style="margin-left:auto;">
+			<div class="row text-center col-12 hide-sm hide-md" style="height: 100%;" >{{ include("nav.html.twig") }}</div>
+			<navbar-toggle class="navbar-toggler" menu="navbar" style="margin: auto 25px auto 0;width:30px;height:30px;"></navbar-toggle>
+		</div>
+			<tip-box icon="cog" style="margin: auto 0;width:20px;height:20px;">
+				<h1>Parametres : </h1>
+				<div class="row input-group">
+					<p>Changer les couleurs</p>
+					<switch-mode-night class="centred-line" ></switch-mode-night>
+				</div>
+			</tip-box>
+			</nav>
+			<div id="navbar" style="display:none" class="uppercase hide-lg navbar-nav right navbar-collapsed border-bottom border-md-left">{{ include("nav.html.twig") }}</div>
+			{% block header %}{% endblock %}
+			<main>
+				{% block body %}{% endblock %}
+			</main>
+			<footer class="border-top bg-dark">
+				<p class="footer-copyright">&copy; 2021 ABC Legermain, Inc</p>
+				<div class="container rows">
+					<img src="{{icon}}" style="height: 2em;" onclick="location.assign(this.getAttribute('href'))" href="{{ path('home') }}"/>
+				</div>
+				<div class="row short uppercase">
+					<a href="{{ path('home') }}" class="nav-link">ACCUEIL</a>
+					<a href="{{ path('chantier_index') }}" class="nav-link">PROJETS</a>
+					<a href="{{ path('aboutus') }}" class="nav-link">A Propos De Nous</a>
+					<a href="{{ path('demande_devis_new') }}" class="nav-link">DEVIS/CONTACT</a>
+					<a href="{{ path('reponse_index') }}" class="nav-link">OFFRES</a>
+				</div>
+			</footer>
+			{% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
+	</body>
 </html>

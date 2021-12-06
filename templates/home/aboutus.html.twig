@@ -1,0 +1,69 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<section class="clean-block bg-dark">
+		<div class="text">
+			<h1 class="uppercase">LEGERMAIN</h1>
+			<p>La société Legermain, jeune entreprise alliant créativité et dynamisme, vous propose de mettre son savoir faire à votre service.
+Pour  vos travaux de charpente, couverture, escaliers et autres ouvrages spécifiques faites confiance à deux techniciens du bois, André Legermain et Philippe Troquin habitués à intervenir, notamment, sur des bâtiments classés Monuments Historiques.
+
+Nous apportons un soin particulier à l’écoute et au conseil, deux points essentiels qui précédent la réalisation de vos ouvrages.
+Réaliser un travail artisanal, respectueux des traditions, tout en accordant notre prestation à votre budget, telle est notre ambition.
+
+Nous serons également enchantés de répondre à votre demande pour tout ouvrage spécifique, personnalisé ou non conventionnel. 
+
+Afin d’être plus concret, nous vous invitons à découvrir, en images, les ouvrages déjà réalisés. </p>
+		</div>
+	</section>
+	<section class="clean-block col" id="hanging-icons">
+		<div class="row">
+			<div class="col-10 col-lg-3 card">
+				<img class="icon bg-light night-invert" src="{{asset("/images/house.png")}}"/>
+				<h2>Charpentes</h2>
+				<p>Les charpentes ABC Legermain couvrent une large gamme de produits (du hangar agricole aux monuments historiques en passant bien sur par la charpente traditionnelle). Elles sont réalisées artisanalement en employant les assemblages traditionnels correspondant aux style et à l’époque de l’ouvrage (tenons mortaise, chevilles en bois...) </p>
+			</div>
+			<div class="col-10 col-lg-3 card">
+				<img class="icon bg-light night-invert" src="{{asset("/images/roof.png")}}"/>
+				<h2>Couverture</h2>
+				<p>Nous sommes également en mesure de protéger vos demeures des intempéries. Utilisant autant la tuile que l’ardoise ou le bardeau de châtaignier, la société ABC Legermain réalisera la couverture de vos charpentes, en l'agrémentant, si vous le souhaitez de quelques éléments décoratifs.</p>
+			</div>
+			<div class="col-10 col-lg-3 card">
+				<img class="icon bg-light night-invert" src="{{asset("/images/woodworking.png")}}"/>
+				<h2>Ouvrages spécifiques</h2>
+				<p>Escaliers, rambardes et garde-corps, lucarnes et autres menuiseries artisanales…
+Nous mettons notre maîtrise de l'ouvrage au service de vos attentes.
+Sobre ou travaillé, d'un style rustique ou moderne, racontez nous de votre projet et nous trouverons ensemble une réponse adaptée à votre budget et à votre demande.</p>
+			</div>
+		</div>
+	</section>
+	<section class="col clean-block">
+		<h1 class="uppercase">Qualifications : </h1>
+		<div class="row col-10 centred">
+			<img class="col-12 col-lg-1 centred" src="{{asset("/images/d11186.png")}}" />
+			<img class="col-12 col-lg-1 centred" src="{{asset("/images/logo_qualibat_2015_72dpi_RVB.png")}}" />
+			<img class="col-12 col-lg-1 centred" src="{{asset("/images/logo-Entreprise-du-Patrimoine-Vivant-EPV.png")}}" />
+			<img class="col-12 col-lg-1 centred" src="{{asset("/images/Logo-RGE.png")}}" />
+			<img class="col-12 col-lg-1 centred" src="{{asset("/images/logo_fondation_du_patrimoine_rvb-rogne.png")}}" />
+		</div>
+	</section>
+	<section class="row clean-block">
+		<div class="col-lg-5 col-10" >
+		<h1 class="uppercase">PASSION POUR NOTRE ARTISANAT</h1>
+		<p>Tout simplement, nous aimons ce que nous faisons. Grâce à la combinaison des connaissances et de l'expérience de notre équipe, nous espérons que notre passion se manifeste dans la qualité exceptionnelle de notre travail.</p>
+		</div>
+		<img-aspect class="big-img col-lg-5 col-10" aspect="16/9" crop="cover" src="{{asset("/images/31bbd0373562.jpg")}}" >
+	</section>
+	<section class="row-reverse clean-block">
+		<div class="col-lg-5 col-10" >
+		<h1 class="uppercase">ATELIER DE POINTE</h1>
+		<p>Dans notre atelier, le moderne rencontre le traditionnel. Nous profitons des dernières technologies pour améliorer notre travail et augmenter la créativité et la productivité au sein de l'équipe.</p>
+		</div>
+		<img-aspect class="big-img col-lg-5 col-10" aspect="16/9" crop="cover" src="{{asset("/images/devenir-charpentier-1024x679.jpg")}}" >
+	</section>
+	<section class="clean-block text-center">
+		<div class="col-lg-8 col-10" >
+			<h1 class="uppercase">SERVICE COMPLET DE CONCEPTION ET D'AJUSTEMENT</h1>
+			<p>La satisfaction du client est notre première priorité. Notre équipe qualifiée est à votre disposition tout au long de votre projet pour vous offrir des conseils d'experts et un accompagnement du début à la fin.</p>
+			<button type="button" class="btn outline uppercase" onclick=location.assign({{ path('demande_devis_new') }}) >NOUS CONTACTER</button>
+		</div>
+	</section>
+{% endblock %}

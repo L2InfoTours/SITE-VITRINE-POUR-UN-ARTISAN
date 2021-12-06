@@ -3,7 +3,8 @@
     "app": {
       "js": [
         "/build/runtime.js",
-        "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_bootstrap_dist_js_boo-6a5154.js",
+        "/build/vendors-node_modules_core-js_modules_es_object_create_js-node_modules_core-js_modules_es_obje-e078df.js",
+        "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_bootstrap_dist_js_boo-da594f.js",
         "/build/app.js"
       ],
       "css": [
@@ -22,10 +23,21 @@
     "haiku": {
       "js": [
         "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_modules_es_object_create_js-node_modules_core-js_modules_es_obje-e078df.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_array-7d1229.js",
         "/build/haiku.js"
       ],
       "css": [
         "/build/haiku.css"
+      ]
+    },
+    "signin": {
+      "js": [
+        "/build/runtime.js",
+        "/build/signin.js"
+      ],
+      "css": [
+        "/build/signin.css"
       ]
     }
   }

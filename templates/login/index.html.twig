@@ -1,25 +1,53 @@
-{# templates/login/index.html.twig #}
-{% extends 'base.html.twig' %}
+{% extends 'present.html.twig' %}
 
-{# ... #}
+{%
+set title = "BIENVENUE SUR LEGERMAIN"
+%}
+
+  {% set description %}
+CONNECTEZ-VOUS SUR NOTRE SITE LEGERMAIN
+  {% endset %}
+
+{%
+set image = asset("/images/home.jpeg")
+%}
 
 {% block body %}
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-    <form action="{{ path('login') }}" method="post">
-        <label for="username">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}"/>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password"/>
-
-        {# If you want to control the URL the user is redirected to on success
-        <input type="hidden" name="_target_path" value="/account"/> #}
-
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-        <button type="submit">login</button>
-    </form>
-{% endblock %}
+{{encore_entry_link_tags('signin') }}
+<section class="row clean-block">
+	<div class="col-10 col-lg-5">
+		<img src="{{icon}}" style="height: 2em;" onclick="location.assign(this.getAttribute('href'))" href="{{ path('home') }}"/>
+		<h3>CONNECTEZ-VOUS SUR LEGERMAIN</h3>
+		{% if error %}
+			<div class="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
+		{% for flashError in app.flashes('verify_email_error') %}
+			<div class="alert" role="alert">{{ flashError }}</div>
+		{% endfor %}
+		<div class="form-signin">
+			<form action="{{ path('login') }}" method="post">
+				<div class="form-floating">
+					<div class="input-group">
+						<input type="" class="form-control form-control-danger" id="username" name="_username" value="{{ last_username }}" placeholder="nom@exemple.com">
+						<label for="username" class="form-label">Adresse mail</label>
+					</div>
+					<div class="input-group">
+						<input type="password" class="form-control" id="password" name="_password" placeholder="Mot de passe">
+						<label for="password" class="form-label">Mot de passe</label>
+					</div>
+				</div>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<div class="row">
+					<input type="checkbox" name="stay_connected">
+					<label>Rester Connecter</label>
+				</div>
+				<hr>
+				<a class="nav-item" href="{{ path('app_register')}}">Je n'ai pas encore de compte</a>
+				<div class="row form-label">
+					<button class="btn outline" type="submit">Se Connecter</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+{% endblock%}

@@ -1,11 +1,107 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}New DemandeDevis{% endblock %}
-
+{% extends 'present.html.twig' %}
+{% set image = asset("/images/contact.jpg") %}
+{% set title = "Demandez un devis / Nous Contacter" %}
+{% set description %}
+Pour nous contacter afin d'obtenir un renseignement ou un devis, vous pouvez remplir
+le formulaire en bas de cette page ou nous appeler au numéro de téléphone ci-dessous. 
+Nous vous répondrons dans les plus brefs délais.
+{% endset %}
 {% block body %}
-    <h1>Create new DemandeDevis</h1>
-
-    {{ include('demande_devis/_form.html.twig') }}
-
-    <a href="{{ path('demande_devis_index') }}">back to list</a>
+<section class="bg-dark">
+	{{ form_start(form, disable="disable") }}
+	<div class="col ">
+		{% if not form.vars.valid %}
+	    <ul class="alert alert-danger list">
+	        {# on affiche en premier les erreurs globales (cas classiques) #}
+	        {% for error in form.vars.errors %}
+	            <li>{{error.message}}</li>
+	        {% endfor %}
+	        {# ainsi que les erreurs concernant chaque champs #}
+	        {% for child in form.children %}
+	            {# si le champ à des erreur #}
+	            {% if child.vars.errors is defined %}
+	                {% for error in child.vars.errors %}
+	                    <li>"{{child.vars.label}}" : {{error.message}} </br>: {{form.vars.data}}</li> {# on ajoute le label du champ devant l'erreur pour plus de précisions. #}
+	                {% endfor %}
+	            {% endif %}
+	        {% endfor %}
+	    </ul>
+	{% endif %}
+		{% for flashError in app.flashes('verify_email_error') %}
+			<div class="alert" role="alert">{{ flashError }}</div>
+		{% endfor %}
+		<h1 class="text-center">Nouvelle demande de devis</h1>
+		<div class="row">
+			<div class="col-10 col-lg-4 col ">
+				<div class="col ">
+					<label class="form-label">Nom</label> 
+					{{ form_widget(form.nom, {'attr':{'class':'form-control'}}) }}
+				</div>
+				<div class="col ">
+					<label class="form-label">Telephone </label>
+					{{ form_widget(form.telephone, {'attr':{'class':'form-control'}}) }}
+				</div> 
+			</div>
+			<div class="col-10 col-lg-4 col ">
+				<div class="col ">
+					<label class="form-label">Adresse  </label>
+					{{ form_widget(form.adresse, {'attr':{'class':'form-control'}}) }}
+				</div>
+				<div class="col ">
+					<label class="form-label">Email </label>
+					{{ form_widget(form.email, {'attr':{'class':'form-control'}}) }}
+				</div>
+			</div>
+		</div>
+		<div class="col-10 col centred">
+			<label class="form-label text-light"> Description </label>
+			{{ form_widget(form.description, {'attr': {'rows':"5", 'class':'col-12 form-control'} })}}
+		</div>
+		<button type="submit" class="btn outline uppercase form-submit">Enregistrer</button>
+	</div>
+	{{ form_rest(form) }}
+	{{form_end(form)}}
+</section>
+<section class="col">
+	<h1 class="text-center">Contact</h1>
+	<div class="row">
+		<div class="col-12 col-lg-5">
+			<div id="map" style=" height: 360px;min-width:480px; overflow:hidden;"></div>
+		</div>
+		<div class="col-10 col-lg-5">
+			<ul class="list separed">
+				<li>
+					<h5>Telephone</h5>
+					<p>02 47 36 70 34</p>
+				</li>
+				<li>
+					<h5>Addresse</h5>
+					<p>	ABC Legermain (ABC = Artisanat Bois Création)<br>
+						Zone Artisanale<br>
+						72140 Rouez en Champagne
+					</p>
+				</li>
+				<li>
+					<h5>Horaire de travail</h5>
+					<p>7h00 - 18h00</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+window.addEventListener('load',()=>{
+	var map = L.map('map').setView([48.1322556, -0.1107165], 13);
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+	L.marker([48.1446839,-0.1192413]).addTo(map)
+	    .bindPopup('LEGERMAIN')
+	    .openPopup();
+})
+</script>
 {% endblock %}

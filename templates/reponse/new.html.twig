@@ -1,11 +1,79 @@
-{% extends 'base.html.twig' %}
+{% extends 'present.html.twig' %}
+{%
+set title = "REPONDRE A UNE OFFRES"
+%}
+  {% set description %}
 
-{% block title %}New Reponse{% endblock %}
+Veuillez répondre complètement au formulaire pour que votre demande puisse être prise en compte. Les documents envoyés doivent être des PDF.
+  {% endset %}
 
 {% block body %}
-    <h1>Create new Reponse</h1>
-
-    {{ include('reponse/_form.html.twig') }}
-
-    <a href="{{ path('reponse_index') }}">back to list</a>
+<section >
+	{{ form_start(form) }}
+	<div class="col ">
+	{% if not form.vars.valid %}
+	    <ul class="alert alert-danger list">
+	        {# on affiche en premier les erreurs globales (cas classiques) #}
+	        {% for error in form.vars.errors %}
+	            <li>{{error.message}}</li>
+	        {% endfor %}
+	        {# ainsi que les erreurs concernant chaque champs #}
+	        {% for child in form.children %}
+	            {# si le champ à des erreur #}
+	            {% if child.vars.errors is defined %}
+	                {% for error in child.vars.errors %}
+	                    <li>"{{child.vars.label}}" : {{error.message}} </br>: {{form.vars.data}}</li> {# on ajoute le label du champ devant l'erreur pour plus de précisions. #}
+	                {% endfor %}
+	            {% endif %}
+	        {% endfor %}
+	    </ul>
+	{% endif %}
+	{% if error %}
+		<p class="alert alert-danger">{{error}}</p>
+	{% endif %}
+		{% for flashError in app.flashes('verify_email_error') %}
+			<div class="alert" role="alert">{{ flashError }}</div>
+		{% endfor %}
+		<h1 class="text-center uppercase">Indiquez vos coordonnées</h1>
+		<div class="row">
+				{{ form_widget(form.offre, {'attr':{'class':'form-control'}}) }}
+				<script>
+					document.querySelector('[name="reponse1[offre]"]').selectedIndex = localStorage.getItem('offre')
+				</script>
+		</div>
+		<div class="row">
+			<div class="col-10 col-lg-4 col ">
+				<div class="col ">
+					<label class="form-label">Nom</label> 
+					{{ form_widget(form.nom, {'attr':{'class':'form-control'}}) }}
+				</div>
+				<div class="col ">
+					<label class="form-label">Prenom</label> 
+					{{ form_widget(form.prenom, {'attr':{'class':'form-control'}}) }}
+				</div>
+			</div>
+			<div class="col-10 col-lg-4 col ">
+				<div class="col ">
+					<label class="form-label">Telephone </label>
+					{{ form_widget(form.telephone, {'attr':{'class':'form-control'}}) }}
+				</div> 
+				<div class="col ">
+					<label class="form-label">Email </label>
+					{{ form_widget(form.email, {'attr':{'class':'form-control'}}) }}
+				</div>
+			</div>
+		</div>
+		<div class="col-10 col centred">
+					<label class="form-label">Cv  </label>
+					{{ form_widget(form.cv, {'attr':{'class':'form-control','hidden':'true',}}) }}
+					<input-dragdrop type="file" for="reponse1_cv" ></input-dragdrop>
+				</div>
+		<div class="col-10 col centred">
+					<label class="form-label">Lettre_motivation </label>
+					{{ form_widget(form.lettre_motivation, {'attr':{'class':'form-control'}}) }}
+				</div>
+			<button type="submit" class="btn outline uppercase form-submit">Candidater</button>
+	</div>
+	{{form_end(form)}}
+</section>
 {% endblock %}

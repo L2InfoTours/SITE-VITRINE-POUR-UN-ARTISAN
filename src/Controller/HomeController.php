@@ -10,15 +10,18 @@ class HomeController extends AbstractController
 {
     #[Route('/', name: 'home')]
     public function index(): Response
-    {
-
-        $hasAccess = $this->isGranted('ROLE_USER');
-        $this->denyAccessUnlessGranted('ROLE_USER');
-        
+    {        
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'titre' => 'HOME',
 
         ]);
     }
+    #[Route('/a-propos', name: 'aboutus', methods: ['GET'])]
+        public function aboutus(): Response
+        {
+            return $this->render('home/aboutus.html.twig', [
+            'titre' => 'ABOUT US',
+            ]);
+        }
 }

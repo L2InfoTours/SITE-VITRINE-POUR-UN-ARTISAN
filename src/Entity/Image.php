@@ -51,7 +51,7 @@ class Image
     // ...
 
     public function __toString(){
-        return $this->titre;
+        return $this->image;
     }
 
     public function setImageFile(File $image = null)
@@ -107,6 +107,18 @@ class Image
     public function setLien(string $lien): self
     {
         $this->lien = $lien;
+
+        return $this;
+    }
+
+    public function getTypeChantier(): ?TypeChantier
+    {
+        return $this->typechantier;
+    }
+
+    public function setTypeChantier(?TypeChantier $typechantier): self
+    {
+        $this->typechantier = $typechantier;
 
         return $this;
     }

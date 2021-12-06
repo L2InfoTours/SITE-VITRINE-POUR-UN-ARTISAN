@@ -8,16 +8,18 @@ use App\Form\ReponseType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
-// use App\Form\ImageType;
 
 class OffreCrudController extends AbstractCrudController
 {
@@ -30,10 +32,12 @@ class OffreCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            IdField::new('id', 'Date de création')
+            ->setValue(false)
+            ->hideOnForm(),
             DateField::new('date')
-            ->onlyOnIndex()
-            ->setFormat('dd/MM/yyyy'),
-            ChoiceField::new('niveau_etude')->setChoices([
+            ->onlyOnIndex(),
+            ChoiceField::new('niveau_etude', 'Niveau d\'études')->setChoices([
                 'Bac+1' => 'Bac+1',
                 'Bac+2' => 'Bac+2',
                 'Bac+3' => 'Bac+3',
@@ -42,11 +46,11 @@ class OffreCrudController extends AbstractCrudController
                 'Bac+5 +' => 'Bac+5 +',
             ]),
             'lieu',
-            'intitule',
-            'mission',
-            MoneyField::new('remuneration')
+            TextareaField::new('intitule'),
+            TextEditorField::new('mission'),
+            MoneyField::new('remuneration', 'Rémunération')
             ->setCurrency('EUR'),
-            'profile',
+            TextEditorField::new('profile'),
             ChoiceField::new('type', "Type d'offre")->setChoices([
                 'Stage' => 'Stage',
                 'Alternance' => 'Alternance',
@@ -54,24 +58,28 @@ class OffreCrudController extends AbstractCrudController
                 'CDI' => 'CDI',
             ]),
             IntegerField::new('duree', 'Nombre de jours'),
-            CollectionField::new('reponses')
+            //MODIFER
+            CollectionField::new('reponses', 'Réponses')
             ->setEntryType(ReponseType::class)
             ->setFormTypeOption('by_reference', false)
             ->onlyOnForms()
             ->allowAdd(false)
             ->allowDelete(false),
-            //TODO ITEM NAME ->prototype_name('__name__'),
-            CollectionField::new('reponses')
-            // ->setTemplatePath('reponses.html.twig')
-            ->setEntryType(ReponseType::class)
-            ->setFormTypeOption('by_reference', false)
-            ->allowAdd(false)
-            ->allowDelete(false)
+            //CONSULTER
+            CollectionField::new('reponses', 'Réponses')
+            ->setTemplatePath('reponses.html.twig')
             ->onlyOnDetail()
         ];
     }
     public function configureActions(Actions $actions): Actions
     {
         return $actions->add(Crud::PAGE_INDEX, 'detail');
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setDefaultSort(['id' => 'DESC'])
+            ->setDateFormat('dd/MM/yyyy');
     }
 }

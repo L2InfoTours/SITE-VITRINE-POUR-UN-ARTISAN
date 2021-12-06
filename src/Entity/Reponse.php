@@ -8,6 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=ReponseRepository::class)
@@ -57,11 +59,14 @@ class Reponse
 
     /**
      * @ORM\Column(type="decimal", precision=10, scale=0)
+     * @Assert\Regex(pattern="/^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/", message="Numéro de téléphone incorrect ou non français") 
      */
     private $telephone;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Regex(pattern="/^(?!(?:(?:\x22?\x5C[\x00-\x7E]\x22?)|(?:\x22?[^\x5C\x22]\x22?)){255,})(?!(?:(?:\x22?\x5C[\x00-\x7E]\x22?)|(?:\x22?[^\x5C\x22]\x22?)){65,}@)(?:(?:[\x21\x23-\x27\x2A\x2B\x2D\x2F-\x39\x3D\x3F\x5E-\x7E]+)|(?:\x22(?:[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]|(?:\x5C[\x00-\x7F]))*\x22))(?:\.(?:(?:[\x21\x23-\x27\x2A\x2B\x2D\x2F-\x39\x3D\x3F\x5E-\x7E]+)|(?:\x22(?:[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]|(?:\x5C[\x00-\x7F]))*\x22)))*@(?:(?:(?!.*[^.]{64,})(?:(?:(?:xn--)?[a-z0-9]+(?:-[a-z0-9]+)*\.){1,126}){1,}(?:(?:[a-z][a-z0-9]*)|(?:(?:xn--)[a-z0-9]+))(?:-[a-z0-9]+)*)|(?:\[(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){7})|(?:(?!(?:.*[a-f0-9][:\]]){7,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?)))|(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){5}:)|(?:(?!(?:.*[a-f0-9]:){5,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3}:)?)))?(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))(?:\.(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))){3}))\]))$/iD", 
+     * message="Adresse mail incorrect") 
      */
     private $email;
 
@@ -103,17 +108,12 @@ class Reponse
         return $this;
     }
 
-    public function setCvFile(File $cv = null)
+    public function setCvFile($cv = null)
     {
-        $this->cvFile = $cv;
-        if ($cv) {
-            var_dump($cv);
-           // It is required that at least one field changes if you are using doctrine
-           // otherwise the event listeners won't be called and the file is lost
-           $this->updatedAt = new \DateTime("now");
-       }
-
-        return $this;
+		if ($cv) {
+			$this->cv = $cv;
+			$this->updatedAt = new \DateTime("now");
+		}
     }
 
     public function getCvFile()
@@ -134,6 +134,10 @@ class Reponse
     public function getLettreMotivation(): ?string
     {
         return $this->lettre_motivation;
+    }
+    public function getLettre_Motivation(): ?string
+    {
+        return $this->getLettreMotivation();
     }
 
     public function setLettreMotivation(string $lettre_motivation): self
