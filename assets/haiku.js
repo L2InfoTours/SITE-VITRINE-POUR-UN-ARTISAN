@@ -247,7 +247,7 @@ class TipBox extends HaikuElement{
 		padding: 10px;
 		border-radius: 10px;
 		flex-direction: column;
-		transform:translate(-75%,2em);
+		transform:translate(-100%,2em);
 	}
 	.row{
 		display:flex;
