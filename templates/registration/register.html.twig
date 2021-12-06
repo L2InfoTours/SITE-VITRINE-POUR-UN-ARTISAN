@@ -1,9 +1,11 @@
 {% extends 'present.html.twig' %}
 
 {%
-set title = "Inscrivez-vous sur LEGERMAIN"
+set title = "BIENVENUE SUR LEGERMAIN"
 %}
-
+  {% set description %}
+INSCRIVEZ-VOUS SUR NOTRE SITE LEGERMAIN
+  {% endset %}
 {%
 set image = asset("/images/home.jpeg")
 %}
@@ -13,7 +15,7 @@ set image = asset("/images/home.jpeg")
 <section class="row clean-block">
 	<div class="col-10 col-lg-5">
 		<img src="{{icon}}" style="height: 2em;" onclick="location.assign(this.getAttribute('href'))" href="{{ path('home') }}"/>
-		<h3 class="uppercase">{{title}}</h3>
+		<h3 class="uppercase">Inscrivez-vous sur LEGERMAIN</h3>
 		{% for flashError in app.flashes('verify_email_error') %}
 			<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 		{% endfor %}
@@ -23,17 +25,21 @@ set image = asset("/images/home.jpeg")
                                                 
             {# If there are errors in the form, display them in this unorganized list #}
             {% if formErrors|length %}
+				<ul class="list short">
                     {% for error in formErrors %}
-                        <div class="alert alert-danger" role="alert">{{ error.message }}</div>
+                        <li class="alert alert-danger" role="alert">{{ error.message }}</li>
                     {% endfor %}
+				</ul>
             {% endif %}
 			<div class="form-floating">
-				{{ form_widget(registrationForm.email, { 'attr': {'placeholder': 'nom@exemple.com', 'class' : 'form-control form-control-danger'} }) }}
-				{{ form_label(registrationForm.email, "Adresse mail", {'label_attr':{'class':'form-label'}}) }}
-			</div>
-			<div class="form-floating">
-				{{ form_widget(registrationForm.plainPassword, {'attr' : {'placeholder': 'Mot de passe', 'class' : 'form-control form-control-danger'},label: 'Password'}) }}
-				{{ form_label(registrationForm.plainPassword, 'Mot de passe', {'label_attr':{'class':'form-label'}}) }}
+				<div class="input-group">
+					{{ form_widget(registrationForm.email, { 'attr': {'placeholder': 'nom@exemple.com', 'class' : 'form-control form-control-danger'} }) }}
+					{{ form_label(registrationForm.email, "Adresse mail", {'label_attr':{'class':'form-label'}}) }}
+				</div>
+				<div class="input-group">
+					{{ form_widget(registrationForm.plainPassword, {'attr' : {'placeholder': 'Mot de passe', 'class' : 'form-control form-control-danger'},label: 'Password'}) }}
+					{{ form_label(registrationForm.plainPassword, 'Mot de passe', {'label_attr':{'class':'form-label'}}) }}
+				</div>
 			</div>
 			<div class="row row-md short form-label">
 				{{ form_widget(registrationForm.agreeTerms) }}

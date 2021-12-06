@@ -230,8 +230,9 @@ class NavBarToggle extends HaikuElement{
 	switchMenu(value){
 		var menu = this.getAttribute('menu')
 		var v = "open"
-		var cls = document.getElementById(menu).classList
-		value?cls.add(v):cls.remove(v)
+		var cls = document.getElementById(menu)
+		cls.style.display = ""
+		value?cls.classList.add(v):cls.classList.remove(v)
 	}
 }
 
@@ -246,7 +247,7 @@ class TipBox extends HaikuElement{
 		padding: 10px;
 		border-radius: 10px;
 		flex-direction: column;
-		transform:translate(-75%,2em);
+		transform:translate(-100%,2em);
 	}
 	.row{
 		display:flex;
@@ -626,11 +627,20 @@ function UpdateDialog(){
 		document.body.classList.add("dialog-focus")
 	}
 }
+let preloads;
 window.addEventListener('load',()=>{
 	UpdateFilter()
 	UpdateTabber()
 	UpdateInputs()
 	UpdateDialog()
+	preloads = document.querySelectorAll('.preload')
+	preloads.forEach(preload=>{
+		preload.classList.remove('preload')
+		preload.style.display="none"
+	})
+})
+window.addEventListener('beforeUnloadListener ',()=>{
+	preloads.forEach(preload=>{preload.classList.add('preload')})
 })
 window.addEventListener('hashchange',()=>{
 	UpdateDialog()

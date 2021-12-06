@@ -92,16 +92,15 @@ Nous vous répondrons dans les plus brefs délais.
  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
-{{encore_entry_script_tags('leaflet') }}
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script>
 window.addEventListener('load',()=>{
-	var map = L.map('map').setView([51.505, -0.09], 13);
+	var map = L.map('map').setView([48.1322556, -0.1107165], 13);
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(map);
-
-	L.marker([51.5, -0.09]).addTo(map)
-	    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+	L.marker([48.1446839,-0.1192413]).addTo(map)
+	    .bindPopup('LEGERMAIN')
 	    .openPopup();
 })
 </script>

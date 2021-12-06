@@ -2,9 +2,17 @@
 {% 
 set image = asset("/images/home.jpeg")
  %}
+
+ {% set title = "UNE PASSION POUR L'ARTISANAT" %}
+ {% set description %}
+Fait à la main, sur mesure, de qualité
+
+ {% endset %}
+
+
 {% block body %}
 	<section class="row clean-block">
-		<div class="col-lg-5 col-10" >
+		<div class="col-lg-6 col-10" >
 		<h1 class="uppercase">notre savoir faire</h1>
 		<p>
 			Nous maîtrisons la pose des petits éléments de couverture: ardoise, tuile plate de terre cuite, tuile mécanique. 
@@ -29,7 +37,7 @@ L’entreprise ABC Legermain est qualifiée
 		</div>
 	</section>
 	<section class="row-reverse clean-block">
-		<div class="col-lg-5 col-10">
+		<div class="col-lg-6 col-10">
 		<h1 class="uppercase">pret a travailler ensemble</h1>
 		<p>
 			Réussir ses travaux, c’est avant tout une histoire de confiance et d’accompagnement. 
@@ -38,7 +46,7 @@ vous ne serez jamais seul. Une question, un doute, un avis, un souci ? Depuis, T
 notre service client est à votre disposition et vous prête une oreille vraiment attentive, 
 pour vous apporter des solutions personnalisées.
 		</p>
-		<button type="button" class="btn outline uppercase" onclick=location.assign({{ path('demande_devis_new') }}) >Créer son devis</button>
+		<button type="button" class="btn outline uppercase" onclick=location.assign({{ path('demande_devis_new') }}) >nous CONTACTer</button>
 		</div>
 		<img-aspect class="big-img col-lg-5 col-10" aspect="16/9" crop="cover" src="{{asset("/images/couverture-zinguerie.jpg")}}" >
 	</section>

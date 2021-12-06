@@ -1,15 +1,21 @@
 {% extends "present.html.twig" %}
 {% 
-set title = "PROJETS"
+set title = "NOS PROJETS"
  %}
+
+  {% set description %}
+ Envie de voir les travaux que l'on a déjà effectué ? Vous trouverez tout se qu'il faut sur cette page en matière de charpenterie, couverture ou pour des ouvrages plus spécifiques
+
+
+  {% endset %}
 {% 
 set image = asset("/images/projets.jpg")
  %}
 {% block body %}
-<section>
-	<div class="grid small-sm" style="gap: 35px;" >
+<section class="clean-block">
+	<div class="row col-11 small-sm" style="gap: 35px;" >
 		{% for type in types %}
-			<div class="card col-3 bg-dark rounded cover overlay shadow-hover" onclick="document.getElementById('{{type}}').click()" style="background-image: url('{{ asset("/uploads/images/typechantier/#{type.getImage()}") }}');height:100%;min-width: min-content;">
+			<div class="card col-12 col-md-6 col-lg-3 bg-dark rounded cover overlay shadow-hover" onclick="document.getElementById('{{type}}').click()" style="background-image: url('{{ asset("/images/typechantier/#{type.getImage()}") }}');height:140px;min-width: min-content;">
 			<input type="checkbox" style="display:none;" id="{{type}}" onclick="doFilter()" class="filter">
 				<div class="col text-shadow">
 					<h2 class="text-center" >{{type}}</h2>
