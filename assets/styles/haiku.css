@@ -504,6 +504,9 @@ dialog .title{
 	opacity:.9;
 	color:rgba(var(--dark),.5);
 }
+ul.separed li:not(:first-child){
+	border-top: rgb(var(--color),var(--a-text)) 2px solid;
+}
 /* == Boot trap == */
 .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,
 .col-7,.col-8,.col-9,.col-10,.col-11,.col-12{
