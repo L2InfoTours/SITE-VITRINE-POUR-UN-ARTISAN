@@ -2,15 +2,21 @@
 
 - METHODE D'INSTALATION
 
-composer i
+$composer i 
 
-npm i
+$npm i 
 
-npm run dev
+(en tant que dev)
 
-php bin/console doctrine:database:create
+$composer require --dev symfony/maker-bundle
 
-symfony serv
+$npm run dev
+
+- Procédure de démarrage
+
+$symfony server:start
+OU
+$symfony serv
 
 - FRAMEWORK
 
