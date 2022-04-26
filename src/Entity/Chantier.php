@@ -51,7 +51,9 @@ class Chantier
     // private $admin;
 
 
-
+    /**
+     * Undocumented function
+     */
     public function __construct()
     {
         $this->images = new ArrayCollection();

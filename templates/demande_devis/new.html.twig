@@ -6,11 +6,11 @@ Pour nous contacter afin d'obtenir un renseignement ou un devis, vous pouvez rem
 le formulaire en bas de cette page ou nous appeler au numéro de téléphone ci-dessous. 
 Nous vous répondrons dans les plus brefs délais.
 {% endset %}
-{% block body %}
+{% block body %} 
 <section class="bg-dark">
 	{{ form_start(form, disable="disable") }}
 	<div class="col ">
-		{% if not form.vars.valid %}
+		{% if not  form.vars.valid %}
 	    <ul class="alert alert-danger list">
 	        {# on affiche en premier les erreurs globales (cas classiques) #}
 	        {% for error in form.vars.errors %}
